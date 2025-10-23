@@ -10,8 +10,12 @@ import matplotlib.pyplot as plt
 from scipy.stats import lognorm, multivariate_normal
 from scipy.interpolate import interp1d
 
-def main():
-    """Main function to run the Aiyagari model with human capital"""
+def main(no_hc_model=False):
+    """Main function to run the Aiyagari model with human capital
+    
+    Args:
+        no_hc_model (bool): If True, run no-human-capital version where e is fixed at 0
+    """
     
     # Parameters
     Kai_n = 2.34/3*0.25
@@ -153,7 +157,14 @@ def main():
     
     n_c = 1001
     cgrid_nowork = np.linspace(0, a2_nowork, n_c)
-    cstartemp = np.zeros(5)
+    
+    # Set number of choices based on model type
+    if no_hc_model:
+        n_choices = 2  # Only (n=0,e=0) and (n=1,e=0)
+        cstartemp = np.zeros(2)
+    else:
+        n_choices = 5  # All 5 choices
+        cstartemp = np.zeros(5)
     
     for ih in range(n_h):
         for iz in range(n_z):
@@ -161,82 +172,129 @@ def main():
                 # z affects current labor income, y affects human capital transitions
                 a2_work = wzx[iz, ih] + (1 + r) * avalue
                 
-                # Find closest indices for human capital transitions (using y shock)
-                ih2_0 = np.argmin(np.abs(hgrid - h2_0[ih]))
-                ih2_l = np.argmin(np.abs(hgrid - (h2_0[ih] + ygrid[iy] * e_l)))  # Use y for HC
-                ih2_h = np.argmin(np.abs(hgrid - (h2_0[ih] + ygrid[iy] * e_h)))  # Use y for HC
+                # Find closest indices for human capital transitions
+                ih2_0 = np.argmin(np.abs(hgrid - h2_0[ih]))  # No education: h' = (1-δ)h
+                
+                if not no_hc_model:
+                    # Full model: include education investment
+                    ih2_l = np.argmin(np.abs(hgrid - (h2_0[ih] + ygrid[iy] * e_l)))  # Use y for HC
+                    ih2_h = np.argmin(np.abs(hgrid - (h2_0[ih] + ygrid[iy] * e_h)))  # Use y for HC
+                    # Ensure indices are within bounds
+                    ih2_l = np.clip(ih2_l, 0, n_h - 1)
+                    ih2_h = np.clip(ih2_h, 0, n_h - 1)
                 
                 # Ensure indices are within bounds
                 ih2_0 = np.clip(ih2_0, 0, n_h - 1)
-                ih2_l = np.clip(ih2_l, 0, n_h - 1)
-                ih2_h = np.clip(ih2_h, 0, n_h - 1)
                 
-                # n=0, e=0
-                assets_remaining = a2_nowork - cgrid_nowork
-                assets_remaining = np.clip(assets_remaining, a_lower, a_upper)
-                
-                interp_func = interp1d(agrid.flatten(), EV_2[:, ih2_0], 
-                                     kind='linear', bounds_error=False, fill_value='extrapolate')
-                obj1 = np.log(np.maximum(cgrid_nowork, 1e-10)) + discount * interp_func(assets_remaining)
-                val1_idx = np.argmax(obj1)
-                val1 = obj1[val1_idx]
-                cstartemp[0] = cgrid_nowork[val1_idx]
-                
-                # n=0, e=e_l
-                interp_func = interp1d(agrid.flatten(), EV_2[:, ih2_l], 
-                                     kind='linear', bounds_error=False, fill_value='extrapolate')
-                obj2 = (np.log(np.maximum(cgrid_nowork, 1e-10)) - Kai_e * e_l + 
-                       discount * interp_func(assets_remaining))
-                val2_idx = np.argmax(obj2)
-                val2 = obj2[val2_idx]
-                cstartemp[1] = cgrid_nowork[val2_idx]
-                
-                # n=0, e=e_h
-                interp_func = interp1d(agrid.flatten(), EV_2[:, ih2_h], 
-                                     kind='linear', bounds_error=False, fill_value='extrapolate')
-                obj3 = (np.log(np.maximum(cgrid_nowork, 1e-10)) - Kai_e * e_h + 
-                       discount * interp_func(assets_remaining))
-                val3_idx = np.argmax(obj3)
-                val3 = obj3[val3_idx]
-                cstartemp[2] = cgrid_nowork[val3_idx]
-                
-                # Working options
-                cgrid_work = np.linspace(0, a2_work, n_c)
-                assets_remaining_work = a2_work - cgrid_work
-                assets_remaining_work = np.clip(assets_remaining_work, a_lower, a_upper)
-                
-                # n=1, e=0
-                interp_func = interp1d(agrid.flatten(), EV_2[:, ih2_0], 
-                                     kind='linear', bounds_error=False, fill_value='extrapolate')
-                obj4 = (np.log(np.maximum(cgrid_work, 1e-10)) - Kai_n + 
-                       discount * interp_func(assets_remaining_work))
-                val4_idx = np.argmax(obj4)
-                val4 = obj4[val4_idx]
-                cstartemp[3] = cgrid_work[val4_idx]
-                
-                # n=1, e=e_l
-                interp_func = interp1d(agrid.flatten(), EV_2[:, ih2_l], 
-                                     kind='linear', bounds_error=False, fill_value='extrapolate')
-                obj5 = (np.log(np.maximum(cgrid_work, 1e-10)) - Kai_n - Kai_e * e_l + 
-                       discount * interp_func(assets_remaining_work))
-                val5_idx = np.argmax(obj5)
-                val5 = obj5[val5_idx]
-                cstartemp[4] = cgrid_work[val5_idx]
-                
-                # Choose over 5 options
-                values = [val1, val2, val3, val4, val5]
-                best_choice = np.argmax(values)
-                V1[iz, iy, ih] = values[best_choice]  # Now includes y dimension
-                choice[iz, iy, ih] = best_choice + 1  # MATLAB uses 1-based indexing
-                cstar[iz, iy, ih] = cstartemp[best_choice]
-                
-                # Compute optimal saving based on choice
-                optimal_consumption = cstartemp[best_choice]
-                if best_choice < 3:  # Choices 1-3: not working (n=0)
-                    total_resources = a2_nowork
-                else:  # Choices 4-5: working (n=1)
-                    total_resources = a2_work
-                optimal_saving[iz, iy, ih] = total_resources - optimal_consumption
+                if no_hc_model:
+                    # No-HC model: only 2 choices
+                    # Choice 1: n=0, e=0
+                    assets_remaining = a2_nowork - cgrid_nowork
+                    assets_remaining = np.clip(assets_remaining, a_lower, a_upper)
+                    
+                    interp_func = interp1d(agrid.flatten(), EV_2[:, ih2_0], 
+                                         kind='linear', bounds_error=False, fill_value='extrapolate')
+                    obj1 = np.log(np.maximum(cgrid_nowork, 1e-10)) + discount * interp_func(assets_remaining)
+                    val1_idx = np.argmax(obj1)
+                    val1 = obj1[val1_idx]
+                    cstartemp[0] = cgrid_nowork[val1_idx]
+                    
+                    # Choice 2: n=1, e=0
+                    cgrid_work = np.linspace(0, a2_work, n_c)
+                    assets_remaining_work = a2_work - cgrid_work
+                    assets_remaining_work = np.clip(assets_remaining_work, a_lower, a_upper)
+                    
+                    interp_func = interp1d(agrid.flatten(), EV_2[:, ih2_0], 
+                                         kind='linear', bounds_error=False, fill_value='extrapolate')
+                    obj2 = (np.log(np.maximum(cgrid_work, 1e-10)) - Kai_n + 
+                           discount * interp_func(assets_remaining_work))
+                    val2_idx = np.argmax(obj2)
+                    val2 = obj2[val2_idx]
+                    cstartemp[1] = cgrid_work[val2_idx]
+                    
+                    # Choose between 2 options
+                    values = [val1, val2]
+                    best_choice = np.argmax(values)
+                    V1[iz, iy, ih] = values[best_choice]
+                    choice[iz, iy, ih] = best_choice + 1  # 1 or 2
+                    cstar[iz, iy, ih] = cstartemp[best_choice]
+                    
+                    # Compute optimal saving
+                    optimal_consumption = cstartemp[best_choice]
+                    if best_choice == 0:  # Choice 1: not working
+                        total_resources = a2_nowork
+                    else:  # Choice 2: working
+                        total_resources = a2_work
+                    optimal_saving[iz, iy, ih] = total_resources - optimal_consumption
+                    
+                else:
+                    # Full model: all 5 choices
+                    # n=0, e=0
+                    assets_remaining = a2_nowork - cgrid_nowork
+                    assets_remaining = np.clip(assets_remaining, a_lower, a_upper)
+                    
+                    interp_func = interp1d(agrid.flatten(), EV_2[:, ih2_0], 
+                                         kind='linear', bounds_error=False, fill_value='extrapolate')
+                    obj1 = np.log(np.maximum(cgrid_nowork, 1e-10)) + discount * interp_func(assets_remaining)
+                    val1_idx = np.argmax(obj1)
+                    val1 = obj1[val1_idx]
+                    cstartemp[0] = cgrid_nowork[val1_idx]
+                    
+                    # n=0, e=e_l
+                    interp_func = interp1d(agrid.flatten(), EV_2[:, ih2_l], 
+                                         kind='linear', bounds_error=False, fill_value='extrapolate')
+                    obj2 = (np.log(np.maximum(cgrid_nowork, 1e-10)) - Kai_e * e_l + 
+                           discount * interp_func(assets_remaining))
+                    val2_idx = np.argmax(obj2)
+                    val2 = obj2[val2_idx]
+                    cstartemp[1] = cgrid_nowork[val2_idx]
+                    
+                    # n=0, e=e_h
+                    interp_func = interp1d(agrid.flatten(), EV_2[:, ih2_h], 
+                                         kind='linear', bounds_error=False, fill_value='extrapolate')
+                    obj3 = (np.log(np.maximum(cgrid_nowork, 1e-10)) - Kai_e * e_h + 
+                           discount * interp_func(assets_remaining))
+                    val3_idx = np.argmax(obj3)
+                    val3 = obj3[val3_idx]
+                    cstartemp[2] = cgrid_nowork[val3_idx]
+                    
+                    # Working options
+                    cgrid_work = np.linspace(0, a2_work, n_c)
+                    assets_remaining_work = a2_work - cgrid_work
+                    assets_remaining_work = np.clip(assets_remaining_work, a_lower, a_upper)
+                    
+                    # n=1, e=0
+                    interp_func = interp1d(agrid.flatten(), EV_2[:, ih2_0], 
+                                         kind='linear', bounds_error=False, fill_value='extrapolate')
+                    obj4 = (np.log(np.maximum(cgrid_work, 1e-10)) - Kai_n + 
+                           discount * interp_func(assets_remaining_work))
+                    val4_idx = np.argmax(obj4)
+                    val4 = obj4[val4_idx]
+                    cstartemp[3] = cgrid_work[val4_idx]
+                    
+                    # n=1, e=e_l
+                    interp_func = interp1d(agrid.flatten(), EV_2[:, ih2_l], 
+                                         kind='linear', bounds_error=False, fill_value='extrapolate')
+                    obj5 = (np.log(np.maximum(cgrid_work, 1e-10)) - Kai_n - Kai_e * e_l + 
+                           discount * interp_func(assets_remaining_work))
+                    val5_idx = np.argmax(obj5)
+                    val5 = obj5[val5_idx]
+                    cstartemp[4] = cgrid_work[val5_idx]
+                    
+                    # Choose over 5 options
+                    values = [val1, val2, val3, val4, val5]
+                    best_choice = np.argmax(values)
+                    V1[iz, iy, ih] = values[best_choice]
+                    choice[iz, iy, ih] = best_choice + 1  # MATLAB uses 1-based indexing
+                    cstar[iz, iy, ih] = cstartemp[best_choice]
+                    
+                    # Compute optimal saving based on choice
+                    optimal_consumption = cstartemp[best_choice]
+                    if best_choice < 3:  # Choices 1-3: not working (n=0)
+                        total_resources = a2_nowork
+                    else:  # Choices 4-5: working (n=1)
+                        total_resources = a2_work
+                    optimal_saving[iz, iy, ih] = total_resources - optimal_consumption
     
     # Aggregate over y dimension for plotting and analysis
     # Check that prob_y sums to one
@@ -259,25 +317,42 @@ def main():
             choice_2d[iz, ih] = weighted_avg_choice
             optimal_saving_2d[iz, ih] = weighted_avg_saving
     
-    z1, h1 = np.where(choice_2d == 1)
-    z2, h2 = np.where(choice_2d == 2)
-    z3, h3 = np.where(choice_2d == 3)
-    z4, h4 = np.where(choice_2d == 4)
-    z5, h5 = np.where(choice_2d == 5)
-    
-    plt.figure(figsize=(10, 8))
-    plt.scatter(hgrid[h1], zgrid[z1], c='black', s=1, label='n=0, e=0')
-    plt.scatter(hgrid[h2], zgrid[z2], c='green', s=1, label='n=0, e=e_l')
-    plt.scatter(hgrid[h3], zgrid[z3], c='red', s=1, label='n=0, e=e_h')
-    plt.scatter(hgrid[h4], zgrid[z4], c='yellow', s=1, label='n=1, e=0')
-    plt.scatter(hgrid[h5], zgrid[z5], c='magenta', s=1, label='n=1, e=e_l')
-    plt.ylim([0, 2])
-    plt.xlabel('Human Capital (h)')
-    plt.ylabel('Productivity (z)')
-    plt.title('Optimal Choices in (h,z) Space (Aggregated over y)')
-    plt.legend()
-    plt.grid(True, alpha=0.3)
-    plt.show()
+    if no_hc_model:
+        # No-HC model: only 2 choices
+        z1, h1 = np.where(choice_2d == 1)
+        z2, h2 = np.where(choice_2d == 2)
+        
+        plt.figure(figsize=(10, 8))
+        plt.scatter(hgrid[h1], zgrid[z1], c='black', s=1, label='n=0, e=0')
+        plt.scatter(hgrid[h2], zgrid[z2], c='yellow', s=1, label='n=1, e=0')
+        plt.ylim([0, 2])
+        plt.xlabel('Human Capital (h)')
+        plt.ylabel('Productivity (z)')
+        plt.title('Optimal Choices in (h,z) Space - No HC Model')
+        plt.legend()
+        plt.grid(True, alpha=0.3)
+        plt.show()
+    else:
+        # Full model: all 5 choices
+        z1, h1 = np.where(choice_2d == 1)
+        z2, h2 = np.where(choice_2d == 2)
+        z3, h3 = np.where(choice_2d == 3)
+        z4, h4 = np.where(choice_2d == 4)
+        z5, h5 = np.where(choice_2d == 5)
+        
+        plt.figure(figsize=(10, 8))
+        plt.scatter(hgrid[h1], zgrid[z1], c='black', s=1, label='n=0, e=0')
+        plt.scatter(hgrid[h2], zgrid[z2], c='green', s=1, label='n=0, e=e_l')
+        plt.scatter(hgrid[h3], zgrid[z3], c='red', s=1, label='n=0, e=e_h')
+        plt.scatter(hgrid[h4], zgrid[z4], c='yellow', s=1, label='n=1, e=0')
+        plt.scatter(hgrid[h5], zgrid[z5], c='magenta', s=1, label='n=1, e=e_l')
+        plt.ylim([0, 2])
+        plt.xlabel('Human Capital (h)')
+        plt.ylabel('Productivity (z)')
+        plt.title('Optimal Choices in (h,z) Space - Full Model')
+        plt.legend()
+        plt.grid(True, alpha=0.3)
+        plt.show()
     
     # Final calculations
     futurewage = w * 1 / (1 + r)
@@ -306,7 +381,8 @@ def main():
     print(f"z2_cutoff: {z2_cutoff}")
     
     # Print optimal saving statistics
-    print(f"\nOptimal Saving Statistics:")
+    model_type = "No-HC Model" if no_hc_model else "Full Model"
+    print(f"\nOptimal Saving Statistics ({model_type}):")
     print(f"Average optimal saving: {np.mean(optimal_saving_2d):.4f}")
     print(f"Min optimal saving: {np.min(optimal_saving_2d):.4f}")
     print(f"Max optimal saving: {np.max(optimal_saving_2d):.4f}")
@@ -337,10 +413,29 @@ def main():
             'r': r,
             'w': w,
             'discount': discount,
-            'delta_corr': delta_corr  # Correlation coefficient
+            'delta_corr': delta_corr,  # Correlation coefficient
+            'no_hc_model': no_hc_model  # Model type flag
         }
     }
 
+def run_both_models():
+    """Run both full model and no-HC model for comparison"""
+    print("="*60)
+    print("Running Full Model (with human capital investment)...")
+    print("="*60)
+    results_full = main(no_hc_model=False)
+    
+    print("\n" + "="*60)
+    print("Running No-HC Model (education effort fixed at zero)...")
+    print("="*60)
+    results_no_hc = main(no_hc_model=True)
+    
+    return results_full, results_no_hc
+
 if __name__ == "__main__":
-    results = main()
-    print("Model solved successfully!")
+    # Run both models
+    results_full, results_no_hc = run_both_models()
+    print("\n" + "="*60)
+    print("Both models solved successfully!")
+    print("Use results_full and results_no_hc for comparison analysis.")
+    print("="*60)

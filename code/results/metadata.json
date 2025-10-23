@@ -1,0 +1,44 @@
+{
+  "5350807dcf5f": {
+    "model_type": "full_model",
+    "parameters": {
+      "Kai_n": 0.19499999999999998,
+      "Kai_e": 0.09749999999999999,
+      "e_l": 1.0,
+      "e_h": 2.0,
+      "lambda_param": 0.4,
+      "r": 0.0,
+      "w": 1.0,
+      "discount": 0.95,
+      "delta_h": 0.0,
+      "sigma_z": 0.001,
+      "sigma_y": 0.001,
+      "delta_corr": 0.5,
+      "no_hc_model": false
+    },
+    "filename": "full_model_5350807dcf5f.pkl.gz",
+    "timestamp": "2025-10-23T17:14:32.460971",
+    "file_size": 75972
+  },
+  "5f545f08bc3e": {
+    "model_type": "no_hc_model",
+    "parameters": {
+      "Kai_n": 0.19499999999999998,
+      "Kai_e": 0.09749999999999999,
+      "e_l": 1.0,
+      "e_h": 2.0,
+      "lambda_param": 0.4,
+      "r": 0.0,
+      "w": 1.0,
+      "discount": 0.95,
+      "delta_h": 0.0,
+      "sigma_z": 0.001,
+      "sigma_y": 0.001,
+      "delta_corr": 0.5,
+      "no_hc_model": true
+    },
+    "filename": "no_hc_model_5f545f08bc3e.pkl.gz",
+    "timestamp": "2025-10-23T17:14:32.524487",
+    "file_size": 42818
+  }
+}
