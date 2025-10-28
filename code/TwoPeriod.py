@@ -130,6 +130,8 @@ def main(no_hc_model=False):
             EV_2temp[ih] = np.sum(V_2[:, ih] * marginal_prob_z)  # Expected over z
         EV_2[ia, :] = EV_2temp
     
+    
+
     # Period-1 Decision Rule - now with bivariate (z,y) shocks
     V1 = np.zeros((n_z, n_y, n_h))  # Expanded to include y dimension
     choice = np.zeros((n_z, n_y, n_h), dtype=int)
