@@ -95,7 +95,7 @@ s_{\mathrm{CE}} &= \frac{\beta y_1 - a}{1+\beta}.
 
 \subsection*{Precautionary Correction}
 
-Linearizing around \(m_0\) for small \(v\) gives
+Linearizing FOC around \(m_0\) for small \(v\) gives
 \[
 \delta m = \frac{v}{(1+\beta)m_0},
 \qquad
@@ -163,6 +163,94 @@ B \cdot \frac{2y_1^2}{(y_1 + tA)^3} > 0,
 \end{equation}
 so \( s^\star(\lambda) \) is \textbf{convex} in \(\lambda\).  
 This means the marginal effect of \(\lambda\) on saving becomes less negative (or more positive) as \(\lambda\) rises.
+
+In other words, the crowd-in effect (precautionary saving) of \(\lambda\) on saving becomes stronger as \(\lambda\) rises. As the AI shock reduces \(\lambda\) for the mover from low to middle sector, the crowd-in effect is weaker and therefore a reduction of saving for the middle sector. On the other hand, the AI shock enlarges \(\lambda\) for the mover from middle to high sector, the crowd-in effect is stronger and therefore an increase of saving for the high sector.
+
+---
+
+\section{Comparative Statics with Respect to \(y_1\)}
+
+From the approximate solution \eqref{eq:s_approx}, we can derive the effect of first-period income on optimal saving:
+\begin{equation}
+\frac{\partial s^\star}{\partial y_1}
+=
+\frac{\beta}{1+\beta}
+-
+B\cdot\frac{t^2}{(y_1 + tA)^2}.
+\label{eq:dsdy1}
+\end{equation}
+
+This derivative has two components:
+\begin{itemize}
+    \item \textbf{Direct consumption-smoothing effect} (first term): $\frac{\beta}{1+\beta} > 0$
+    \begin{itemize}
+        \item Higher $y_1$ increases saving to smooth consumption across periods
+        \item This is the standard life-cycle saving motive
+    \end{itemize}
+    \item \textbf{Precautionary adjustment} (second term): $-B\cdot\frac{t^2}{(y_1 + tA)^2} < 0$
+    \begin{itemize}
+        \item Higher $y_1$ reduces the relative importance of precautionary saving
+        \item With more first-period resources, the agent is less concerned about second-period risk
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Net Effect}
+
+The net effect $\frac{\partial s^\star}{\partial y_1}$ is \textbf{ambiguous} and depends on parameter values and the level of $y_1$: 
+\begin{equation}
+    \frac{\partial s^\star}{\partial y_1} > 0 \quad \Leftrightarrow \quad \frac{\beta}{1+\beta} > B\cdot\frac{t^2}{(y_1 + tA)^2}
+\end{equation}
+
+If the inequality for $\frac{\partial s^\star}{\partial y_1} > 0$ holds at $y_1=0$, it is a sufficient condition for it to hold for all $y_1\geq 0$. Plugging $y_1=0$ into the condition gives:
+\begin{equation}
+\frac{\beta}{1+\beta} > B \cdot \frac{1}{A^2}
+\end{equation}
+Recall that $A = (1+\lambda)x e^{\sigma^2/2}$ and $B = \frac{(1+\lambda)^2 x^2 e^{\sigma^2} (e^{\sigma^2}-1)}{\beta}$, so
+\[
+B \cdot \frac{1}{A^2} 
+= 
+\frac{(1+\lambda)^2 x^2 e^{\sigma^2} (e^{\sigma^2}-1)}{\beta} \cdot \frac{1}{(1+\lambda)^2 x^2 e^{\sigma^2}} 
+= 
+\frac{e^{\sigma^2}-1}{\beta}
+\]
+Thus, the sufficient condition becomes
+\begin{equation}
+\frac{\beta}{1+\beta} > \frac{e^{\sigma^2}-1}{\beta}
+\end{equation}
+or equivalently,
+\begin{equation}
+e^{\sigma^2} < \frac{\beta^2}{1+\beta} + 1
+\end{equation}
+Taking logs yields the sufficient upper bound on $\sigma$:
+\begin{equation}
+\sigma^2 < \log\left( \frac{\beta^2}{1+\beta} + 1 \right)
+\end{equation}
+Therefore, if $\sigma^2$ satisfies this bound, then $\frac{\partial s^\star}{\partial y_1} > 0$ for all $y_1 \geq 0$.
+
+The second derivative is always positive:
+\begin{equation}
+\frac{\partial^2 s^\star}{\partial y_1^2}
+=
+B\cdot\frac{2t^2}{(y_1 + tA)^3} > 0,
+\end{equation}
+so $s^\star(y_1)$ is \textbf{convex} in $y_1$.
+
+\textbf{Case Analysis:}
+\begin{itemize}
+    \item \textbf{High $y_1$ or low risk}: $\frac{\partial s^\star}{\partial y_1} > 0$ (consumption smoothing dominates)
+    \item \textbf{Low $y_1$ or high risk}: $\frac{\partial s^\star}{\partial y_1}$ could be negative (precautionary adjustment dominates)
+    \item \textbf{Asymptotic behavior}: As $y_1 \to \infty$, $\frac{\partial s^\star}{\partial y_1} \to \frac{\beta}{1+\beta} > 0$
+    \item \textbf{Convexity}: The marginal effect becomes less negative (or more positive) as $y_1$ increases
+\end{itemize}
+
+\subsection*{Economic Interpretation}
+
+The convexity of $s^\star(y_1)$ captures the interaction between consumption smoothing and precautionary motives:
+\begin{itemize}
+    \item At \textbf{low wealth levels}, precautionary concerns may dominate, potentially leading to \emph{dissaving} (negative marginal propensity to save) as agents prioritize current consumption when future income is risky
+    \item At \textbf{high wealth levels}, standard consumption smoothing dominates, and saving increases with income
+    \item The convex shape reflects \textbf{diminishing precautionary motives}: as first-period wealth increases, agents become less sensitive to second-period income risk, consistent with decreasing absolute risk aversion under logarithmic utility
+\end{itemize}
 
 ---
 

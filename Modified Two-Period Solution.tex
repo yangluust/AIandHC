@@ -1,0 +1,359 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsthm,bm,setspace,geometry,graphicx,pgfplots}
+\usepackage{float}
+\geometry{margin=1in}
+\onehalfspacing
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+
+\title{Second-Order Approximation and the Effect of Future Endowment Scale on Optimal Saving}
+\author{}
+\date{}
+\maketitle
+
+\section{Modified Optimization Problem}
+
+We consider a two-period consumption--saving problem where the first-period endowment is the sum of two components:
+\begin{equation}
+y_1 = x + y,
+\end{equation}
+with $x>0$ representing a component that also scales the risky endowment in the second period, and $y>0$ representing a deterministic component that only enters period 1.
+
+The agent maximizes expected lifetime utility:
+\begin{equation}
+\max_{0 \le s \le x+y} : \log(c_1) + \beta \mathbb{E}[\log(c_2)],
+\end{equation}
+subject to
+\begin{align}
+c_1 &= x + y - s, \\
+c_2 &= s + (1+\lambda)xz_2,
+\end{align}
+where $\log z_2 \sim \mathcal{N}(0,\sigma^2)$, implying
+\begin{equation}
+\mathbb{E}[z_2] = e^{\sigma^2/2}, \qquad \operatorname{Var}(z_2) = e^{\sigma^2}(e^{\sigma^2}-1).
+\end{equation}
+
+Define auxiliary quantities
+\begin{equation}
+t \equiv 1+\lambda, \quad A \equiv x e^{\sigma^2/2}, \quad K \equiv e^{\sigma^2}(e^{\sigma^2}-1), \quad B \equiv \frac{x^2 K}{\beta}.
+\end{equation}
+
+\section{Second-Order Approximation}
+
+The second-order delta-method approximation to the expected utility of second-period consumption is
+\begin{equation}
+\mathbb{E}[\log c_2] \approx \log(s+tA) - \frac{t^2 x^2 K}{2(s+tA)^2}.
+\end{equation}
+
+The approximate optimization problem is therefore
+\begin{equation}
+\max_{0 \le s \le x+y} \Big\{ \log(x+y-s) + \beta\big[\log(s+tA) - \frac{t^2 x^2 K}{2(s+tA)^2}\big] \Big\}.
+\end{equation}
+
+The first-order condition for an interior optimum is
+\begin{equation}
+\frac{1}{x+y-s} = \beta\Big[\frac{1}{s+tA} + \frac{t^2 x^2 K}{(s+tA)^3}\Big].
+\label{eq:FOC}
+\end{equation}
+
+\section{Second-Order Approximate Solution}
+
+Ignoring the risk term in \eqref{eq:FOC} yields the certainty-equivalent saving rule
+\begin{equation}
+s_{\text{CE}} = \frac{\beta(x+y) - tA}{1+\beta}.
+\label{eq:sce}
+\end{equation}
+
+Linearizing the FOC around $s_{\text{CE}}$ and reintroducing risk gives the second-order approximate optimal saving rule:
+\begin{equation}
+s^*(x,y;\lambda) \approx s_{\text{CE}} + \frac{t^2 x^2 K}{(1+\beta)m_0}, \quad m_0 = s_{\text{CE}} + tA.
+\end{equation}
+
+Simplifying,
+\begin{align}
+m_0 &= \frac{\beta[(x+y)+tA]}{1+\beta}, \\
+\frac{t^2 x^2 K}{(1+\beta)m_0} &= \frac{t^2 x^2 K}{\beta[(x+y)+tA]}.
+\end{align}
+
+Thus the approximate closed form is
+\begin{equation}
+\boxed{
+s^*(x,y;\lambda) \approx \frac{\beta(x+y) - (1+\lambda)x e^{\sigma^2/2}}{1+\beta} + \frac{(1+\lambda)^2 x^2 e^{\sigma^2}(e^{\sigma^2}-1)}{\beta\big[(x+y) + (1+\lambda)x e^{\sigma^2/2}\big]}.
+}
+\label{eq:sstar_final}
+\end{equation}
+
+\section{Comparing the effect of $\lambda>0$ across $x_L<x_H$ ($e=e_L$)}
+
+We start from the second-order approximate saving rule:
+\begin{equation}
+s^\star(x,y;\lambda)
+=
+\frac{\beta(x+y) - (1+\lambda)x e^{\sigma^2/2}}{1+\beta}
++
+\frac{(1+\lambda)^2 x^2 e^{\sigma^2}\!\big(e^{\sigma^2}-1\big)}
+{\beta\big[(x+y) + (1+\lambda)x e^{\sigma^2/2}\big]}.
+\label{eq:sstar_lambda}
+\end{equation}
+Let $t = 1+\lambda$, $A = e^{\sigma^2/2}$, and $K = e^{\sigma^2}\!\big(e^{\sigma^2}-1\big)$.  
+Then we can rewrite~\eqref{eq:sstar_lambda} compactly as
+\begin{equation}
+s^\star(x,y;\lambda)
+=
+\frac{\beta(x+y) - t x A}{1+\beta}
++
+\frac{t^2 x^2 K}{\beta \big[(x+y) + t x A\big]}.
+\label{eq:s_lambda_simplified}
+\end{equation}
+
+We want to understand how a higher $\lambda>0$ (that is, larger $t$) affects saving for two agents:
+\[
+\text{Case 1: } x=x_L, 
+\qquad
+\text{Case 2: } x=x_H, 
+\quad \text{where } x_H>x_L>0.
+\]
+
+Specifically, we compare
+\[
+\Delta s(x;\lambda)
+\equiv s^\star(x,y;\lambda) - s^\star(x,y;0),
+\]
+and study how its sign and magnitude differ for low and high $x$.
+
+\subsection{Decomposing the $\lambda$-effect}
+
+The total change in saving when $\lambda$ rises can be broken down into two intuitive forces.
+
+\paragraph{(i) Mean-income or consumption-smoothing force.}
+The first term of~\eqref{eq:s_lambda_simplified},
+\[
+\frac{\beta(x+y) - t x A}{1+\beta},
+\]
+\begin{itemize}
+    \item As $\lambda$ increases, $t$ increases, so the term $-t x A$ becomes more negative.
+    \item Intuition: higher $\lambda$ raises expected future income $\mathbb{E}[c_2]$, so the agent wants to consume more now and save less.
+    \item This pushes saving \textbf{down} when $\lambda$ goes up.
+\end{itemize}
+
+Importantly, that downward effect is proportional to $x$. A higher $x$ means future income responds more strongly to $\lambda$, so this ``I'm richer tomorrow so I save less'' channel is \textbf{stronger} for $x_H$ than $x_L$.
+
+Formally, the CE part drops with $\lambda$ at rate
+\[
+\frac{\partial}{\partial \lambda}
+\left[
+\frac{\beta(x+y) - t x A}{1+\beta}
+\right]
+= -\frac{xA}{1+\beta},
+\]
+which is more negative for larger $x$.
+
+So:  
+\textbf{Higher $x$ $\Rightarrow$ stronger downward pressure on saving from the higher mean future payoff.}
+
+\paragraph{(ii) Precautionary force}  
+\[
+\frac{t^2 x^2 K}{\beta \big[(x+y) + t x A\big]}.
+\]
+
+
+\begin{itemize}
+    \item As $\lambda$ increases, both $t^2$ in the numerator and $t x A$ in the denominator increase.
+    \item \textbf{Numerator effect:} Future \emph{risk exposure} scales like $t x$. Bigger $x$ makes that exposure very sensitive to $\lambda$, and it enters squared. This pushes saving \textbf{up} when $\lambda$ goes up (classic precautionary saving response to higher risk scale).
+    \item \textbf{Denominator effect:} The term $(x+y) + t x A$ partially mutes it---richer agents dilute marginal risk. But note: that denominator also grows with $x$, so it doesn’t kill the scaling entirely.
+\end{itemize}
+
+Differentiate the precautionary term with respect to $\lambda$:
+\[
+\frac{\partial}{\partial \lambda}
+\left[
+\frac{t^2 x^2 K}{\beta \big[(x+y) + t x A\big]}
+\right]
+=
+\frac{x^2 K}{\beta}\,
+\frac{t\,(2(x+y) + t x A)}{(x+y + t x A)^2}.
+\]
+
+Key thing:  
+The derivative is \textbf{positive}, so precaution pushes saving \textbf{up} when $\lambda$ rises.\\
+It scales roughly like $x^2$ up front. So for higher $x$, this ``risk precaution'' channel is \textbf{much stronger}.
+
+So:  
+\textbf{Higher $x$ $\Rightarrow$ stronger upward pressure on saving from risk amplification.}
+
+\subsection{Putting the two forces together}
+
+
+Combining both effects, the total derivative of saving with respect to $\lambda$ is
+\begin{equation}
+\frac{\partial s^\star}{\partial \lambda}(x;\lambda)
+=
+-\frac{xA}{1+\beta}
++
+\frac{x^2 K}{\beta}\,
+\frac{t\,[2(x+y) + t x A]}{\big[(x+y) + t x A\big]^2}.
+\label{eq:dsdlambda_total}
+\end{equation}
+This summarizes the two channels:
+\begin{itemize}
+    \item First term: nagative mean-income effect: scale with $x$.
+    \item Second term: positive precautionary effect: scale with $x^2$.
+\end{itemize}
+Now compare low $x_L$ and high $x_H$ cases, with $x_H>x_L>0$.
+
+
+\paragraph{Low-$x$ case ($x=x_L$).}
+When $x$ is small, both the mean-income and precautionary terms are small,
+but the negative term (which scales linearly in $x$) dominates the positive term (which scales quadratically).
+Hence:
+\[
+\frac{\partial s^\star}{\partial \lambda}(x_L;\lambda) < 0,
+\qquad
+\text{so } \Delta s(x_L;\lambda) < 0.
+\]
+Intuitively, the low-$x$ household views $\lambda>0$ primarily as ``I will be richer tomorrow,''
+so it reduces saving today.
+
+\paragraph{High-$x$ case ($x=x_H$).}
+When $x$ is larger, the positive term in~\eqref{eq:dsdlambda_total} grows faster (as $x^2$) 
+than the negative term (as $x$).  
+At sufficiently large $x$, the precautionary-risk term dominates:
+\[
+\frac{\partial s^\star}{\partial \lambda}(x_H;\lambda) > 0,
+\qquad
+\text{so } \Delta s(x_H;\lambda) > 0.
+\]
+For such agents, a higher $\lambda$ means the future income is not only higher but also substantially riskier,
+and they respond by saving more for self-insurance.
+
+\paragraph{Threshold value $x^\ast$.}
+There exists a critical value $x^\ast$ at which the two effects offset, determined implicitly by
+\begin{equation}
+\frac{x^{\ast 2} K}{\beta}\,
+\frac{t\,[2(x^\ast+y) + t x^\ast A]}{\big[(x^\ast+y) + t x^\ast A\big]^2}
+=
+\frac{x^\ast A}{1+\beta}.
+\label{eq:x_star_threshold}
+\end{equation}
+For $x<x^\ast$, the total effect $\partial s^\star/\partial \lambda$ is negative; 
+for $x>x^\ast$, it is positive.
+
+\subsection{Bottom line answers}
+
+When $\lambda$ increases from 0 to a positive value:
+\begin{itemize}
+    \item \textbf{Case 1: Low $x=x_L<x^\ast$.}  
+    The consumption-smoothing channel dominates; saving declines with $\lambda$:
+    \[
+    \Delta s(x_L;\lambda) < 0.
+    \]
+    \item \textbf{Case 2: High $x=x_H>x^\ast$.}  
+    The precautionary-risk channel dominates; saving increases with $\lambda$:
+    \[
+    \Delta s(x_H;\lambda) > 0.
+    \]
+\end{itemize}
+
+In short, when $\lambda>0$ amplifies both the mean and the risk of future income, 
+low-$x$ agents behave as if they are richer and save less, 
+whereas high-$x$ agents—facing a large scale of future risk—respond by saving more.
+The crossover arises because the mean-income term in~\eqref{eq:dsdlambda_total}
+scales linearly with $x$, while the precautionary term scales quadratically.
+
+\begin{center}
+\fbox{
+\parbox{0.93\textwidth}{
+\textbf{Summary:}  
+For $x=x_L$, $\lambda>0$ lowers saving;  
+for $x=x_H>x^\ast$, $\lambda>0$ raises saving.  
+This contrast illustrates that the same change in future-income scale 
+induces opposite saving responses across households with different $x$.
+}
+}
+\end{center}
+
+\subsection{Numerical Illustration}
+
+To visualize the comparative statics, consider parameter values 
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{lcc}
+    \hline
+    Parameter & Symbol / Description & Value \\
+    \hline
+    Discount factor & $\beta$ & 0.95 \\
+    First-period safe component & $y$ & 1.0 \\
+    Risk (lognormal std.\ dev.) & $\sigma$ & 0.72 \\
+    Low exposure type & $x_L$ & 0.5 \\
+    High exposure type & $x_H$ & 2.3 \\
+    \hline
+    \end{tabular}
+    \caption{Calibration for the heterogeneous-$x$ illustration.}
+    \label{tab:param_hetero_x}
+\end{table}
+
+The figure below plots the approximate solution $s^*(x,y;\lambda)$ for $x_L=0.5$ and $x_H=2.3$ as $\lambda$ varies.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figure/optimalsaving_varying_x.pdf}
+    \caption{Optimal saving $s^*(x,y;\lambda)$ for low- and high-$x$ types.
+    Low-$x$ ($x_L = 0.5$) reduces saving as $\lambda$ rises, while high-$x$ ($x_H = 2.3$) increases saving as $\lambda$ rises.
+    Parameters: $\beta=0.95$, $y=1.0$, $\sigma=0.72$.}
+    \label{fig:lambda_effect_final}
+\end{figure}
+    
+\subsection{Interpretation}
+
+With sectoral skill premium, allowing HC investment, i.e., social mobility, will lead to a larger wealth inequality than the no-HC model. This is because human capital investment makes the low-income households save less and high-income households save more, relative to a no-HC model. 
+
+The next question is: in face of an AI shock that redues $\lambda$ but increases $x$ for the low-income households (but $x(1+\lambda)$ not change), and enlarge $\lambda$ for the high-income households, how the wealth inequality changes?
+
+For the low income households, increasing $x$ has two effects: one is similar to the a higher $\lambda$ effect but since $x(1+\lambda)$ remains the same, this effect is neutralized. The other is raising the current-period resource and thus increase saving. Therefore, with the AI shock, the low income households save more.
+
+For the high income households, since HC investment already crowds in more saving with the initial $\lambda$, increasing $\lambda$ will further increase saving.
+
+Comparing the low and high income households, since $\lambda$ also has the negative effect on current saving due to higher future income, the AI shock increases the low-income households saving more than the high-income households. This acts to reduce the wealth inequality relative to the pre-AI shock counterpart.
+
+
+
+How this change of wealth inequality compared to the no-HC model?
+
+Using our two-period model, the wealth inequality change in the no-hc model can be analyzed by holding $\lambda=0$ and studying the effect of incrasing $x_L$ and $x_H$ on households saving.
+
+
+\section{The case of $e=e_H$}
+We can reframe the case of $e=e_H$ as the households as to pay monetary cost for HC investment with the monetary cost equal to his labor income. The uility cost of HC investment and labor suppply are addivitvely separable to the consumption utility so that they do not interact with the consumption-saving decision.
+
+Using our two-period model, it is equivalent as a reduction of $y$ to $y-x$ together with $\lambda>0$ when households make $e=e_H$ HC investment. 
+
+We know that a lower $y$ will reduce saving. The change of $y$ is larger for high-income households. This implies that HC investment with monetary cost will crowd out more saving, more so for high income households.
+
+From the previous section, we know that $\lambda>0$ reduces saving for low-income households but increase saving for high-income households, relative to the no-HC model. With the additional monetary cost of HC investment, this result could reverse. 
+
+To investigate it, we write the difference in saving between the highly-intensive human capital investment and no human capital investment as 
+\begin{equation}
+\Delta s^{e_H}(x,y;\lambda) = s^*(x,y-x;\lambda) - s^*(x,y;0).
+\end{equation}
+where $s^*(x,y;\lambda)$ is defined in \eqref{eq:s_lambda_simplified}. 
+
+Relative to the saving difference in the case of low-intensive human capital investment discussed in the previous section: 
+\begin{align}
+    \Delta s^{e_H}(x,y;\lambda) = &\Delta s^{e_L}(x,y;\lambda) - x\frac{\beta}{1+\beta} \\
+    & + \frac{(1+\lambda)^2 x^2 K}{\beta}\big[\frac{1}{y+(1+\lambda)xA}-\frac{1}{x+y+(1+\lambda)xA} \big] \\
+    = & \Delta s^{e_L}(x,y;\lambda) \\
+    &- x\frac{\beta}{1+\beta} + \frac{(1+\lambda)^2 x^2 K}{\beta} \frac{x}{(y+(1+\lambda)xA)(x+y+(1+\lambda)xA)}.
+\end{align}
+The first term is the negative effect of monetary cost of HC investment via consumption-smoothing motive. The second term is the positive precautionary saving incentive due to the lower resource available for self insurance.
+
+Using the same numerical example as in the previous section, we plot the difference in saving between the two cases as $\lambda$ varies. In contrast to the low-incentive human capital investment case, the high-incentive human capital investment crowds out more saving for high-income households.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.85\textwidth]{figure/optimalsaving_varying_x_eLeH.pdf}
+    \caption{Optimal saving $s^*(x,y;\lambda)$ for low- and high-$x$ types.
+    Low-$x$ ($x_L = 0.5$) reduces saving as $\lambda$ rises, while high-$x$ ($x_H = 2.3$) increases saving as $\lambda$ rises.
+    Parameters: $\beta=0.95$, $y=1.0$, $\sigma=0.72$.}
+    \label{fig:lambda_effect_final}
+\end{figure}
+\end{document}

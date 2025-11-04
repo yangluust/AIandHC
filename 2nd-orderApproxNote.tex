@@ -1,0 +1,198 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\begin{document}
+
+\section{Linearization of the FOC around the certainty-equivalent point}
+
+We start from the approximate first-order condition (FOC) derived from the second-order expansion of expected log utility:
+\begin{equation}
+\frac{1}{y_1 - s}
+=
+\beta\!\left[
+    \frac{1}{m}
+    + \frac{v}{m^3}
+\right],
+\qquad
+m \equiv s + (1+\lambda)x\mu,
+\label{eq:FOC}
+\end{equation}
+where $\mu = e^{\sigma^2/2}$ and $v = (1+\lambda)^2 x^2 K$ with $K = e^{\sigma^2}(e^{\sigma^2}-1)$. 
+The variable $m$ is the mean of second-period consumption, and $v$ scales with its variance. 
+
+\subsection*{1. Certainty-equivalent benchmark}
+
+When there is no risk ($v=0$), the FOC becomes
+\[
+\frac{1}{y_1 - s_{\mathrm{CE}}}
+= 
+\frac{\beta}{s_{\mathrm{CE}} + (1+\lambda)x\mu}.
+\]
+Solving for $s_{\mathrm{CE}}$ gives:
+\begin{align*}
+s_{\mathrm{CE}} + (1+\lambda)x\mu &= \beta(y_1 - s_{\mathrm{CE}}),\\
+(1+\beta)s_{\mathrm{CE}} &= \beta y_1 - (1+\lambda)x\mu,\\
+\boxed{s_{\mathrm{CE}} = \frac{\beta y_1 - (1+\lambda)x\mu}{1+\beta}.}
+\end{align*}
+
+Let $m_0$ denote the certainty-equivalent mean of second-period consumption:
+\[
+m_0 \equiv s_{\mathrm{CE}} + (1+\lambda)x\mu.
+\]
+
+\subsection*{2. Define small deviations}
+
+Let the true optimum under risk be $s^\star$ with corresponding mean
+\[
+m = s^\star + (1+\lambda)x\mu,
+\qquad
+\delta m \equiv m - m_0.
+\]
+From this definition,
+\[
+s^\star = s_{\mathrm{CE}} + \delta m.
+\]
+We assume both $\delta m$ and $v$ are small and linearize equation~\eqref{eq:FOC} around $(s_{\mathrm{CE}}, m_0, v=0)$.
+
+\subsection*{3. Linearize the FOC}
+
+Equation~\eqref{eq:FOC} can be written as
+\[
+\underbrace{\frac{1}{y_1 - s^\star}}_{\text{LHS}}
+=
+\underbrace{
+\beta\!\left[
+    \frac{1}{m} + \frac{v}{m^3}
+\right]
+}_{\text{RHS}}.
+\]
+
+\paragraph{Left-hand side (LHS).}
+For small deviations $s^\star = s_{\mathrm{CE}} + \delta m$, expand:
+\begin{align*}
+\frac{1}{y_1 - s^\star}
+&\approx
+\frac{1}{y_1 - s_{\mathrm{CE}}}
++ 
+\frac{d}{ds}\!\left(\frac{1}{y_1 - s}\right)_{s=s_{\mathrm{CE}}}\!\!(s^\star - s_{\mathrm{CE}})\\
+&=
+\frac{1}{y_1 - s_{\mathrm{CE}}}
++ 
+\frac{1}{(y_1 - s_{\mathrm{CE}})^2}\,\delta m.
+\end{align*}
+Using the certainty-equivalent FOC 
+$\frac{1}{y_1 - s_{\mathrm{CE}}} = \frac{\beta}{m_0}$, we have:
+\[
+\text{LHS} \approx \frac{\beta}{m_0} + \frac{\beta^2}{m_0^2}\,\delta m.
+\]
+
+\paragraph{Right-hand side (RHS).}
+Substitute $m = m_0 + \delta m$ and expand to first order in $\delta m$ and $v$:
+\begin{align*}
+\frac{1}{m} &= \frac{1}{m_0} - \frac{\delta m}{m_0^2},\\
+\frac{1}{m^3} &= \frac{1}{m_0^3} - \frac{3\delta m}{m_0^4}.
+\end{align*}
+Ignoring higher-order terms ($v\delta m$), the RHS becomes:
+\[
+\text{RHS} 
+\approx 
+\beta\!\left[
+    \frac{1}{m_0}
+    - \frac{\delta m}{m_0^2}
+    + \frac{v}{m_0^3}
+\right]
+=
+\frac{\beta}{m_0}
+- \frac{\beta}{m_0^2}\,\delta m
++ \frac{\beta v}{m_0^3}.
+\]
+
+\subsection*{4. Equate and solve for $\delta m$}
+
+Equating LHS and RHS and canceling $\beta/m_0$ gives:
+\[
+\frac{\beta^2}{m_0^2}\,\delta m
+=
+- \frac{\beta}{m_0^2}\,\delta m
++ \frac{\beta v}{m_0^3}.
+\]
+Combine like terms:
+\[
+\delta m \left(\frac{\beta^2 + \beta}{m_0^2}\right)
+=
+\frac{\beta v}{m_0^3}.
+\]
+Hence,
+\[
+\boxed{\delta m = \frac{v}{(1+\beta)m_0}.}
+\]
+
+\subsection*{5. Approximate optimal saving}
+
+Using $s^\star = s_{\mathrm{CE}} + \delta m$, we obtain:
+\[
+\boxed{
+s^\star \approx s_{\mathrm{CE}} + \frac{v}{(1+\beta)m_0}.
+}
+\]
+
+\subsection*{6. Interpretation}
+
+\begin{itemize}
+\item The first term $s_{\mathrm{CE}}$ is the optimal saving under certainty.
+\item The additive correction $\frac{v}{(1+\beta)m_0}$ is positive for $v>0$, reflecting the precautionary saving motive.
+\item The correction is smaller when $\beta$ or $m_0$ is large: patient agents or richer agents exhibit a smaller marginal precautionary adjustment.
+\end{itemize}
+
+
+\section{Apply a second-order Taylor expansion}
+
+We approximate $\mathbb{E}[\log C]$ using a second-order Taylor expansion of the function 
+$g(c) = \log c$ around the mean of the random variable $C$.
+
+Let 
+\[
+C = s + (1+\lambda)x z_2, \qquad 
+m \equiv \mathbb{E}[C] = s + (1+\lambda)x \mu,
+\qquad 
+v \equiv \operatorname{Var}(C).
+\]
+Then the second-order Taylor expansion of $g(C)$ around $m$ is
+\[
+g(C) \approx g(m) + g'(m)\,(C - m) + \frac{1}{2}g''(m)\,(C - m)^2.
+\]
+Taking expectations and using $\mathbb{E}[C - m] = 0$ yields
+\[
+\mathbb{E}[g(C)] \approx g(m) + \frac{1}{2} g''(m)\,\mathbb{E}\!\left[(C - m)^2\right].
+\]
+Since $\mathbb{E}[(C - m)^2] = \operatorname{Var}(C) = v$, we have
+\[
+\mathbb{E}[\log C]
+\approx
+g(m) + \frac{1}{2} g''(m)\, v.
+\]
+For $g(c) = \log c$,
+\[
+g'(c) = \frac{1}{c}, 
+\qquad 
+g''(c) = -\frac{1}{c^2}.
+\]
+Substituting $g(m)$ and $g''(m)$ gives
+\[
+\mathbb{E}[\log C]
+\approx
+\log m - \frac{v}{2m^2}.
+\]
+Finally, recalling that $m = s + (1+\lambda)x\mu$, the delta-method approximation is
+\[
+\boxed{
+\mathbb{E}[\log(s+(1+\lambda)xz_2)]
+\approx 
+\log\big(s+(1+\lambda)x\mu\big)
+-\frac{v}{2\big(s+(1+\lambda)x\mu\big)^2}.
+}
+\]
+
+\end{document}
