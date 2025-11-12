@@ -195,49 +195,80 @@ Combining both effects, the total derivative of saving with respect to $\lambda$
 \frac{t\,[2(x+y) + t x A]}{\big[(x+y) + t x A\big]^2}.
 \label{eq:dsdlambda_total}
 \end{equation}
-This summarizes the two channels:
-\begin{itemize}
-    \item First term: nagative mean-income effect: scale with $x$.
-    \item Second term: positive precautionary effect: scale with $x^2$.
-\end{itemize}
-Now compare low $x_L$ and high $x_H$ cases, with $x_H>x_L>0$.
 
-
-\paragraph{Low-$x$ case ($x=x_L$).}
-When $x$ is small, both the mean-income and precautionary terms are small,
-but the negative term (which scales linearly in $x$) dominates the positive term (which scales quadratically).
-Hence:
+Define
 \[
-\frac{\partial s^\star}{\partial \lambda}(x_L;\lambda) < 0,
-\qquad
-\text{so } \Delta s(x_L;\lambda) < 0.
+F(x)\equiv x\,\frac{t[2(x+y)+t x A]}{[(x+y)+t x A]^2}.
 \]
-Intuitively, the low-$x$ household views $\lambda>0$ primarily as ``I will be richer tomorrow,''
-so it reduces saving today.
-
-\paragraph{High-$x$ case ($x=x_H$).}
-When $x$ is larger, the positive term in~\eqref{eq:dsdlambda_total} grows faster (as $x^2$) 
-than the negative term (as $x$).  
-At sufficiently large $x$, the precautionary-risk term dominates:
+Then equation \eqref{eq:dsdlambda_total} can be written as
 \[
-\frac{\partial s^\star}{\partial \lambda}(x_H;\lambda) > 0,
-\qquad
-\text{so } \Delta s(x_H;\lambda) > 0.
+\boxed{\;
+\frac{\partial s^\star}{\partial\lambda}(x;\lambda)
+= x\Big[\frac{K}{\beta}F(x)-\frac{A}{1+\beta}\Big].
+\;}
 \]
-For such agents, a higher $\lambda$ means the future income is not only higher but also substantially riskier,
-and they respond by saving more for self-insurance.
 
-\paragraph{Threshold value $x^\ast$.}
-There exists a critical value $x^\ast$ at which the two effects offset, determined implicitly by
-\begin{equation}
-\frac{x^{\ast 2} K}{\beta}\,
-\frac{t\,[2(x^\ast+y) + t x^\ast A]}{\big[(x^\ast+y) + t x^\ast A\big]^2}
+\subsection*{Monotonicity of $F(x)$}
+
+Let $b=1+tA$ and $c=2+tA$. Then
+\[
+F(x)=t\,\frac{x(2y+c x)}{(y+b x)^2}.
+\]
+Differentiating with respect to $x$ gives
+\[
+F'(x)
 =
-\frac{x^\ast A}{1+\beta}.
-\label{eq:x_star_threshold}
-\end{equation}
-For $x<x^\ast$, the total effect $\partial s^\star/\partial \lambda$ is negative; 
-for $x>x^\ast$, it is positive.
+\frac{2t\,y\,(y+x)}{(y+b x)^3}
+>0,
+\]
+so $F(x)$ is strictly increasing in $x$.
+
+The limiting behaviors are:
+\[
+F(x)\sim \frac{2t}{y}x \quad (x\to 0),
+\qquad
+F(x)\to \frac{t(2+tA)}{(1+tA)^2}\quad (x\to \infty).
+\]
+
+\subsection*{Implications for $\frac{\partial s^\star}{\partial \lambda}$}
+
+The sign of $\frac{\partial s^\star}{\partial\lambda}$ is governed by
+\[
+S(x)\equiv \frac{K}{\beta}F(x)-\frac{A}{1+\beta}.
+\]
+Because $F(x)$ is strictly increasing, $S(x)$ increases monotonically with $x$. Thus:
+
+\begin{itemize}
+  \item For small $x$, $F(x)\approx (2t/y)x$ and
+  \[
+  S(x)\approx \frac{2tK}{\beta y}x - \frac{A}{1+\beta}<0,
+  \]
+  implying $\frac{\partial s^\star}{\partial\lambda}(x;\lambda)<0$.
+  \item For large $x$, $F(x)\to F_\infty\equiv \frac{t(2+tA)}{(1+tA)^2}$.
+  If
+  \[
+  \boxed{\;
+  \frac{K}{\beta}F_\infty>\frac{A}{1+\beta}
+  \;\Longleftrightarrow\;
+  K(1+\beta)t(2+tA) > A\beta(1+tA)^2,
+  \;}
+  \]
+  then $S(x)>0$ for sufficiently large $x$, and hence
+  $\frac{\partial s^\star}{\partial\lambda}(x;\lambda)>0$.
+\end{itemize}
+
+Under condition above, there exists a unique threshold $x^\ast(\lambda)$ at which the sign flips:
+\[
+\boxed{\;
+\frac{\partial s^\star}{\partial\lambda}<0\ \text{for }x<x^\ast,
+\qquad
+\frac{\partial s^\star}{\partial\lambda}>0\ \text{for }x>x^\ast.
+\;}
+\]
+The threshold satisfies
+\[
+\frac{K}{\beta}F(x^\ast)=\frac{A}{1+\beta}.
+\]
 
 \subsection{Bottom line answers}
 

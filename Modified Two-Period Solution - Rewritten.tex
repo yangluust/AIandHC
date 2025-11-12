@@ -1,0 +1,413 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsthm,bm,setspace,geometry,graphicx,pgfplots}
+\usepackage{float}
+\geometry{margin=1in}
+\onehalfspacing
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+
+\title{Second-Order Approximation and the Effect of Human Capital Investment on Optimal Saving}
+\author{}
+\date{}
+\maketitle
+
+\section{Modified Optimization Problem}
+
+We consider a two-period consumption--saving problem within the framework of Section \ref{sec:period1} of the main paper. Following the notation established there, a household in period 1 has:
+\begin{itemize}
+    \item Physical capital: $a$
+    \item Human capital: $h$
+    \item Idiosyncratic productivity: $z$
+    \item Labor supply decision: $n \in \{0,1\}$
+    \item Human capital investment effort: $e \in \{0, e_L, (1-n)e_H\}$
+\end{itemize}
+
+The household maximizes expected lifetime utility:
+\begin{equation}
+\max_{a'} : \ln(c) + \beta \mathbb{E}[\ln(c')],
+\end{equation}
+subject to the intertemporal budget constraint (from equation (409) of the main paper):
+\begin{align}
+c + \frac{c'}{1+r'} &= (1+r)a + n(wzx(h)) + \frac{w'z'x(h')}{1+r'}, \\
+\text{with } h' &= ze + (1-\delta)h,
+\end{align}
+where $x(h')$ is the sectoral productivity function defined in equation (\ref{eq:x}) of the main paper. The productivity shock $z'$ follows a log-normal distribution: $\ln z' \sim \mathcal{N}(\rho_z \ln z, \sigma_z^2)$.
+
+For the purpose of this analysis, we focus on the case where human capital investment $e = e_L$ allows the household to move to a higher sector, so that $x(h')$ takes a higher value. Specifically, we parameterize the effect of human capital investment on future sectoral productivity through a scaling parameter $\lambda$:
+\begin{equation}
+x(h') = (1+\lambda)x_0,
+\end{equation}
+where $x_0$ is the baseline sectoral productivity when $e=0$. This captures the idea that human capital investment increases the household's effective labor productivity in period 2.
+
+Assuming the household works in period 2 (so that $n'=1$), and using the optimality condition $c' = \beta(1+r')c$ from equation (\ref{eq:c'}) of the main paper, we can express the problem in terms of saving $a'$. 
+
+To simplify the analysis while maintaining the key economic forces, we decompose period-1 total resources into two components:
+\begin{equation}
+(1+r)a + n(wzx(h)) = x + y,
+\end{equation}
+where $x > 0$ represents the labor income component that also scales the risky endowment in period 2 through its effect on human capital and sectoral productivity, and $y > 0$ represents the deterministic component from physical capital. 
+
+We normalize $(1+r') = 1$ and $w' = 1$ for analytical tractability. The effect of human capital investment on future sectoral productivity is captured by the scaling parameter $\lambda$, so that period-2 income becomes:
+\begin{equation}
+c' = a' + (1+\lambda)x z',
+\end{equation}
+where $z'$ is the period-2 productivity shock with $\ln z' \sim \mathcal{N}(0,\sigma_z^2)$ (normalized), implying
+\begin{equation}
+\mathbb{E}[z'] = e^{\sigma_z^2/2}, \qquad \operatorname{Var}(z') = e^{\sigma_z^2}(e^{\sigma_z^2}-1).
+\end{equation}
+
+Let us define $t \equiv 1+\lambda$. Then the budget constraints become:
+\begin{align}
+c &= x + y - a', \\
+c' &= a' + t x z'.
+\end{align}
+
+Define auxiliary quantities:
+\begin{equation}
+A \equiv x e^{\sigma_z^2/2}, \quad K \equiv e^{\sigma_z^2}(e^{\sigma_z^2}-1).
+\end{equation}
+
+\section{Second-Order Approximation}
+
+The second-order delta-method approximation to the expected utility of second-period consumption is
+\begin{equation}
+\mathbb{E}[\ln c'] \approx \ln(a'+tA) - \frac{t^2 x^2 K}{2(a'+tA)^2}.
+\end{equation}
+
+The approximate optimization problem is therefore
+\begin{equation}
+\max_{0 \le a' \le x+y} \Big\{ \ln(x+y-a') + \beta\big[\ln(a'+tA) - \frac{t^2 x^2 K}{2(a'+tA)^2}\big] \Big\}.
+\end{equation}
+
+The first-order condition for an interior optimum is
+\begin{equation}
+\frac{1}{x+y-a'} = \beta\Big[\frac{1}{a'+tA} + \frac{t^2 x^2 K}{(a'+tA)^3}\Big].
+\label{eq:FOC}
+\end{equation}
+
+\section{Second-Order Approximate Solution}
+
+Ignoring the risk term in \eqref{eq:FOC} yields the certainty-equivalent saving rule
+\begin{equation}
+a'_{\text{CE}} = \frac{\beta(x+y) - tA}{1+\beta}.
+\label{eq:ace}
+\end{equation}
+
+Linearizing the FOC around $a'_{\text{CE}}$ and reintroducing risk gives the second-order approximate optimal saving rule:
+\begin{equation}
+a'^*(x,y;\lambda) \approx a'_{\text{CE}} + \frac{t^2 x^2 K}{(1+\beta)m_0}, \quad m_0 = a'_{\text{CE}} + tA.
+\end{equation}
+
+Simplifying,
+\begin{align}
+m_0 &= \frac{\beta[(x+y)+tA]}{1+\beta}, \\
+\frac{t^2 x^2 K}{(1+\beta)m_0} &= \frac{t^2 x^2 K}{\beta[(x+y)+tA]}.
+\end{align}
+Note that $a'$ here corresponds to $a_{t+1}$ in the main paper's notation (equation 357).
+
+Thus the approximate closed form is
+\begin{equation}
+\boxed{
+a'^*(x,y;\lambda) \approx \frac{\beta(x+y) - (1+\lambda)x e^{\sigma_z^2/2}}{1+\beta} + \frac{(1+\lambda)^2 x^2 e^{\sigma_z^2}(e^{\sigma_z^2}-1)}{\beta\big[(x+y) + (1+\lambda)x e^{\sigma_z^2/2}\big]}.
+}
+\label{eq:astar_final}
+\end{equation}
+
+\section{Comparing the Effect of Human Capital Investment ($e=e_L$) Across Households with Different $x$}
+
+We start from the second-order approximate saving rule:
+\begin{equation}
+a'^\star(x,y;\lambda)
+=
+\frac{\beta(x+y) - (1+\lambda)x e^{\sigma_z^2/2}}{1+\beta}
++
+\frac{(1+\lambda)^2 x^2 e^{\sigma_z^2}\!\big(e^{\sigma_z^2}-1\big)}
+{\beta\big[(x+y) + (1+\lambda)x e^{\sigma_z^2/2}\big]}.
+\label{eq:astar_lambda}
+\end{equation}
+Let $t = 1+\lambda$, $A = e^{\sigma_z^2/2}$, and $K = e^{\sigma_z^2}\!\big(e^{\sigma_z^2}-1\big)$.  
+Then we can rewrite~\eqref{eq:astar_lambda} compactly as
+\begin{equation}
+a'^\star(x,y;\lambda)
+=
+\frac{\beta(x+y) - t x A}{1+\beta}
++
+\frac{t^2 x^2 K}{\beta \big[(x+y) + t x A\big]}.
+\label{eq:a_lambda_simplified}
+\end{equation}
+
+We want to understand how human capital investment (captured by $\lambda>0$) affects saving for two types of households:
+\[
+\text{Case 1: Low $x=x_L$ (low labor income / low sector),} 
+\qquad
+\text{Case 2: High $x=x_H$ (high labor income / high sector),} 
+\quad \text{where } x_H>x_L>0.
+\]
+
+Specifically, we compare
+\[
+\Delta a'(x;\lambda)
+\equiv a'^\star(x,y;\lambda) - a'^\star(x,y;0),
+\]
+and study how its sign and magnitude differ for low and high $x$.
+
+\subsection{Decomposing the Effect of Human Capital Investment}
+
+The total change in saving when human capital investment increases future productivity (i.e., when $\lambda$ rises) can be broken down into two intuitive forces.
+
+\paragraph{(i) Mean-income or consumption-smoothing force.}
+The first term of~\eqref{eq:a_lambda_simplified},
+\[
+\frac{\beta(x+y) - t x A}{1+\beta},
+\]
+\begin{itemize}
+    \item As $\lambda$ increases, $t$ increases, so the term $-t x A$ becomes more negative.
+    \item Intuition: higher $\lambda$ (from human capital investment) raises expected future income $\mathbb{E}[c']$, so the agent wants to consume more now and save less.
+    \item This pushes saving \textbf{down} when human capital investment increases future productivity.
+\end{itemize}
+
+Importantly, that downward effect is proportional to $x$. A higher $x$ means future income responds more strongly to human capital investment, so this ``I'm richer tomorrow so I save less'' channel is \textbf{stronger} for $x_H$ than $x_L$.
+
+Formally, the CE part drops with $\lambda$ at rate
+\[
+\frac{\partial}{\partial \lambda}
+\left[
+\frac{\beta(x+y) - t x A}{1+\beta}
+\right]
+= -\frac{xA}{1+\beta},
+\]
+which is more negative for larger $x$.
+
+So:  
+\textbf{Higher $x$ $\Rightarrow$ stronger downward pressure on saving from the higher mean future payoff due to human capital investment.}
+
+\paragraph{(ii) Precautionary force}  
+\[
+\frac{t^2 x^2 K}{\beta \big[(x+y) + t x A\big]}.
+\]
+
+
+\begin{itemize}
+    \item As $\lambda$ increases, both $t^2$ in the numerator and $t x A$ in the denominator increase.
+    \item \textbf{Numerator effect:} Future \emph{risk exposure} scales like $t x$. Bigger $x$ makes that exposure very sensitive to $\lambda$, and it enters squared. This pushes saving \textbf{up} when $\lambda$ goes up (classic precautionary saving response to higher risk scale from human capital investment).
+    \item \textbf{Denominator effect:} The term $(x+y) + t x A$ partially mutes it---richer agents dilute marginal risk. But note: that denominator also grows with $x$, so it doesn't kill the scaling entirely.
+\end{itemize}
+
+Differentiate the precautionary term with respect to $\lambda$:
+\[
+\frac{\partial}{\partial \lambda}
+\left[
+\frac{t^2 x^2 K}{\beta \big[(x+y) + t x A\big]}
+\right]
+=
+\frac{x^2 K}{\beta}\,
+\frac{t\,(2(x+y) + t x A)}{(x+y + t x A)^2}.
+\]
+
+Key thing:  
+The derivative is \textbf{positive}, so precaution pushes saving \textbf{up} when human capital investment increases.\\
+It scales roughly like $x^2$ up front. So for higher $x$, this ``risk precaution'' channel is \textbf{much stronger}.
+
+So:  
+\textbf{Higher $x$ $\Rightarrow$ stronger upward pressure on saving from risk amplification due to human capital investment.}
+
+\subsection{Putting the Two Forces Together}
+
+Combining both effects, the total derivative of saving with respect to $\lambda$ is
+\begin{equation}
+\frac{\partial a'^\star}{\partial \lambda}(x;\lambda)
+=
+-\frac{xA}{1+\beta}
++
+\frac{x^2 K}{\beta}\,
+\frac{t\,[2(x+y) + t x A]}{\big[(x+y) + t x A\big]^2}.
+\label{eq:dadlambda_total}
+\end{equation}
+
+Define
+\[
+F(x)\equiv x\,\frac{t[2(x+y)+t x A]}{[(x+y)+t x A]^2}.
+\]
+Then equation \eqref{eq:dadlambda_total} can be written as
+\[
+\boxed{\;
+\frac{\partial a'^\star}{\partial\lambda}(x;\lambda)
+= x\Big[\frac{K}{\beta}F(x)-\frac{A}{1+\beta}\Big].
+\;}
+\]
+
+\subsection*{Monotonicity of $F(x)$}
+
+Let $b=1+tA$ and $c=2+tA$. Then
+\[
+F(x)=t\,\frac{x(2y+c x)}{(y+b x)^2}.
+\]
+Differentiating with respect to $x$ gives
+\[
+F'(x)
+=
+\frac{2t\,y\,(y+x)}{(y+b x)^3}
+>0,
+\]
+so $F(x)$ is strictly increasing in $x$.
+
+The limiting behaviors are:
+\[
+F(x)\sim \frac{2t}{y}x \quad (x\to 0),
+\qquad
+F(x)\to \frac{t(2+tA)}{(1+tA)^2}\quad (x\to \infty).
+\]
+
+\subsection*{Implications for $\frac{\partial a'^\star}{\partial \lambda}$}
+
+The sign of $\frac{\partial a'^\star}{\partial\lambda}$ is governed by
+\[
+S(x)\equiv \frac{K}{\beta}F(x)-\frac{A}{1+\beta}.
+\]
+Because $F(x)$ is strictly increasing, $S(x)$ increases monotonically with $x$. Thus:
+
+\begin{itemize}
+  \item For small $x$, $F(x)\approx (2t/y)x$ and
+  \[
+  S(x)\approx \frac{2tK}{\beta y}x - \frac{A}{1+\beta}<0,
+  \]
+  implying $\frac{\partial a'^\star}{\partial\lambda}(x;\lambda)<0$.
+  \item For large $x$, $F(x)\to F_\infty\equiv \frac{t(2+tA)}{(1+tA)^2}$.
+  If
+  \[
+  \boxed{\;
+  \frac{K}{\beta}F_\infty>\frac{A}{1+\beta}
+  \;\Longleftrightarrow\;
+  K(1+\beta)t(2+tA) > A\beta(1+tA)^2,
+  \;}
+  \]
+  then $S(x)>0$ for sufficiently large $x$, and hence
+  $\frac{\partial a'^\star}{\partial\lambda}(x;\lambda)>0$.
+\end{itemize}
+
+Under condition above, there exists a unique threshold $x^\ast(\lambda)$ at which the sign flips:
+\[
+\boxed{\;
+\frac{\partial a'^\star}{\partial\lambda}<0\ \text{for }x<x^\ast,
+\qquad
+\frac{\partial a'^\star}{\partial\lambda}>0\ \text{for }x>x^\ast.
+\;}
+\]
+The threshold satisfies
+\[
+\frac{K}{\beta}F(x^\ast)=\frac{A}{1+\beta}.
+\]
+
+\subsection{Bottom Line Answers}
+
+When human capital investment increases future productivity (i.e., $\lambda$ increases from 0 to a positive value):
+\begin{itemize}
+    \item \textbf{Case 1: Low $x=x_L<x^\ast$ (low sector households).}  
+    The consumption-smoothing channel dominates; saving declines with human capital investment:
+    \[
+    \Delta a'(x_L;\lambda) < 0.
+    \]
+    \item \textbf{Case 2: High $x=x_H>x^\ast$ (high sector households).}  
+    The precautionary-risk channel dominates; saving increases with human capital investment:
+    \[
+    \Delta a'(x_H;\lambda) > 0.
+    \]
+\end{itemize}
+
+In short, when human capital investment amplifies both the mean and the risk of future income, 
+low-$x$ households (in low sectors) behave as if they are richer and save less, 
+whereas high-$x$ households (in high sectors)—facing a large scale of future risk—respond by saving more.
+The crossover arises because the mean-income term in~\eqref{eq:dadlambda_total}
+scales linearly with $x$, while the precautionary term scales quadratically.
+
+\begin{center}
+\fbox{
+\parbox{0.93\textwidth}{
+\textbf{Summary:}  
+For low-sector households ($x=x_L$), human capital investment lowers saving;  
+for high-sector households ($x=x_H>x^\ast$), human capital investment raises saving.  
+This contrast illustrates that the same human capital investment 
+induces opposite saving responses across households in different sectors.
+}
+}
+\end{center}
+
+\subsection{Numerical Illustration}
+
+To visualize the comparative statics, consider parameter values 
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{lcc}
+    \hline
+    Parameter & Symbol / Description & Value \\
+    \hline
+    Discount factor & $\beta$ & 0.95 \\
+    First-period capital income & $y$ & 1.0 \\
+    Risk (lognormal std.\ dev.) & $\sigma_z$ & 0.72 \\
+    Low sector type & $x_L$ & 0.5 \\
+    High sector type & $x_H$ & 2.3 \\
+    \hline
+    \end{tabular}
+    \caption{Calibration for the heterogeneous-$x$ illustration.}
+    \label{tab:param_hetero_x}
+\end{table}
+
+The figure below plots the approximate solution $a'^*(x,y;\lambda)$ for $x_L=0.5$ and $x_H=2.3$ as $\lambda$ varies.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figure/optimalsaving_varying_x.pdf}
+    \caption{Optimal saving $a'^*(x,y;\lambda)$ for low- and high-$x$ types.
+    Low-$x$ ($x_L = 0.5$) reduces saving as $\lambda$ rises, while high-$x$ ($x_H = 2.3$) increases saving as $\lambda$ rises.
+    Parameters: $\beta=0.95$, $y=1.0$, $\sigma_z=0.72$.}
+    \label{fig:lambda_effect_final}
+\end{figure}
+    
+\subsection{Interpretation}
+
+With sectoral skill premium, allowing human capital investment (i.e., social mobility) will lead to a larger wealth inequality than the no-HC model. This is because human capital investment makes the low-income households save less and high-income households save more, relative to a no-HC model. 
+
+The next question is: in face of an AI shock that reduces the skill premium for the middle sector but increases productivity for low and high sectors, how does wealth inequality change?
+
+For the low-income households, the AI shock increases their sectoral productivity $x$ while potentially reducing the relative premium $\lambda$. The net effect on saving depends on which force dominates.
+
+For the high-income households, since human capital investment already crowds in more saving with the initial $\lambda$, changes in the skill premium structure will further affect their saving behavior.
+
+Comparing the low and high income households, the differential response to human capital investment opportunities acts to either increase or decrease wealth inequality depending on the relative magnitudes of the consumption-smoothing and precautionary saving effects.
+
+\section{The Case of $e=e_H$ (Full-Time Human Capital Investment)}
+
+We can reframe the case of $e=e_H$ as households paying a monetary cost for human capital investment, where the monetary cost equals foregone labor income. The utility cost of human capital investment and labor supply are additively separable from the consumption utility, so they do not interact with the consumption-saving decision.
+
+Using our two-period model framework, this is equivalent to a reduction of $y$ to $y-x$ together with $\lambda>0$ when households make $e=e_H$ human capital investment. 
+
+We know that a lower $y$ will reduce saving. The change of $y$ is larger for high-income households (those with higher $x$). This implies that human capital investment with monetary cost will crowd out more saving, more so for high-income households.
+
+From the previous section, we know that $\lambda>0$ reduces saving for low-income households but increases saving for high-income households, relative to the no-HC model. With the additional monetary cost of human capital investment, this result could reverse. 
+
+To investigate it, we write the difference in saving between the high-intensity human capital investment and no human capital investment as 
+\begin{equation}
+\Delta a'^{e_H}(x,y;\lambda) = a'^*(x,y-x;\lambda) - a'^*(x,y;0).
+\end{equation}
+where $a'^*(x,y;\lambda)$ is defined in \eqref{eq:a_lambda_simplified}. 
+
+Relative to the saving difference in the case of low-intensity human capital investment discussed in the previous section: 
+\begin{align}
+    \Delta a'^{e_H}(x,y;\lambda) = &\Delta a'^{e_L}(x,y;\lambda) - x\frac{\beta}{1+\beta} \\
+    & + \frac{(1+\lambda)^2 x^2 K}{\beta}\big[\frac{1}{y+(1+\lambda)xA}-\frac{1}{x+y+(1+\lambda)xA} \big] \\
+    = & \Delta a'^{e_L}(x,y;\lambda) \\
+    &- x\frac{\beta}{1+\beta} + \frac{(1+\lambda)^2 x^2 K}{\beta} \frac{x}{(y+(1+\lambda)xA)(x+y+(1+\lambda)xA)}.
+\end{align}
+The first term is the negative effect of monetary cost of human capital investment via consumption-smoothing motive. The second term is the positive precautionary saving incentive due to the lower resource available for self insurance.
+
+Using the same numerical example as in the previous section, we plot the difference in saving between the two cases as $\lambda$ varies. In contrast to the low-intensity human capital investment case, the high-intensity human capital investment crowds out more saving for high-income households.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.85\textwidth]{figure/optimalsaving_varying_x_eLeH.pdf}
+    \caption{Optimal saving $a'^*(x,y;\lambda)$ for low- and high-$x$ types under different human capital investment intensities.
+    Parameters: $\beta=0.95$, $y=1.0$, $\sigma_z=0.72$.}
+    \label{fig:lambda_effect_eHeL}
+\end{figure}
+\end{document}
+
