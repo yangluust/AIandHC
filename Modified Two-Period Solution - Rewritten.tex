@@ -14,7 +14,7 @@
 
 \section{Modified Optimization Problem}
 
-We consider a two-period consumption--saving problem within the framework of Section \ref{sec:period1} of the main paper. Following the notation established there, a household in period 1 has:
+We consider a two-period consumption--saving problem within the framework of the two-period model from the main paper. Following the notation established there, a household in period 1 has:
 \begin{itemize}
     \item Physical capital: $a$
     \item Human capital: $h$
@@ -27,12 +27,12 @@ The household maximizes expected lifetime utility:
 \begin{equation}
 \max_{a'} : \ln(c) + \beta \mathbb{E}[\ln(c')],
 \end{equation}
-subject to the intertemporal budget constraint (from equation (409) of the main paper):
+subject to the intertemporal budget constraint:
 \begin{align}
 c + \frac{c'}{1+r'} &= (1+r)a + n(wzx(h)) + \frac{w'z'x(h')}{1+r'}, \\
 \text{with } h' &= ze + (1-\delta)h,
 \end{align}
-where $x(h')$ is the sectoral productivity function defined in equation (\ref{eq:x}) of the main paper. The productivity shock $z'$ follows a log-normal distribution: $\ln z' \sim \mathcal{N}(\rho_z \ln z, \sigma_z^2)$.
+where $x(h')$ is the sectoral productivity function (a step function taking values $1-\lambda$, $1$, or $1+\lambda$ depending on the sector). The productivity shock $z'$ follows a log-normal distribution: $\ln z' \sim \mathcal{N}(\rho_z \ln z, \sigma_z^2)$.
 
 For the purpose of this analysis, we focus on the case where human capital investment $e = e_L$ allows the household to move to a higher sector, so that $x(h')$ takes a higher value. Specifically, we parameterize the effect of human capital investment on future sectoral productivity through a scaling parameter $\lambda$:
 \begin{equation}
@@ -40,7 +40,7 @@ x(h') = (1+\lambda)x_0,
 \end{equation}
 where $x_0$ is the baseline sectoral productivity when $e=0$. This captures the idea that human capital investment increases the household's effective labor productivity in period 2.
 
-Assuming the household works in period 2 (so that $n'=1$), and using the optimality condition $c' = \beta(1+r')c$ from equation (\ref{eq:c'}) of the main paper, we can express the problem in terms of saving $a'$. 
+Assuming the household works in period 2 (so that $n'=1$), and using the optimality condition $c' = \beta(1+r')c$ (which follows from log utility), we can express the problem in terms of saving $a'$. 
 
 To simplify the analysis while maintaining the key economic forces, we decompose period-1 total resources into two components:
 \begin{equation}
@@ -138,12 +138,11 @@ a'^\star(x,y;\lambda)
 \end{equation}
 
 We want to understand how human capital investment (captured by $\lambda>0$) affects saving for two types of households:
-\[
-\text{Case 1: Low $x=x_L$ (low labor income / low sector),} 
-\qquad
-\text{Case 2: High $x=x_H$ (high labor income / high sector),} 
+\begin{align*}
+\text{Case 1: } &x=x_L \text{ (low labor income / low sector),} \\
+\text{Case 2: } &x=x_H \text{ (high labor income / high sector),} 
 \quad \text{where } x_H>x_L>0.
-\]
+\end{align*}
 
 Specifically, we compare
 \[

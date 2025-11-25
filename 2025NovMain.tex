@@ -22,6 +22,7 @@
 
 % Useful packages
 \usepackage{amssymb,amsmath}
+\usepackage{amsthm}
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}
@@ -321,7 +322,7 @@ The production technology in the economy is a constant-returns-to-scale Cobb-Dou
 \begin{equation}
     F(K,L)=K^{1-\alpha} L^{\alpha}
 \end{equation}
-$K$ is the aggregation of all physical capital held by the households. $L$ is the aggregation of effective labor supplied by the households and employed in three sectors: low, middle, and high. 
+$K$ represents the total physical capital accumulated by households, while $L$ denotes the total effective labor supplied by households, aggregated across three sectors: low, middle, and high. The marginal products of capital and effective labor determine the economy-wide wage rate, $w$, and interest rate, $r$.
 
 These sectors differ in their technologies for converting labor into effective labor units and in the levels of human capital required for employment. 
 The middle sector employs households with human capital above $h_M$ and converts one unit of labor to one effective labor unit. The high sector, requiring human capital above $h_H$, converts one unit of labor to $1+\lambda$ effective units, while the low sector, with no human capital requirement, converts one unit into $1-\lambda$ effective units. This implies a sectoral labor productivity $x(h)$ that is a step function in human capital:
@@ -350,9 +351,7 @@ A household maximizes the expected lifetime utility by optimally choosing consum
 \end{equation}
 where $c_t$ represents consumption, $a_{t+1}$ represents saving, $n_t \in \{0,1\}$ is labor supply, and $e_t$ is the effort of human capital investment.
 
-If a household decides to work in period $t$, he will be employed into the appropriate sector according to his human capital $h_t$ and receive labor income $w_tz_tx(h_t)$, where $w_t$ is the economy-wide wage rate of effective labor unit.
-
-Denote $r_t$ as the interest rate on the physical capital $a_t$. The household's budget constraint is
+If a household decides to work in period $t$, he will be employed into the appropriate sector according to his human capital $h_t$ and receive labor income $w_tz_tx(h_t)$. The household's budget constraint is
 \begin{align}
     c_t+a_{t+1}&=n_t( w_tz_tx(h_t))+(1+r_t)a_t \\
     c_t& \geq 0 \text{ and } a_{t+1} \geq 0
@@ -468,7 +467,7 @@ where
 \begin{align}
 \underline{z}^L_{fast}(a)=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)[(1+r)a+\frac{w'z'}{1+r'}]}{w} \label{eq:z-fast-lower}
 \end{align}
-We set up our model so that $\overline{z}^L_{fast}(a)>\underline{z}^L_{fast}(a)$.\footnote{Appendix provides the parameter restrictions such that the condition for $(n=0,e=e_H)$ to dominate $(n=0,e=0)$ is sufficient for $\overline{z}^L_{fast}(a)>\underline{z}^L_{fast}(a)$.} 
+We set up our model so that $\overline{z}^L_{fast}(a)>\underline{z}^L_{fast}(a)$.\footnote{Appendix~\ref{app:cutoff_ranking} provides the parameter restrictions such that the condition for $(n=0,e=e_H)$ to dominate $(n=0,e=0)$ is sufficient for $\overline{z}^L_{fast}(a)>\underline{z}^L_{fast}(a)$.} 
 
 \begin{figure}
     \centering
@@ -485,26 +484,38 @@ We set up our model so that $\overline{z}^L_{fast}(a)>\underline{z}^L_{fast}(a)$
 \paragraph{Decision rule diagram:}Figure \ref{fig:rule-diagram} illustrates the decision rule $(n,e)$ as a function of states $(z,h,a)$ for households with $h_M \leq h<h_M\frac{1}{1-\delta}$. The human capital $h$ changes along the horizontal line and the idiosyncratic productivity $z$ changes along the vertical line. The two diagonal lines, $\overline{z}_M(h)$ and $\underline{z}_M(h)$ defined in (\ref{eq:zm}), separate the state space into three areas: the unshaded area represents the non-learners, the lightly-shaded area represents the slow learners, and the darkly-shaded area represents the fast learners. The areas are divided by four dashed horizontal lines associated with cutoffs $\overline{z}^L_{non}(a)$, $\overline{z}^L_{slow}(a)$, $\underline{z}^L_{fast}(a)$, and $\overline{z}^L_{fast}(a)$ that are functions of capital holding $a$ and defined in (\ref{eq:z-non}), (\ref{eq:z-slow}), (\ref{eq:z-fast-lower}), and (\ref{eq:z-fast-upper}).
 
 
-This decision rule diagram is representative for households in other four ranges of human capital. For households with $h<h_M$, $\overline{z}_M(h)$ and $\underline{z}_M(h)$ continue to be the boundaries that separate non-learners, slow learners and fast learners, but the four cutoffs are $\overline{z}^L_{non}\frac{1}{1-\lambda}$, $\overline{z}^L_{slow}\frac{1}{1-\lambda}$, $\underline{z}^L_{fast}\frac{1}{1-\lambda}$, and $\overline{z}^L_{fast}\frac{1}{1-\lambda}$.
+This decision rule diagram is representative for households in other four ranges of human capital. Figure \ref{fig:e-digram} illustrates the regions in which households make positive human capital investments. Striped shading highlights where investment occurs, with dark areas denoting fast learners and light areas representing slow learners. 
+
+For households with $h<h_M$, $\overline{z}_M(h)$ and $\underline{z}_M(h)$ continue to be the boundaries that separate non-learners, slow learners and fast learners, but the four cutoffs are $\overline{z}^L_{non}\frac{1}{1-\lambda}$, $\overline{z}^L_{slow}\frac{1}{1-\lambda}$, $\underline{z}^L_{fast}\frac{1}{1-\lambda}$, and $\overline{z}^L_{fast}\frac{1}{1-\lambda}$.
 
 For households with $h_M\frac{1}{1-\delta} \leq h<h_H\frac{1}{1-\delta}$, the boundaries for state space division change to $\overline{z}_H(h)$ and $\underline{z}_H(h)$:
 \begin{equation}\label{eq:zh}
-    \underline{z}_H(h):=\frac{h_H-(1-\delta)h}{e_H}; \overline{z}_H(h):=\frac{h_H-(1-\delta)h}{e_L} 
+    \underline{z}_H(h):=\frac{h_H-(1-\delta)h}{e_H}; \qquad \overline{z}_H(h):=\frac{h_H-(1-\delta)h}{e_L} 
 \end{equation}
-If $h_M\frac{1}{1-\delta} \leq h<h_H$, the four cutoffs for households are:\footnote{Appendix provides parameter restrictions for $\overline{z}^M_{fast}(a)>\underline{z}^M_{fast}(a)$.}
-\begin{align}
-\overline{z}^M_{non}(a)&:=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)[(1+r)a+\frac{w'z'}{1+r'}]}{w}  \label{eq:z-non-M} \\
-\overline{z}^M_{slow}(a)&:=\frac{(\exp(\frac{\chi_n-\chi_e e_H}{1+\beta})-1)[(1+r)a+\frac{w'z'(1+\lambda)}{1+r'}]+\lambda\frac{w'z'}{1+r'}}{w} \label{eq:z-slow-M} \\
-\underline{z}^M_{fast}(a)&:=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)[(1+r)a+\frac{w'z'(1+\lambda)}{1+r'}]}{w} \label{eq:z-fast-lower-M} \\
-\overline{z}^M_{fast}(a)&:=\frac{\left\{\lambda\left[\exp(\frac{\chi_e e_L}{1+\beta})-1\right]^{-1}-1\right\}\frac{w'z'}{1+r'}-(1+r)a}{w}  \label{eq:z-fast-upper_M} 
-\end{align}
-If $h_H \leq h<h_H\frac{1}{1-\delta}$, the cutoffs are $\overline{z}^M_{non}\frac{1}{1+\lambda}$, $\overline{z}^M_{slow}\frac{1}{1+\lambda}$, $\underline{z}^M_{fast}\frac{1}{1+\lambda}$, and $\overline{z}^M_{fast}\frac{1}{1+\lambda}$.
+If $h_M\frac{1}{1-\delta} \leq h<h_H$, the four cutoffs that partition the decision regions for households are denoted as $\overline{z}^M_{non}(a)$, $\overline{z}^M_{slow}(a)$, $\underline{z}^M_{fast}(a)$, and $\overline{z}^M_{fast}(a)$ (see Appendix~\ref{app:cutoff_formulae} for the explicit formulae).\footnote{Appendix~\ref{app:cutoff_ranking} provides parameter restrictions for $\overline{z}^M_{fast}(a)>\underline{z}^M_{fast}(a)$.}
+If $h_H \leq h<h_H\frac{1}{1-\delta}$, the analogous cutoffs are given by $\overline{z}^M_{non}\frac{1}{1+\lambda}$, $\overline{z}^M_{slow}\frac{1}{1+\lambda}$, $\underline{z}^M_{fast}\frac{1}{1+\lambda}$, and $\overline{z}^M_{fast}\frac{1}{1+\lambda}$.
 
 
 All households with $h \geq h_H\frac{1}{1-\delta}$ are non-learners because their current human capital is enough for employment in the high sector next period even without any human capital investment. The only relevant cutoff for them is $\overline{z}^H_{non}(a)\frac{1}{1+\lambda}$ where
 \begin{equation}
     \overline{z}^H_{non}(a):=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)[(1+r)a+\frac{w'z'(1+\lambda)}{1+r'}]}{w}  \label{eq:z-non-H} 
 \end{equation}
+
+\begin{figure}
+    \centering
+    
+\input{figure_204040calib/Figure2a}
+\caption{State Space for Human Capital Investment}
+\begin{flushleft}
+\footnotesize{The darkly-shaded striped areas indicate the state space for human capital investment equal to $e_L$ by the fast learners. The lightly-shaded striped areas indicate the state space for human capital investment equal to $e_H$ by the slow learners.} 
+\end{flushleft}
+    
+\label{fig:e-digram}
+\end{figure}
+
+
+
+
 
 \subsection{The Effects of Uninsured Idiosyncratic Risk}
 We now reintroduce the idiosyncratic risk to households in period 1 by assuming that $z'$ follows a log-normal distribution with mean $\overline{z}'$ and variance $\sigma^2_z$. 
@@ -532,42 +543,115 @@ Taking into account endogenous labor supply reinforces the discouragement of hum
 
 
 \subsection{Period-1 Saving and Human Capital Investment}
-In this section, we study the impact of endogenous human capital investment on households’ saving decisions. Specifically, we compare optimal saving behavior in two scenarios: one in which households can choose to invest in human capital, and an alternative scenario in which human capital is exogenously fixed. 
+In this section, we study the impact of endogenous human capital investment on households’ saving decisions. Specifically, we compare optimal saving behavior in two scenarios: one in which households can choose to invest in human capital, and an alternative scenario in which human capital is exogenously fixed. To facilitate the comparison, we assume in this section that there is no human capital depreciation.\footnote{If depreciation is allowed, the analysis proceeds similarly but involves more comparison paris.}
 
-When the optimal choice of human capital investment is zero, there will be no difference in optimal saving between the two senarios. When the optimal choice of human capital investment is either $e_L$ or $e_H$, we compare household's optimal saving with its counterpart when $e$ is fixed to zero, i.e., $(n=1,e=0)$.\footnote{What about $(n=0,e=0)$? Its comparison with $(n=0,e=e_H \text{ or } e_L)$ is meaningless since no labor income in either period and human capital is irrelvant. What if we compare $(n=0,e=0)$ to $(n=1,e=e_L)$? Will these choices ever share a common state space? In other words, for the state space where $(n=1,e=e_L)$, if we exogenousely fix $e=0$, will the households ever choose not to work, i.e., $n=0$? [TO BE CHECKED]}
+When the optimal choice of human capital investment is zero, optimal saving is identical in both scenarios. When the optimal human capital investment is either $e_L$ or $e_H$, we compare the household's optimal saving to the case where human capital investment is exogenously fixed at zero, i.e., $(n=1, e=0)$.\footnote{Why not compare to $(n=0,e=0)$? Such a comparison is not meaningful when considering $(n=1, e=e_L)$ because the two scenarios involve different state spaces. To see it, suppose conditions are 
+such that $(n=1,e=e_L)$ is optimal. If we were to fix $e=0$ 
+exogenously, the household’s lifetime income would fall, 
+and as a result the household would have a greater 
+incentive to work. Thus, it is not possible for the 
+household to deviate from choosing $n=1$ when human capital 
+is held fixed at $e=0$. The comparison between $(n=0,e=0)$ 
+and $(n=0,e=e_L \text{ or } e_H)$ is similar to the 
+comparison between $(n=1,e=0)$ to $(n=1,e=e_L)$, since human capital investment does not affect period-1 labor income in either case.}
 
 To make the human captial relevant, we assume that $n'=1$ in period 2. The additive separability of work and human capital investment effort from consumption allows us to consider the optimal saving conditional on a given choice of labor supply and human capital investment. 
 
-In particular, the household maximizes expected lifetime utility:
-\begin{equation}
+In particular, the household maximizes expected lifetime utility:   
+\begin{equation}\label{eq:savingprob}
 \max_{a'} : \ln(c) + \beta \mathbb{E}_{z'}[\ln(c')],
 \end{equation}
-subject to the intertemporal budget constraint
+subject to the budget constraints
 \begin{align}
 c + a' &= (1+r)a + n(wzx(h)) , \\
 c' &= (1+r')a' + w'z'x(h'), \\
 \text{with } h' &= ze + (1-\delta)h, e \in \{0, e_L, (1-n)e_H\}
 \end{align}
 
-\subsubsection{Effect of on-job-training on saving}
-We now compare the optimal saving between $(n=1,e=e_L)$ and $(n=1,e=0)$, where $e_L$ allows households to move to a higher sector in period 2 with higher sectoral productivity $x(h')$. We normalize $(1+r') = 1$, $w' = 1$, and the period-2 productivity shock $z'$ to $\ln z' \sim \mathcal{N}(0,\sigma_z^2)$ for analytical tractability.\footnote{The normalization of $z'$ is without loss of generality since the period-2 income is scaled by $t$ that captures the effect of the mean of $z'$.} The effect of human capital investment on period-2 income becomes:
-\begin{equation}
-c' = a' + t x z',
-\end{equation}
-where we also normalize $z'$ to $\ln z' \sim \mathcal{N}(0,\sigma_z^2)$, implying
-\begin{equation}
-\mathbb{E}[z'] = e^{\sigma_z^2/2}, \qquad \operatorname{Var}(z') = e^{\sigma_z^2}(e^{\sigma_z^2}-1).
-\end{equation}
+\subsubsection{Effect of on-job-training on saving}\label{sec:on-job-saving}
+We now compare the optimal saving between $(n=1,e=e_L)$ and $(n=1,e=0)$, where $e_L$ allows households to move to a higher sector in period 2 with higher sectoral productivity $x(h')$. 
 
-\begin{proposition}
-    For $x=x_L<x^\ast$, $e=e_L$ lowers saving; for $x=x_H>x^\ast$, $e=e_L$ raises saving.
+To simplify the notation while maintaining the key economic forces, we normalize $(1+r)=(1+r')= 1$, $w=w'= 1$, the period-1 productivity shock $z=1$ and the period-2 productivity shock $z'$ to $\ln z' \sim \mathcal{N}(0,\sigma_z^2)$. The budget constraints become:
+\begin{equation}
+c + a' = a + x , \quad c' = a' + txz'
+\end{equation}
+where $t\geq 1$ represents the effect of human capital investment on period-2 income: $t>1$ if $e=e_L$; $t=1$ if $e=0$.
+
+The optimal saving is determined by the FOC:
+\begin{equation}
+\frac{1}{a+x-a'} = \beta\mathbb{E}_{z'}\big(\frac{1}{a'+txz'}\big)
+\end{equation}
+Denoting the mean and variance of $z'$ as $\mu$ and $\Sigma$, respectively:
+\begin{equation}
+    \mu \equiv \mathbb{E}[z'] = e^{\sigma_z^2/2}, \quad \Sigma \equiv\operatorname{Var}(z') = e^{\sigma_z^2}(e^{\sigma_z^2}-1).
+\end{equation}
+The second-order approximate solution to the FOC is:
+\begin{equation}
+a'^*(x,a;t) = \underbrace{\frac{\beta(a+x) - tx\mu}{1+\beta}}_{\text{CE}} + \underbrace{\frac{t^2x^2\Sigma}{\beta(a+x + tx\mu)}}_{\text{Precautionary}}
+\end{equation}
+The first term is the \textit{certainty-equivalent} saving, which reflects the consumption smoothing motive, increasing in the period-1 resources $a+x$ and decreasing in the period-2 expected labor income $tx\mu$. The second term is the \textit{precautionary} saving, which is increasing in the variance of period-2 labor income $t^2x^2\Sigma$ and decreasing in the expected total resources $a+x+tx\mu$.
+
+The effect of on-job-training on saving can be decomposed into two components:
+\begin{equation}
+    \frac{\partial a'^\star}{\partial t}(x,a;t)
+    = -\frac{x\mu}{1+\beta}+\frac{x^2 \Sigma}{\beta}\frac{t\,[2(a+x) + t x \mu]}{(a+x + t x \mu)^2}.
+    \label{eq:dadt_partial}
+\end{equation}
+The first term being negative captures the \textit{crowd-out} effect on saving via consumption-smoothing motive as on-job-training increases the expected period-2 labor income $tx\mu$. The second positive term captures the \textit{crowd-in} effect via precautionary saving motive as on-job-training exposes households to larger future income risk.
+
+To capture the overall impact of on-job-training on saving, we define:
+\begin{equation} \label{eq:dadt_integral}
+    \Delta_{\text{on-job}}(x,a;t) = a'^\star(x,a;t) - a'^\star(x,a;1) = \int_1^t \frac{\partial a'^\star}{\partial u}(x,a;u) du,
+\end{equation}
+where $a'^\star(x,a;t)$ is the optimal saving when households undertake on-job-training, and $a'^\star(x,a;1)$ is the optimal saving when human capital is kept exogenously fixed. 
+
+Whether on-job-training increases or decreases saving ultimately depends on the balance between the crowd-out effect (via higher expected future income) and the precautionary crowd-in effect (via heightened future income risk). The next proposition demonstrates that these effects can dominate differently depending on skill, so that the overall impact of on-job-training on saving can differ between low- and high-skilled households.
+
+
+
+\begin{proposition}\label{prop:dadt}
+    When the idiosyncratic shock is large enough, i.e., $\frac{\Sigma}{\mu}>\underline{\sigma}(t)$, on-job-training crowds out saving for low-skilled households and crowds in saving for high-skilled households: 
+    for $x<x^\ast(a,t)$, $e=e_L$ lowers saving $\Delta_{\text{on-job}}(x,a;t)<0$; for $x>x^\ast(a,t)$, $e=e_L$ raises saving $\Delta_{\text{on-job}}(x,a;t)>0$.
 \end{proposition}
+\begin{proof}
+    See Appendix~\ref{appsec: proofs}.
+\end{proof}
 
 
 \subsubsection{Effect of full-time training on saving}
-We next compare the optimal saving between $(n=0,e=e_L \text{ or } e_H)$ and $(n=1,e=0)$.
+We next compare the optimal saving between $(n=0,e=e_L \text{ or } e_H)$ and $(n=1,e=0)$. Note that  full-time training requires the households to give up their labor income in period 1, which is not the case for on-job-training. Following the same normalization and notation as in the previous subsection, we can write the budget constraints with full-time training and without training as:
+\begin{align}
+e=e_H: \quad c + a' &= a, \quad c' = a' + txz'\\
+e=0: \quad c + a' &= a + x, \quad c' = a' + xz'
+\end{align}
+where $t>1$ captures the effect of full-time training on period-2 income. 
 
-\section{The Effects of an Anticipated Period-2 AI Shock}
+The second-order approximate solution to the optimization problem is:
+\begin{align}
+    e=e_H: \quad a'^*_{e_H}(x,a;t) &= \underbrace{\frac{\beta a - tx\mu}{1+\beta}}_{\text{CE}} + \underbrace{\frac{t^2x^2\Sigma}{\beta(a + tx\mu)}}_{\text{Precautionary}}\\
+    e=0: \quad a'^*(x,a;1) &= \underbrace{\frac{\beta(a + x) - x\mu}{1+\beta}}_{\text{CE}} + \underbrace{\frac{x^2\Sigma}{\beta(a + x + x\mu)}}_{\text{Precautionary}}
+\end{align}
+so that the total effect of full-time training on saving is:
+\begin{align}
+    \Delta_{\text{full-time}}(x,a;t) &= a'^*_{e_H}(x,a;t) - a'^*(x,a;1)\\
+    &= \Delta_{\text{on-job}}(x,a;t) - x\frac{\beta}{1+\beta} + \frac{t^2x^2\Sigma}{\beta}\frac{x}{(a+x+tx\mu)(a+tx\mu)}
+\end{align}
+Compared to the effect of on-job-training, represented by $\Delta_{\text{on-job}}(x,a;t)$ defined in \eqref{eq:dadt_integral}, full-time training introduces two additional effects on saving. First, it further reduces saving because households forgo their period-1 labor income, as reflected in the second term. Second, it increases precautionary saving, since having lower current resources leaves households less able to self-insure against idiosyncratic risk in period 2, which is captured by the third term. 
+Denote the net additional effect of full-time training on saving as:
+\begin{equation}
+    \Delta_H(x,a;t) \equiv  x\big[-\frac{\beta}{1+\beta} + \frac{\Sigma}{\beta}\frac{t^2x^2}{(a+x+tx\mu)(a+tx\mu)}\big]
+\end{equation}
+so that $\Delta_{\text{full-time}}(x,a;t)=\Delta_{\text{on-job}}(x,a;t)+\Delta_H(x,a;t)$. The next proposition shows that the net additional effect is negative and stronger for higher skilled households.
+
+\begin{proposition}\label{prop:fulltime}
+    When the idiosyncratic shock is not too large, i.e., $\frac{\Sigma}{\mu}<\overline{\sigma}(t)$, full-time training crowds out more saving than on-job-training, $\Delta_H(x,a;t)<0$. Moreover, the crowding-out effect is stronger for higher skilled households: $\Delta_H(x,a;t)$ is decreasing in $x$.
+\end{proposition}
+\begin{proof}
+    See Appendix~\ref{appsec: proofs}.
+\end{proof}
+
+
+\subsection{The Effects of an Anticipated Period-2 AI Shock}
 Suppose that an AI shock is anticipated to occur in period 2 and to increase the labor productivity for the low sector and the high sector but not the middle sector. The effect of AI shock on the sectoral productivity is captured by $\gamma$ with $0<\gamma<1$:
 \begin{equation}
     \label{eq:xAI}
@@ -581,83 +665,80 @@ x(h')=\left \{
 \end{equation}
 In other words, the AI shock increases average labor productivity, reduces the earnings premium for the middle sector, and enlarges the earnings premium for the high sector relative to the middle sector.
 
-\paragraph{The non-learners:} The AI shock increases the labor income of households who work in the low sector or the high sector in period 2, i.e, those with $h<h_M\frac{1}{1-\delta}$ or $h>h_H\frac{1}{1-\delta}$. The positive income effect makes them work less in period 1 so that $\overline{z}^L_{non}(a)$ and $\overline{z}^H_{non}(a)$ increases in $\gamma$:
-\begin{equation*}
-    \overline{z}^i_{non}(a;\gamma)=\overline{z}^i_{non}(a;\gamma=0) + \gamma \lambda  \frac{w'z'}{w(1+r')}\left[\exp(\frac{\chi_n}{1+\beta})-1\right] \text{ for } i=L,H
-\end{equation*}
+%\subsubsection{AI's effect on human capital investment and labor supply}
 
+\subsubsection{Effects on human capital investment} 
 
-\paragraph{The slow learners:} The AI shock reduces the incentive to work in the middle sector in period 2, i.e., $\overline{z}^L_{slow}(a)$ is decreasing and $\overline{z}^M_{slow}(a)$ is increasing in $\gamma$:
-\begin{align*}
-    \overline{z}^L_{slow}(a;\gamma)&= \overline{z}^L_{slow}(a;\gamma=0) - \gamma \lambda  \frac{w'z'}{w(1+r')}\\
-    \overline{z}^M_{slow}(a;\gamma)&=\overline{z}^M_{slow}(a;\gamma=0) + \gamma \lambda \frac{w'z'}{w(1+r')}\exp(\frac{\chi_n-\chi_e e_H}{1+\beta})
-\end{align*}
-Therefore, those with $h<h_M\frac{1}{1-\delta}$ invest less human capital and work more in period 1 and those with $h>h_M\frac{1}{1-\delta}$ invest more human capital and work less.
+The AI shock lowers the incentive to work in the middle sector in period 2. Consequently, households with $h < h_M/(1-\delta)$ reduce their human capital investment, while those with $h > h_M/(1-\delta)$ increase it. More specifically, the upper bounds that determine whether households undertake positive human capital investment -- denoted by $\overline{z}^L_{slow}$ and $\overline{z}^L_{fast}$ for $h < h_M/(1-\delta)$, and $\overline{z}^M_{slow}$ and $\overline{z}^M_{fast}$ for $h > h_M/(1-\delta)$ -- respond in opposite directions to the anticipated shock: the former decrease with $\gamma$ and the latter increase. This relationship is formalized below.
 
-\paragraph{The fast learners:} Similar to the slow learners, the AI shock reduces households' incentive to work in the middle sector in period 2. As a result, human capital investment is lower for those with $h<h_M\frac{1}{1-\delta}$, and is higher for those with $h>h_M\frac{1}{1-\delta}$. The effects of AI shock $\gamma$ on the cutoff governing human capital investment are:
-\begin{align*}
-    \overline{z}^L_{fast}(a;\gamma)&= \overline{z}^L_{fast}(a;\gamma=0) - \gamma \lambda \frac{w'z'}{w(1+r')}\frac{\exp(\frac{\chi_e e_L}{1+\beta})}{\exp(\frac{\chi_e e_L}{1+\beta})-1} \\
-    \overline{z}^M_{fast}(a;\gamma)&= \overline{z}^M_{fast}(a;\gamma=0) + \gamma \lambda \frac{w'z'}{w(1+r')}\frac{1}{\exp(\frac{\chi_e e_L}{1+\beta})-1} 
-\end{align*}
-Conditional on the human capital investment being $e_L$, the fast learners' labor supply decision is affected by the AI shock via the future earning increase if the households will work in the high sector in period 2. That is, those with $h>h_M\frac{1}{1-\delta}$ work less in period 1, i.e., $\underline{z}^L_{fast}$ increases in $\gamma$:
-\begin{equation*}
-    \underline{z}^M_{fast}(a;\gamma)=\underline{z}^M_{fast}(a;\gamma=0) + \gamma \lambda \frac{w'z'}{w(1+r')}\left[\exp(\frac{\chi_n}{1+\beta})-1\right]
-\end{equation*}
-
-
-\subsection{Comparative Statics}
-The decision rules derived in the previous section imply that the fast learners invest in human capital if $z<\overline{z}_{fast}(h,a)$ and the slow learner invest in human capital if $z<\overline{z}_{slow}(h,a)$. The close form expressions of the cutoffs allow us to compare human capital investment between groups of households with different levels of human capital and physical capital.
-
-\paragraph{Effect of human capital $h$ on human capital investment:} 
-
-\begin{lemma}\label{lem:h_on_e}
-    Both the fast learners and the slow learners with $h<\frac{h_M}{1-\delta}$ invest more in human capital than their counterparts with $h>\frac{h_M}{1-\delta}$:
-    \begin{align*}
-        \frac{\overline{z}^L_{fast}}{1-\lambda} &> \overline{z}^M_{fast} \text{ ; }  \overline{z}^L_{fast}> \frac{\overline{z}^M_{fast}}{1+\lambda}\\
-        \frac{\overline{z}^L_{slow}}{1-\lambda} &> \overline{z}^M_{slow} \text{ ; }  \overline{z}^L_{slow}> \frac{\overline{z}^M_{slow}}{1+\lambda}
-    \end{align*}
-    
-\end{lemma}
-
-\begin{figure}
-    \centering
-    
-\input{figure_204040calib/Figure2a}
-\caption{State Space for Human Capital Investment}
-\begin{flushleft}
-\footnotesize{The darkly-shaded striped areas indicate the state space for human capital investment equal to $e_L$ by the fast learners. The lightly-shaded striped areas indicate the state space for human capital investment equal to $e_H$ by the slow learners.} 
-\end{flushleft}
-    
-\label{fig:e-digram}
-\end{figure}
-
-Figure \ref{fig:e-digram} provides an illustration to this proposition. The striped areas indicate the state space for positive human capital investment. The darkly-shaded areas correspond to the fast learners. The lightly-shaded areas correspond to the slow learners. Let us take the slow learners as an example. Those with $h<\frac{h_M}{1-\delta}$ need to invest $e_H$ to either stay in or to move up to the middle sector next period. Those with $h>\frac{h_M}{1-\delta}$ need to invest $e_H$ to either stay in or to move up to the high sector. The most productive households does not invest in human capital because it requires giving up their labor earning. This productivity cutoff is lower for those with higher human capital, meaning that their investment in human capital is lower than those with lower human capital. 
-
-
-
-\paragraph{Effect of physical capital $a$ on human capital investment:} 
-\begin{lemma}\label{lem:a_on_e}
-The fast learners with lower asset holding invest more in human capital:
-\begin{equation*}
-    \frac{\partial \overline{z}^L_{fast}(a)}{\partial a}<0 \text{ ; } \frac{\partial \overline{z}^M_{fast}(a)} {\partial a} <0
-\end{equation*}
-The slow learners with lower asset holding invest more in human capital if and only if $\chi_n<\chi_e e_H$:
-\begin{equation*}
-    \frac{\partial \overline{z}^L_{slow}(a)}{\partial a}<0 \text{ and } \frac{\partial \overline{z}^M_{slow}(a)}{\partial a}<0 \text{ iff } \chi_n<\chi_e e_H
-\end{equation*}
-\end{lemma}
-
-
-\subsubsection{AI effect on human capital inequality}
-Recall from Lemma \ref{lem:h_on_e} that, without the AI shock, households with low $h$ invest more in human capital than households with high $h$. The analysis above shows that the AI shock discourages human capital investment for those with low $h$ but encourages it for those with high $h$. Therefore, a small AI shock reduces human capital investment disparity between groups with different levels of $h$, and a large AI shock could lead to a reversal in the comparison, making households with high $h$ invest more in human capital than households with low $h$. The human capital distribution will be more unequal due to the AI shock. 
-\begin{proposition}
-    AI shock increases human capital inequality.
+\begin{proposition}\label{prop:AI_human_capital}
+An anticipated AI shock decreases human capital investment among households with $h < h_M/(1-\delta)$, but increases it among those with $h > h_M/(1-\delta)$. Specifically, $\overline{z}^L_{slow}$ and $\overline{z}^L_{fast}$ decrease with $\gamma$, while $\overline{z}^M_{slow}$ and $\overline{z}^M_{fast}$ increase with $\gamma$.
 \end{proposition}
+\begin{proof}
+    See Appendix~\ref{appsec: proofs}.
+\end{proof}
+
+\subsubsection{Effects on labor supply} 
+\paragraph{via income:} 
+The AI shock raises period-2 labor income for households who will work in the low or high sector, leading to a positive income effect that reduces their labor supply in period 1. 
+
+\paragraph{via full-time training:} Because full-time training and labor supply compete for time, the AI shock affects their tradeoff through its impact on human capital investment incentives. For $h>h_M/(1-\delta)$, where AI makes investing in additional skills more attractive, households are more likely to engage in full-time training and thus reduce period-1 labor supply. In contrast, for $h<h_M/(1-\delta)$, where the AI shock lowers the payoff to investing in skills, households shift away from full-time training and supply more labor in the first period. 
+
+
+\subsubsection{Effects on saving}
+
+The AI shock increases the sectoral labor productivities for the low and high sectors in period 2, but leaving the middle sector's labor productivity unchanged. Its effect on saving can be analyzed using the households optimal saving problem \eqref{eq:savingprob} with varying $x'$ across sectors.
+
+\paragraph{Households who will stay in the same sector}
+
+We first discuss those households who need no human capital investment or on-job-training to stay in the same sector. 
+
+For low-sector and high-sector households, the AI shock increases their period-2 labor income $x'$. This change of $x'$ is analogous to the effect of on-job-training $\Delta_{\text{on-job}}(x,a;t)$ defined in \eqref{eq:dadt_integral}. Proposition \ref{prop:dadt} shows that $\Delta_{\text{on-job}}(x,a;t)$ has opposite sign for low-skill and high-skill households. Therefore, the AI shock \textit{crowds out low-sector households' saving} and \textit{crowds in high-sector households' saving}. 
+For middel-sector households, the AI shock brings no change to their incomes and saving. 
+
+When households need full-time traning to stay in the same sector (middle or high sector), the AI shock affects their incentives to invest $e_H$. The middle-sector households have weaker incentives for full-time training so that the AI shock makes them save more. The high-sector households have stronger incentives for full-time training and in turn save less in response to the AI shock. 
+
+
+\paragraph{Households who will upskill to a higher sector}
+When households upskill via on-job-training, the low-sector houesholds do not change their saving as the AI shock does not alter their future productivity gain after they upskill. For the middle-sector households, the AI shock improves their future productivity gain from $\lambda$ to $(1+\gamma)\lambda$. This is equivalent to an increase of $t$ in the on-job-training effect on saving, $\Delta_{\text{on-job}}(x,a;t)$. 
+
+their saving's response depends on their current sectoral productivity, according to Proposition \ref{prop:dadt}. As 
 
 
 
+When households upskill via full-time training
 
-\paragraph{Limitations to the two-period model:} In the two-period model, we take the period-1 asset holding as exogenous. In the full model, the idiosyncratic risk increases households saving and leads to more asset holding. According to Lemma \ref{lem:a_on_e}, more asset holding reduces human capital investment for the fast learners and reduces human capital investment for the slow learners if and only if $\chi_n<\chi_e e_H$.
+
+
+\paragraph{Households who will downskill to a lower sector}
+They must have $e=0$. 
+
+\paragraph{Low sector households:}
+For households who will stay in the low sector in period 2, the AI shock increases their period-2 labor income $x'$ from $1-\lambda$ to $1-(1-\gamma)\lambda$. This change of $x'$ is analogous to the effect of on-job-training $\Delta_{\text{on-job}}(x,a;t)$ defined in \eqref{eq:dadt_integral}.  
+
+\paragraph{Middle sector households:}
+For households who will stay in the middle sector in period 2, the AI shock brings no change to their incomes and saving. 
+
+For households who will work in the high sector in period 2 (via human capital investment)
+
+
+\paragraph{High sector households:}
+
+\paragraph{On-job-training:}
+For the low-skill households, AI increases $x$ but reduces $t$. Hence, AI reduces the net-crowding-out effect for the low-skill households.
+
+For the middle-skill households, AI does not change $x$ but increases $t$. Hence, AI enhances the net-crowding-in effect for the middle-skill households.
+
+For the high-skill households, $t=1$, AI increases $x$ and therefore saving via the conventional channels. 
+
+\paragraph{Full-time training:}
+
+\subsection{Limitations of the two-period model}
+Up to this point, our analysis has focused on how AI influences household-level decisions regarding human capital investment, labor supply, and saving within the framework of a two-period model. While this provides valuable insights into individual behavioral responses, understanding the broader, economy-wide implications of AI requires moving to a more comprehensive setting -- a quantitative model with an infinite time horizon, endogenous asset accumulation, and general equilibrium feedback.
+
+\paragraph{General equilibrium (GE) effects} When households adjust their investment in human capital, labor supply, and savings in response to AI, these changes aggregate up to affect the total supply of effective labor and capital in the economy. As these aggregates shift, they exert downward or upward pressure on the wage rate and the interest rate, feeding back into each household’s optimization problem. Thus, general equilibrium effects capture the intricate loop by which individual decisions shape, and are shaped by, the macroeconomic environment.
+
+\paragraph{Composition effects} Endogenizing human capital investment injects dynamism into how households sort themselves among the three skill sectors. When an AI shock occurs, individuals may choose to retrain, upskill, or even move to lower-skilled work, reshaping the distribution of labor across sectors. This shifting composition changes the relative size of each sector, with significant consequences for both aggregate outcomes and the distributional effects of AI.
 
 
 \section{A Quantitative Model \protect\label{sec:quant_model}}
@@ -1009,8 +1090,32 @@ Our work points to several promising directions for future research on the econo
 
 
 \appendix
+% Ensure equation numbers in the appendix are labeled by section: e.g., A.1, B.2, etc.
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\makeatletter
+\@addtoreset{equation}{section}
+\makeatother
 
-\section{Parameter Restrictions for the Two-Period Model}
+
+\section{Household Decision Rule Cutoffs}
+\subsection{Cutoffs formulae for households with $h_M\frac{1}{1-\delta} \leq h<h_H\frac{1}{1-\delta}$}
+\label{app:cutoff_formulae}
+\begin{align}
+    \overline{z}^M_{non}(a)&:=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)
+    [(1+r)a+\frac{w'z'}{1+r'}]}{w}  \label{eq:z-non-M} \\
+    \overline{z}^M_{slow}(a)&:=\frac{(\exp(\frac{\chi_n-\chi_e e_H}{1
+    +\beta})-1)[(1+r)a+\frac{w'z'(1+\lambda)}{1+r'}]+\lambda\frac
+    {w'z'}{1+r'}}{w} \label{eq:z-slow-M} \\
+    \underline{z}^M_{fast}(a)&:=\frac{(\exp(\frac{\chi_n}{1+\beta})
+    -1)[(1+r)a+\frac{w'z'(1+\lambda)}{1+r'}]}{w} \label
+    {eq:z-fast-lower-M} \\
+    \overline{z}^M_{fast}(a)&:=\frac{\left\{\lambda\left[\exp(\frac
+    {\chi_e e_L}{1+\beta})-1\right]^{-1}-1\right\}\frac{w'z'}{1+r'}-
+    (1+r)a}{w}  \label{eq:z-fast-upper_M} 
+\end{align}
+
+\subsection{Parameter restrictions for cutoffs ranking}
+\label{app:cutoff_ranking}
 To guarantee that $(n=0,e=e_H)$ dominates $(n=0,e=0)$, we need a lower bound for $\lambda$.
 The slow learners prefer $(n=0,e=e_H)$ if and only if
 \begin{equation*}
@@ -1023,12 +1128,10 @@ or equivalently:
 \end{align}
     
 
-
-
+\bigskip
+\noindent
 To avoid $(n=1,e=e_L)$ from being a dominated choice, we need another lower bound for $\lambda$.
-To see it, recall that $(n=1,e=0)$ is better than $(n=1,e=e_L)$ if $z>\overline{z}_{fast}$, and $(n=1,e=e_L)$ is better than $(n=0,e=e_L)$ if $z>\underline{z}_{fast}$. $(n=1,e=e_L)$ is therefore the best choice over the interval $(\underline{z}_{fast},\overline{z}_{fast})$. For such an interval to exist, it must be the case that when $z=\underline{z}_{fast}$, $z<\overline{z}_{fast}$.
-
-$z=\underline{z}_{fast}$ means that the fast learners are indifferent between $(n=1,e=e_L)$ and $(n=0,e=e_L)$ so that
+To see it, recall that $(n=1,e=0)$ is better than $(n=1,e=e_L)$ if $z>\overline{z}_{fast}$, and $(n=1,e=e_L)$ is better than $(n=0,e=e_L)$ if $z>\underline{z}_{fast}$. $(n=1,e=e_L)$ is therefore the best choice over the interval $(\underline{z}_{fast},\overline{z}_{fast})$. For such an interval to exist, it must be the case that when $z=\underline{z}_{fast}$, $z<\overline{z}_{fast}$. $z=\underline{z}_{fast}$ means that the fast learners are indifferent between $(n=1,e=e_L)$ and $(n=0,e=e_L)$ so that
 \begin{align}
     (1+r)a+wzx(h)+\frac{w'z'}{1+r'}&=\exp(\frac{\chi_n}{1+\beta})\left[(1+r)a+\frac{w'z'}{1+r'}\right] \text{ if } h<h_M\frac{1}{1-\delta} \\
     (1+r)a+wzx(h)+\frac{w'z'(1+\lambda)}{1+r'}&=\exp(\frac{\chi_n}{1+\beta})\left[(1+r)a+\frac{w'z'(1+\lambda)}{1+r'}\right] \text{ if } h \geq h_M\frac{1}{1-\delta} 
@@ -1037,7 +1140,7 @@ For the fast learners to prefer $(n=1,e=e_L)$ over $(n=1,e=0)$, we need
 \begin{equation}\label{app:eL}
     (1+\beta)\ln\frac{c(n=1,e=e_L)}{c(n=1,e=0)} \geq \chi_e e_L
 \end{equation}
-If $h<h_M\frac{1}{1-\delta}$, this inequality is:
+If $h<h_M\frac{1}{1-\delta}$, inequality (\ref{app:eL}) is:
 \begin{equation*}
     (1+\beta)\ln\frac{(1+r)a+wzx(h)+\frac{w'z'}{1+r'}}{(1+r)a+wzx(h)+\frac{w'z'(1-\lambda)}{1+r'}} \geq \chi_e e_L 
 \end{equation*}
@@ -1046,7 +1149,7 @@ Evaluating the left-hand-side at $z=\underline{z}_{fast}$ yields:
     \lambda \geq \underline{\lambda}_2:=\frac{(1+r)a+\frac{w'z'}{1+r'}}{\frac{w'z'}{1+r'}}\left(1-\frac{1}{\exp(\frac{\chi_e e_L}{1+\beta})}\right)\exp(\frac{\chi_n}{1+\beta}) \label{app:lambda2}
 \end{equation}
 
-If $h>h_M\frac{1}{1-\delta}$, inequality (\ref{app:eL}) is:
+\noindent If $h>h_M\frac{1}{1-\delta}$, inequality (\ref{app:eL}) is:
 \begin{equation*}
     (1+\beta)\ln\frac{(1+r)a+wzx(h)+\frac{w'z'(1+\lambda)}{1+r'}}{(1+r)a+wzx(h)+\frac{w'z'}{1+r'}} \geq \chi_e e_L 
 \end{equation*}
@@ -1061,9 +1164,9 @@ We have that $\underline{\lambda}_1>\underline{\lambda}_2$ and $\underline{\lamb
 \end{equation}
 Therefore, the inequality above implies that the conditions (\ref{app:lambda1}) and (\ref{app:lambda3}) are sufficient for the conditions (\ref{app:lambda2}) and (\ref{app:lambda4}). Furthermore, $\lambda_3 \geq \lambda_1$ so that the condition (\ref{app:lambda3}) is sufficient for the condition (\ref{app:lambda1}). 
 
-We can then conclude that the conditions (\ref{app:lambda3}) and (\ref{app:eH}) are sufficient for 1) the slower learners always prefers $(n=0,e=e_H)$ over $(n=0,e=0)$, and 2) $\overline{z}_{fast}>\underline{z}_{fast}$.
+We can then conclude that the conditions (\ref{app:lambda3}) and (\ref{app:eH}) are sufficient for 1) the slower learners always prefers $(n=0,e=e_H)$ over $(n=0,e=0)$, and 2) $\overline{z}_{fast}>\underline{z}_{fast}$, i.e., there exists state space where $(n=1,e=e_L)$ is optimal.
 
-\section{Cutoffs ranking for the Two-Period Model}
+\subsection{Other cutoffs ranking for the two-period Model}
 For the fast learners, their cutoffs rank as follows 
 \begin{align}
     \frac{\overline{z}^L_{fast}(a)}{1-\lambda}&>\overline{z}^L_{fast}(a)>\overline{z}^M_{fast}(a)>\frac{\overline{z}^M_{fast}(a)}{1+\lambda}  \\
@@ -1078,6 +1181,127 @@ For the non-learners, the rank of their cutoffs is
 \frac{\overline{z}^L_{non}(a)}{1-\lambda} > \overline{z}^M_{non}(a) & > \frac{\overline{z}^H_{non}(a)}{1+\lambda} > \frac{\overline{z}^M_{non}(a)}{1+\lambda}\\
 \overline{z}^M_{non}(a) & > \overline{z}^L_{non}(a)
 \end{align}
+
+\section{Proof of Proposition} \label{appsec: proofs}
+\subsection{Proof of Proposition \ref{prop:dadt}}
+The derivative of saving with respect to $t$ is
+\begin{equation}
+\frac{\partial a'^\star}{\partial t}(x,a;t)
+=
+-\frac{x\mu}{1+\beta}
++
+\frac{x^2 \Sigma}{\beta}\,
+\frac{t\,[2(x+a) + t x \mu]}{\big[(x+a) + t x \mu\big]^2}.
+\label{eq:dadlambda_partial}
+\end{equation}
+
+The total effect of human capital investment on saving is
+\begin{equation}
+    \Delta_{\text{on-job}}(x,a;t) = a'^\star(x,a;t) - a'^\star(x,a;1) = \int_1^t \frac{\partial a'^\star}{\partial u}(x,a;u) du. \label{eq:dadt_total}
+\end{equation}
+
+Define
+\[
+F(x,a;u)\equiv x\,\frac{u[2(x+a)+u x \mu]}{[(x+a)+u x \mu]^2}, \quad \overline{F}(x,a;t)\equiv \frac{1}{t-1}\int_1^t F(x,a;u) du.
+\]
+Then equation \eqref{eq:dadt_total} can be written as
+\[
+    \Delta_{\text{on-job}}(x,a;t)
+= x(t-1)\Big[\frac{\Sigma}{\beta}\overline{F}(x,a;t)-\frac{\mu}{1+\beta}\Big].
+\]
+
+Differentiating $F(x,a;u)$ with respect to $x$ gives
+\[
+\frac{\partial F(x,a;u)}{\partial x}
+=
+\frac{2u\,a\,(a+x)}{(a+ (1+u\mu) x)^3}
+>0,
+\]
+so $\overline{F}(x,a;t)$ is strictly increasing in $x$.
+
+
+
+
+
+The sign of $\Delta_{\text{on-job}}(x,a;t)$ is governed by
+\[
+S(x,a;t)\equiv \frac{\Sigma}{\beta}\overline{F}(x,a;t)-\frac{\mu}{1+\beta}.
+\]
+Because $\overline{F}(x,a;t)$ is strictly increasing, $S(x,a;t)$ increases monotonically with $x$. 
+
+For $x\to 0$, $F(x,a;u)\to 0$ and $\overline{F}(x,a;t) \to 0$ so that $S(x,a;t)\to - \frac{\mu}{1+\beta}<0$, implying $\Delta_{\text{on-job}}(x,a;t)<0$ for small $x$.
+
+For $x\to \infty$, $F(x,a;u)\to \frac{u(2+u\mu)}{(1+u\mu)^2}$ and $\overline{F}(x,a;t) \to \overline{F}_\infty(t)\equiv \frac{1}{t-1}\int_1^t \frac{u(2+u\mu)}{(1+u\mu)^2} du$. If 
+\begin{equation}
+\frac{\Sigma}{\mu} > \underline{\sigma}(t) \equiv \frac{\beta}{1+\beta}\frac{1}{\overline{F}_\infty(t)}
+\label{app:Klowerbound}
+\end{equation}
+then $S(x,a;t)>0$ for sufficiently large $x$, and hence $\Delta_{\text{on-job}}(x,a;t)>0$.
+
+
+
+If idiosyncratic risk is large enough, i.e., condition (\ref{app:Klowerbound}) is satisfied, there exists a unique threshold $x^\ast(t)$ at which the sign flips:
+\[
+    \Delta_{\text{on-job}}(x,a;t)<0\ \text{for }x<x^\ast(a,t),
+\qquad
+\Delta_{\text{on-job}}(x,a;t)>0\ \text{for }x>x^\ast(a,t).
+\]
+
+\subsection{Proof of Proposition \ref{prop:fulltime}}
+
+Denote 
+\[
+G(x,a;t)\equiv \frac{t^2x^2}{(a+x+tx\mu)(a+tx\mu)}
+\]
+the net additional effect of full-time training on saving can be rewritten as 
+\[
+\Delta_H(x,a;t) \equiv  x\big[-\frac{\beta}{1+\beta} + \frac{\Sigma}{\beta}G(x,a;t)\big]
+\]
+
+Differentiating $G(x,a;t)$ with respect to $x$ gives
+\[
+\frac{\partial G(x,a;t)}{\partial x}
+=
+\frac{t^2xa(2tx\mu+2a+x)}{(a+ tx\mu)^2(a+x+tx\mu)^2}
+>0,
+\]
+so $G(x,a;t)$ is strictly increasing in $x$.
+
+The limits of $G(x,a;t)$ are:
+\[
+G(x,a;t) \to 0 \quad (x\to 0),
+\]
+\[
+G(x,a;t) \to G_\infty(t)\equiv \frac{t}{\mu(1+t\mu)} \quad (x\to \infty),
+\]
+Therefore, $G(x,a;t)<G_\infty(t)$ for any $x$.
+
+If 
+\begin{equation} \label{app:Ginfty}
+    \frac{\Sigma}{\beta}G_\infty(t)<\frac{\beta}{1+\beta}, \text{ i.e. } \frac{\Sigma}{\mu} < \overline{\sigma}(t) \equiv \frac{\beta^2}{1+\beta}(\frac{1}{t}+\mu).
+\end{equation}
+Then $\Delta_H(x,a;t)<x[-\frac{\beta}{1+\beta}+\frac{\Sigma}{\beta}G_\infty(t)]<0$ for any $x$.
+
+Furthermore, with some tedious algebra, we can show that for any $x$
+\[
+G(x,a;t)+x\frac{\partial G(x,a;t)}{\partial x}<G_\infty(t)
+\]
+Hence, the inequality (\ref{app:Ginfty}) also implies that
+\begin{equation} 
+    \frac{\partial \Delta_H(x,a;t)}{\partial x} = \frac{\Sigma}{\beta}[G(x,a;t)+x\frac{\partial G(x,a;t)}{\partial x}] - \frac{\beta}{1+\beta} < \frac{\Sigma}{\beta} G_\infty(t) - \frac{\beta}{1+\beta} < 0.
+\end{equation}
+
+\subsection{Proof of Proposition \ref{prop:AI_human_capital}}
+The relevant upper bounds of $z$ for positive human capital investment are functions of $\gamma$ (to the first order approximation):
+\begin{align*}
+    \overline{z}^L_{slow}(a;\gamma)&= \overline{z}^L_{slow}(a;\gamma=0) - \gamma \lambda  \frac{w'z'}{w(1+r')}\\
+    \overline{z}^L_{fast}(a;\gamma)&= \overline{z}^L_{fast}(a;\gamma=0) - \gamma \lambda \frac{w'z'}{w(1+r')}\frac{\exp(\frac{\chi_e e_L}{1+\beta})}{\exp(\frac{\chi_e e_L}{1+\beta})-1} \\
+    \overline{z}^M_{slow}(a;\gamma)&=\overline{z}^M_{slow}(a;\gamma=0) + \gamma \lambda \frac{w'z'}{w(1+r')}\exp(\frac{\chi_n-\chi_e e_H}{1+\beta})\\
+    \overline{z}^M_{fast}(a;\gamma)&= \overline{z}^M_{fast}(a;\gamma=0) + \gamma \lambda \frac{w'z'}{w(1+r')}\frac{1}{\exp(\frac{\chi_e e_L}{1+\beta})-1}
+\end{align*}
+Therefore, an anticipated AI shock, $\gamma>0$ makes those with $h<h_M\frac{1}{1-\delta}$ invest less human capital and those with $h>h_M\frac{1}{1-\delta}$ invest more human capital.
+
+
 
 
 
