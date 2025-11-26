@@ -700,13 +700,9 @@ When households need full-time traning to stay in the same sector (middle or hig
 
 
 \paragraph{Households who will upskill to a higher sector}
-When households upskill via on-job-training, the low-sector houesholds do not change their saving as the AI shock does not alter their future productivity gain after they upskill. For the middle-sector households, the AI shock improves their future productivity gain from $\lambda$ to $(1+\gamma)\lambda$. This is equivalent to an increase of $t$ in the on-job-training effect on saving, $\Delta_{\text{on-job}}(x,a;t)$. 
+When households upskill via on-job-training, the low-sector houesholds do not change their saving as the AI shock does not alter their future productivity gain after they upskill. For the middle-sector households, the AI shock improves their future productivity gain from $\lambda$ to $(1+\gamma)\lambda$. This is equivalent to an increase of $t$ in the on-job-training effect on saving, $\Delta_{\text{on-job}}(x,a;t)$. If the on-job-training effect on saving is positive in absence of the AI shock, the AI shock will increase households' saving. If the on-job-training effect on saving is negative in absence of the AI shock, the AI shock may reduce or increase households' saving depending on the households current sectoral produtivity and $\gamma$.
 
-their saving's response depends on their current sectoral productivity, according to Proposition \ref{prop:dadt}. As 
-
-
-
-When households upskill via full-time training
+When households upskill via full-time training, 
 
 
 
@@ -1195,7 +1191,7 @@ The derivative of saving with respect to $t$ is
 \label{eq:dadlambda_partial}
 \end{equation}
 
-The total effect of human capital investment on saving is
+The total effect of on-job-training on saving is
 \begin{equation}
     \Delta_{\text{on-job}}(x,a;t) = a'^\star(x,a;t) - a'^\star(x,a;1) = \int_1^t \frac{\partial a'^\star}{\partial u}(x,a;u) du. \label{eq:dadt_total}
 \end{equation}
@@ -1219,10 +1215,6 @@ Differentiating $F(x,a;u)$ with respect to $x$ gives
 \]
 so $\overline{F}(x,a;t)$ is strictly increasing in $x$.
 
-
-
-
-
 The sign of $\Delta_{\text{on-job}}(x,a;t)$ is governed by
 \[
 S(x,a;t)\equiv \frac{\Sigma}{\beta}\overline{F}(x,a;t)-\frac{\mu}{1+\beta}.
@@ -1238,14 +1230,28 @@ For $x\to \infty$, $F(x,a;u)\to \frac{u(2+u\mu)}{(1+u\mu)^2}$ and $\overline{F}(
 \end{equation}
 then $S(x,a;t)>0$ for sufficiently large $x$, and hence $\Delta_{\text{on-job}}(x,a;t)>0$.
 
-
-
 If idiosyncratic risk is large enough, i.e., condition (\ref{app:Klowerbound}) is satisfied, there exists a unique threshold $x^\ast(t)$ at which the sign flips:
 \[
     \Delta_{\text{on-job}}(x,a;t)<0\ \text{for }x<x^\ast(a,t),
 \qquad
 \Delta_{\text{on-job}}(x,a;t)>0\ \text{for }x>x^\ast(a,t).
 \]
+
+\subsection{Proof of another proposition}
+
+$a'^*(x,a;t)$ is convex in $t$:
+\begin{equation}
+    \frac{\partial^2 a'^*(x,a;t)}{\partial t^2}  = \frac{\partial}{\partial t} \left( -\frac{x\mu}{1+\beta}
+    +
+    \frac{x^2 \Sigma}{\beta}\,
+    \frac{t\,[2(x+a) + t x \mu]}{\big[(x+a) + t x \mu\big]^2} \right) = \frac{2x^2\Sigma(a+x)^2}{\beta(a +x + tx\mu)^3} > 0.
+\end{equation}
+
+Increasing $t$ by $\Delta t$ changes the total effect of on-job-training on saving by 
+\begin{equation}
+    \int_t^{t+\Delta t} \frac{\partial a'^\star}{\partial u}(x,a;u) du .
+\end{equation}
+
 
 \subsection{Proof of Proposition \ref{prop:fulltime}}
 
