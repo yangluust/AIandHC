@@ -689,6 +689,18 @@ The AI shock raises period-2 labor income for households who will work in the lo
 
 The AI shock increases the sectoral labor productivities for the low and high sectors in period 2, but leaving the middle sector's labor productivity unchanged. Its effect on saving can be analyzed using the households optimal saving problem \eqref{eq:savingprob} with varying $x'$ across sectors.
 
+\begin{proposition}\label{prop:convexity_onjob}
+    $\Delta_{\text{on-job}}(x,a;t)$ is a convex function of $t$. 
+    \begin{itemize}
+        \item If $\Delta_{\text{on-job}}(x,a;t)>0$ and $t>1$, $\Delta_{\text{on-job}}(x,a;t') > \Delta_{\text{on-job}}(x,a;t)$ for $t'>t>1$. 
+        \item If $\Delta_{\text{on-job}}(x,a;t) > 0$ and $t<1$, $\Delta_{\text{on-job}}(x,a;t') < \Delta_{\text{on-job}}(x,a;t)$ for $1>t'>t$.
+    \end{itemize}
+\end{proposition}
+\begin{proof}
+    See Appendix~\ref{appsec: proofs}.
+\end{proof}
+
+
 \paragraph{Households who will stay in the same sector}
 
 We first discuss those households who need no human capital investment or on-job-training to stay in the same sector. 
@@ -702,32 +714,14 @@ When households need full-time traning to stay in the same sector (middle or hig
 \paragraph{Households who will upskill to a higher sector}
 When households upskill via on-job-training, the low-sector houesholds do not change their saving as the AI shock does not alter their future productivity gain after they upskill. For the middle-sector households, the AI shock improves their future productivity gain from $\lambda$ to $(1+\gamma)\lambda$. This is equivalent to an increase of $t$ in the on-job-training effect on saving, $\Delta_{\text{on-job}}(x,a;t)$. If the on-job-training effect on saving is positive in absence of the AI shock, the AI shock will increase households' saving. If the on-job-training effect on saving is negative in absence of the AI shock, the AI shock may reduce or increase households' saving depending on the households current sectoral produtivity and $\gamma$.
 
-When households upskill via full-time training, 
+When households upskill via full-time training, the dominant intensive-margin effect on saving is via forgoing their period-1 labor income, which is not affected by the AI shock. The AI shock only affects the extensive margin of full-time training. The low-sector households has weaker incentive for full-time training after the AI shock and therefore save more. The middle-sector households has stronger incentive for full-time training after the AI shock and therefore save less.
 
 
 
 \paragraph{Households who will downskill to a lower sector}
-They must have $e=0$. 
-
-\paragraph{Low sector households:}
-For households who will stay in the low sector in period 2, the AI shock increases their period-2 labor income $x'$ from $1-\lambda$ to $1-(1-\gamma)\lambda$. This change of $x'$ is analogous to the effect of on-job-training $\Delta_{\text{on-job}}(x,a;t)$ defined in \eqref{eq:dadt_integral}.  
-
-\paragraph{Middle sector households:}
-For households who will stay in the middle sector in period 2, the AI shock brings no change to their incomes and saving. 
-
-For households who will work in the high sector in period 2 (via human capital investment)
+They must have $e=0$. Facing downskilling makes households' saving differ from a fixed human capital senario by $\Delta_{\text{on-job}}(x,a;t)$ with $t<1$. For the high-sector households who will downskill to the middle sector, the AI shock has no effect on their future productivity loss and therefore their saving. For the middle-sector households who will downskill to the low sector, the AI shock mitigates their future productivity loss from $\lambda$ to $(1-\gamma)\lambda$. This is equivalent to an increase of $t$ to $t'$ where $t'<1$. If $\Delta_{\text{on-job}}(x,a;t<1)>0$, the AI shock will mitigate the positive effect and reduces households' saving. 
 
 
-\paragraph{High sector households:}
-
-\paragraph{On-job-training:}
-For the low-skill households, AI increases $x$ but reduces $t$. Hence, AI reduces the net-crowding-out effect for the low-skill households.
-
-For the middle-skill households, AI does not change $x$ but increases $t$. Hence, AI enhances the net-crowding-in effect for the middle-skill households.
-
-For the high-skill households, $t=1$, AI increases $x$ and therefore saving via the conventional channels. 
-
-\paragraph{Full-time training:}
 
 \subsection{Limitations of the two-period model}
 Up to this point, our analysis has focused on how AI influences household-level decisions regarding human capital investment, labor supply, and saving within the framework of a two-period model. While this provides valuable insights into individual behavioral responses, understanding the broader, economy-wide implications of AI requires moving to a more comprehensive setting -- a quantitative model with an infinite time horizon, endogenous asset accumulation, and general equilibrium feedback.
@@ -1237,20 +1231,7 @@ If idiosyncratic risk is large enough, i.e., condition (\ref{app:Klowerbound}) i
 \Delta_{\text{on-job}}(x,a;t)>0\ \text{for }x>x^\ast(a,t).
 \]
 
-\subsection{Proof of another proposition}
 
-$a'^*(x,a;t)$ is convex in $t$:
-\begin{equation}
-    \frac{\partial^2 a'^*(x,a;t)}{\partial t^2}  = \frac{\partial}{\partial t} \left( -\frac{x\mu}{1+\beta}
-    +
-    \frac{x^2 \Sigma}{\beta}\,
-    \frac{t\,[2(x+a) + t x \mu]}{\big[(x+a) + t x \mu\big]^2} \right) = \frac{2x^2\Sigma(a+x)^2}{\beta(a +x + tx\mu)^3} > 0.
-\end{equation}
-
-Increasing $t$ by $\Delta t$ changes the total effect of on-job-training on saving by 
-\begin{equation}
-    \int_t^{t+\Delta t} \frac{\partial a'^\star}{\partial u}(x,a;u) du .
-\end{equation}
 
 
 \subsection{Proof of Proposition \ref{prop:fulltime}}
@@ -1308,7 +1289,121 @@ The relevant upper bounds of $z$ for positive human capital investment are funct
 Therefore, an anticipated AI shock, $\gamma>0$ makes those with $h<h_M\frac{1}{1-\delta}$ invest less human capital and those with $h>h_M\frac{1}{1-\delta}$ invest more human capital.
 
 
+\subsection{Proof of Proposition \ref{prop:convexity_onjob}}
 
+\[
+    \Delta_{\text{on-job}}(x,a;t) = a'^\star(x,a;t) - a'^\star(x,a;1) = \int_1^t \frac{\partial a'^\star}{\partial u}(x,a;u) du.
+\]
+differentiating with respect to $t$ gives
+\[\frac{d \Delta_{\text{on-job}}(x,a;t)}{d t} = \frac{\partial a'^\star}{\partial t}(x,a;t) 
+\]
+Since
+\begin{equation}
+    \frac{\partial^2 a'^*(x,a;t)}{\partial t^2}  = \frac{\partial}{\partial t} \left( -\frac{x\mu}{1+\beta}
+    +
+    \frac{x^2 \Sigma}{\beta}\,
+    \frac{t\,[2(x+a) + t x \mu]}{\big[(x+a) + t x \mu\big]^2} \right) = \frac{2x^2\Sigma(a+x)^2}{\beta(a +x + tx\mu)^3} > 0.
+\end{equation}
+The slope $\frac{\partial a'^\star}{\partial t}(x,a;t)$ is strictly increasing in $t$. Hence $\Delta_{\text{on-job}}(x,a;t)$ is convex in $t$.
+
+\medskip
+We now consider the comparison between $\Delta_{\text{on-job}}(x,a;t)$ and $\Delta_{\text{on-job}}(x,a;t')$ for $t'>t$.
+Given $x$ and $a$, define
+\[
+f(t)\equiv \frac{\partial a'^*}{\partial t}(x,a;t).
+\]
+so $f'(t)>0$, i.e. $f(t)$ is strictly increasing in $t$.
+
+\subsubsection*{Case 1: $1<t<t'$}
+
+Suppose $\Delta_{\text{on-job}}(x,a;t)>0$. Then
+\[
+\Delta_{\text{on-job}}(x,a;t)
+=\int_{1}^{t} f(u)\,du>0.
+\]
+Since $f$ is increasing,
+\[
+f(u)\le f(t)\quad\text{for all } u\in[1,t],
+\]
+which implies
+\[
+\Delta_{\text{on-job}}(x,a;t)
+=\int_{1}^{t} f(u)\,du
+\le (t-1)\,f(t).
+\]
+Because $t>1$, the inequality $\Delta_{\text{on-job}}(x,a;t)>0$ forces $f(t)>0$.
+
+Now for any $t'>t$,
+\[
+f(u)\ge f(t)>0
+\quad\text{for all }u\in[t,t'],
+\]
+and therefore
+\[
+\Delta_{\text{on-job}}(x,a;t')-\Delta_{\text{on-job}}(x,a;t)
+=
+\int_{t}^{t'} f(u)\,du
+>0.
+\]
+
+We then have that:
+\begin{equation}
+1<t<t', \Delta_{\text{on-job}}(x,a;t)>0
+\quad\Longrightarrow\quad
+\Delta_{\text{on-job}}(x,a;t')>\Delta_{\text{on-job}}(x,a;t)
+\end{equation}
+That is, once $\Delta_{\text{on-job}}(x,a;t)$ becomes positive for $t>1$, it is strictly increasing in $t$ thereafter.
+
+\subsubsection*{Case 2: $t<t'<1$}
+
+For $t<1$,
+\[
+\Delta_{\text{on-job}}(x,a;t)
+=\int_{1}^{t} f(u)\,du
+= -\int_{t}^{1} f(u)\,du.
+\]
+
+Suppose $\Delta_{\text{on-job}}(x,a;t)>0$. Then
+\[
+-\int_{t}^{1} f(u)\,du>0
+\quad\Longrightarrow\quad
+\int_{t}^{1} f(u)\,du<0.
+\]
+Since $f$ is increasing 
+\[
+f(u)\ge f(t)\quad\text{for all } u\in[t,1],
+\]
+which implies
+\[
+\int_{t}^{1} f(u)\,du
+\ge (1-t)\,f(t).
+\]
+Because $t<1$, the inequality $\Delta_{\text{on-job}}(x,a;t)>0$ forces $f(t)<0$.
+
+Consider 
+\[
+\Delta_{\text{on-job}}(x,a;t')-\Delta_{\text{on-job}}(x,a;t)
+=\int_{t}^{t'} f(u)\,du
+\]
+
+If $f(u)<0$ for all $u\in[t,t']$, then $\int_{t}^{t'} f(u)\,du<0$.
+
+If there exists some $t_s\in[t,t']$ such that $f(t_s)=0$, so $f(u)<0$ for $u<t_s$ and $f(u)>0$ for $u>t_s$. Then $f(u)>0$ for $u\in[t',1]$. Hence, 
+\[
+\int_{t'}^{1} f(u)\,du>0
+\]
+This implies that
+\[\Delta_{\text{on-job}}(x,a;t')=-\int_{t'}^{1} f(u)\,du<0\]
+Together with the inequality $\Delta_{\text{on-job}}(x,a;t)>0$, we have that
+\[\Delta_{\text{on-job}}(x,a;t')<\Delta_{\text{on-job}}(x,a;t)\]
+
+We then have that 
+\begin{equation}
+t<t'<1,\ \Delta_{\text{on-job}}(x,a;t)>0
+\quad\Longrightarrow\quad
+\Delta_{\text{on-job}}(x,a;t')<\Delta_{\text{on-job}}(x,a;t).
+\end{equation}
+Thus, for $t<1$, whenever $\Delta_{\text{on-job}}(x,a;t)>0$, increasing $t$ toward $0$ makes $\Delta_{\text{on-job}}$ strictly decrease.
 
 
 
