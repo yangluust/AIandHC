@@ -496,10 +496,7 @@ If $h_M\frac{1}{1-\delta} \leq h<h_H$, the four cutoffs that partition the decis
 If $h_H \leq h<h_H\frac{1}{1-\delta}$, the analogous cutoffs are given by $\overline{z}^M_{non}\frac{1}{1+\lambda}$, $\overline{z}^M_{slow}\frac{1}{1+\lambda}$, $\underline{z}^M_{fast}\frac{1}{1+\lambda}$, and $\overline{z}^M_{fast}\frac{1}{1+\lambda}$.
 
 
-All households with $h \geq h_H\frac{1}{1-\delta}$ are non-learners because their current human capital is enough for employment in the high sector next period even without any human capital investment. The only relevant cutoff for them is $\overline{z}^H_{non}(a)\frac{1}{1+\lambda}$ where
-\begin{equation}
-    \overline{z}^H_{non}(a):=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)[(1+r)a+\frac{w'z'(1+\lambda)}{1+r'}]}{w}  \label{eq:z-non-H} 
-\end{equation}
+Households with $h \geq h_H\frac{1}{1-\delta}$ are always non-learners, since their human capital guarantees high-sector employment next period without further investment. For them, only the cutoff $\overline{z}^H_{non}(a)\frac{1}{1+\lambda}$ matters.
 
 \begin{figure}
     \centering
@@ -638,7 +635,7 @@ so that the total effect of full-time training on saving is:
 \end{align}
 Compared to the effect of on-job-training, represented by $\Delta_{\text{on-job}}(x,a;t)$ defined in \eqref{eq:dadt_integral}, full-time training introduces two additional effects on saving. First, it further reduces saving because households forgo their period-1 labor income, as reflected in the second term. Second, it increases precautionary saving, since having lower current resources leaves households less able to self-insure against idiosyncratic risk in period 2, which is captured by the third term. 
 Denote the net additional effect of full-time training on saving as:
-\begin{equation}
+\begin{equation}\label{eq:dadt_fulltime}
     \Delta_H(x,a;t) \equiv  x\big[-\frac{\beta}{1+\beta} + \frac{\Sigma}{\beta}\frac{t^2x^2}{(a+x+tx\mu)(a+tx\mu)}\big]
 \end{equation}
 so that $\Delta_{\text{full-time}}(x,a;t)=\Delta_{\text{on-job}}(x,a;t)+\Delta_H(x,a;t)$. The next proposition shows that the net additional effect is negative and stronger for higher skilled households.
@@ -687,10 +684,10 @@ The AI shock raises period-2 labor income for households who will work in the lo
 
 \subsubsection{Effects on saving}
 
-The AI shock increases the sectoral labor productivities for the low and high sectors in period 2, but leaving the middle sector's labor productivity unchanged. Its effect on saving can be analyzed using the households optimal saving problem \eqref{eq:savingprob} with varying $x'$ across sectors.
+The AI shock increases sectoral labor productivities for the low and high sectors in period 2, while leaving the middle sector's labor productivity unchanged. Its effect on saving can be analyzed as if we are varying the parameter $t$ in the functions $\Delta_{\text{on-job}}(x,a;t)$, defined in \eqref{eq:dadt_integral}, and $\Delta_{H}(x,a;t)$, defined in \eqref{eq:dadt_fulltime}. 
 
-\begin{proposition}\label{prop:convexity_onjob}
-    $\Delta_{\text{on-job}}(x,a;t)$ is a convex function of $t$. 
+\begin{proposition}\label{prop:Delta}
+    $\Delta_{\text{on-job}}(x,a;t)$ is convex in $t$. $\Delta_{H}(x,a;t)$ is increasing in $t$.
     \begin{itemize}
         \item If $\Delta_{\text{on-job}}(x,a;t)>0$ and $t>1$, $\Delta_{\text{on-job}}(x,a;t') > \Delta_{\text{on-job}}(x,a;t)$ for $t'>t>1$. 
         \item If $\Delta_{\text{on-job}}(x,a;t) > 0$ and $t<1$, $\Delta_{\text{on-job}}(x,a;t') < \Delta_{\text{on-job}}(x,a;t)$ for $1>t'>t$.
@@ -701,25 +698,29 @@ The AI shock increases the sectoral labor productivities for the low and high se
 \end{proof}
 
 
-\paragraph{Households who will stay in the same sector}
+\paragraph{Households who stay in the same sector}
+For middle-sector households, the AI shock leaves both their incomes and saving unchanged.
 
-We first discuss those households who need no human capital investment or on-job-training to stay in the same sector. 
+By contrast, low-sector and high-sector households experience an increase in period-2 labor income $x'$ as a result of the AI shock. If they remain in the same sector without needing additional human capital investment or on-the-job training, their saving behavior in the absence of the AI shock can be compared to the scenario with fixed human capital. Following the AI shock, however, their situation resembles one with on-the-job training that enhances $x'$ (i.e., $t>1$). Thus, the effect of the AI shock on saving is captured by the on-the-job training impact, $\Delta_{\text{on-job}}(x,a;t)$.
 
-For low-sector and high-sector households, the AI shock increases their period-2 labor income $x'$. This change of $x'$ is analogous to the effect of on-job-training $\Delta_{\text{on-job}}(x,a;t)$ defined in \eqref{eq:dadt_integral}. Proposition \ref{prop:dadt} shows that $\Delta_{\text{on-job}}(x,a;t)$ has opposite sign for low-skill and high-skill households. Therefore, the AI shock \textit{crowds out low-sector households' saving} and \textit{crowds in high-sector households' saving}. 
-For middel-sector households, the AI shock brings no change to their incomes and saving. 
+As shown in Proposition \ref{prop:dadt}, $\Delta_{\text{on-job}}(x,a;t)$ has opposite signs for low-skill and high-skill households. This implies that the AI shock \textit{crowds out} saving among low-sector households, while it \textit{crowds in} saving for high-sector households.
 
-When households need full-time traning to stay in the same sector (middle or high sector), the AI shock affects their incentives to invest $e_H$. The middle-sector households have weaker incentives for full-time training so that the AI shock makes them save more. The high-sector households have stronger incentives for full-time training and in turn save less in response to the AI shock. 
-
-
-\paragraph{Households who will upskill to a higher sector}
-When households upskill via on-job-training, the low-sector houesholds do not change their saving as the AI shock does not alter their future productivity gain after they upskill. For the middle-sector households, the AI shock improves their future productivity gain from $\lambda$ to $(1+\gamma)\lambda$. This is equivalent to an increase of $t$ in the on-job-training effect on saving, $\Delta_{\text{on-job}}(x,a;t)$. If the on-job-training effect on saving is positive in absence of the AI shock, the AI shock will increase households' saving. If the on-job-training effect on saving is negative in absence of the AI shock, the AI shock may reduce or increase households' saving depending on the households current sectoral produtivity and $\gamma$.
-
-When households upskill via full-time training, the dominant intensive-margin effect on saving is via forgoing their period-1 labor income, which is not affected by the AI shock. The AI shock only affects the extensive margin of full-time training. The low-sector households has weaker incentive for full-time training after the AI shock and therefore save more. The middle-sector households has stronger incentive for full-time training after the AI shock and therefore save less.
+For households who must undertake full-time training to remain in the high sector, $\Delta_{H}(x,a;t)$ captures the additional effect of such training on saving. In this case, a higher $x'$—brought about by the AI shock—corresponds to an increase in $t$, further boosting $\Delta_{H}(x,a;t)$ (Proposition \ref{prop:Delta}). Consequently, the AI shock \textit{crowds in} saving for high-sector households in this scenario as well.
 
 
+\paragraph{Households who upskill} For low-sector households, saving behavior remains unchanged, as the AI shock does not affect their future productivity after upskilling.
 
-\paragraph{Households who will downskill to a lower sector}
-They must have $e=0$. Facing downskilling makes households' saving differ from a fixed human capital senario by $\Delta_{\text{on-job}}(x,a;t)$ with $t<1$. For the high-sector households who will downskill to the middle sector, the AI shock has no effect on their future productivity loss and therefore their saving. For the middle-sector households who will downskill to the low sector, the AI shock mitigates their future productivity loss from $\lambda$ to $(1-\gamma)\lambda$. This is equivalent to an increase of $t$ to $t'$ where $t'<1$. If $\Delta_{\text{on-job}}(x,a;t<1)>0$, the AI shock will mitigate the positive effect and reduces households' saving. 
+For the middle-sector households who upskill via on-job-training, the AI shock boosts their future productivity gain from $\lambda$ to $(1+\gamma)\lambda$, which corresponds to a higher $t$ in $\Delta_{\text{on-job}}(x,a;t)$ with $t>1$. According to Proposition \ref{prop:Delta}, if the pre-shock effect of on-the-job training on saving is positive, the AI shock will \textit{raise} saving. However, if this effect is negative, the overall impact of the AI shock on saving becomes ambiguous.
+
+For the middle-sector households who upskill via full-time training, there is an \textit{additional positive effect} of the AI shock on their saving, because a higher $x'$ increases $\Delta_{H}(x,a;t)$ (Proposition \ref{prop:Delta}).
+
+
+
+\paragraph{Households who downskill} Downskilling, which reflects human capital depreciation, does not require any new investment in skills. For high-sector households who transition downward, the AI shock leaves their future productivity -- and thus their saving -- unchanged.
+
+For middle-sector households who downskill to the low sector, their saving differs from the fixed human capital scenario by $\Delta_{\text{on-job}}(x,a;t)$ with $t<1$. The AI shock mitigates their future productivity loss by reducing it from $\lambda$ to $(1-\gamma)\lambda$, effectively increasing $t$ to a new value $t'<1$. According to Proposition \ref{prop:Delta}, if the pre-shock effect $\Delta_{\text{on-job}}(x,a;t)$ is positive, the AI shock will \textit{reduce} saving. If this effect is negative, however, the overall impact of the AI shock on saving is ambiguous.
+
+
 
 
 
@@ -1088,7 +1089,7 @@ Our work points to several promising directions for future research on the econo
 
 
 \section{Household Decision Rule Cutoffs}
-\subsection{Cutoffs formulae for households with $h_M\frac{1}{1-\delta} \leq h<h_H\frac{1}{1-\delta}$}
+\subsection{Additional cutoffs formulae for households}
 \label{app:cutoff_formulae}
 \begin{align}
     \overline{z}^M_{non}(a)&:=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)
@@ -1101,7 +1102,8 @@ Our work points to several promising directions for future research on the econo
     {eq:z-fast-lower-M} \\
     \overline{z}^M_{fast}(a)&:=\frac{\left\{\lambda\left[\exp(\frac
     {\chi_e e_L}{1+\beta})-1\right]^{-1}-1\right\}\frac{w'z'}{1+r'}-
-    (1+r)a}{w}  \label{eq:z-fast-upper_M} 
+    (1+r)a}{w}  \label{eq:z-fast-upper_M} \\
+    \overline{z}^H_{non}(a)&:=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)[(1+r)a+\frac{w'z'(1+\lambda)}{1+r'}]}{w}  
 \end{align}
 
 \subsection{Parameter restrictions for cutoffs ranking}
@@ -1289,7 +1291,7 @@ The relevant upper bounds of $z$ for positive human capital investment are funct
 Therefore, an anticipated AI shock, $\gamma>0$ makes those with $h<h_M\frac{1}{1-\delta}$ invest less human capital and those with $h>h_M\frac{1}{1-\delta}$ invest more human capital.
 
 
-\subsection{Proof of Proposition \ref{prop:convexity_onjob}}
+\subsection{Proof of Proposition \ref{prop:Delta}}
 
 \[
     \Delta_{\text{on-job}}(x,a;t) = a'^\star(x,a;t) - a'^\star(x,a;1) = \int_1^t \frac{\partial a'^\star}{\partial u}(x,a;u) du.
@@ -1306,7 +1308,17 @@ Since
 \end{equation}
 The slope $\frac{\partial a'^\star}{\partial t}(x,a;t)$ is strictly increasing in $t$. Hence $\Delta_{\text{on-job}}(x,a;t)$ is convex in $t$.
 
-\medskip
+\[\Delta_{H}(x,a;t) = x\big[-\frac{\beta}{1+\beta} + \frac{\Sigma}{\beta}G(x,a;t)\big] \text{ with } G(x,a;t) = \frac{t^2x^2}{(a+x+tx\mu)(a+tx\mu)}
+\]
+Differentiating $G(x,a;t)$ with respect to $t$ gives
+\[
+\frac{\partial G(x,a;t)}{\partial t}
+=\frac{tx^2(2a^2+2atx\mu+2ax+\mu t x^2)}{(a+ tx\mu)^2(a+x+tx\mu)^2}
+>0,
+\]
+so $G(x,a;t)$ is strictly increasing in $t$, and so is $\Delta_{H}(x,a;t)$.
+
+\bigskip\noindent
 We now consider the comparison between $\Delta_{\text{on-job}}(x,a;t)$ and $\Delta_{\text{on-job}}(x,a;t')$ for $t'>t$.
 Given $x$ and $a$, define
 \[
