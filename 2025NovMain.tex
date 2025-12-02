@@ -215,6 +215,17 @@ This paper develops a model to analyze the effects of AI advancements on human c
 The distinctive nature of AI advancements lies in their ability to perform cognitive, non-routine tasks that previously required significant education and expertise, fundamentally differentiating its impact on the labor market and economy from that of general automation. For example, AI tools in medical diagnostics now assist radiologists in analyzing medical images, potentially reducing demand for entry-level radiologists while simultaneously increasing the productivity of senior professionals. More generally, AI could shift the premium associated with various skills levels, devaluing middle-level skills while increasing the demand for high-level expertise. In anticipation of these changes, households are likely to adjust their human capital investments.
 
 
+The average worker in low-skilled occupations also obtains a significant wage premium from working in a more innovative firm \citet{aghion2019}
+
+
+Recent labor market data highlight the disproportionate impact of AI on entry-level employment opportunities. According to Revelio Labs\footnote{\url{https://www.reveliolabs.com/news/macro/is-ai-responsible-for-the-rise-in-entry-level-unemployment/}}, postings for entry-level jobs in the US declined by about 35\% since January 2023, with roles more exposed to AI experiencing even steeper reductions. Bloomberg\footnote{\url{https://www.bloomberg.com/news/articles/2025-07-30/ai-s-takeover-of-entry-level-tasks-is-making-college-grads-job-hunt-harder}} reports that, in the words of Matt Sigelman, president of the Burning Glass Institute, ``Demand for junior hires in many college-level roles is already declining, even as demand for experienced hires in the same jobs is on the rise.''
+
+Experimental evidences reviewed by \citet{calvino_effects_2025} suggest two seemingly contradictory findings in productivity gains between experienced and less experienced workers. On the one hand, AI can help to narrow the gap between low- and high-skilled workers given the same task. On the other hand, higher digital proficiency or task-specific experience can positively affect the returns to AI's use. The rational for these contradictory findings is that less experienced users may see greater improvements in simpler tasks, where current AI excels. For tasks that AI may not be capable of performing effectively, succesful use of AI requires more advanced skills and experience that involves understanding AI's capabilities and limitations.
+
+\citet{asam_generative_2025} find that GitHub Copilot helps software startups raise their initial funding 19\% faster with 20\% fewer employed developers. Moreover, the productivity gains is disproportionally larger for startups with more experienced founders.
+
+\citet{de_souza_artificial_2025} find that AI used in Brazilian firms reduces employment and wages for middle-wage office workers whereas increases employment of low-skilled production workders.
+
 According to the National Center for Education Statistic,\footnote{\url{https://nces.ed.gov/programs/digest/d22/tables/dt22_303.70.asp}} college enrollment in the U.S. has been declining since 2010. The National Student Clearinghouse Research Center reports that the undergraduate college enrollment decline has accelerated since the pandemic began, resulting in a loss of almost 6\% of total enrollment between fall 2019 to fall 2023, while graduate enrollment has risen by about 5\%.\footnote{\url{https://public.tableau.com/app/profile/researchcenter/viz/CTEEFall2023dashboard/CTEEFall2023}} These shifts, regardless of their causes, highlight evolving patterns in human capital investment. 
 
 
@@ -222,6 +233,9 @@ This paper develops a model to study the effects of AI advancements on human cap
 
 
 The interaction between human capital investment and labor supply presents a tradeoff at the household level between current wage earning and future wage gains. At aggregate level, the interaction implies that when individuals transition from the middle to the high sector, they may temporarily exit the workforce to upskill, reducing immediate labor supply but improving future labor productivity. 
+
+Add interaction between human capital and saving. 
+
 
 
 We model AI advancements as increasing the productivity for the low and high sectors but not for the middle sector so that the skill premium of the middle sector decreases and the skill premium of the high sector increases. Allowing for human capital adjustments not only alters AI’s economic implications quantitatively, it also makes a qualitative difference. 
@@ -244,9 +258,9 @@ Our findings reveal that human capital responses to AI amplify its positive effe
 
 %Suppose that labor supply declines as a result of households in the middle sector exiting the workforce to invest in their human capital in anticipating the AI advancements. The equilibrium wage will increase, disproportionately benefiting high-sector workers whose labor produces more effective units. This will encourage further shifts from the middle sector and amplifying human capital adjustments.
 
-INTRODUCING PRECAUTIONARY SAVING MOTIVE IN THE WAGE POLARIZATION INVESTIGATION \citet{autor_polarization_2006}
+INTRODUCING PRECAUTIONARY SAVING MOTIVE IN THE WAGE POLARIZATION INVESTIGATION \citet{autor_polarization_2006}\citet{Autor2013}
 
-
+\subsection{Related Literature}
 This paper relates to the literature examining how technological advancements,
 including AI, have significantly contributed to job polarization.
 \citet{Goos2007} show that since 1975, the United Kingdom has experienced
@@ -800,25 +814,6 @@ Human capital cutoffs, $h_{M}$ and $h_{H}$, are set so that the population share
 
 On the production side, we set the capital income share, $\alpha,$ to 0.36, and the depreciation rate, $\delta,$ to 0.1.
 
-\begin{table}
-\caption{\protect\label{tbl:moments}Key Moments}
-
-\begin{centering}
-\begin{tabular}{lccccrrrc}
-\hline 
-Moment  &  &  &  & Data  &  &  &  & Model\tabularnewline
-\hline 
-~~Employment rate  &  &  &  & 0.80  &  &  &  & 0.80\tabularnewline
-~~Human capital investment ratio  &  &  &  & 0.29  &  &  &  & 0.29\tabularnewline
-~~Gini coefficient for wealth  &  &  &  & 0.78  &  &  &  & 0.76\tabularnewline
-~~Gini coefficient for earnings  &  &  &  & 0.63  &  &  &  & 0.62\tabularnewline
-~~Gini coefficient for income  &  &  &  & 0.57  &  &  &  & 0.58\tabularnewline
-\hline 
-\end{tabular}
-\par\end{centering}
-\end{table}
-
-
 \subsection{Key Moments: Data vs. Model}
 
 In Table \ref{tbl:moments}, we present a comparison of
@@ -838,6 +833,23 @@ aligning closely with observed data. This suggests that the model
 effectively incorporates the key mechanisms driving labor market outcomes
 and the corresponding distributional aspects of earnings. Although the model does not explicitly target the wealth Gini coefficient, it achieves a close match to the data: the empirical wealth Gini is 0.78, while the model produces a value of 0.76. This highlights the model’s ability to capture substantial wealth inequality in the economy.
 
+\begin{table}
+    \caption{\protect\label{tbl:moments}Key Moments}
+    
+    \begin{centering}
+    \begin{tabular}{lccccrrrc}
+    \hline 
+    Moment  &  &  &  & Data  &  &  &  & Model\tabularnewline
+    \hline 
+    ~~Employment rate  &  &  &  & 0.80  &  &  &  & 0.80\tabularnewline
+    ~~Human capital investment ratio  &  &  &  & 0.29  &  &  &  & 0.29\tabularnewline
+    ~~Gini coefficient for wealth  &  &  &  & 0.78  &  &  &  & 0.76\tabularnewline
+    ~~Gini coefficient for earnings  &  &  &  & 0.63  &  &  &  & 0.62\tabularnewline
+    ~~Gini coefficient for income  &  &  &  & 0.57  &  &  &  & 0.58\tabularnewline
+    \hline 
+    \end{tabular}
+    \par\end{centering}
+    \end{table}
 
 \subsection{Steady-state Distribution}
 Table \ref{tab:SSdistribution} presents the steady-state distribution of population, employment, and assets across sectors. The population shares are calibrated to 20\%, 40\%, and 40\% by adjusting the human capital thresholds that define sectors. The shares of employment and assets are endogenously determined by households' labor supply and savings decisions. Notably, the high sector accounts for 46\% of total employment—exceeding its population share—indicating that a disproportionate number of households choose to work in that sector. Asset holdings are even more skewed: the high sector holds 68\% of total assets, while the low sector holds only 8\%.  
@@ -867,10 +879,7 @@ are implied by households labor supply decisions and saving decisions. }{\script
     \centering  
     \caption{Steady-state Human Capital Distribution}
     \includegraphics[width=0.9\linewidth]{figure_204040calib/h_dist.pdf}
-    \label{fig:hc_dist}   
-    \caption{Steady-state Human Capital Investment}
-    \includegraphics[width=0.9\linewidth]{figure_204040calib/DR_h.pdf}
-    \label{fig:hprime_h}    
+    \label{fig:hc_dist}    
     \caption{Transition Path for Human Capital Investment}
     \includegraphics[width=0.9\linewidth]{figure_204040calib/agg_HC.pdf}
     \label{fig:h_agg}
@@ -890,12 +899,6 @@ Figure \ref{fig:hc_dist} illustrates how households reallocate across sectors in
 
 The gray shaded area shows the overlap between the two steady-state distributions. Within each sector, the distribution of households is skewed to the left, reflecting the tendency for human capital investment to be concentrated among those near the sectoral cutoffs. As shown in the decision rule diagram in Figure \ref{fig:e-digram}, some households seek to upgrade their skills, while others aim to remain in more skilled sectors. The blue shaded area highlights the mass of households who have exited the middle sector following the AI shock. The pink areas represent the additional mass of households in the new steady-state distribution, concentrated at the lower end of the low sector and the lower end of the high sector.
 
-\paragraph{Steady-state human capital investment:}
-This reallocation pattern reflects shifts in human capital investment incentives driven by AI’s impact on the skill premium. Figure \ref{fig:hprime_h} plots human capital investment decisions in the initial and new steady states across different human capital levels. Because both the productivity shock ($z$) and current asset holdings ($a$) influence human capital investment, the y-axis shows the weighted average of next-period human capital, where the weights reflect the steady-state distribution of households by productivity shock and wealth at each human capital level. 
-
-The changes in decision rules before and after the AI shock are highlighted in the blue shaded area, where next-period human capital in the new steady state is lower than in the initial steady state, and in the pick shaded area, where it is higher. The most notable change is that the middle-sector households substantially intensify their human capital investment, aiming to transition into high-sector roles. In contrast, households in the low sector reduce their human capital investment, causing those who might have moved up to the middle sector to remain in the low sector or even drift further down to the very bottom of human capital distribution as shown in Figure \ref{fig:hc_dist}. 
-
-Somewhat surprisingly, most high-sector workers in the new steady state decrease their human capital investment relative to the initial steady state. This is primarily a composition effect: as more households move from the middle-sector to the high sectors, the average asset holdings among high-sector households decline, making intensive human capital investment less affordable {\color{red} [note that this is not supported by the average asset in transition dynamics figure \ref{fig:tr_sector_k}]}. 
 
 \paragraph{Transition path}
 Figure \ref{fig:h_agg} reports the transition dynamics of aggregate human capital from the initial to the new steady state. The figure also displays its extensive margin (the share of households making positive human capital investments) and intensive margin (average human capital per household among those who invest).
@@ -1016,56 +1019,19 @@ Benchmark vs. No HC Models.}
 
 \subsubsection{Wealth inequality} 
 
-In stark contrast to the effects on income and earnings inequality, allowing for endogenous human capital adjustment actually mitigates the negative direct impact of AI on wealth inequality. While AI’s direct effect would otherwise widen disparities, human capital responses help dampen the increase in wealth inequality, underscoring the stabilizing role of human capital adjustments in the wealth distribution.
+In stark contrast to the effects on income and earnings inequality, allowing for endogenous human capital adjustment mitigates the negative direct impact of AI on wealth inequality. While AI’s direct effect would otherwise widen disparities, human capital responses help dampen the increase in wealth inequality, underscoring the stabilizing role of human capital adjustments in the wealth distribution.
 
-To disentangle the direct and indirect effects of AI on wealth inequality, Figure \ref{fig:tr_sector_k} presents the sectoral transition paths for asset holdings, while Figure \ref{fig:aprime_h} compares steady-state asset investment decisions across different human capital levels.
-\begin{figure}
-\begin{centering}
-
-    \caption{\protect\label{fig:tr_sector_k}Sectoral Asset-holding Transition}
-\includegraphics[width=0.9\linewidth]{figure_204040calib/nohc_asset.pdf}
-\par\end{centering}
-
-{\scriptsize Note: The transition paths of average capital within each sector. The x-axis represents years, and the y-axis shows the percentage deviation from the initial steady state. AI introduction is assumed to occur in period 10. “Average Capital” denotes the physical assets per household in each sector. }{\scriptsize\par}
-\centering
-\caption{Steady-state Asset Investment}
-    \includegraphics[width=0.9\linewidth]{figure_204040calib/DR_a.pdf}    
-    \label{fig:aprime_h}    
- 
-\end{figure}
-
-{\color{red} [Add a figure that compares the steady-state asset investment in the No-HC-model (a counterpart of Figure \ref{fig:aprime_h}).]}
-
-\paragraph{AI's direct impacts:} We first focus on the black dashed lines in Figure \ref{fig:tr_sector_k}. Without households reallocation across sectors, total assets and average asset holdings follow similar patterns. In both the low and high sectors, households reduce their savings in anticipation of AI, expecting higher lifetime labor income. After AI is implemented at period 10, their savings increase alongside rising labor incomes. In contrast, households in the middle sector, anticipating a negative income effect from AI due to a lower wage rate, increase their savings prior to period 10. Once AI is introduced and the wage rate recovers, middle-sector households reduce their savings.
+\paragraph{AI's direct impacts:} Without any human capital adjustment, AI's impact on households' saving works purely through income effect. In both the low and high sectors, households reduce their savings in anticipation of AI, expecting higher lifetime labor income. After AI is implemented at period 10, their savings increase alongside rising labor incomes. In contrast, households in the middle sector, anticipating a negative income effect from AI due to a lower wage rate, increase their savings prior to period 10. Once AI is introduced and the wage rate recovers, middle-sector households reduce their savings.
 
 These shifts in sectoral saving patterns sharply increase wealth inequality before period 10, as low-sector households -- typically the least wealthy -- reduce their asset holdings. After AI is implemented and saving rates in the low sector recover, the wealth Gini coefficient declines from its peak and stabilizes at a level about 0.2\% higher than its initial steady state.
 
 
 \paragraph{Effects of AI-induced human capital adjustments:}
-Average asset holding isolates us from movements in the population share along the transition path.
+Endogenous human capital responses introduce an additional channel. AI-induced changes in the skill premium motivate more households in the middle and high sectors to undertake full-time training, either to move into or remain in the high sector. This extensive margin adjustment requires these households to forgo labor income and rely on their assets to finance consumption, thus reducing their ability to accumulate additional savings during the transition. Meanwhile, low-sector households reduce their full-time investment in human capital, freeing up resources to save more. As a result, this endogenous response of human capital dampens the rise in wealth inequality that would otherwise occur, helping to stabilize the wealth distribution even as AI reshapes the labor market. 
 
-1. Selection effect is dominant:
-From middle to low: low productivity and middle-sector level wealth. Due to higher wealth level than the low-sector, the influx should have increased the arrearage asset holding of the low sector, but because they are low productivity households and they experience a reduction of sectoral productivity. [But we still should have seen an increase in Average asset before period 10??? ]
-
-
-From middle to high: high productivity and middle-sector level wealth. Due to lower wealth level than the high-sector, the influx of middle-sector households reduces the average asset holding of the high sector. But since they are high-productivity households, their saving rate increases.
-
-2. Precautionary saving motive changes:
-For the low sector, the reduction of skill premium in the benchmark model implies a reduction in idiosyncratic risk, so households reduce saving. For the high sector, the opposite is true. In the No-HC-model, changes in skill premium does not affect idiosyncratic risk since households cannot change sector. 
+{\color{red} I cannot really explain well why the wealth gini in the benchmark model is lower than in the No-HC-model, please help to improve this part.}
 
 
-Allowing for endogenous human capital adjustment results in time-varying population shares across sectors along the transition path, which drives the divergence between sectoral total and average asset holdings. In both the low and high sectors, although the average household’s asset holding declines substantially, the total asset holding in the low sector remains relatively stable, and in the high sector even increases, due to the influx of households from the middle sector. Conversely, while the average household in the middle sector saves more, the total asset holding in the middle sector declines as its population share shrinks. These offsetting effects between sectoral average asset holdings and shifting population shares help dampen fluctuations in the wealth Gini coefficient along the transition path, compared to the No-HC model (see Figure~\ref{fig:no_hc_gini}).
-
-{\color{red} I cannot explain why the wealth gini in the benchmark model is lower than in the No-HC-model, since from the total asset graphs, benchmark model has more total assets in the higher sector in new steady state. So we have to turn to the comparison of asset holding decision rule. }
-
-\paragraph{Steady-state change in asset investment:} To explain the contrasting sectoral changes in average asset holdings between the benchmark model and the No-HC-model in the new steady state, Figure \ref{fig:aprime_h} shows how next-period asset holdings change from the initial to the new steady state at each human capital level in the benchmark model, while Figure XXX presents the corresponding results for the No-HC-model. As in Figure \ref{fig:hprime_h}, the y-axis displays the weighted average of next-period asset holdings, with weights reflecting the steady-state distribution of households by productivity shocks ($z$) and wealth ($a$) at each human capital level. Pink shaded areas indicate an increase in next-period asset holdings, while blue shaded areas indicate a decrease.
-
-Note that in the benchmark model, the pink shaded areas are mostly located in the middle sector. This is due to a ``selection effect" since the households who stays in the middle sector in the new steady after the AI shock are those with higher productivity than those in the initial steady state. It is because those with lower productivity would have already flow in the low sector. As productivity is positively correlated with wealth, households remaining in the middle sector in the new steady state tends to have more wealth, which boosts their saving. {\color{red} I cannot explain why the high-sector average asset-holding remains unchanged in the new steady state whereas the asset investment figure shows that the next-period asset holding is reduced in the high sector.} 
-
-Reduction in saving in the low sector, because of the influx of low-productivity households from the middle sector?
-High sector, it is a mix so that average asset holding remains the same as the initial steady state. 
-in the benchmark, in the initial steady state, the middle sector's idiosyncratic productivity on average is lower than the high sector households (that is the why they stay in the middle sector that has requires lower human capital investment. Therefore, those moving to the high sector has on average lower $z$ and lower $a$. That explains why there is a reduction of asset investment in the low end to high sector in the new steady state as the result of more mover from the middle sector. 
-Income effects are still present for the higher end of high sector, which acts as a counterforce to the reduction of average asset holding in the low end.
 
 
 
