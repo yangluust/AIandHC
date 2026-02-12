@@ -4,112 +4,77 @@
 \begin{document}
 \begin{tikzpicture}
 
+% Axes
+\draw[thick,->] (-1,0) -- (11,0) node[right] {$h$};
+\draw[thick,->] (-1,0) -- (-1,6.6) node[above] {$z$};
 
-% Shaded areas (original diagram)
-\fill[gray, opacity=0.7] 
-    (-1,5.5) -- (4.5,5.5) -- (4.5,0) -- cycle; % Top shaded region bounded by diagonals
-\fill[gray, opacity=1, pattern=north east lines] 
-    (2,5) -- (-0.5,5) -- (2,2.5)  -- cycle; % Top shaded region with strips
-\fill[gray, opacity=1, pattern=north east lines] 
-     (2,4.7) -- (4.5,4.7) -- (4.5,0) --(2,2.5) -- cycle; % Top shaded region with strips
-\fill[gray, opacity=0.3] 
-    (-1,5.5) -- (4.5,0) -- (-1,2.33) -- cycle; % Bottom shaded region bounded by diagonals
-\fill[gray, opacity=0.5, pattern=north east lines] 
-    (2,2.5) -- (-1,2.5) -- (-1,2.33) -- (2,1.1)-- cycle; % Bottom shaded region bounded by diagonals
-\fill[gray, opacity=0.5, pattern=north east lines] 
-    (2,1.5) -- (3,1.5) -- (4.5,0) -- (2,1.1)-- cycle; % Bottom shaded region bounded by diagonals
+% Key h cutoffs
+\draw[thick] (2,0) -- (2,6.3);
+\node[below] at (2,0) {$h_M$};
+\draw[thick] (4.5,0) -- (4.5,6.3);
+\node[below] at (4.5,0) {$\frac{h_M}{1-\delta}$};
+\draw[thick] (7.5,0) -- (7.5,6.3);
+\node[below] at (7.5,0) {$h_H$};
+\draw[thick] (10,0) -- (10,6.3);
+\node[below] at (10,0) {$\frac{h_H}{1-\delta}$};
 
-% Axes for diagram
-\draw[thick,->] (-1,0) -- (11,0) node[right] {$h$}; % Rescaled x-axis 
+% h-cutoffs conditional on y (schematic placement, labels carry the economics)
+% Relative to h_M
+\draw[thick] (1.2,0) -- (1.2,6.3);
+\draw[thick] (3.2,0) -- (3.2,6.3);
+\node[below] at (1.2,0) {\scriptsize $\underline{h}_M(y)$};
+\node[below] at (3.2,0) {\scriptsize $\overline{h}_M(y)$};
+% Relative to h_H
+\draw[thick] (6.0,0) -- (6.0,6.3);
+\draw[thick] (8.8,0) -- (8.8,6.3);
+\node[below] at (6.0,0) {\scriptsize $\underline{h}_H(y)$};
+\node[below] at (8.8,0) {\scriptsize $\overline{h}_H(y)$};
 
-% Vertical divisions (original diagram)
-\draw[thick] (2,6) -- (2,0) node[below] {$h_M$}; % Original y-axis
-\draw[thick] (4.5,6) -- (4.5,0) node[below] {$\frac{h_M}{1-\delta}$}; % Vertical line for right boundary
+% Grey shading: learner types (conditional on y), by h
+% Left block (threshold h_M): [0,4.5]
+\fill[gray, opacity=0.15] (0,0) rectangle (1.2,6.3);  % non-learners
+\fill[gray, opacity=0.30] (1.2,0) rectangle (3.2,6.3); % slow learners
+\fill[gray, opacity=0.55] (3.2,0) rectangle (4.5,6.3); % fast learners
+% Right block (threshold h_H): [4.5,10]
+\fill[gray, opacity=0.15] (4.5,0) rectangle (6.0,6.3);  % non-learners
+\fill[gray, opacity=0.30] (6.0,0) rectangle (8.8,6.3);  % slow learners
+\fill[gray, opacity=0.55] (8.8,0) rectangle (10,6.3);   % fast learners
 
+% Stripes: region where e>0 (schematic, uses z cutoffs)
+% Define schematic z cutoffs
+\def\zSlowL{2.6}   % \overline{z}^L_{slow}
+\def\zFastL{5.1}   % \overline{z}^L_{fast}
+\def\zSlowM{2.2}   % \overline{z}^M_{slow}
+\def\zFastM{4.6}   % \overline{z}^M_{fast}
 
+% Left block: investment for slow learners (e_H) when z is low
+\fill[pattern=north east lines, pattern color=black, opacity=0.35]
+  (1.2,0) rectangle (3.2,\zSlowL);
+% Left block: investment for fast learners (e_L) when z is below \overline{z}^L_{fast}
+\fill[pattern=north east lines, pattern color=black, opacity=0.35]
+  (3.2,0) rectangle (4.5,\zFastL);
 
-% Diagonal lines (original diagram)
-\draw[thick] (-1,5.5) -- (4.5,0); % Top diagonal line
-\draw[thick] (-1,2.33) -- (4.5,0); % Bottom diagonal line
+% Right block: investment for slow learners (e_H) when z is low
+\fill[pattern=north east lines, pattern color=black, opacity=0.35]
+  (6.0,0) rectangle (8.8,\zSlowM);
+% Right block: investment for fast learners (e_L) when z is low
+\fill[pattern=north east lines, pattern color=black, opacity=0.35]
+  (8.8,0) rectangle (10,\zFastM);
 
+% Dashed horizontal cutoff lines (labels)
+\draw[dashed] (1.2,\zSlowL) -- (3.2,\zSlowL);
+\node[left] at (-1,\zSlowL) {\scriptsize $\overline{z}^L_{slow}$};
+\draw[dashed] (3.2,\zFastL) -- (4.5,\zFastL);
+\node[left] at (-1,\zFastL) {\scriptsize $\overline{z}^L_{fast}$};
+\draw[dashed] (6.0,\zSlowM) -- (8.8,\zSlowM);
+\node[left] at (-1,\zSlowM) {\scriptsize $\overline{z}^M_{slow}$};
+\draw[dashed] (8.8,\zFastM) -- (10,\zFastM);
+\node[left] at (-1,\zFastM) {\scriptsize $\overline{z}^M_{fast}$};
 
-
-
-
-% Labels (original diagram)
-\node at (-1.3,5.5) {$\overline{z}_M$};
-\node at (-1.3,2.33) {$\underline{z}_M$};
-
-
-
-% Duplicated Diagram (Starting at x = 4.5)
-% Shaded areas (duplicated diagram)
-\fill[gray, opacity=0.7]
-    (10,5.5) -- (10,0) --(4.5,5.5) -- cycle; % Top shaded region bounded by diagonals in duplicated diagram
-\fill[gray, opacity=1, pattern=north east lines] 
-    (7.5,4.5) -- (5.5,4.5) -- (7.5,2.5)  -- cycle; % Top shaded region bounded by diagonals
-\fill[gray, opacity=1, pattern=north east lines] 
-     (7.5,4) -- (10,4) -- (10,0) --(7.5,2.5)  -- cycle; % Top shaded region bounded by diagonals
-\fill[gray, opacity=0.3] 
-    (4.5,5.5) -- (10,0) -- (4.5,2.33) -- cycle; % Botton shaded region bounded by diagonals in duplicated diagram
-\fill[gray, opacity=0.5, pattern=north east lines] 
-    (7.5,2) -- (5.3,2) -- (7.5,1.1)-- cycle; % Bottom shaded region bounded by diagonals
-\fill[gray, opacity=0.5, pattern=north east lines] 
-    (7.5,1.1) -- (8.9,1.1) -- (10,0) -- cycle; % Bottom shaded region bounded by diagonals
-    
-% Vertical divisions (duplicated diagram)
-\draw[thick] (7.5,6) -- (7.5,0) node[below] {$h_H$}; % y-axis for duplicated version starting at x=7.5
-\draw[thick] (10,6) -- (10,0) node[below] {$\frac{h_H}{1-\delta}$}; 
-
-% Horizontal lines (1st region)
-\draw[dashed] (2,5) -- (-0.5,5) node[above] {$\frac{\overline{z}^L_{fast}}{1-\lambda}$}; % First top dashed line
-% \draw[dashed] (2,4.4) -- (0.1,4.4) node[below] {$\frac{\underline{z}^L_{fast}}{1-\lambda}$}; % Second dashed line
-\draw[dashed] (2,2.5) -- (-1,2.5) node[above] {$\frac{\overline{z}^L_{slow}}{1-\lambda}$}; % Third dashed line
-% \draw[dashed] (2,1) -- (-1,1) node[above] {$\frac{\overline{z}^L_{non}}{1-\lambda}$}; % Bottom dashed line with label
-
-% Horizontal lines (2nd region)
-\draw[dashed] (4.5,4.7) -- (2,4.7) node[above right] {$\overline{z}^L_{fast}$}; % First top dashed line
-% \draw[dashed] (4.5,4) -- (2,4) node[above right] {$\underline{z}^L_{fast}$}; % Second dashed line
-\draw[dashed] (3,1.5) -- (2,1.5)  node[above right] {$\overline{z}^L_{slow}$}; % Third dashed line
-% \draw[dashed] (2,0.5) -- (3.2,0.5) node[right] {$\overline{z}^L_{non}$}; % Bottom dashed line with label
-
-% Horizontal lines (3rd region)
-\draw[dashed] (7.5,4.5) -- (5.5,4.5) node[above right] {\textcolor{black}{$\overline{z}^M_{fast}$}}; % First top dashed line
-% \draw[dashed] (7.5,3.5) -- (6.5,3.5) node[above right] {$\underline{z}^M_{fast}$}; % Second dashed line
-\draw[dashed] (7.5,2) -- (5.3,2) node[above] {$\overline{z}^M_{slow}$}; % Third dashed line
-% \draw[dashed] (7.5,0.75) -- (4.5,0.75) node[above right] {$\overline{z}^M_{non}$}; % Bottom dashed line with label
-
-% Horizontal lines (4th region)
-\draw[dashed] (7.5,4) -- (10,4) node[above left] {$\frac{\overline{z}^M_{fast}}{1+\lambda}$}; % First top dashed line
-% \draw[dashed] (7.5,2.5) -- (10,2.5) node[above left] {$\frac{\underline{z}^M_{fast}}{1+\lambda}$}; % Second dashed line
-\draw[dashed]  (8.9,1.1) --(7.5,1.1) node[above right] {$\frac{\overline{z}^M_{slow}}{1+\lambda}$}; % Third dashed line
-% \draw[dashed] (9.3,0.25) -- (7.5,0.25) node[above right] {$\frac{\overline{z}^M_{non}}{1+\lambda}$}; % Bottom dashed line with label
-
-% Horizontal lines (4th region)
-% \draw[dashed] (10,0.5) -- (11,0.5) node[above] {$\frac{\overline{z}^H_{non}}{1+\lambda}$}; % Bottom dashed line with label
-
-% Diagonal lines (duplicated diagram)
-% The slopes of these lines should be identical to the original version
-% Top diagonal line: matching slope from (-1, 5.5) to (4.5, 0) in original diagram
-\draw[thick] (4.5,5.5) -- (10,0); % Top diagonal line in duplicated version
-% Bottom diagonal line: matching slope from (-1, 2.33) to (4.5, 0) in original diagram
-\draw[thick] (4.5,2.33) -- (10,0); % Bottom diagonal line in duplicated version
-
-
-
-
-
-% Labels (duplicated diagram)
-\node at (4.2,5.5) {$\overline{z}_H$};
-\node at (4.2,2.2) {$\underline{z}_H$};
-\node at (8.5,3) {\Large{\color{white}{$e_L$}}};
-\node at (2.5,3) {\Large{\color{white}{$e_L$}}};
-\node at (6.9,1.7) {\Large{\color{black}{$e_H$}}};
-\node at (1.2,1.7) {\Large{\color{black}{$e_H$}}};
-
+% Legend (minimal)
+\node[anchor=west] at (-0.8,6.35) {\scriptsize grey: learner type (conditional on $y$)};
+\node[anchor=west] at (4.9,6.35) {\scriptsize stripes: $e>0$ region};
 
 \end{tikzpicture}
-
-
-
 \end{document}
+
