@@ -330,7 +330,7 @@ Its contribution to next-period human capital is subject to the learning-ability
 \begin{equation}
 h_{t+1}=y_te_t + (1-\delta_h)h_t
 \end{equation}
-where $\delta_h$ is human capital's depreciation rate. We interpret $y_t e_t$ as effective human-capital investment, with $y_t$ capturing a learning-ability shock.\footnote{Separating $y_t$ from the labor productivity shock $z_t$ introduces an additional state variable relative to the special case in which learning ability is perfectly correlated with labor productivity. In the quantitative model, we discretize $(z_t,y_t)$ jointly (allowing for correlation if desired).}
+where $\delta_h$ is human capital's depreciation rate. We interpret $y_t e_t$ as effective human-capital investment, with $y_t$ capturing a learning-ability shock.\footnote{The learning ability shock $y_t$ is likely to be correlated with the labor productivity shock $z_t$ in reality. In our quantitative analysis, we assume they are perfectly correlated to reduce the dimensionality of the state space. For readers interested in the two-period model under this perfect-correlation assumption, Appendix~\ref{appendix:decision_rule_diagram} displays the corresponding decision rule diagram.}
 
  
 \section{Household Decisions in a Two-Period Model}
@@ -1032,6 +1032,12 @@ Our work points to several promising directions for future research on the econo
 \@addtoreset{equation}{section}
 \makeatother
 
+% Ensure figure numbers in the appendix are labeled by section: e.g., A.1, B.2, etc.
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\makeatletter
+\@addtoreset{figure}{section}
+\makeatother
+
 
 \section{Household Decision Rule Cutoffs}
 \subsection{Additional cutoffs formulae for households}
@@ -1103,21 +1109,71 @@ Therefore, the inequality above implies that the conditions (\ref{app:lambda1}) 
 
 We can then conclude that the conditions (\ref{app:lambda3}) and (\ref{app:eH}) are sufficient for 1) the slower learners always prefers $(n=0,e=e_H)$ over $(n=0,e=0)$, and 2) $\overline{z}_{fast}>\underline{z}_{fast}$, i.e., there exists state space where $(n=1,e=e_L)$ is optimal.
 
-\subsection{Other cutoffs ranking for the two-period Model}
-For the fast learners, their cutoffs rank as follows 
-\begin{align}
-    \frac{\overline{z}^L_{fast}(a)}{1-\lambda}&>\overline{z}^L_{fast}(a)>\overline{z}^M_{fast}(a)>\frac{\overline{z}^M_{fast}(a)}{1+\lambda}  \\
-    \frac{\underline{z}^L_{fast}(a)}{1-\lambda}&>\underline{z}^M_{fast}(a)>\underline{z}^L_{fast}(a)>\frac{\underline{z}^M_{fast}(a)}{1+\lambda}
-\end{align}
-For the slow learners, the rank of their cutoffs is
-\begin{equation}
-    \frac{\overline{z}^L_{slow}(a)}{1-\lambda}>\overline{z}^M_{slow}(a)>\overline{z}^L_{slow}(a)>\frac{\overline{z}^M_{slow}(a)}{1+\lambda}
+% \subsection{Other cutoffs ranking for the two-period Model}
+% For the fast learners, their cutoffs rank as follows 
+% \begin{align}
+%     \frac{\overline{z}^L_{fast}(a)}{1-\lambda}&>\overline{z}^L_{fast}(a)>\overline{z}^M_{fast}(a)>\frac{\overline{z}^M_{fast}(a)}{1+\lambda}  \\
+%     \frac{\underline{z}^L_{fast}(a)}{1-\lambda}&>\underline{z}^M_{fast}(a)>\underline{z}^L_{fast}(a)>\frac{\underline{z}^M_{fast}(a)}{1+\lambda}
+% \end{align}
+% For the slow learners, the rank of their cutoffs is
+% \begin{equation}
+%     \frac{\overline{z}^L_{slow}(a)}{1-\lambda}>\overline{z}^M_{slow}(a)>\overline{z}^L_{slow}(a)>\frac{\overline{z}^M_{slow}(a)}{1+\lambda}
+% \end{equation}
+% For the non-learners, the rank of their cutoffs is
+% \begin{align}
+% \frac{\overline{z}^L_{non}(a)}{1-\lambda} > \overline{z}^M_{non}(a) & > \frac{\overline{z}^H_{non}(a)}{1+\lambda} > \frac{\overline{z}^M_{non}(a)}{1+\lambda}\\
+% \overline{z}^M_{non}(a) & > \overline{z}^L_{non}(a)
+% \end{align}
+
+\subsection{Labor supply and human capital investment when $y$ perfectly correlats with $z$}\label{appendix:decision_rule_diagram}
+
+\begin{figure}
+    \centering
+    
+\input{figure_204040calib/Figure1_yequalz.tex}
+\caption{Decision Rule Diagram for $h_M \leq h<h_M(1-\delta)^{-1}$}
+\begin{flushleft}
+\footnotesize{The human capital $h$ changes along the horizontal line and the idiosyncratic productivity $z$ changes along the vertical line. The two diagonal lines, $\overline{z}_M(h)$ and $\underline{z}_M(h)$, separate the state space into three areas: the unshaded area represents the non-learners, the lightly-shaded area represents the slow learners, and the darkly-shaded  area represents the fast learners. The areas are divided by four dashed horizontal lines associated with cutoffs $\overline{z}^L_{non}$, $\overline{z}^L_{slow}$, $\underline{z}^L_{fast}$, and $\overline{z}^L_{fast}$ that are functions of capital holding $a$.} 
+\end{flushleft}
+    
+\label{fig:rule-diagram_yequalz}
+\end{figure}
+
+When the learning ability $y$ is perfectly correlated with the idiosyncratic productivity $z$, the decision rule $(n,e)$ is a function of states $(z,h,a)$ instead of $(z,h,a,y)$.
+
+
+Figure \ref{fig:rule-diagram_yequalz} illustrates the decision rule $(n,e)$ for households with $h_M \leq h<h_M\frac{1}{1-\delta}$. The human capital $h$ changes along the horizontal line and the idiosyncratic productivity $z$ changes along the vertical line. The two diagonal lines, $\overline{z}_M(h)$ and $\underline{z}_M(h)$ are defined as:
+\begin{equation}\label{eq:zm}
+    \underline{z}_M(h):=\frac{h_M-(1-\delta)h}{e_H}; \qquad \overline{z}_M(h):=\frac{h_M-(1-\delta)h}{e_L} 
 \end{equation}
-For the non-learners, the rank of their cutoffs is
-\begin{align}
-\frac{\overline{z}^L_{non}(a)}{1-\lambda} > \overline{z}^M_{non}(a) & > \frac{\overline{z}^H_{non}(a)}{1+\lambda} > \frac{\overline{z}^M_{non}(a)}{1+\lambda}\\
-\overline{z}^M_{non}(a) & > \overline{z}^L_{non}(a)
-\end{align}
+They separate the state space into three areas: the unshaded area represents the non-learners, the lightly-shaded area represents the slow learners, and the darkly-shaded area represents the fast learners. The areas are divided by dashed horizontal lines associated with cutoffs $\overline{z}^L_{non}(a)$, $\overline{z}^L_{slow}(a)$, $\underline{z}^L_{fast}(a)$, and $\overline{z}^L_{fast}(a)$ defined in (\ref{eq:z-non}), (\ref{eq:z-slow}), (\ref{eq:z-fast-lower}), and (\ref{eq:z-fast-upper}).
+
+
+This decision rule diagram is representative for households in other four ranges of human capital. Figure \ref{fig:e-digram_yequalz} illustrates the regions in which households make positive human capital investments. Striped shading highlights where investment occurs, with dark areas denoting fast learners and light areas representing slow learners. 
+
+For households with $h<h_M$, $\overline{z}_M(h)$ and $\underline{z}_M(h)$ continue to be the boundaries that separate non-learners, slow learners and fast learners, but the four cutoffs are $\overline{z}^L_{non}\frac{1}{1-\lambda}$, $\overline{z}^L_{slow}\frac{1}{1-\lambda}$, $\underline{z}^L_{fast}\frac{1}{1-\lambda}$, and $\overline{z}^L_{fast}\frac{1}{1-\lambda}$.
+
+For households with $h_M\frac{1}{1-\delta} \leq h<h_H\frac{1}{1-\delta}$, the boundaries for state space division change to $\overline{z}_H(h)$ and $\underline{z}_H(h)$:
+\begin{equation}\label{eq:zh}
+    \underline{z}_H(h):=\frac{h_H-(1-\delta)h}{e_H}; \qquad \overline{z}_H(h):=\frac{h_H-(1-\delta)h}{e_L} 
+\end{equation}
+The four cutoffs of $z$ are $\overline{z}^M_{non}$, $\overline{z}^M_{slow}$, $\underline{z}^M_{fast}$, and $\overline{z}^M_{fast}$ defined in Appendix~\ref{app:cutoff_formulae}
+
+
+Households with $h \geq h_H\frac{1}{1-\delta}$ are non-learners, and have their decision exactly the same as in the benchmark model.
+
+
+\begin{figure}
+    \centering
+    
+\input{figure_204040calib/Figure2_yequalz.tex}
+\caption{State Space for Human Capital Investment}
+\begin{flushleft}
+\footnotesize{The darkly-shaded striped areas indicate the state space for human capital investment equal to $e_L$ by the fast learners. The lightly-shaded striped areas indicate the state space for human capital investment equal to $e_H$ by the slow learners.} 
+\end{flushleft}
+    
+\label{fig:e-digram_yequalz}
+\end{figure}
 
 \section{Proof of Proposition} \label{appsec: proofs}
 \subsection{Proof of Proposition \ref{prop:dadt}}

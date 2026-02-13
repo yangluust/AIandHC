@@ -1,0 +1,1684 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{Acemoglu2019a}{inbook}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=d849e6f8de178bfb18aa67341c9f8d38}{%
+           family={Acemoglu},
+           familyi={A\bibinitperiod},
+           given={Daron},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=741d2340160d17e7d9b5d9e3be8edd84}{%
+           family={Restrepo},
+           familyi={R\bibinitperiod},
+           given={Pascual},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=d379b2563b45b79c2a7d0703c88b412a}{%
+           family={Agrawal},
+           familyi={A\bibinitperiod},
+           given={Ajay},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a3d4e21b1e5cc4edaaab0d63cc2de494}{%
+           family={Gans},
+           familyi={G\bibinitperiod},
+           given={Joshua},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1c03aa99078dac095be795ecb415c439}{%
+           family={Goldfarb},
+           familyi={G\bibinitperiod},
+           given={Avi},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Chicago}%
+      }
+      \list{publisher}{1}{%
+        {University of Chicago Press}%
+      }
+      \strng{namehash}{4cb0cc109d3549f4dc540e3709bf2e7b}
+      \strng{fullhash}{4cb0cc109d3549f4dc540e3709bf2e7b}
+      \strng{fullhashraw}{4cb0cc109d3549f4dc540e3709bf2e7b}
+      \strng{bibnamehash}{4cb0cc109d3549f4dc540e3709bf2e7b}
+      \strng{authorbibnamehash}{4cb0cc109d3549f4dc540e3709bf2e7b}
+      \strng{authornamehash}{4cb0cc109d3549f4dc540e3709bf2e7b}
+      \strng{authorfullhash}{4cb0cc109d3549f4dc540e3709bf2e7b}
+      \strng{authorfullhashraw}{4cb0cc109d3549f4dc540e3709bf2e7b}
+      \strng{editorbibnamehash}{7a33f2eccf739d3f412657ae8e5d9599}
+      \strng{editornamehash}{2ae00f8102957e13f7ecb189f63aba08}
+      \strng{editorfullhash}{7a33f2eccf739d3f412657ae8e5d9599}
+      \strng{editorfullhashraw}{7a33f2eccf739d3f412657ae8e5d9599}
+      \field{extraname}{1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The Economics of Artificial Intelligence}
+      \field{isbn}{9780226613475}
+      \field{title}{8. Artificial Intelligence, Automation, and Work}
+      \field{year}{2019}
+      \field{pages}{197\bibrangedash 236}
+      \range{pages}{40}
+      \verb{doi}
+      \verb doi:10.7208/9780226613475-010
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.7208/9780226613475-010
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.7208/9780226613475-010
+      \endverb
+    \endentry
+    \entry{Acemoglu2020}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=d849e6f8de178bfb18aa67341c9f8d38}{%
+           family={Acemoglu},
+           familyi={A\bibinitperiod},
+           given={Daron},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=741d2340160d17e7d9b5d9e3be8edd84}{%
+           family={Restrepo},
+           familyi={R\bibinitperiod},
+           given={Pascual},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4cb0cc109d3549f4dc540e3709bf2e7b}
+      \strng{fullhash}{4cb0cc109d3549f4dc540e3709bf2e7b}
+      \strng{fullhashraw}{4cb0cc109d3549f4dc540e3709bf2e7b}
+      \strng{bibnamehash}{4cb0cc109d3549f4dc540e3709bf2e7b}
+      \strng{authorbibnamehash}{4cb0cc109d3549f4dc540e3709bf2e7b}
+      \strng{authornamehash}{4cb0cc109d3549f4dc540e3709bf2e7b}
+      \strng{authorfullhash}{4cb0cc109d3549f4dc540e3709bf2e7b}
+      \strng{authorfullhashraw}{4cb0cc109d3549f4dc540e3709bf2e7b}
+      \field{extraname}{2}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We study the effects of industrial robots on US labor markets. We show theoretically that robots may reduce employment and wages and that their local impacts can be estimated using variation in exposure to robots—defined from industry-level advances in robotics and local industry employment. We estimate robust negative effects of robots on employment and wages across commuting zones. We also show that areas most exposed to robots after 1990 do not exhibit any differential trends before then, and robots’ impact is distinct from other capital and technologies. One more robot per thousand workers reduces the employment-to-population ratio by 0.2 percentage points and wages by 0.42\%.}
+      \field{journaltitle}{Journal of Political Economy}
+      \field{number}{6}
+      \field{title}{Robots and Jobs: Evidence from US Labor Markets}
+      \field{volume}{128}
+      \field{year}{2020}
+      \field{pages}{2188\bibrangedash 2244}
+      \range{pages}{57}
+      \verb{doi}
+      \verb 10.1086/705716
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1086/705716
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1086/705716
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1086/705716
+      \endverb
+    \endentry
+    \entry{aghion2019}{report}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=7c80c989fdd0b446cc5cdac1d9584afe}{%
+           family={Aghion},
+           familyi={A\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=45f7a2404d1bd9b2ab2d0e95caf11184}{%
+           family={Bergeaud},
+           familyi={B\bibinitperiod},
+           given={Antonin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=201b803c1acac5e453b4e3a14b816b3b}{%
+           family={Blundell},
+           familyi={B\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=58ed36a91a3bcb95bdc01cd68f741ef2}{%
+           family={Griffith},
+           familyi={G\bibinitperiod},
+           given={Rachel},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Banque de France}%
+      }
+      \strng{namehash}{fb729f6ef6c1efba92738ec98909537c}
+      \strng{fullhash}{284c70484c01df7e4f9714ad9a15e9e1}
+      \strng{fullhashraw}{284c70484c01df7e4f9714ad9a15e9e1}
+      \strng{bibnamehash}{fb729f6ef6c1efba92738ec98909537c}
+      \strng{authorbibnamehash}{fb729f6ef6c1efba92738ec98909537c}
+      \strng{authornamehash}{fb729f6ef6c1efba92738ec98909537c}
+      \strng{authorfullhash}{284c70484c01df7e4f9714ad9a15e9e1}
+      \strng{authorfullhashraw}{284c70484c01df7e4f9714ad9a15e9e1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Matched employee-employer data from the UK are used to analyze the wage premium to working in an innovative firm. We find that firms that are more R\&D intensive pay higher wages on average, and this is particularly true for workers in some low-skilled occupations. We propose a model in which a firm's innovativeness is reflected in the degree of complementarity between workers in low-skill and high-skilled occupations, and in which non-verifiable soft skills are an important determinant of the wages of workers in low-skilled occupations. The model yields additional predictions on training, tenure and outsourcing which we also find support for in data.}
+      \field{number}{739}
+      \field{title}{The Innovation Premium to Soft Skills in Low-Skilled Occupations}
+      \field{type}{Working papers}
+      \field{year}{2019}
+      \verb{doi}
+      \verb None
+      \endverb
+      \verb{urlraw}
+      \verb https://ideas.repec.org/p/bfr/banfra/739.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org/p/bfr/banfra/739.html
+      \endverb
+      \keyw{: Innovation; Skill-biased Technological Change; Wage; Complementarity.}
+    \endentry
+    \entry{aiyagari_uninsured_1994}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=117116c90a98fcd0aa5ba0a075f068f0}{%
+           family={Aiyagari},
+           familyi={A\bibinitperiod},
+           given={S.\bibnamedelimi Rao},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{117116c90a98fcd0aa5ba0a075f068f0}
+      \strng{fullhash}{117116c90a98fcd0aa5ba0a075f068f0}
+      \strng{fullhashraw}{117116c90a98fcd0aa5ba0a075f068f0}
+      \strng{bibnamehash}{117116c90a98fcd0aa5ba0a075f068f0}
+      \strng{authorbibnamehash}{117116c90a98fcd0aa5ba0a075f068f0}
+      \strng{authornamehash}{117116c90a98fcd0aa5ba0a075f068f0}
+      \strng{authorfullhash}{117116c90a98fcd0aa5ba0a075f068f0}
+      \strng{authorfullhashraw}{117116c90a98fcd0aa5ba0a075f068f0}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We present a qualitative and quantitative analysis of the standard growth model modified to include precautionary saving motives and liquidity constraints. We address the impact on the aggregate saving rate, the importance of asset trading to individuals, and the relative inequality of wealth and income distributions.}
+      \field{issn}{0033-5533}
+      \field{journaltitle}{The Quarterly Journal of Economics}
+      \field{note}{Publisher: Oxford University Press}
+      \field{number}{3}
+      \field{title}{Uninsured Idiosyncratic Risk and Aggregate Saving}
+      \field{urlday}{24}
+      \field{urlmonth}{9}
+      \field{urlyear}{2024}
+      \field{volume}{109}
+      \field{year}{1994}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{659\bibrangedash 684}
+      \range{pages}{26}
+      \verb{doi}
+      \verb 10.2307/2118417
+      \endverb
+      \verb{file}
+      \verb JSTOR Full Text PDF:C\:\\Users\\yanglu\\Zotero\\storage\\2QRR8FAS\\Aiyagari - 1994 - Uninsured Idiosyncratic Risk and Aggregate Saving.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.jstor.org/stable/2118417
+      \endverb
+      \verb{url}
+      \verb https://www.jstor.org/stable/2118417
+      \endverb
+    \endentry
+    \entry{asam_generative_2025}{misc}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=42d75d1abaf07e53dd09dafae7c4a0c6}{%
+           family={Asam},
+           familyi={A\bibinitperiod},
+           given={Dominik},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d185009d16e198b02d91765b29f9915d}{%
+           family={Heller},
+           familyi={H\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Rochester, {NY}}%
+      }
+      \list{publisher}{1}{%
+        {Social Science Research Network}%
+      }
+      \strng{namehash}{e6d98d80b56c09856166d649f5b76223}
+      \strng{fullhash}{e6d98d80b56c09856166d649f5b76223}
+      \strng{fullhashraw}{e6d98d80b56c09856166d649f5b76223}
+      \strng{bibnamehash}{e6d98d80b56c09856166d649f5b76223}
+      \strng{authorbibnamehash}{e6d98d80b56c09856166d649f5b76223}
+      \strng{authornamehash}{e6d98d80b56c09856166d649f5b76223}
+      \strng{authorfullhash}{e6d98d80b56c09856166d649f5b76223}
+      \strng{authorfullhashraw}{e6d98d80b56c09856166d649f5b76223}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{{<}div{>} This paper provides new evidence on the impact of Generative {AI} on firm-level productivity by studying the funding and employment dynamics in a large-sca}
+      \field{langid}{english}
+      \field{number}{4877505}
+      \field{shorttitle}{Generative {AI} and Firm-level Productivity}
+      \field{title}{Generative {AI} and Firm-level Productivity: Evidence from Startup Funding and Employment Dynamics}
+      \field{urlday}{1}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.2139/ssrn.4877505
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\yanglu\\Zotero\\storage\\LYZULJER\\Asam and Heller - 2024 - Generative AI and Firm-level Productivity Evidence from Startup Funding and Employment Dynamics.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://papers.ssrn.com/abstract=4877505
+      \endverb
+      \verb{url}
+      \verb https://papers.ssrn.com/abstract=4877505
+      \endverb
+      \keyw{entrepreneurial finance,Generative {AI},{GitHub} Copilot,startup employment,startup productivity}
+    \endentry
+    \entry{Atkin2016}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f673f9090cb4a1f7275c7106b927c6e0}{%
+           family={Atkin},
+           familyi={A\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f673f9090cb4a1f7275c7106b927c6e0}
+      \strng{fullhash}{f673f9090cb4a1f7275c7106b927c6e0}
+      \strng{fullhashraw}{f673f9090cb4a1f7275c7106b927c6e0}
+      \strng{bibnamehash}{f673f9090cb4a1f7275c7106b927c6e0}
+      \strng{authorbibnamehash}{f673f9090cb4a1f7275c7106b927c6e0}
+      \strng{authornamehash}{f673f9090cb4a1f7275c7106b927c6e0}
+      \strng{authorfullhash}{f673f9090cb4a1f7275c7106b927c6e0}
+      \strng{authorfullhashraw}{f673f9090cb4a1f7275c7106b927c6e0}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Economic Review}
+      \field{month}{8}
+      \field{number}{8}
+      \field{title}{Endogenous Skill Acquisition and Export Manufacturing in Mexico}
+      \field{volume}{106}
+      \field{year}{2016}
+      \field{pages}{2046\bibrangedash 85}
+      \range{pages}{40}
+      \verb{doi}
+      \verb 10.1257/aer.20120901
+      \endverb
+      \verb{urlraw}
+      \verb https://www.aeaweb.org/articles?id=10.1257/aer.20120901
+      \endverb
+      \verb{url}
+      \verb https://www.aeaweb.org/articles?id=10.1257/aer.20120901
+      \endverb
+    \endentry
+    \entry{Autor2013}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=68f91bcaddbb4b488aea7cb0c43b670d}{%
+           family={Autor},
+           familyi={A\bibinitperiod},
+           given={David\bibnamedelima H.},
+           giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8ed98663662c03115a1f8a6926baf48c}{%
+           family={Dorn},
+           familyi={D\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8b346da0c11e41b7abab1b3e2c9abad0}
+      \strng{fullhash}{8b346da0c11e41b7abab1b3e2c9abad0}
+      \strng{fullhashraw}{8b346da0c11e41b7abab1b3e2c9abad0}
+      \strng{bibnamehash}{8b346da0c11e41b7abab1b3e2c9abad0}
+      \strng{authorbibnamehash}{8b346da0c11e41b7abab1b3e2c9abad0}
+      \strng{authornamehash}{8b346da0c11e41b7abab1b3e2c9abad0}
+      \strng{authorfullhash}{8b346da0c11e41b7abab1b3e2c9abad0}
+      \strng{authorfullhashraw}{8b346da0c11e41b7abab1b3e2c9abad0}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Economic Review}
+      \field{month}{8}
+      \field{number}{5}
+      \field{title}{The Growth of Low-Skill Service Jobs and the Polarization of the US Labor Market}
+      \field{volume}{103}
+      \field{year}{2013}
+      \field{pages}{1553\bibrangedash 97}
+      \range{pages}{45}
+      \verb{doi}
+      \verb 10.1257/aer.103.5.1553
+      \endverb
+      \verb{urlraw}
+      \verb https://www.aeaweb.org/articles?id=10.1257/aer.103.5.1553
+      \endverb
+      \verb{url}
+      \verb https://www.aeaweb.org/articles?id=10.1257/aer.103.5.1553
+      \endverb
+    \endentry
+    \entry{Beaudry2016}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=8eee1269cdd921335287266a1e5b6583}{%
+           family={Beaudry},
+           familyi={B\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f5f2a83b4933d59ed8eae857107fbea}{%
+           family={Green},
+           familyi={G\bibinitperiod},
+           given={David\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=91da2e9fe0d51e2cb239bc9508242b54}{%
+           family={Sand},
+           familyi={S\bibinitperiod},
+           given={Benjamin\bibnamedelima M.},
+           giveni={B\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fce58a7c99f664d3d003938650d29b18}
+      \strng{fullhash}{134f4c35da4377bf59cacb455946d4af}
+      \strng{fullhashraw}{134f4c35da4377bf59cacb455946d4af}
+      \strng{bibnamehash}{134f4c35da4377bf59cacb455946d4af}
+      \strng{authorbibnamehash}{134f4c35da4377bf59cacb455946d4af}
+      \strng{authornamehash}{fce58a7c99f664d3d003938650d29b18}
+      \strng{authorfullhash}{134f4c35da4377bf59cacb455946d4af}
+      \strng{authorfullhashraw}{134f4c35da4377bf59cacb455946d4af}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper argues that several of the poor labor market outcomes observed in the Great Recession can be traced back to a change in the demand pattern for skilled workers that started with the tech bust of 2000. In particular, we show that around the year 2000, the demand for cognitive tasks underwent a reversal. In response, high-skilled workers moved down the occupational ladder and increasingly displaced lower-educated workers in less skill-intensive jobs. While these effects were present before the financial crisis of 2008, they became more obvious after jobs associated with the housing bubble disappeared.}
+      \field{journaltitle}{Journal of Labor Economics}
+      \field{number}{S1}
+      \field{title}{The Great Reversal in the Demand for Skill and Cognitive Tasks}
+      \field{volume}{34}
+      \field{year}{2016}
+      \field{pages}{S199\bibrangedash S247}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1086/682347
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1086/682347
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1086/682347
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1086/682347
+      \endverb
+    \endentry
+    \entry{berg_should_2018}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=b3fde5f93d7e8ee5c5b17024f065e776}{%
+           family={Berg},
+           familyi={B\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=407d1591a8186c2f5864c5a2d9acaa4e}{%
+           family={Buffie},
+           familyi={B\bibinitperiod},
+           given={Edward\bibnamedelima F.},
+           giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8b9f2aa9271e6fec2aeeac0e6c9e193b}{%
+           family={Zanna},
+           familyi={Z\bibinitperiod},
+           given={Luis-Felipe},
+           giveni={L\bibinithyphendelim F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c9e2e2be18acb2f0734d3566306c4329}
+      \strng{fullhash}{e4536fd5656607058e29b820eafe1b28}
+      \strng{fullhashraw}{e4536fd5656607058e29b820eafe1b28}
+      \strng{bibnamehash}{e4536fd5656607058e29b820eafe1b28}
+      \strng{authorbibnamehash}{e4536fd5656607058e29b820eafe1b28}
+      \strng{authornamehash}{c9e2e2be18acb2f0734d3566306c4329}
+      \strng{authorfullhash}{e4536fd5656607058e29b820eafe1b28}
+      \strng{authorfullhashraw}{e4536fd5656607058e29b820eafe1b28}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Advances in artificial intelligence and robotics may be leading to a new industrial revolution. This paper presents a model with the minimum necessary features to analyze the implications for inequality and output. Two assumptions are key: “robot” capital is distinct from traditional capital in its degree of substitutability with human labor; and only capitalists and skilled workers save. We analyze a range of variants that reflect widely different views of how automation may transform the labor market. Our main results are surprisingly robust: automation is good for growth and bad for equality; in the benchmark model real wages fall in the short run and eventually rise, but “eventually” can easily take generations.}
+      \field{day}{1}
+      \field{issn}{0304-3932}
+      \field{journaltitle}{Journal of Monetary Economics}
+      \field{month}{8}
+      \field{shortjournal}{Journal of Monetary Economics}
+      \field{shorttitle}{Should we fear the robot revolution?}
+      \field{title}{Should we fear the robot revolution? (The correct answer is yes)}
+      \field{urlday}{4}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{volume}{97}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{117\bibrangedash 148}
+      \range{pages}{32}
+      \verb{doi}
+      \verb 10.1016/j.jmoneco.2018.05.014
+      \endverb
+      \verb{file}
+      \verb ScienceDirect Snapshot:C\:\\Users\\yanglu\\Zotero\\storage\\SAXVBL6M\\S0304393218302204.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0304393218302204
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0304393218302204
+      \endverb
+      \keyw{Artificial intelligence,Growth,Income distribution,Inequality,Robots,Technological change}
+    \endentry
+    \entry{bloomberg2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=208421fcbc090a62f099f85472ded9ba}{%
+           family={Bloomberg},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{208421fcbc090a62f099f85472ded9ba}
+      \strng{fullhash}{208421fcbc090a62f099f85472ded9ba}
+      \strng{fullhashraw}{208421fcbc090a62f099f85472ded9ba}
+      \strng{bibnamehash}{208421fcbc090a62f099f85472ded9ba}
+      \strng{authorbibnamehash}{208421fcbc090a62f099f85472ded9ba}
+      \strng{authornamehash}{208421fcbc090a62f099f85472ded9ba}
+      \strng{authorfullhash}{208421fcbc090a62f099f85472ded9ba}
+      \strng{authorfullhashraw}{208421fcbc090a62f099f85472ded9ba}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{accessed 02 Dec. 2024}
+      \field{title}{AI's Takeover of Entry-Level Tasks Is Making College Grads' Job Hunt Harder}
+      \field{urlday}{2}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.bloomberg.com/news/articles/2025-07-30/ai-s-takeover-of-entry-level-tasks-is-making-college-grads-job-hunt-harder
+      \endverb
+      \verb{url}
+      \verb https://www.bloomberg.com/news/articles/2025-07-30/ai-s-takeover-of-entry-level-tasks-is-making-college-grads-job-hunt-harder
+      \endverb
+    \endentry
+    \entry{calvino_effects_2025}{report}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=0562ec2c191bb9905561dbe16c9d4d1e}{%
+           family={Calvino},
+           familyi={C\bibinitperiod},
+           given={Flavio},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=07ee32ceec27e25e2d2f015b290d29c9}{%
+           family={Reijerink},
+           familyi={R\bibinitperiod},
+           given={Jelmer},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1a5a388399bd7f3b108bc52715fd8d5c}{%
+           family={Samek},
+           familyi={S\bibinitperiod},
+           given={Lea},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b0dd3b201657e1f81853d53cd0e63649}
+      \strng{fullhash}{687da8e3c9e7b519e016a25e3cc1a593}
+      \strng{fullhashraw}{687da8e3c9e7b519e016a25e3cc1a593}
+      \strng{bibnamehash}{687da8e3c9e7b519e016a25e3cc1a593}
+      \strng{authorbibnamehash}{687da8e3c9e7b519e016a25e3cc1a593}
+      \strng{authornamehash}{b0dd3b201657e1f81853d53cd0e63649}
+      \strng{authorfullhash}{687da8e3c9e7b519e016a25e3cc1a593}
+      \strng{authorfullhashraw}{687da8e3c9e7b519e016a25e3cc1a593}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{20}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{note}{Edition: 39 Series: {OECD} Artificial Intelligence Papers}
+      \field{title}{The effects of generative {AI} on productivity, innovation and entrepreneurship}
+      \field{type}{{OECD} Artificial Intelligence Papers}
+      \field{urlday}{1}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1787/b21df222-en
+      \endverb
+      \verb{file}
+      \verb PDF:C\:\\Users\\yanglu\\Zotero\\storage\\WS523NXT\\Calvino et al. - 2025 - The effects of generative AI on productivity, innovation and entrepreneurship.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.oecd.org/en/publications/the-effects-of-generative-ai-on-productivity-innovation-and-entrepreneurship_b21df222-en.html
+      \endverb
+      \verb{url}
+      \verb https://www.oecd.org/en/publications/the-effects-of-generative-ai-on-productivity-innovation-and-entrepreneurship_b21df222-en.html
+      \endverb
+    \endentry
+    \entry{chanda_rise_2008}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9b723cff08d85454096763353a5ea16f}{%
+           family={Chanda},
+           familyi={C\bibinitperiod},
+           given={Areendam},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9b723cff08d85454096763353a5ea16f}
+      \strng{fullhash}{9b723cff08d85454096763353a5ea16f}
+      \strng{fullhashraw}{9b723cff08d85454096763353a5ea16f}
+      \strng{bibnamehash}{9b723cff08d85454096763353a5ea16f}
+      \strng{authorbibnamehash}{9b723cff08d85454096763353a5ea16f}
+      \strng{authornamehash}{9b723cff08d85454096763353a5ea16f}
+      \strng{authorfullhash}{9b723cff08d85454096763353a5ea16f}
+      \strng{authorfullhashraw}{9b723cff08d85454096763353a5ea16f}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Over the past 25 years, returns to higher education have increased while the household savings rate has fallen to almost zero. In this paper, we present a representative agent model where a decline in savings emerges as an outcome of an exogenously driven increase in the return to education. In particular, we ﬁnd that a rise in the return to education raises the education spending ratio by less than what it reduces the aggregate savings rate, and for some parameter values, it actually reduces both ratios. The paper highlights the fact that a part of the decline in savings may reﬂect a relative reallocation towards human capital investments away from physical capital.}
+      \field{issn}{01651889}
+      \field{journaltitle}{Journal of Economic Dynamics and Control}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{2}
+      \field{shortjournal}{Journal of Economic Dynamics and Control}
+      \field{title}{The rise in returns to education and the decline in household savings}
+      \field{urlday}{7}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{32}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{436\bibrangedash 469}
+      \range{pages}{34}
+      \verb{doi}
+      \verb 10.1016/j.jedc.2006.09.014
+      \endverb
+      \verb{file}
+      \verb PDF:C\:\\Users\\yanglu\\Zotero\\storage\\CE5EDWD2\\Chanda - 2008 - The rise in returns to education and the decline in household savings.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0165188907000681
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0165188907000681
+      \endverb
+    \endentry
+    \entry{Chang2006}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=11d7292adade0dc1fd211231fb13323b}{%
+           family={Chang},
+           familyi={C\bibinitperiod},
+           given={Yongsung},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=73240a4825efd19ede20188abca8a2e8}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Sun-Bin},
+           giveni={S\bibinithyphendelim B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Blackwell Publishing, Inc.}%
+      }
+      \strng{namehash}{55716ee1e0259c37516a0754e09816c0}
+      \strng{fullhash}{55716ee1e0259c37516a0754e09816c0}
+      \strng{fullhashraw}{55716ee1e0259c37516a0754e09816c0}
+      \strng{bibnamehash}{55716ee1e0259c37516a0754e09816c0}
+      \strng{authorbibnamehash}{55716ee1e0259c37516a0754e09816c0}
+      \strng{authornamehash}{55716ee1e0259c37516a0754e09816c0}
+      \strng{authorfullhash}{55716ee1e0259c37516a0754e09816c0}
+      \strng{authorfullhashraw}{55716ee1e0259c37516a0754e09816c0}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1468-2354}
+      \field{journaltitle}{International Economic Review}
+      \field{number}{1}
+      \field{title}{From Individual to Aggregate Labor Supply: A Quantitative Analysis based on a Heterogeneous Agent Macroeconomy}
+      \field{volume}{47}
+      \field{year}{2006}
+      \field{pages}{1\bibrangedash 27}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.1111/j.1468-2354.2006.00370.x
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1111/j.1468-2354.2006.00370.x
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1111/j.1468-2354.2006.00370.x
+      \endverb
+    \endentry
+    \entry{cortes_disappearing_2017}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=43cd996342ca48cba6aeadc855199cf1}{%
+           family={Cortes},
+           familyi={C\bibinitperiod},
+           given={Guido\bibnamedelima Matias},
+           giveni={G\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5a5bb0f9c460d98522e08443ec241eed}{%
+           family={Jaimovich},
+           familyi={J\bibinitperiod},
+           given={Nir},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1df6b94fc56dd65dc6f52201e4d5474f}{%
+           family={Siu},
+           familyi={S\bibinitperiod},
+           given={Henry\bibnamedelima E},
+           giveni={H\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c661bcfd160236f8d87a6f6098a5bbae}
+      \strng{fullhash}{b5da31d9ec192174caef7e2515d9508b}
+      \strng{fullhashraw}{b5da31d9ec192174caef7e2515d9508b}
+      \strng{bibnamehash}{b5da31d9ec192174caef7e2515d9508b}
+      \strng{authorbibnamehash}{b5da31d9ec192174caef7e2515d9508b}
+      \strng{authornamehash}{c661bcfd160236f8d87a6f6098a5bbae}
+      \strng{authorfullhash}{b5da31d9ec192174caef7e2515d9508b}
+      \strng{authorfullhashraw}{b5da31d9ec192174caef7e2515d9508b}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{We study the deterioration of employment in middle-wage, routine occupations in the United States in the last 35 years. The decline is primarily drive…}
+      \field{day}{1}
+      \field{issn}{0304-3932}
+      \field{journaltitle}{Journal of Monetary Economics}
+      \field{langid}{american}
+      \field{month}{11}
+      \field{note}{Publisher: North-Holland}
+      \field{shorttitle}{Disappearing routine jobs}
+      \field{title}{Disappearing routine jobs: Who, how, and why?}
+      \field{urlday}{18}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{91}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{69\bibrangedash 87}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1016/j.jmoneco.2017.09.006
+      \endverb
+      \verb{file}
+      \verb Cortes et al. - Disappearing Routine Jobs Who, How, and Why.pdf:C\:\\Users\\yanglu\\Zotero\\storage\\8DEQJJK4\\Cortes et al. - Disappearing Routine Jobs Who, How, and Why.pdf:application/pdf;Full Text:C\:\\Users\\yanglu\\Zotero\\storage\\LWSMFJVQ\\2017 - Disappearing routine jobs Who, how, and why.pdf:application/pdf;Snapshot:C\:\\Users\\yanglu\\Zotero\\storage\\7C7KWJPD\\S0304393217300958.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/abs/pii/S0304393217300958
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/abs/pii/S0304393217300958
+      \endverb
+    \endentry
+    \entry{Dauth2021}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=17460fc0f9bd25d2bd8138dbc9bdf0af}{%
+           family={Dauth},
+           familyi={D\bibinitperiod},
+           given={Wolfgang},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=818b7c148da5c51f43c1a55033c2fd66}{%
+           family={Findeisen},
+           familyi={F\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=16f942209194eff26c1761dca600c0dc}{%
+           family={Suedekum},
+           familyi={S\bibinitperiod},
+           given={Jens},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=808c4702d63636035c5311735567182b}{%
+           family={Woessner},
+           familyi={W\bibinitperiod},
+           given={Nicole},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f9e1327c815870c55f298e0755f39ab9}
+      \strng{fullhash}{3a22532bbe8ad076bc478d86120d3451}
+      \strng{fullhashraw}{3a22532bbe8ad076bc478d86120d3451}
+      \strng{bibnamehash}{f9e1327c815870c55f298e0755f39ab9}
+      \strng{authorbibnamehash}{f9e1327c815870c55f298e0755f39ab9}
+      \strng{authornamehash}{f9e1327c815870c55f298e0755f39ab9}
+      \strng{authorfullhash}{3a22532bbe8ad076bc478d86120d3451}
+      \strng{authorfullhashraw}{3a22532bbe8ad076bc478d86120d3451}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{We use detailed administrative data to study the adjustment of local labor markets to industrial robots in Germany. Robot exposure, as predicted by a shift-share variable, is associated with displacement effects in manufacturing, but those are fully offset by new jobs in services. The incidence mostly falls on young workers just entering the labor force. Automation is related to more stable employment within firms for incumbents, and this is driven by workers taking over new tasks in their original plants. Several measures indicate that those new jobs are of higher quality than the previous ones. Young workers also adapt their educational choices, and substitute away from vocational training towards colleges and universities. Finally, industrial robots have benefited workers in occupations with complementary tasks, such as managers or technical scientists.}}
+      \field{issn}{1542-4766}
+      \field{journaltitle}{Journal of the European Economic Association}
+      \field{month}{05}
+      \field{number}{6}
+      \field{title}{{The Adjustment of Labor Markets to Robots}}
+      \field{volume}{19}
+      \field{year}{2021}
+      \field{pages}{3104\bibrangedash 3153}
+      \range{pages}{50}
+      \verb{doi}
+      \verb 10.1093/jeea/jvab012
+      \endverb
+      \verb{eprint}
+      \verb https://academic.oup.com/jeea/article-pdf/19/6/3104/41987039/jvab012\_dauth\_etal\_online\_appendix.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/jeea/jvab012
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/jeea/jvab012
+      \endverb
+    \endentry
+    \entry{DiGiacomo2023}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=5ebd55a1580bd9993f575a0c8af5567b}{%
+           family={Di\bibnamedelima Giacomo},
+           familyi={D\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Giuseppe},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3b0f39948951f98fcd57184a9f0f641e}{%
+           family={Lerch},
+           familyi={L\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {University of Wisconsin Press}%
+      }
+      \strng{namehash}{7d1a054a185c36540fccf029494bc92a}
+      \strng{fullhash}{7d1a054a185c36540fccf029494bc92a}
+      \strng{fullhashraw}{7d1a054a185c36540fccf029494bc92a}
+      \strng{bibnamehash}{7d1a054a185c36540fccf029494bc92a}
+      \strng{authorbibnamehash}{7d1a054a185c36540fccf029494bc92a}
+      \strng{authornamehash}{7d1a054a185c36540fccf029494bc92a}
+      \strng{authorfullhash}{7d1a054a185c36540fccf029494bc92a}
+      \strng{authorfullhashraw}{7d1a054a185c36540fccf029494bc92a}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper analyzes the link between automation and education by investigating the impact of the introduction of industrial robots on college enrollment in the US. We exploit exogenous variation in the adoption of robots across US local labor markets and show that for every additional robot adopted four individuals enroll in college. This result is driven by rising enrollment rates in local community colleges. We also observe a shift in graduations towards more applied fields. Finally, we show that the increase in college enrollment is primarily due to reduced opportunity costs, rather than an increase in the college wage premium.}
+      \field{issn}{0022-166X}
+      \field{journaltitle}{Journal of Human Resources}
+      \field{title}{Automation and Human Capital Adjustment}
+      \field{year}{2023}
+      \verb{doi}
+      \verb 10.3368/jhr.1222-12684R1
+      \endverb
+      \verb{eprint}
+      \verb https://jhr.uwpress.org/content/early/2023/12/01/jhr.1222-12684R1.full.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://jhr.uwpress.org/content/early/2023/12/01/jhr.1222-12684R1
+      \endverb
+      \verb{url}
+      \verb https://jhr.uwpress.org/content/early/2023/12/01/jhr.1222-12684R1
+      \endverb
+    \endentry
+    \entry{Faber2022}{report}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=b6d384d14fc7007e2734452a056207c4}{%
+           family={Faber},
+           familyi={F\bibinitperiod},
+           given={Marius},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=20241e48a48acab94a07b2b4d4d67aff}{%
+           family={Sarto},
+           familyi={S\bibinitperiod},
+           given={Andres\bibnamedelima P},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=638b1eae37f2993c3561368bb54f19ee}{%
+           family={Tabellini},
+           familyi={T\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {National Bureau of Economic Research}%
+      }
+      \strng{namehash}{f42e873d6b7853bd43da12133ef71e1f}
+      \strng{fullhash}{77716020c278d5b30b17bc61bd327742}
+      \strng{fullhashraw}{77716020c278d5b30b17bc61bd327742}
+      \strng{bibnamehash}{77716020c278d5b30b17bc61bd327742}
+      \strng{authorbibnamehash}{77716020c278d5b30b17bc61bd327742}
+      \strng{authornamehash}{f42e873d6b7853bd43da12133ef71e1f}
+      \strng{authorfullhash}{77716020c278d5b30b17bc61bd327742}
+      \strng{authorfullhashraw}{77716020c278d5b30b17bc61bd327742}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Migration is a key mechanism through which local labor markets adjust to economic shocks. In this paper, we analyze the migration response of American workers to two of the most important shocks that hit US manufacturing since the 1990s: Chinese import competition and the introduction of industrial robots. Exploiting plausibly exogenous variation in exposure across US local labor markets over time, we establish a new fact. Even though both shocks drastically reduced employment in the manufacturing sector, only robots led to a sizable decline in population size. We provide evidence that negative employment spillovers outside manufacturing, caused by robots but not by Chinese imports, can explain the different migration responses. We interpret our findings through the lens of a model that highlights two mechanisms: the cost savings that each shock provides and the degree of complementarity between directly and indirectly exposed industries.}
+      \field{month}{5}
+      \field{number}{30048}
+      \field{series}{Working Paper Series}
+      \field{title}{Local Shocks and Internal Migration: The Disparate Effects of Robots and Chinese Imports in the US}
+      \field{type}{Working Paper}
+      \field{year}{2022}
+      \verb{doi}
+      \verb 10.3386/w30048
+      \endverb
+      \verb{urlraw}
+      \verb http://www.nber.org/papers/w30048
+      \endverb
+      \verb{url}
+      \verb http://www.nber.org/papers/w30048
+      \endverb
+    \endentry
+    \entry{Goos2007}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=f38fa122b7a8e6744967b7eecf1219c0}{%
+           family={Goos},
+           familyi={G\bibinitperiod},
+           given={Maarten},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d348adb11692d69e12aef759f4c55f0}{%
+           family={Manning},
+           familyi={M\bibinitperiod},
+           given={Alan},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{20ba1cf6aa760f07d4d9520153f08370}
+      \strng{fullhash}{20ba1cf6aa760f07d4d9520153f08370}
+      \strng{fullhashraw}{20ba1cf6aa760f07d4d9520153f08370}
+      \strng{bibnamehash}{20ba1cf6aa760f07d4d9520153f08370}
+      \strng{authorbibnamehash}{20ba1cf6aa760f07d4d9520153f08370}
+      \strng{authornamehash}{20ba1cf6aa760f07d4d9520153f08370}
+      \strng{authorfullhash}{20ba1cf6aa760f07d4d9520153f08370}
+      \strng{authorfullhashraw}{20ba1cf6aa760f07d4d9520153f08370}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{This paper shows that the United Kingdom since 1975 has exhibited a pattern of job polarization with rises in employment shares in the highest- and lowest-wage occupations. This is not entirely consistent with the idea of skill-biased technical change as a hypothesis about the impact of technology on the labor market. We argue that the “routinization” hypothesis recently proposed by Autor, Levy, and Murnane (2003) is a better explanation of job polarization, though other factors may also be important. We show that job polarization can explain one-third of the rise in the log(50/10) wage differential and one-half of the rise in the log(90/50).}}
+      \field{issn}{0034-6535}
+      \field{journaltitle}{The Review of Economics and Statistics}
+      \field{month}{02}
+      \field{number}{1}
+      \field{title}{{Lousy and Lovely Jobs: The Rising Polarization of Work in Britain}}
+      \field{volume}{89}
+      \field{year}{2007}
+      \field{pages}{118\bibrangedash 133}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1162/rest.89.1.118
+      \endverb
+      \verb{eprint}
+      \verb https://direct.mit.edu/rest/article-pdf/89/1/118/1614294/rest.89.1.118.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1162/rest.89.1.118
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1162/rest.89.1.118
+      \endverb
+    \endentry
+    \entry{Goos2014}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=f38fa122b7a8e6744967b7eecf1219c0}{%
+           family={Goos},
+           familyi={G\bibinitperiod},
+           given={Maarten},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d348adb11692d69e12aef759f4c55f0}{%
+           family={Manning},
+           familyi={M\bibinitperiod},
+           given={Alan},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8751a205b8b6f06cd3c15e4f750bddbd}{%
+           family={Salomons},
+           familyi={S\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b374832c35f71e738a7da4a25d5edccd}
+      \strng{fullhash}{cc7b73bcd92a30bd8180e9dacf502888}
+      \strng{fullhashraw}{cc7b73bcd92a30bd8180e9dacf502888}
+      \strng{bibnamehash}{cc7b73bcd92a30bd8180e9dacf502888}
+      \strng{authorbibnamehash}{cc7b73bcd92a30bd8180e9dacf502888}
+      \strng{authornamehash}{b374832c35f71e738a7da4a25d5edccd}
+      \strng{authorfullhash}{cc7b73bcd92a30bd8180e9dacf502888}
+      \strng{authorfullhashraw}{cc7b73bcd92a30bd8180e9dacf502888}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Economic Review}
+      \field{month}{8}
+      \field{number}{8}
+      \field{title}{Explaining Job Polarization: Routine-Biased Technological Change and Offshoring}
+      \field{volume}{104}
+      \field{year}{2014}
+      \field{pages}{2509\bibrangedash 26}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1257/aer.104.8.2509
+      \endverb
+      \verb{urlraw}
+      \verb https://www.aeaweb.org/articles?id=10.1257/aer.104.8.2509
+      \endverb
+      \verb{url}
+      \verb https://www.aeaweb.org/articles?id=10.1257/aer.104.8.2509
+      \endverb
+    \endentry
+    \entry{hemous_rise_2022}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=8bbde1caa3e63405b58a75ccb3976ab7}{%
+           family={Hémous},
+           familyi={H\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f2bbcc59d7ec1d7e9c7353132c629429}{%
+           family={Olsen},
+           familyi={O\bibinitperiod},
+           given={Morten},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{39e72f7731f6ca256b09289102c683f2}
+      \strng{fullhash}{39e72f7731f6ca256b09289102c683f2}
+      \strng{fullhashraw}{39e72f7731f6ca256b09289102c683f2}
+      \strng{bibnamehash}{39e72f7731f6ca256b09289102c683f2}
+      \strng{authorbibnamehash}{39e72f7731f6ca256b09289102c683f2}
+      \strng{authornamehash}{39e72f7731f6ca256b09289102c683f2}
+      \strng{authorfullhash}{39e72f7731f6ca256b09289102c683f2}
+      \strng{authorfullhashraw}{39e72f7731f6ca256b09289102c683f2}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{We build an endogenous growth model with automation (the replacement of low-skill workers with machines) and horizontal innovation (the creation of new products). Over time, the share of automation innovations endogenously increases through an increase in low-skill wages, leading to an increase in the skill premium and a decline in the labor share. We calibrate the model to the {US} economy and show that it quantitatively replicates the paths of the skill premium, the labor share, and labor productivity. Our model offers a new perspective on recent trends in the income distribution by showing that they can be explained endogenously.}
+      \field{issn}{1945-7707}
+      \field{journaltitle}{American Economic Journal: Macroeconomics}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{1}
+      \field{shorttitle}{The Rise of the Machines}
+      \field{title}{The Rise of the Machines: Automation, Horizontal Innovation, and Income Inequality}
+      \field{urlday}{4}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{volume}{14}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{179\bibrangedash 223}
+      \range{pages}{45}
+      \verb{doi}
+      \verb 10.1257/mac.20160164
+      \endverb
+      \verb{file}
+      \verb Submitted Version:C\:\\Users\\yanglu\\Zotero\\storage\\DFF8G7Z5\\Hémous and Olsen - 2022 - The Rise of the Machines Automation, Horizontal Innovation, and Income Inequality.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.aeaweb.org/articles?id=10.1257/mac.20160164
+      \endverb
+      \verb{url}
+      \verb https://www.aeaweb.org/articles?id=10.1257/mac.20160164
+      \endverb
+      \keyw{Aggregate Factor Income Distribution,Diffusion Processes,One,Two,and Multisector Growth Models,Human Capital; Skills; Occupational Choice; Labor Productivity,Labor Productivity,Wage Level and Structure,Occupational Choice,One,Two,and Multisector Growth Models,Personal Income,Wealth,and Their Distributions,Personal Income,Wealth,and Their Distributions,Aggregate Factor Income Distribution,Human Capital,Skills,Technological Change: Choices and Consequences; Diffusion Processes,Wage Differentials,Technological Change: Choices and Consequences,Wage Level and Structure; Wage Differentials}
+    \endentry
+    \entry{hesa2022}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b14600de06eb1fcba2d5e220f9fb37db}{%
+           family={{Higher Education Strategy Associates}},
+           familyi={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{b14600de06eb1fcba2d5e220f9fb37db}
+      \strng{fullhash}{b14600de06eb1fcba2d5e220f9fb37db}
+      \strng{fullhashraw}{b14600de06eb1fcba2d5e220f9fb37db}
+      \strng{bibnamehash}{b14600de06eb1fcba2d5e220f9fb37db}
+      \strng{authorbibnamehash}{b14600de06eb1fcba2d5e220f9fb37db}
+      \strng{authornamehash}{b14600de06eb1fcba2d5e220f9fb37db}
+      \strng{authorfullhash}{b14600de06eb1fcba2d5e220f9fb37db}
+      \strng{authorfullhashraw}{b14600de06eb1fcba2d5e220f9fb37db}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{accessed 02 Dec. 2024}
+      \field{title}{World Higher Education: Institutions, Students and Funding}
+      \field{urlday}{2}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://higheredstrategy.com/world-higher-education-institutions-students-and-funding/
+      \endverb
+      \verb{url}
+      \verb https://higheredstrategy.com/world-higher-education-institutions-students-and-funding/
+      \endverb
+    \endentry
+    \entry{huggett_sources_2011}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=bf92eb7565da8011a5bdd496b20c5396}{%
+           family={Huggett},
+           familyi={H\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7e567ef06dc21991254489330467e5aa}{%
+           family={Ventura},
+           familyi={V\bibinitperiod},
+           given={Gustavo},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5d5eb112bd28131e79c9b739aae3bbaf}{%
+           family={{Yaron, Amir}},
+           familyi={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{c929e5c0be0d252e16cd1875257e62ac}
+      \strng{fullhash}{480069c5fd810b0bbcc5b3be4323a007}
+      \strng{fullhashraw}{480069c5fd810b0bbcc5b3be4323a007}
+      \strng{bibnamehash}{480069c5fd810b0bbcc5b3be4323a007}
+      \strng{authorbibnamehash}{480069c5fd810b0bbcc5b3be4323a007}
+      \strng{authornamehash}{c929e5c0be0d252e16cd1875257e62ac}
+      \strng{authorfullhash}{480069c5fd810b0bbcc5b3be4323a007}
+      \strng{authorfullhashraw}{480069c5fd810b0bbcc5b3be4323a007}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The American Economic Review}
+      \field{langid}{english}
+      \field{number}{7}
+      \field{title}{Sources of Lifetime Inequality}
+      \field{volume}{101}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{pages}{2923\bibrangedash 2954}
+      \range{pages}{32}
+      \verb{file}
+      \verb PDF:C\:\\Users\\yanglu\\Zotero\\storage\\HSDSK4AM\\Huggett and Ventura - 2025 - Sources of Lifetime Inequality.pdf:application/pdf
+      \endverb
+    \endentry
+    \entry{Lerch2021}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3b0f39948951f98fcd57184a9f0f641e}{%
+           family={Lerch},
+           familyi={L\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {USI Università della Svizzera italiana}%
+      }
+      \strng{namehash}{3b0f39948951f98fcd57184a9f0f641e}
+      \strng{fullhash}{3b0f39948951f98fcd57184a9f0f641e}
+      \strng{fullhashraw}{3b0f39948951f98fcd57184a9f0f641e}
+      \strng{bibnamehash}{3b0f39948951f98fcd57184a9f0f641e}
+      \strng{authorbibnamehash}{3b0f39948951f98fcd57184a9f0f641e}
+      \strng{authornamehash}{3b0f39948951f98fcd57184a9f0f641e}
+      \strng{authorfullhash}{3b0f39948951f98fcd57184a9f0f641e}
+      \strng{authorfullhashraw}{3b0f39948951f98fcd57184a9f0f641e}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper analyzes the impact of one of the leading automation technologies of the last decades, industrial robots, on the declining labor force participation in the US. Exploiting exogenous variation in the adoption of robots across local labor markets and over time, I find that, on average, one additional robot drives two workers out of the labor force. Despite the adverse impact of robots, there is no evidence that displaced workers are migrating away from exposed labor markets or that labor force dropouts have been compensated by the labor force participation of a family member. Instead, I find that robot adoption leads to rising enrollment in post-secondary education institutions among young individuals, early retirement of older workers and a considerable fraction of middle-aged workers enrolling in disability insurance.}
+      \field{month}{7}
+      \field{number}{2003}
+      \field{title}{{Robots and Nonparticipation in the US: Where Have All the Workers Gone?}}
+      \field{type}{IdEP Economic Papers}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://ideas.repec.org/p/lug/wpidep/2003.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org/p/lug/wpidep/2003.html
+      \endverb
+      \keyw{industrial robots; labor force participation; education; disability; early retirement}
+    \endentry
+    \entry{oliwyman2024}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3c516f10e48dac1545ceaccdce8d8b76}{%
+           family={{Oliver Wyman Forum}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{3c516f10e48dac1545ceaccdce8d8b76}
+      \strng{fullhash}{3c516f10e48dac1545ceaccdce8d8b76}
+      \strng{fullhashraw}{3c516f10e48dac1545ceaccdce8d8b76}
+      \strng{bibnamehash}{3c516f10e48dac1545ceaccdce8d8b76}
+      \strng{authorbibnamehash}{3c516f10e48dac1545ceaccdce8d8b76}
+      \strng{authornamehash}{3c516f10e48dac1545ceaccdce8d8b76}
+      \strng{authorfullhash}{3c516f10e48dac1545ceaccdce8d8b76}
+      \strng{authorfullhashraw}{3c516f10e48dac1545ceaccdce8d8b76}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{How Generative {AI} is Transforming Business and Society}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb PDF:C\:\\Users\\yanglu\\Zotero\\storage\\WQW27QNI\\AI-Report-2024-Davos.pdf:application/pdf
+      \endverb
+    \endentry
+    \entry{park_constrained_2018}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=348313e1a049276adeb2d587fae236e0}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Yena},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{348313e1a049276adeb2d587fae236e0}
+      \strng{fullhash}{348313e1a049276adeb2d587fae236e0}
+      \strng{fullhashraw}{348313e1a049276adeb2d587fae236e0}
+      \strng{bibnamehash}{348313e1a049276adeb2d587fae236e0}
+      \strng{authorbibnamehash}{348313e1a049276adeb2d587fae236e0}
+      \strng{authornamehash}{348313e1a049276adeb2d587fae236e0}
+      \strng{authorfullhash}{348313e1a049276adeb2d587fae236e0}
+      \strng{authorfullhashraw}{348313e1a049276adeb2d587fae236e0}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper investigates whether capital and human capital are over-accumulated in an incomplete market economy. As in Davila et al. (2012), whether capital is over-accumulated depends on how the pecuniary externalities affect insurance and redistribution. In a human capital economy, however, not only capital but also human capital generates externalities and an additional channel arises that has implications for the overaccumulation (under-accumulation) of capital (human capital). The income sources of the poor and the correlation between wealth and human capital are crucial for the implication of pecuniary externalities. Realistically calibrated models exhibit under-accumulation (overaccumulation) of capital (human capital).}
+      \field{issn}{1945-7707}
+      \field{journaltitle}{American Economic Journal: Macroeconomics}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{3}
+      \field{title}{Constrained Efficiency in a Human Capital Model}
+      \field{urlday}{21}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{10}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{179\bibrangedash 214}
+      \range{pages}{36}
+      \verb{doi}
+      \verb 10.1257/mac.20160405
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\yanglu\\Zotero\\storage\\CRRP5UAN\\Park - 2018 - Constrained Efficiency in a Human Capital Model.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.aeaweb.org/articles?id=10.1257/mac.20160405
+      \endverb
+      \verb{url}
+      \verb https://www.aeaweb.org/articles?id=10.1257/mac.20160405
+      \endverb
+      \keyw{Wage Differentials,Wage Level and Structure; Wage Differentials,Externalities,Human Capital; Skills; Occupational Choice; Labor Productivity,Incomplete Markets,Incomplete Markets,Externalities,Returns to Education,Time Allocation and Labor Supply,Human Capital,Labor Productivity,Wage Level and Structure,Occupational Choice,Returns to Education,Skills,Time Allocation and Labor Supply}
+    \endentry
+    \entry{pew2024}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=83778ea1c38ca19c82fc35bb68b48c1b}{%
+           family={{Pew Research Center}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{83778ea1c38ca19c82fc35bb68b48c1b}
+      \strng{fullhash}{83778ea1c38ca19c82fc35bb68b48c1b}
+      \strng{fullhashraw}{83778ea1c38ca19c82fc35bb68b48c1b}
+      \strng{bibnamehash}{83778ea1c38ca19c82fc35bb68b48c1b}
+      \strng{authorbibnamehash}{83778ea1c38ca19c82fc35bb68b48c1b}
+      \strng{authornamehash}{83778ea1c38ca19c82fc35bb68b48c1b}
+      \strng{authorfullhash}{83778ea1c38ca19c82fc35bb68b48c1b}
+      \strng{authorfullhashraw}{83778ea1c38ca19c82fc35bb68b48c1b}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{accessed 02 Dec. 2024}
+      \field{title}{Public Views on the Value of a College Degree}
+      \field{urlday}{2}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.pewresearch.org/social-trends/2024/05/23/public-views-on-the-value-of-a-college-degree/
+      \endverb
+      \verb{url}
+      \verb https://www.pewresearch.org/social-trends/2024/05/23/public-views-on-the-value-of-a-college-degree/
+      \endverb
+    \endentry
+    \entry{Prettner2020}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=21b6e38f03399b2f20528c99cac36df2}{%
+           family={Prettner},
+           familyi={P\bibinitperiod},
+           given={Klaus},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b4749641d42e0f73034cd0334cdaab97}{%
+           family={Strulik},
+           familyi={S\bibinitperiod},
+           given={Holger},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bf5cf5ba20be536192687d8c66f1f202}
+      \strng{fullhash}{bf5cf5ba20be536192687d8c66f1f202}
+      \strng{fullhashraw}{bf5cf5ba20be536192687d8c66f1f202}
+      \strng{bibnamehash}{bf5cf5ba20be536192687d8c66f1f202}
+      \strng{authorbibnamehash}{bf5cf5ba20be536192687d8c66f1f202}
+      \strng{authornamehash}{bf5cf5ba20be536192687d8c66f1f202}
+      \strng{authorfullhash}{bf5cf5ba20be536192687d8c66f1f202}
+      \strng{authorfullhashraw}{bf5cf5ba20be536192687d8c66f1f202}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The effects of automation on economic growth, education, and inequality are analyzed using an R&D-driven growth model with endogenous education in which high-skilled workers are complements to machines and low-skilled workers are substitutes for machines. The model predicts that automation leads to an increasing share of college graduates, increasing income and wealth inequality, and a declining labor share. We show that standard policy suggestions for the age of automation can trigger unintended side effects on inequality, growth, and welfare, irrespective of whether they are financed by progressive wage taxation or by a robot tax.}
+      \field{issn}{0304-3932}
+      \field{journaltitle}{Journal of Monetary Economics}
+      \field{title}{Innovation, automation, and inequality: Policy challenges in the race against the machine}
+      \field{volume}{116}
+      \field{year}{2020}
+      \field{pages}{249\bibrangedash 265}
+      \range{pages}{17}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.jmoneco.2019.10.012
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0304393219301965
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0304393219301965
+      \endverb
+      \keyw{Automation,Education,Innovation-Driven growth,Inequality,Policy responses}
+    \endentry
+    \entry{publicagenda2022}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9ca0803e095539e23428075d526b84ab}{%
+           family={{Public Agenda}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{9ca0803e095539e23428075d526b84ab}
+      \strng{fullhash}{9ca0803e095539e23428075d526b84ab}
+      \strng{fullhashraw}{9ca0803e095539e23428075d526b84ab}
+      \strng{bibnamehash}{9ca0803e095539e23428075d526b84ab}
+      \strng{authorbibnamehash}{9ca0803e095539e23428075d526b84ab}
+      \strng{authornamehash}{9ca0803e095539e23428075d526b84ab}
+      \strng{authorfullhash}{9ca0803e095539e23428075d526b84ab}
+      \strng{authorfullhashraw}{9ca0803e095539e23428075d526b84ab}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{accessed 02 Dec. 2024}
+      \field{title}{Young Americans Without College Degrees Are Most Skeptical About the Value of Higher Education}
+      \field{urlday}{2}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.publicagenda.org/research/young-americans-without-college-degrees-are-most-skeptical-about-the-value-of-higher-education/
+      \endverb
+      \verb{url}
+      \verb https://www.publicagenda.org/research/young-americans-without-college-degrees-are-most-skeptical-about-the-value-of-higher-education/
+      \endverb
+    \endentry
+    \entry{reveliolabs2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=87747c93845d0afe10f9b70d1849be40}{%
+           family={{Revelio Labs}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{87747c93845d0afe10f9b70d1849be40}
+      \strng{fullhash}{87747c93845d0afe10f9b70d1849be40}
+      \strng{fullhashraw}{87747c93845d0afe10f9b70d1849be40}
+      \strng{bibnamehash}{87747c93845d0afe10f9b70d1849be40}
+      \strng{authorbibnamehash}{87747c93845d0afe10f9b70d1849be40}
+      \strng{authornamehash}{87747c93845d0afe10f9b70d1849be40}
+      \strng{authorfullhash}{87747c93845d0afe10f9b70d1849be40}
+      \strng{authorfullhashraw}{87747c93845d0afe10f9b70d1849be40}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{accessed 02 Dec. 2024}
+      \field{title}{Is AI Responsible for the Rise in Entry-Level Unemployment?}
+      \field{urlday}{2}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.reveliolabs.com/news/macro/is-ai-responsible-for-the-rise-in-entry-level-unemployment/
+      \endverb
+      \verb{url}
+      \verb https://www.reveliolabs.com/news/macro/is-ai-responsible-for-the-rise-in-entry-level-unemployment/
+      \endverb
+    \endentry
+    \entry{Sachs2012}{report}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=f49fa8d4c5a359424f8d716560c7e2a4}{%
+           family={Sachs},
+           familyi={S\bibinitperiod},
+           given={Jeffrey\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0a162249aead01329c372710972589fa}{%
+           family={Kotlikoff},
+           familyi={K\bibinitperiod},
+           given={Laurence\bibnamedelima J.},
+           giveni={L\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {National Bureau of Economic Research, Inc}%
+      }
+      \strng{namehash}{bae18bbbc1901291bfc6bfe67ca6ab20}
+      \strng{fullhash}{bae18bbbc1901291bfc6bfe67ca6ab20}
+      \strng{fullhashraw}{bae18bbbc1901291bfc6bfe67ca6ab20}
+      \strng{bibnamehash}{bae18bbbc1901291bfc6bfe67ca6ab20}
+      \strng{authorbibnamehash}{bae18bbbc1901291bfc6bfe67ca6ab20}
+      \strng{authornamehash}{bae18bbbc1901291bfc6bfe67ca6ab20}
+      \strng{authorfullhash}{bae18bbbc1901291bfc6bfe67ca6ab20}
+      \strng{authorfullhashraw}{bae18bbbc1901291bfc6bfe67ca6ab20}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Are smarter machines our children's friends? Or can they bring about a transfer from our relatively unskilled children to ourselves that leaves our children and, indeed, all our descendants - worse off? This, indeed, is the dire message of the model presented here in which smart machines substitute directly for young unskilled labor, but complement older skilled labor. The depression in the wages of the young then limits their ability to save and invest in their own skill acquisition and physical capital. This, in turn, means the next generation of young, initially unskilled workers, encounter an economy with less human and physical capital, which further drives down their wages. This process stabilizes through time, but potentially entails each newborn generation being worse off than its predecessor. We illustrate the potential for smart machines to engender long-term misery in a highly stylized two-period model. We also show that appropriate generational policy can be used to transform win-lose into win-win for all generations.}
+      \field{month}{12}
+      \field{number}{18629}
+      \field{title}{{Smart Machines and Long-Term Misery}}
+      \field{type}{NBER Working Papers}
+      \field{year}{2012}
+      \verb{urlraw}
+      \verb https://ideas.repec.org/p/nbr/nberwo/18629.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org/p/nbr/nberwo/18629.html
+      \endverb
+    \endentry
+    \entry{de_souza_artificial_2025}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=843530f70b61e9f3b7f09a5f518760e6}{%
+           family={Souza},
+           familyi={S\bibinitperiod},
+           given={Gustavo},
+           giveni={G\bibinitperiod},
+           givenun=0,
+           prefix={de},
+           prefixi={d\bibinitperiod},
+           prefixun=0}}%
+      }
+      \list{location}{1}{%
+        {Rochester, {NY}}%
+      }
+      \list{publisher}{1}{%
+        {Social Science Research Network}%
+      }
+      \strng{namehash}{843530f70b61e9f3b7f09a5f518760e6}
+      \strng{fullhash}{843530f70b61e9f3b7f09a5f518760e6}
+      \strng{fullhashraw}{843530f70b61e9f3b7f09a5f518760e6}
+      \strng{bibnamehash}{843530f70b61e9f3b7f09a5f518760e6}
+      \strng{authorbibnamehash}{843530f70b61e9f3b7f09a5f518760e6}
+      \strng{authornamehash}{843530f70b61e9f3b7f09a5f518760e6}
+      \strng{authorfullhash}{843530f70b61e9f3b7f09a5f518760e6}
+      \strng{authorfullhashraw}{843530f70b61e9f3b7f09a5f518760e6}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{I use administrative data on artificial intelligence ({AI}) software created in Brazil to study its effects on the labor market. Owing to a unique copyright system, Brazilian firms have registered their software with the government since the 1980s, creating a detailed record of nearly all commercial {AI} applications developed in the country. Drawing on this registry, I show that {AI} is widely used not only in administrative tasks but also in production settings, where it primarily supports process optimization and quality control. Using an instrument based on variation in software development costs, I find that {AI} affects administrative and production workers differently. Among office workers, {AI} reduces employment and wages, particularly for middle-wage earners. Among production workers, it increases employment of low-skilled and young workers operating machinery. These results suggest that {AI} displaces routine office tasks while making machines more productive and easier to operate, leading to a net increase in employment.}
+      \field{day}{21}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{5375463}
+      \field{shorttitle}{Artificial Intelligence in the Office and the Factory}
+      \field{title}{Artificial Intelligence in the Office and the Factory: Evidence from Administrative Software Registry Data}
+      \field{urlday}{1}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.2139/ssrn.5375463
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\yanglu\\Zotero\\storage\\WCFLBADE\\de Souza - 2025 - Artificial Intelligence in the Office and the Factory Evidence from Administrative Software Registr.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://papers.ssrn.com/abstract=5375463
+      \endverb
+      \verb{url}
+      \verb https://papers.ssrn.com/abstract=5375463
+      \endverb
+      \keyw{Artificial Intelligence,Automation,Deskilling,Inequality,Software}
+    \endentry
+    \entry{waldinger_bombs_2016}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=58bb35ba8edffa95c2f10ac5aac60bee}{%
+           family={Waldinger},
+           familyi={W\bibinitperiod},
+           given={Fabian},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{58bb35ba8edffa95c2f10ac5aac60bee}
+      \strng{fullhash}{58bb35ba8edffa95c2f10ac5aac60bee}
+      \strng{fullhashraw}{58bb35ba8edffa95c2f10ac5aac60bee}
+      \strng{bibnamehash}{58bb35ba8edffa95c2f10ac5aac60bee}
+      \strng{authorbibnamehash}{58bb35ba8edffa95c2f10ac5aac60bee}
+      \strng{authornamehash}{58bb35ba8edffa95c2f10ac5aac60bee}
+      \strng{authorfullhash}{58bb35ba8edffa95c2f10ac5aac60bee}
+      \strng{authorfullhashraw}{58bb35ba8edffa95c2f10ac5aac60bee}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{I examine the role of human and physical capital for the creation of scientific knowledge. I address the endogeneity of human and physical capital with two exogenous shocks: the dismissal of scientists in Nazi Germany and World War {II} bombings. A 10\% shock to human capital reduced output by 0.2 {SD} in the short run, and the reduction persisted in the long run. A 10\% shock to physical capital reduced output by 0.05 {SD} in the short run, and the reduction did not persist. The dismissal of star scientists caused much larger reductions in output because they are key for attracting other successful scientists.}
+      \field{day}{1}
+      \field{issn}{0034-6535}
+      \field{journaltitle}{The Review of Economics and Statistics}
+      \field{month}{12}
+      \field{number}{5}
+      \field{shortjournal}{The Review of Economics and Statistics}
+      \field{shorttitle}{Bombs, Brains, and Science}
+      \field{title}{Bombs, Brains, and Science: The Role of Human and Physical Capital for the Creation of Scientific Knowledge}
+      \field{urlday}{4}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{volume}{98}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{811\bibrangedash 831}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1162/REST_a_00565
+      \endverb
+      \verb{file}
+      \verb Full Text:C\:\\Users\\yanglu\\Zotero\\storage\\3I5TEMBC\\Waldinger - 2016 - Bombs, Brains, and Science The Role of Human and Physical Capital for the Creation of Scientific Kn.pdf:application/pdf;Snapshot:C\:\\Users\\yanglu\\Zotero\\storage\\VWJY6766\\REST_a_00565.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1162/REST_a_00565
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1162/REST_a_00565
+      \endverb
+    \endentry
+    \entry{wang_artificial_2025}{unpublished}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=2053a78b8c7e674d28eabbe236f2f077}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Ping},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5879044661afefc16e44a2d7c53b0692}{%
+           family={Wong},
+           familyi={W\bibinitperiod},
+           given={Tsz-Nga},
+           giveni={T\bibinithyphendelim N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a776e51a4813f218a2feb8f57cc4b0fc}
+      \strng{fullhash}{a776e51a4813f218a2feb8f57cc4b0fc}
+      \strng{fullhashraw}{a776e51a4813f218a2feb8f57cc4b0fc}
+      \strng{bibnamehash}{a776e51a4813f218a2feb8f57cc4b0fc}
+      \strng{authorbibnamehash}{a776e51a4813f218a2feb8f57cc4b0fc}
+      \strng{authornamehash}{a776e51a4813f218a2feb8f57cc4b0fc}
+      \strng{authorfullhash}{a776e51a4813f218a2feb8f57cc4b0fc}
+      \strng{authorfullhashraw}{a776e51a4813f218a2feb8f57cc4b0fc}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{How large is the impact of artificial intelligence ({AI}) on labor productivity and unemployment? This paper introduces a labor-search model of technological unemployment, conceptualizing the generative aspect of {AI} as a learning-by-using technology. {AI} capability improves through machine learning from workers and in turn enhances their labor productivity, but eventually displaces workers if wage renegotiation fails. Three distinct equilibria emerge: no {AI}, some {AI} with higher unemployment, or unbounded {AI} with sustained endogenous growth and little impact on employment. By calibrating to the U.S. data, our model predicts more than threefold improvements in productivity in some-{AI} steady state, alongside a long-run employment loss of 23\%, with half this loss occurring over the initial five-year transition. Plausible change in parameter values could lead to global and local indeterminacy. The mechanism highlights the considerable uncertainty of {AI}'s impacts in the presence of labor-market frictions. In the unbounded-{AI} equilibrium, technological unemployment would not occur. We further show that equilibria are inefficient despite adherence to the Hosios condition. By improving job-finding rate and labor productivity, the optimal subsidy to jobs facing the replacement risk of {AI} can generate a welfare gain from 26.6\% in the short run to over 50\% in the long run.}
+      \field{langid}{english}
+      \field{title}{Artificial Intelligence and Technological Unemployment}
+      \field{urlday}{21}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb PDF:C\:\\Users\\yanglu\\Zotero\\storage\\6Q5KEEES\\Moser - 2022 - Artificial Intelligence and Technological Unemployment.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://www.nber.org/papers/w33867
+      \endverb
+      \verb{url}
+      \verb http://www.nber.org/papers/w33867
+      \endverb
+    \endentry
+  \enddatalist
+  \missing{oecd2025adultlearning}
+  \missing{tauchen1986finite}
+\endrefsection
+\endinput
+
