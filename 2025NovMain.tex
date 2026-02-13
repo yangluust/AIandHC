@@ -436,9 +436,6 @@ where
 \end{align}
 We set up our model so that $\overline{z}^L_{fast}(a,h)>\underline{z}^L_{fast}(a,h)$.\footnote{Appendix~\ref{app:cutoff_ranking} provides the parameter restrictions such that the condition for $(n=0,e=e_H)$ to dominate $(n=0,e=0)$ is sufficient for $\overline{z}^L_{fast}(a,h)>\underline{z}^L_{fast}(a,h)$.} 
 
-\paragraph{Decision rule diagram:} Figure \ref{fig:rule-diagram} illustrates how the decision rules of labor supply $n$ and human capital investment $e$ vary with $(z,h,a)$ for households with $h<h_M\frac{1}{1-\delta}$ conditional on a given $y$. The human capital $h$ changes along the horizontal axis and the labor productivity shock $z$ changes along the vertical axis. The two vertical lines $\underline{h}_M(y)$ and $\overline{h}_M(y)$ defined in (\ref{eq:hm}) separate the state space into non-learners (unshaded area), slow learners (lightly shaded area), and fast learners (darkly shaded area). Within each learner type, labor supply and investment choices vary with $z$ and the dashed horizontal lines represents the cutoffs in $z$.
-
-
 \begin{figure}
     \centering
     
@@ -451,29 +448,24 @@ We set up our model so that $\overline{z}^L_{fast}(a,h)>\underline{z}^L_{fast}(a
 \label{fig:rule-diagram}
 \end{figure}
 
-This decision rule diagram is representative for households in other ranges of human capital. Figure \ref{fig:e-digram} illustrates the regions in which households are able to make positive human capital investments that move them across sectoral thresholds. Dark shading denotes regions in which $e_L$ is sufficient (fast learners), while light shading denotes regions in which only $e_H$ is sufficient (slow learners). 
 
-For households with $h_M\frac{1}{1-\delta} \leq h<h_H\frac{1}{1-\delta}$, conditional on $y$ the boundaries for state space division change to $\overline{h}_H(y)$ and $\underline{h}_H(y)$:
+\paragraph{Decision rule diagram:} Figure \ref{fig:rule-diagram} illustrates how the decision rules of labor supply $n$ and human capital investment $e$ vary with $(z,h,a)$ for households with $h<h_M\frac{1}{1-\delta}$ conditional on a given $y$. The human capital $h$ changes along the horizontal axis and the labor productivity shock $z$ changes along the vertical axis. The two vertical lines $\underline{h}_M(y)$ and $\overline{h}_M(y)$ defined in (\ref{eq:hm}) separate the state space into non-learners (unshaded area), slow learners (lightly shaded area), and fast learners (darkly shaded area). Within each learner type, labor supply and investment choices vary with $z$ and the dashed horizontal lines represents the cutoffs in $z$.
+
+
+
+\bigskip
+\noindent
+Households with $h_M\frac{1}{1-\delta} \leq h<h_H\frac{1}{1-\delta}$ have a decision rule analogous to those with $h<h_M\frac{1}{1-\delta}$. Conditional on $y$, the boundaries for learner type change to:
 \begin{equation}\label{eq:hh}
     \underline{h}_H(y):=\frac{h_H-ye_H}{1-\delta}; \qquad \overline{h}_H(y):=\frac{h_H-ye_L}{1-\delta} 
 \end{equation}
-If $h_M\frac{1}{1-\delta} \leq h<h_H$, the four cutoffs that partition the decision regions for households are denoted as $\overline{z}^M_{non}(a)$, $\overline{z}^M_{slow}(a)$, $\underline{z}^M_{fast}(a)$, and $\overline{z}^M_{fast}(a)$ (see Appendix~\ref{app:cutoff_formulae} for the explicit formulae).\footnote{Appendix~\ref{app:cutoff_ranking} provides parameter restrictions for $\overline{z}^M_{fast}(a,h)>\underline{z}^M_{fast}(a,h)$.}
-If $h_H \leq h<h_H\frac{1}{1-\delta}$, the analogous cutoffs are given by $\overline{z}^M_{non}\frac{1}{1+\lambda}$, $\overline{z}^M_{slow}\frac{1}{1+\lambda}$, $\underline{z}^M_{fast}\frac{1}{1+\lambda}$, and $\overline{z}^M_{fast}\frac{1}{1+\lambda}$.
+The four cutoffs in $z$ that partition the decision regions change to $\overline{z}^M_{non}(a,h)$, $\overline{z}^M_{slow}(a,h)$, $\underline{z}^M_{fast}(a,h)$, and $\overline{z}^M_{fast}(a,h)$ (see Appendix~\ref{app:cutoff_formulae} for the explicit formulae).
+
+\bigskip
+\noindent
+Households with $h \geq h_H\frac{1}{1-\delta}$ are always non-learners, since their human capital guarantees high-sector employment next period without further investment. For them, only the cutoff $\overline{z}^H_{non}(a)$ matters.
 
 
-Households with $h \geq h_H\frac{1}{1-\delta}$ are always non-learners, since their human capital guarantees high-sector employment next period without further investment. For them, only the cutoff $\overline{z}^H_{non}(a)\frac{1}{1+\lambda}$ matters.
-
-\begin{figure}
-    \centering
-    
-\input{figure_204040calib/Figure2a}
-\caption{State Space for Human Capital Investment}
-\begin{flushleft}
-\footnotesize{With a separate learning-ability shock $y$, the figure illustrates how learner type (grey shading) and optimal investment ($e>0$, striped areas) vary with the labor productivity shock $z$ and human capital $h$. The cutoffs in $h$ are conditional on $y$; the cutoffs in $z$ are scaled by current-sector productivity $x(h)$.} 
-\end{flushleft}
-    
-\label{fig:e-digram}
-\end{figure}
 
 
 
@@ -1045,18 +1037,18 @@ Our work points to several promising directions for future research on the econo
 \subsection{Additional cutoffs formulae for households}
 \label{app:cutoff_formulae}
 \begin{align}
-    \overline{z}^M_{non}(a)&:=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)
-    [(1+r)a+\frac{w'z'}{1+r'}]}{w}  \label{eq:z-non-M} \\
-    \overline{z}^M_{slow}(a)&:=\frac{(\exp(\frac{\chi_n-\chi_e e_H}{1
+    \overline{z}^M_{non}(a,h)&:=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)
+    [(1+r)a+\frac{w'z'}{1+r'}]}{w\left(1+\mathbbm{1}_{h > h_H}\lambda\right)}  \label{eq:z-non-M} \\
+    \overline{z}^M_{slow}(a,h)&:=\frac{(\exp(\frac{\chi_n-\chi_e e_H}{1
     +\beta})-1)[(1+r)a+\frac{w'z'(1+\lambda)}{1+r'}]+\lambda\frac
-    {w'z'}{1+r'}}{w} \label{eq:z-slow-M} \\
-    \underline{z}^M_{fast}(a)&:=\frac{(\exp(\frac{\chi_n}{1+\beta})
-    -1)[(1+r)a+\frac{w'z'(1+\lambda)}{1+r'}]}{w} \label
+    {w'z'}{1+r'}}{w\left(1+\mathbbm{1}_{h > h_H}\lambda\right)} \label{eq:z-slow-M} \\
+    \underline{z}^M_{fast}(a,h)&:=\frac{(\exp(\frac{\chi_n}{1+\beta})
+    -1)[(1+r)a+\frac{w'z'(1+\lambda)}{1+r'}]}{w\left(1+\mathbbm{1}_{h > h_H}\lambda\right)} \label
     {eq:z-fast-lower-M} \\
-    \overline{z}^M_{fast}(a)&:=\frac{\left\{\lambda\left[\exp(\frac
+    \overline{z}^M_{fast}(a,h)&:=\frac{\left\{\lambda\left[\exp(\frac
     {\chi_e e_L}{1+\beta})-1\right]^{-1}-1\right\}\frac{w'z'}{1+r'}-
-    (1+r)a}{w}  \label{eq:z-fast-upper_M} \\
-    \overline{z}^H_{non}(a)&:=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)[(1+r)a+\frac{w'z'(1+\lambda)}{1+r'}]}{w}  
+    (1+r)a}{w\left(1+\mathbbm{1}_{h > h_H}\lambda\right)}  \label{eq:z-fast-upper_M} \\
+    \overline{z}^H_{non}(a)&:=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)[(1+r)a+\frac{w'z'(1+\lambda)}{1+r'}]}{w(1+\lambda)}  
 \end{align}
 
 \subsection{Parameter restrictions for cutoffs ranking}
