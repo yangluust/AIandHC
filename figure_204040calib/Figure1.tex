@@ -1,52 +1,69 @@
 \documentclass{standalone}
 \usepackage{tikz}
 \begin{document}
- \begin{tikzpicture}
+ % Make the whole figure wider (x-direction).
+ \begin{tikzpicture}[xscale=1.25]
+
+% Decision rule conditional on a given y:
+% x-axis: h in [0, h_M/(1-delta))
+% y-axis: z
 
 % Axes
-\draw[thick] (-1,0) -- (7,0) node[right] {$h$};
-% Vertical divisions
-\draw[thick] (0,6) -- (0,0) node[below] {$h_M$};
-\draw[thick] (6,6) -- (6,0) node[below] {$\frac{h_M}{1-\delta}$};
+\draw[thick,->] (-0.8,0) -- (7,0) node[right] {$h$};
+\draw[thick,->] (-0.8,0) -- (-0.8,6.6) node[above] {$z$};
+
+% h-range boundaries
+\draw[thick] (0,0) -- (0,6.3);
+\node[below] at (0,0) {$0$};
+\draw[thick] (6,0) -- (6,6.3);
+\node[below] at (6,0) {$\frac{h_M}{1-\delta}$};
 
 
+% Learner-type cutoffs in h conditional on y (schematic placement)
+\draw[thick] (2,0) -- (2,6.3);
+\draw[thick] (4,0) -- (4,6.3);
+\node[below] at (2,0) {$\underline{h}_M(y)$};
+\node[below] at (4,0) {$\overline{h}_M(y)$};
 
+% Shade learner-type regions (conditional on y)
+% non-learners region (0 to \underline{h}_M(y)) intentionally left unshaded
+\fill[gray, opacity=0.30] (2,0) rectangle (4,6.3); % slow learners
+\fill[gray, opacity=0.55] (4,0) rectangle (6,6.3); % fast learners
 
-% Diagonal lines
-\draw[thick] (-1,5.5) -- (6,0) ;
-\draw[thick] (-1,2.33) -- (6,0);
-\node at (-1.3,5.6) {$\overline{z}_M$};
-\node at (-1.3,2.4) {$\underline{z}_M$};
+% z cutoffs (schematic heights)
+\def\zNon{1.0}
+\def\zSlow{2.6}
+\def\zFastL{3.8}
+\def\zFastU{5.1}
 
-% Shade the area between the diagonal lines and the left vertical line
-\fill[gray, opacity=0.3] 
-    (0,2) -- (0,4.7) -- (6,0) -- cycle;
-\fill[gray, opacity=0.7] 
-    (0,4.7) -- (0,6) -- (6,6) -- (6,0) -- cycle;
+% Non-learner cutoff
+\draw[dashed] (0,\zNon) -- (2,\zNon);
+\node[left] at (0,\zNon) {\small $\overline{z}^L_{non}$};
 
-% Horizontal lines
-\draw[dashed] (0,5.2) -- (6,5.2) node[right] {$\overline{z}^L_{fast}$};% First top dashed line bounded by diagonal
-\draw[dashed] (1,4) -- (6,4) node[right] {$\underline{z}^L_{fast}$}; % Second top dashed line bounded by top diagonal and vertical line
-\draw[dashed] (0,2.5) -- (2.8,2.5) node[right] {$\overline{z}^L_{slow}$}; % Third dashed line bounded by vertical line and top diagonal
-\draw[dashed] (0,0.8) -- (3.6,0.8) ; % Bottom dashed line bounded by diagonal line
+% Slow-learner cutoff
+\draw[dashed] (2,\zSlow) -- (4,\zSlow);
+\node[right] at (4,\zSlow) {\small $\overline{z}^L_{slow}$};
 
-% Labels
+% Fast-learner cutoffs
+\draw[dashed] (4,\zFastL) -- (6,\zFastL);
+\draw[dashed] (4,\zFastU) -- (6,\zFastU);
+\node[right] at (6,\zFastL) {\small $\underline{z}^L_{fast}$};
+\node[right] at (6,\zFastU) {\small $\overline{z}^L_{fast}$};
 
+% Decision labels inside regions
+% Non-learners
+\node at (1,0.45) {\small $n=0,e=0$};
+\node at (1,3.3) {\small $n=1,e=0$};
 
-\node at (-0.5,0.8) {$\overline{z}^L_{non}$};
+% Slow learners
+\node at (3,1.2) {\small $n=0,e=e_H$};
+\node at (3,4.3) {\small $n=1,e=0$};
 
-% Region Labels
-\node at (3,5.4) {$n=1, e=0$};
-\node at (3.5,4.5) {$n=1, e=e_L$};
-\node at (4.3,3.5) {$n=0, e=e_L$};
-
-\node at (1.2,2.7) {$n=1, e=0$};
-\node at (2,2) {$n=0, e=e_H$};
-
-\node at (1.2,1) {$n=1, e=0$};
-\node at (2.5,0.3) {$n=0, e=0$};
+% Fast learners
+\node at (5,1.6) {\small $n=0,e=e_L$};
+\node at (5,4.4) {\small $n=1,e=e_L$};
+\node at (5,5.9) {\small $n=1,e=0$};
 
 \end{tikzpicture}
-
 
 \end{document}

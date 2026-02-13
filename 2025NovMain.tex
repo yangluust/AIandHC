@@ -12,6 +12,7 @@
 \usepackage{tikz}
 \usetikzlibrary{patterns}
 \usepackage{standalone}
+\usepackage{bbm}
 
 % Set page size and margins
 % Replace `letterpaper' with `a4paper' for UK/EU standard size
@@ -267,12 +268,18 @@ The rest of the paper is organized as follows. Section 2 describes the model env
 \section{Model Environment }
 \label{sec:model}
 Time is discrete and infinite. 
-There is a continuum of households. Each household is endowed with one unit of indivisible labor and faces idiosyncratic productivity shock, $z$, that follows an AR(1) process in logs:
+There is a continuum of households. Each household is endowed with one unit of indivisible labor and faces an idiosyncratic labor productivity shock, $z$, and an idiosyncratic learning-ability shock, $y$. The labor productivity shock follows an AR(1) process in logs:
 \begin{equation}
     \label{eq:z}
 \ln z'=\rho_z\ln z + \varepsilon_z, \varepsilon_z \overset{\mathrm{iid}}{\sim} N(0,\sigma_z^2)
 \end{equation}
-The asset market is incomplete following \citet{aiyagari_uninsured_1994}, and the physical capital, $a$, is the only asset available to households to insure against this idiosyncratic risk. Households can also invest in human capital, $h$, which allows them to work in sectors with different human capital requirement.
+The learning-ability shock follows an AR(1) process in logs:
+\begin{equation}
+    \label{eq:y}
+\ln y'=\rho_y\ln y + \varepsilon_y, \varepsilon_y \overset{\mathrm{iid}}{\sim} N(0,\sigma_y^2)
+\end{equation}
+Households observe $(z_t,y_t)$ at the beginning of each period before making decisions.
+The asset market is incomplete following \citet{aiyagari_uninsured_1994}, and the physical capital, $a$, is the only asset available to households to insure against idiosyncratic labor income risk. Households can also invest in human capital, $h$, which allows them to work in sectors with different human capital requirement.
 
 \subsection{Production Technology}
 The production technology in the economy is a constant-returns-to-scale Cobb-Douglas production function:
@@ -301,7 +308,7 @@ assuming perfect substitutability of effective labor across the three sectors.
 
 \subsection{Household's Problem}
 Households derive utility from consumption, incur disutility from labor and effort of human capital investment. 
-A household maximizes the expected lifetime utility by optimally choosing consumption, saving, labor supply and human capital investment each period, based on his idiosyncratic productivity shock $z_t$:
+A household maximizes the expected lifetime utility by optimally choosing consumption, saving, labor supply and human capital investment each period, based on his idiosyncratic shocks $(z_t,y_t)$:
 \begin{equation}
 \max_{\left \{ c_t,a_{t+1},n_t,e_t\right \}_{t=0}^{\infty }}E_0\left[
 \sum\limits_{t=0}^{\infty }\beta^t( \ln c_t-\chi_n n_t-\chi_e e_t ) \right] 
@@ -319,11 +326,11 @@ Human capital investment can take three levels of effort: $\{0,e_L,e_H\}$. A non
 \begin{equation}
 e_t \in \{0, e_L, (1-n_t)e_H\}.
 \end{equation}
-Its contribution to next-period human capital is subject to the productivity shock:
+Its contribution to next-period human capital is subject to the learning-ability shock:
 \begin{equation}
-h_{t+1}=z_te_t + (1-\delta_h)h_t
+h_{t+1}=y_te_t + (1-\delta_h)h_t
 \end{equation}
-where $\delta_h$ is human capital's depreciation rate.  We interpret $z_t e_t$ as effective human-capital investment, with $z_t$ capturing a learning-ability shock.\footnote{Equivalently, one can think of an underlying learning-ability term that is perfectly correlated with $z_t$. This allows us to reduce the dimensionality of the state space.}
+where $\delta_h$ is human capital's depreciation rate. We interpret $y_t e_t$ as effective human-capital investment, with $y_t$ capturing a learning-ability shock.\footnote{Separating $y_t$ from the labor productivity shock $z_t$ introduces an additional state variable relative to the special case in which learning ability is perfectly correlated with labor productivity. In the quantitative model, we discretize $(z_t,y_t)$ jointly (allowing for correlation if desired).}
 
  
 \section{Household Decisions in a Two-Period Model}
@@ -365,7 +372,7 @@ To see the implication of this trade-off and how it interacts with uninsured idi
 The additive separability of household's utility implies that labor supply $n$ and human capital investment $e$ enters in consumption and saving choices only via the intertemporal budget constraint:
 \begin{align*}
     c + \frac{c'}{1+r'}&=(1+r)a+n(wzx(h))+\frac{w'z'x(h')}{1+r'} \\
-    \text{with } h'&=ze+ (1-\delta)h.
+    \text{with } h'&=ye+ (1-\delta)h.
 \end{align*}
 The log utility in consumption implies the optimality condition:
 \begin{equation}\label{eq:c'}
@@ -373,100 +380,92 @@ The log utility in consumption implies the optimality condition:
 \end{equation}
 Combining it with the budget constraint, we obtain the optimal consumption as a function of labor supply $n$ and human capital investment $e$:
 \begin{equation}\label{eq:c}
-    c(n,e)=\frac{1}{1+\beta}\left[(1+r)a+n(wzx(h))+\frac{w'z'x\left(h'=ze+ (1-\delta)h\right)}{1+r'} \right].
+    c(n,e)=\frac{1}{1+\beta}\left[(1+r)a+n(wzx(h))+\frac{w'z'x\left(h'=ye+ (1-\delta)h\right)}{1+r'} \right].
 \end{equation}
 
-\subsubsection{Labor supply and human capital investment}
+\subsubsection{Labor supply and human capital investment}\label{sec:n_and_e}
 
 The optimal consumption rules in (\ref{eq:c}) and (\ref{eq:c'}) allow us to express the household’s problem as the maximization of an objective function in labor supply $n$ and human capital investment $e$:\footnote{This follows since $c' = \beta(1+r')c$, so $\ln c' = \ln\beta + \ln(1+r') + \ln c$.} 
 \begin{equation}
    \max_{n,e} (1+\beta)\ln c(n,e) - \chi_n n - \chi_e e
 \end{equation}
-This maximization depends critically on the household's current human capital and achievable next-period human capital. Accordingly, we partition households into five ranges of $h$: $[0,h_M)$, $[h_M,h_M(1-\delta)^{-1})$, $[h_M(1-\delta)^{-1},h_H)$, $[h_H,h_H(1-\delta)^{-1})$, and $[h_H(1-\delta)^{-1},h_{\max}]$. 
+This maximization depends critically on the household's current human capital and achievable next-period human capital. Accordingly, we partition households into three ranges of $h$: $[0,h_M(1-\delta)^{-1})$, $[h_M(1-\delta)^{-1},h_H(1-\delta)^{-1})$, and $[h_H(1-\delta)^{-1},h_{\max}]$. 
 
 \bigskip
 \noindent
-We now derive the decision rules for households $h\in[h_M,h_M(1-\delta)^{-1})$ in detail, as the decision rules for the other four ranges are similar.
-For households with $h<h_M(1-\delta)^{-1}$, we define two cutoffs in $z$:
-\begin{equation}\label{eq:zm}
-    \underline{z}_M(h):=\frac{h_M-(1-\delta)h}{e_H}; \overline{z}_M(h):=\frac{h_M-(1-\delta)h}{e_L} 
+We now derive the decision rules for households $h\in[0,h_M(1-\delta)^{-1})$ in detail, as the decision rules for the other two ranges are similar.
+Conditional on a given learning ability $y$, we define two cutoffs in human capital:
+\begin{equation}\label{eq:hm}
+    \underline{h}_M(y):=\frac{h_M-ye_H}{1-\delta}, \quad\overline{h}_M(y):=\frac{h_M-ye_L}{1-\delta} 
 \end{equation}
-These cutoffs divide households into three groups based on their ability to be employed in the middle sector in the next period.
+These cutoffs divide households into three groups based on their ability to be employed in the middle sector in the next period. 
+\textbf{Non-learners} are households with $h < \underline{h}_M(y)$. They cannot achieve $h' > h_M$ with either $e_L$ or $e_H$ level of human capital investment today. \textbf{Slow learners} are households with $h \in (\underline{h}_M(y), \overline{h}_M(y))$. These households can reach $h' > h_M$ in the next period only by investing $e = e_H$ today. \textbf{Fast learners} are households with $h > \overline{h}_M(y)$. They can achieve $h' > h_M$ in the next period if they invest $e = e_L$ today. 
 
-\paragraph{Non-learners} are households with $z < \underline{z}_M(h)$. They cannot achieve $h' > h_M$ with either $e_L$ or $e_H$ level of human capital investment today. As a result, they will choose not to invest in human capital, $e=0$, and their future sectoral productivity will be $x(h')=1-\lambda$. 
-These non-learners work $n=1$ if and only if $z\geq \overline{z}^L_{non}(a)$:
-\begin{align}
-\overline{z}^L_{non}(a)=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)[(1+r)a+\frac{w'z'(1-\lambda)}{1+r'}]}{w}  \label{eq:z-non}
-\end{align}
 
-\paragraph{Slow learners} are households with $z \in (\underline{z}_M(h), \overline{z}_M(h))$. These households can reach $h' > h_M$ in the next period only by investing $e = e_H$ today. Their choice is restricted to $e=0$ or $e=e_H$, since selecting $e=e_L$ incurs a cost without any future benefit. Slow learners must trade off between working and human capital investment: choosing $e=e_H$ requires not working today ($n=0$), while opting to work means forgoing investment in human capital ($n=1, e=0$).\footnote{The choice between $(n=0,e=e_H)$ and $(n=0,e=0)$ does not depend on $z$. For $e_H$ to be relevant, $\lambda$ must be large enough so that $(n=0,e=e_H)$ is preferred to $(n=0,e=0)$. See the Appendix for details on the lower bound for $\lambda$.}
+Conditional on $y$ and learner type, the optimal choices of labor supply and human capital investment are characterized by cutoffs in $z$. The cutoff formulae varies with households' current sectoral productivity, i.e, if $h<h_M$ or not. 
 
-Slow learners prefer $(n=1,e=0)$ to $(n=0,e=e_H)$ if and only if $z \geq \overline{z}^L_{slow}(a)$:
+
+\paragraph{Non-learners} will not invest in human capital, $e=0$, and their future sectoral productivity will be $x(h')=1-\lambda$. Non-learners work $n=1$ if and only if:
+\begin{equation}
+    z\geq\overline{z}^L_{non}(a,h)=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)\left[(1+r)a+\frac{w'z'(1-\lambda)}{1+r'}\right]}{w\left(1-\mathbbm{1}_{h < h_M}\lambda\right)}  \label{eq:z-non}
+\end{equation}
+
+\paragraph{Slow learners} choose between $e=0$ and $e=e_H$, since $e=e_L$ incurs a cost without any future benefit. Slow learners must trade off between working and human capital investment: choosing $e=e_H$ requires not working today ($n=0$), while opting to work means forgoing investment in human capital ($n=1, e=0$).\footnote{The choice between $(n=0,e=e_H)$ and $(n=0,e=0)$ does not depend on $z$. For $e_H$ to be relevant, $\lambda$ must be large enough so that $(n=0,e=e_H)$ is preferred to $(n=0,e=0)$. See Appendix~\ref{app:cutoff_ranking} for details on the lower bound for $\lambda$.}
+
+Slow learners prefer $(n=1,e=0)$ to $(n=0,e=e_H)$ if and only if:
 \begin{align} 
-\overline{z}^L_{slow}(a)=\frac{(\exp(\frac{\chi_n-\chi_e e_H}{1+\beta})-1)[(1+r)a+\frac{w'z'}{1+r'}]+\lambda\frac{w'z'}{1+r'}}{w} \label{eq:z-slow}
+    z \geq \overline{z}^L_{slow}(a,h)=\frac{(\exp(\frac{\chi_n-\chi_e e_H}{1+\beta})-1)[(1+r)a+\frac{w'z'}{1+r'}]+\lambda\frac{w'z'}{1+r'}}{w\left(1-\mathbbm{1}_{h < h_M}\lambda\right)} \label{eq:z-slow}
 \end{align}
 
-\paragraph{Fast learners} are households with $z > \overline{z}_M(h)$. They can achieve $h' > h_M$ in the next period if they invest $e = e_L$ today. In this case, there is no need to exert high effort $e_H$ in human capital investment. The fast learners choose among three options: $(n=1,e=0)$, $(n=1,e=e_L)$, and $(n=0,e=e_L)$.\footnote{Similar to the case of slow learners, the choice between $(n=0,e=e_L)$ and $(n=0,e=0)$ does not depend on $z$. Moreover, since our model is set up so that $(n=0,e=e_H)$ dominates $(n=0,e=0)$, it implies that $(n=0,e=e_L)$ dominates $(n=0,e=0)$. }
-
-The decision rule for fast learners are as follows:
+\paragraph{Fast learners} do not exert high effort $e_H$ in human capital investment. They choose among three options: $(n=1,e=0)$, $(n=1,e=e_L)$, and $(n=0,e=e_L)$,\footnote{Similar to the case of slow learners, the choice between $(n=0,e=e_L)$ and $(n=0,e=0)$ does not depend on $z$. Moreover, since our model is set up so that $(n=0,e=e_H)$ dominates $(n=0,e=0)$, it implies that $(n=0,e=e_L)$ dominates $(n=0,e=0)$.} with the decision rule as follows:
 \begin{equation}
 n(z,h,a),e(z,h,a) =\left \{ 
 \begin{array}{cl}
-n=1,e=0  & \text{ if } z \geq \overline{z}^L_{fast}(a) \\
-n=1,e=e_L & \text{ if } \underline{z}^L_{fast}(a) \leq z<\overline{z}^L_{fast}(a) \\
-n=0,e=e_L & \text{ if } z<\underline{z}^L_{fast}(a)
+n=1,e=0  & \text{ if } z \geq \overline{z}^L_{fast}(a,h) \\
+n=1,e=e_L & \text{ if } \underline{z}^L_{fast}(a,h) \leq z<\overline{z}^L_{fast}(a,h) \\
+n=0,e=e_L & \text{ if } z<\underline{z}^L_{fast}(a,h)
 \end{array}%
 \right.
 \end{equation}
 where 
 \begin{align}
-\overline{z}^L_{fast}(a)=\frac{\left\{\exp(\frac{\chi_e e_L}{1+\beta})\lambda\left[\exp(\frac{\chi_e e_L}{1+\beta})-1\right]^{-1}-1\right\}\frac{w'z'}{1+r'}-(1+r)a}{w}  \label{eq:z-fast-upper}
+\overline{z}^L_{fast}(a,h)=\frac{\left\{\exp(\frac{\chi_e e_L}{1+\beta})\lambda\left[\exp(\frac{\chi_e e_L}{1+\beta})-1\right]^{-1}-1\right\}\frac{w'z'}{1+r'}-(1+r)a}{w\left(1-\mathbbm{1}_{h < h_M}\lambda\right)}  \label{eq:z-fast-upper}
 \end{align}
 \begin{align}
-\underline{z}^L_{fast}(a)=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)[(1+r)a+\frac{w'z'}{1+r'}]}{w} \label{eq:z-fast-lower}
+\underline{z}^L_{fast}(a,h)=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)[(1+r)a+\frac{w'z'}{1+r'}]}{w\left(1-\mathbbm{1}_{h < h_M}\lambda\right)} \label{eq:z-fast-lower}
 \end{align}
-We set up our model so that $\overline{z}^L_{fast}(a)>\underline{z}^L_{fast}(a)$.\footnote{Appendix~\ref{app:cutoff_ranking} provides the parameter restrictions such that the condition for $(n=0,e=e_H)$ to dominate $(n=0,e=0)$ is sufficient for $\overline{z}^L_{fast}(a)>\underline{z}^L_{fast}(a)$.} 
+We set up our model so that $\overline{z}^L_{fast}(a,h)>\underline{z}^L_{fast}(a,h)$.\footnote{Appendix~\ref{app:cutoff_ranking} provides the parameter restrictions such that the condition for $(n=0,e=e_H)$ to dominate $(n=0,e=0)$ is sufficient for $\overline{z}^L_{fast}(a,h)>\underline{z}^L_{fast}(a,h)$.} 
 
 \begin{figure}
     \centering
     
 \input{figure_204040calib/Figure1}
-\caption{Decision Rule Diagram for $h_M \leq h<h_M(1-\delta)^{-1}$}
+\caption{Decision Rule Diagram for $0 \leq h<h_M(1-\delta)^{-1}$}
 \begin{flushleft}
-\footnotesize{The human capital $h$ changes along the horizontal line and the idiosyncratic productivity $z$ changes along the vertical line. The two diagonal lines, $\overline{z}_M(h)$ and $\underline{z}_M(h)$, separate the state space into three areas: the unshaded area represents the non-learners, the lightly-shaded area represents the slow learners, and the darkly-shaded  area represents the fast learners. The areas are divided by four dashed horizontal lines associated with cutoffs $\overline{z}^L_{non}$, $\overline{z}^L_{slow}$, $\underline{z}^L_{fast}$, and $\overline{z}^L_{fast}$ that are functions of capital holding $a$.} 
+\footnotesize{Conditional on a given learning ability $y$, the figure illustrates the decision rule $(n,e)$ as a function of states $(z,h,a)$ for households with $0 \leq h<h_M\frac{1}{1-\delta}$. The human capital $h$ changes along the horizontal axis and the labor productivity shock $z$ changes along the vertical axis. The two vertical lines $\underline{h}_M(y)$ and $\overline{h}_M(y)$ defined in (\ref{eq:hm}) separate the state space into non-learners, slow learners, and fast learners. Within each learner type, labor supply and investment choices vary with $z$.} 
 \end{flushleft}
     
 \label{fig:rule-diagram}
 \end{figure}
 
-\paragraph{Decision rule diagram:}Figure \ref{fig:rule-diagram} illustrates the decision rule $(n,e)$ as a function of states $(z,h,a)$ for households with $h_M \leq h<h_M\frac{1}{1-\delta}$. The human capital $h$ changes along the horizontal line and the idiosyncratic productivity $z$ changes along the vertical line. The two diagonal lines, $\overline{z}_M(h)$ and $\underline{z}_M(h)$ defined in (\ref{eq:zm}), separate the state space into three areas: the unshaded area represents the non-learners, the lightly-shaded area represents the slow learners, and the darkly-shaded area represents the fast learners. The areas are divided by four dashed horizontal lines associated with cutoffs $\overline{z}^L_{non}(a)$, $\overline{z}^L_{slow}(a)$, $\underline{z}^L_{fast}(a)$, and $\overline{z}^L_{fast}(a)$ that are functions of capital holding $a$ and defined in (\ref{eq:z-non}), (\ref{eq:z-slow}), (\ref{eq:z-fast-lower}), and (\ref{eq:z-fast-upper}).
+
+\paragraph{Decision rule diagram:} Figure \ref{fig:rule-diagram} illustrates how the decision rules of labor supply $n$ and human capital investment $e$ vary with $(z,h,a)$ for households with $h<h_M\frac{1}{1-\delta}$ conditional on a given $y$. The human capital $h$ changes along the horizontal axis and the labor productivity shock $z$ changes along the vertical axis. The two vertical lines $\underline{h}_M(y)$ and $\overline{h}_M(y)$ defined in (\ref{eq:hm}) separate the state space into non-learners (unshaded area), slow learners (lightly shaded area), and fast learners (darkly shaded area). Within each learner type, labor supply and investment choices vary with $z$ and the dashed horizontal lines represents the cutoffs in $z$.
 
 
-This decision rule diagram is representative for households in other four ranges of human capital. Figure \ref{fig:e-digram} illustrates the regions in which households make positive human capital investments. Striped shading highlights where investment occurs, with dark areas denoting fast learners and light areas representing slow learners. 
 
-For households with $h<h_M$, $\overline{z}_M(h)$ and $\underline{z}_M(h)$ continue to be the boundaries that separate non-learners, slow learners and fast learners, but the four cutoffs are $\overline{z}^L_{non}\frac{1}{1-\lambda}$, $\overline{z}^L_{slow}\frac{1}{1-\lambda}$, $\underline{z}^L_{fast}\frac{1}{1-\lambda}$, and $\overline{z}^L_{fast}\frac{1}{1-\lambda}$.
-
-For households with $h_M\frac{1}{1-\delta} \leq h<h_H\frac{1}{1-\delta}$, the boundaries for state space division change to $\overline{z}_H(h)$ and $\underline{z}_H(h)$:
-\begin{equation}\label{eq:zh}
-    \underline{z}_H(h):=\frac{h_H-(1-\delta)h}{e_H}; \qquad \overline{z}_H(h):=\frac{h_H-(1-\delta)h}{e_L} 
+\bigskip
+\noindent
+Households with $h_M\frac{1}{1-\delta} \leq h<h_H\frac{1}{1-\delta}$ have a decision rule analogous to those with $h<h_M\frac{1}{1-\delta}$. Conditional on $y$, the boundaries for learner type change to:
+\begin{equation}\label{eq:hh}
+    \underline{h}_H(y):=\frac{h_H-ye_H}{1-\delta}; \qquad \overline{h}_H(y):=\frac{h_H-ye_L}{1-\delta} 
 \end{equation}
-If $h_M\frac{1}{1-\delta} \leq h<h_H$, the four cutoffs that partition the decision regions for households are denoted as $\overline{z}^M_{non}(a)$, $\overline{z}^M_{slow}(a)$, $\underline{z}^M_{fast}(a)$, and $\overline{z}^M_{fast}(a)$ (see Appendix~\ref{app:cutoff_formulae} for the explicit formulae).\footnote{Appendix~\ref{app:cutoff_ranking} provides parameter restrictions for $\overline{z}^M_{fast}(a)>\underline{z}^M_{fast}(a)$.}
-If $h_H \leq h<h_H\frac{1}{1-\delta}$, the analogous cutoffs are given by $\overline{z}^M_{non}\frac{1}{1+\lambda}$, $\overline{z}^M_{slow}\frac{1}{1+\lambda}$, $\underline{z}^M_{fast}\frac{1}{1+\lambda}$, and $\overline{z}^M_{fast}\frac{1}{1+\lambda}$.
+The four cutoffs in $z$ that partition the decision regions change to $\overline{z}^M_{non}(a,h)$, $\overline{z}^M_{slow}(a,h)$, $\underline{z}^M_{fast}(a,h)$, and $\overline{z}^M_{fast}(a,h)$ (see Appendix~\ref{app:cutoff_formulae} for the explicit formulae).
+
+\bigskip
+\noindent
+Households with $h \geq h_H\frac{1}{1-\delta}$ are always non-learners, since their human capital guarantees high-sector employment next period without further investment. For them, only the cutoff $\overline{z}^H_{non}(a)$ matters.
 
 
-Households with $h \geq h_H\frac{1}{1-\delta}$ are always non-learners, since their human capital guarantees high-sector employment next period without further investment. For them, only the cutoff $\overline{z}^H_{non}(a)\frac{1}{1+\lambda}$ matters.
-
-\begin{figure}
-    \centering
-    
-\input{figure_204040calib/Figure2a}
-\caption{State Space for Human Capital Investment}
-\begin{flushleft}
-\footnotesize{The darkly-shaded striped areas indicate the state space for human capital investment equal to $e_L$ by the fast learners. The lightly-shaded striped areas indicate the state space for human capital investment equal to $e_H$ by the slow learners.} 
-\end{flushleft}
-    
-\label{fig:e-digram}
-\end{figure}
 
 
 
@@ -489,7 +488,7 @@ The second derivative is
 \end{equation*}
 and is more negative if $x(h')$ is higher.} Consider two levels of $h'$, $\overline{h'}>\underline{h'}$, a mean-preserving spread of $z'$ distribution reduces the expected utility at both levels of $h'$ but the reduction is larger for the higher level $\overline{h'}$. Hence, the expected utility gain of moving from $\underline{h'}$ to $\overline{h'}$ is smaller due to the idiosyncratic risk. Human capital investment is discouraged.
 
-Taking into account endogenous labor supply reinforces the discouragement of human capital investment by the idiosyncratic risk. Recall from Section \ref{sec:period2} that households with $z'$ lower than a cutoff do not work. The endogenous labor supply therefore provides insurance against the lower tail risk of the idiosyncratic $z'$. Moreover, the cutoff in $z'$ is lower for those with higher human capital $h'$. This makes households with higher $h'$ more exposed to the lower tail risk than those with lower $h'$, further reducing the gain of human capital investment.
+Taking into account endogenous labor supply reinforces the discouragement of human capital investment by the idiosyncratic risk. Recall from Section \ref{sec:n_and_e} that households with $z'$ lower than a cutoff do not work. The endogenous labor supply therefore provides insurance against the lower tail risk of the idiosyncratic $z'$. Moreover, the cutoff in $z'$ is lower for those with higher human capital $h'$. This makes households with higher $h'$ more exposed to the lower tail risk than those with lower $h'$, further reducing the gain of human capital investment.
 
 
 \begin{proposition}
@@ -520,13 +519,13 @@ subject to the budget constraints
 \begin{align}
 c + a' &= (1+r)a + n(wzx(h)) , \\
 c' &= (1+r')a' + w'z'x(h'), \\
-\text{with } h' &= ze + (1-\delta)h, e \in \{0, e_L, (1-n)e_H\}
+\text{with } h' &= ye + (1-\delta)h, e \in \{0, e_L, (1-n)e_H\}
 \end{align}
 
 \subsubsection{Effect of on-job-training on saving}\label{sec:on-job-saving}
 We now compare the optimal saving between $(n=1,e=e_L)$ and $(n=1,e=0)$, where $e_L$ allows households to move to a higher sector in period 2 with higher sectoral productivity $x(h')$. 
 
-To simplify the notation while maintaining the key economic forces, we normalize $(1+r)=(1+r')= 1$, $w=w'= 1$, the period-1 productivity shock $z=1$ and the period-2 productivity shock $z'$ to $\ln z' \sim \mathcal{N}(0,\sigma_z^2)$. The budget constraints become:
+To simplify the notation while maintaining the key economic forces, we normalize $(1+r)=(1+r')= 1$, $w=w'= 1$, the period-1 productivity shock $z=1$, the period-1 learning-ability shock $y=1$, and the period-2 productivity shock $z'$ to $\ln z' \sim \mathcal{N}(0,\sigma_z^2)$. The budget constraints become:
 \begin{equation}
 c + a' = a + x , \quad c' = a' + txz'
 \end{equation}
@@ -1038,18 +1037,18 @@ Our work points to several promising directions for future research on the econo
 \subsection{Additional cutoffs formulae for households}
 \label{app:cutoff_formulae}
 \begin{align}
-    \overline{z}^M_{non}(a)&:=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)
-    [(1+r)a+\frac{w'z'}{1+r'}]}{w}  \label{eq:z-non-M} \\
-    \overline{z}^M_{slow}(a)&:=\frac{(\exp(\frac{\chi_n-\chi_e e_H}{1
+    \overline{z}^M_{non}(a,h)&:=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)
+    [(1+r)a+\frac{w'z'}{1+r'}]}{w\left(1+\mathbbm{1}_{h > h_H}\lambda\right)}  \label{eq:z-non-M} \\
+    \overline{z}^M_{slow}(a,h)&:=\frac{(\exp(\frac{\chi_n-\chi_e e_H}{1
     +\beta})-1)[(1+r)a+\frac{w'z'(1+\lambda)}{1+r'}]+\lambda\frac
-    {w'z'}{1+r'}}{w} \label{eq:z-slow-M} \\
-    \underline{z}^M_{fast}(a)&:=\frac{(\exp(\frac{\chi_n}{1+\beta})
-    -1)[(1+r)a+\frac{w'z'(1+\lambda)}{1+r'}]}{w} \label
+    {w'z'}{1+r'}}{w\left(1+\mathbbm{1}_{h > h_H}\lambda\right)} \label{eq:z-slow-M} \\
+    \underline{z}^M_{fast}(a,h)&:=\frac{(\exp(\frac{\chi_n}{1+\beta})
+    -1)[(1+r)a+\frac{w'z'(1+\lambda)}{1+r'}]}{w\left(1+\mathbbm{1}_{h > h_H}\lambda\right)} \label
     {eq:z-fast-lower-M} \\
-    \overline{z}^M_{fast}(a)&:=\frac{\left\{\lambda\left[\exp(\frac
+    \overline{z}^M_{fast}(a,h)&:=\frac{\left\{\lambda\left[\exp(\frac
     {\chi_e e_L}{1+\beta})-1\right]^{-1}-1\right\}\frac{w'z'}{1+r'}-
-    (1+r)a}{w}  \label{eq:z-fast-upper_M} \\
-    \overline{z}^H_{non}(a)&:=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)[(1+r)a+\frac{w'z'(1+\lambda)}{1+r'}]}{w}  
+    (1+r)a}{w\left(1+\mathbbm{1}_{h > h_H}\lambda\right)}  \label{eq:z-fast-upper_M} \\
+    \overline{z}^H_{non}(a)&:=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)[(1+r)a+\frac{w'z'(1+\lambda)}{1+r'}]}{w(1+\lambda)}  
 \end{align}
 
 \subsection{Parameter restrictions for cutoffs ranking}

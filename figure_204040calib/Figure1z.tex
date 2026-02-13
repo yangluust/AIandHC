@@ -1,0 +1,59 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}
+
+% Global y-axis (labor productivity shock)
+\draw[thick,->] (-0.8,0) -- (-0.8,6.6) node[above] {$z$};
+
+% Common cutoff levels (schematic heights)
+\def\zNon{1.2}
+\def\zSlow{2.7}
+\def\zFastL{3.9}
+\def\zFastU{5.2}
+
+% Helper: draw dashed line + label
+\newcommand{\cutline}[2]{\draw[dashed] (#1,#2) -- (#1+4.2,#2);}
+
+% Panel 1: Non-learners
+\begin{scope}[shift={(0,0)}]
+  \draw[thick,->] (0,0) -- (4.2,0);
+  \node[below] at (2.1,0) {Non-learners ($h<\underline{h}_M(y)$)};
+
+  \cutline{0}{\zNon}
+  \node[left] at (0,\zNon) {\small $\overline{z}^L_{non}$};
+
+  \node at (2.1,0.6) {\small $n=0,\,e=0$};
+  \node at (2.1,3.6) {\small $n=1,\,e=0$};
+\end{scope}
+
+% Panel 2: Slow learners
+\begin{scope}[shift={(5.0,0)}]
+  \draw[thick,->] (0,0) -- (4.2,0);
+  \node[below] at (2.1,0) {Slow learners ($\underline{h}_M(y)\le h<\overline{h}_M(y)$)};
+
+  \cutline{0}{\zSlow}
+  \node[left] at (0,\zSlow) {\small $\overline{z}^L_{slow}$};
+
+  \node at (2.1,1.4) {\small $n=0,\,e=e_H$};
+  \node at (2.1,4.6) {\small $n=1,\,e=0$};
+\end{scope}
+
+% Panel 3: Fast learners
+\begin{scope}[shift={(10.0,0)}]
+  \draw[thick,->] (0,0) -- (4.2,0);
+  \node[below] at (2.1,0) {Fast learners ($h\ge\overline{h}_M(y)$)};
+
+  \cutline{0}{\zFastL}
+  \cutline{0}{\zFastU}
+  \node[left] at (0,\zFastL) {\small $\underline{z}^L_{fast}$};
+  \node[left] at (0,\zFastU) {\small $\overline{z}^L_{fast}$};
+
+  \node at (2.1,1.7) {\small $n=0,\,e=e_L$};
+  \node at (2.1,4.5) {\small $n=1,\,e=e_L$};
+  \node at (2.1,5.9) {\small $n=1,\,e=0$};
+\end{scope}
+
+\end{tikzpicture}
+\end{document}
+
