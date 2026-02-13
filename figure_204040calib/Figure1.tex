@@ -5,7 +5,7 @@
  \begin{tikzpicture}[xscale=1.25]
 
 % Decision rule conditional on a given y:
-% x-axis: h in [h_M, h_M/(1-delta))
+% x-axis: h in [0, h_M/(1-delta))
 % y-axis: z
 
 % Axes
@@ -14,7 +14,7 @@
 
 % h-range boundaries
 \draw[thick] (0,0) -- (0,6.3);
-\node[below] at (0,0) {$h_M$};
+\node[below] at (0,0) {$0$};
 \draw[thick] (6,0) -- (6,6.3);
 \node[below] at (6,0) {$\frac{h_M}{1-\delta}$};
 
@@ -26,7 +26,7 @@
 \node[below] at (4,0) {$\overline{h}_M(y)$};
 
 % Shade learner-type regions (conditional on y)
-\fill[gray, opacity=0.15] (0,0) rectangle (2,6.3); % non-learners
+% non-learners region (0 to \underline{h}_M(y)) intentionally left unshaded
 \fill[gray, opacity=0.30] (2,0) rectangle (4,6.3); % slow learners
 \fill[gray, opacity=0.55] (4,0) rectangle (6,6.3); % fast learners
 
