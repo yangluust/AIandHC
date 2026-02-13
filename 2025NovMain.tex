@@ -397,9 +397,11 @@ Conditional on a given learning ability $y$, we define two cutoffs in human capi
 \begin{equation}\label{eq:hm}
     \underline{h}_M(y):=\frac{h_M-ye_H}{1-\delta}, \quad\overline{h}_M(y):=\frac{h_M-ye_L}{1-\delta} 
 \end{equation}
-These cutoffs divide households into three groups based on their ability to be employed in the middle sector in the next period.
+These cutoffs divide households into three groups based on their ability to be employed in the middle sector in the next period. Conditional on $y$ and learner type, the optimal choices of labor supply and human capital investment are characterized by cutoffs in $\tilde{z}$. The cutoff formulae below are stated in terms of $z$ under the normalization $x(h)=1$. For households in other sectors, the corresponding cutoffs in $z$ are obtained by dividing by $x(h)$. To simplify notation, we define the effective labor productivity $\tilde{z}:=zx(h)$.
+
 
 \paragraph{Non-learners} are households with $h < \underline{h}_M(y)$. They cannot achieve $h' > h_M$ with either $e_L$ or $e_H$ level of human capital investment today. As a result, they will choose not to invest in human capital, $e=0$, and their future sectoral productivity will be $x(h')=1-\lambda$. 
+
 These non-learners work $n=1$ if and only if $z\geq \overline{z}^L_{non}(a)$:
 \begin{align}
 \overline{z}^L_{non}(a)=\frac{(\exp(\frac{\chi_n}{1+\beta})-1)[(1+r)a+\frac{w'z'(1-\lambda)}{1+r'}]}{w}  \label{eq:z-non}
@@ -448,9 +450,7 @@ We set up our model so that $\overline{z}^L_{fast}(a)>\underline{z}^L_{fast}(a)$
 \paragraph{Decision rule diagram:}With a separate learning-ability shock $y$, the decision rule $(n,e)$ depends on the state $(z,y,h,a)$. Conditional on $y$, the cutoffs in $h$ are given by (\ref{eq:hm}). Figure \ref{fig:rule-diagram} illustrates how labor supply and investment choices vary with $(h,z)$ conditional on a given $y$.
 
 
-This decision rule diagram is representative for households in other four ranges of human capital. Figure \ref{fig:e-digram} illustrates the regions in which households are able to make positive human capital investments that move them across sectoral thresholds. Dark shading denotes regions in which $e_L$ is sufficient (fast learners), while light shading denotes regions in which only $e_H$ is sufficient (slow learners). 
-
-For households with $h<h_M$, the current sector is low and $x(h)=1-\lambda$. Conditional on $y$, the cutoffs $\underline{h}_M(y)$ and $\overline{h}_M(y)$ continue to separate non-learners, slow learners and fast learners. Note that the threshold $h_M$ itself can lie in any of the three regions depending on $y$: $h_M<\underline{h}_M(y)$ (all $h<h_M$ are non-learners), $\underline{h}_M(y)\leq h_M<\overline{h}_M(y)$ (some $h<h_M$ are slow learners), or $h_M\geq \overline{h}_M(y)$ (some $h<h_M$ are fast learners). Since low-sector labor income is scaled by $1-\lambda$, the cutoffs in $z$ are adjusted by $\frac{1}{1-\lambda}$, i.e., $\overline{z}^L_{non}\frac{1}{1-\lambda}$, $\overline{z}^L_{slow}\frac{1}{1-\lambda}$, $\underline{z}^L_{fast}\frac{1}{1-\lambda}$, and $\overline{z}^L_{fast}\frac{1}{1-\lambda}$.
+This decision rule diagram is representative for households in other ranges of human capital. Figure \ref{fig:e-digram} illustrates the regions in which households are able to make positive human capital investments that move them across sectoral thresholds. Dark shading denotes regions in which $e_L$ is sufficient (fast learners), while light shading denotes regions in which only $e_H$ is sufficient (slow learners). 
 
 For households with $h_M\frac{1}{1-\delta} \leq h<h_H\frac{1}{1-\delta}$, conditional on $y$ the boundaries for state space division change to $\overline{h}_H(y)$ and $\underline{h}_H(y)$:
 \begin{equation}\label{eq:hh}
@@ -468,7 +468,7 @@ Households with $h \geq h_H\frac{1}{1-\delta}$ are always non-learners, since th
 \input{figure_204040calib/Figure2a}
 \caption{State Space for Human Capital Investment}
 \begin{flushleft}
-\footnotesize{With a separate learning-ability shock $y$, the figure illustrates the $(h,y)$ regions in which households can raise next-period human capital above $h_M$ or $h_H$. Dark shading indicates that $e_L$ is sufficient to cross the relevant threshold (fast learners), while light shading indicates that only $e_H$ is sufficient (slow learners).} 
+\footnotesize{With a separate learning-ability shock $y$, the figure illustrates how learner type (grey shading) and optimal investment ($e>0$, striped areas) vary with the labor productivity shock $z$ and human capital $h$. The cutoffs in $h$ are conditional on $y$; the cutoffs in $z$ are scaled by current-sector productivity $x(h)$.} 
 \end{flushleft}
     
 \label{fig:e-digram}
