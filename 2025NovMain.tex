@@ -742,10 +742,10 @@ percent employment rate. We calibrate $\chi_{e}$ to match the fact
 that around 30 percent of the population invests in human capital \citep{oecd2025adultlearning}.
 
 We calibrate parameters regarding labor productivity process as follows.
-We assume that $z$ follows the AR(1) process in logs: $\log z'=\rho_{z}\log z+\epsilon_{z}$,
+Recall that $z$ follows the AR(1) process in logs: $\log z'=\rho_{z}\log z+\epsilon_{z}$,
 where $\epsilon_{z}\sim N(0,\sigma_{z}^{2})$. The shock process is
 discretized using the \citet{tauchen1986finite} method, resulting in a transition
-probability matrix with 11 grids. We set the persistence parameter to $\rho_{z} = 0.948$ and the standard deviation to $\sigma_{z} = 0.269$, following the estimates reported in \citet{Chang2006}.
+probability matrix with 11 grids. We set the persistence parameter to $\rho_{z} = 0.948$ and the standard deviation to $\sigma_{z} = 0.269$, following the estimates reported in \citet{Chang2006}. In the quantitative analysis, we assume that the learning ability shock $y_t$ and the labor productivity shock $z_t$ are perfectly correlated, i.e., $y_t=z_t$.
 
 We deviate from the two-period model by assuming that the labor supply is a discrete choice between 0 and $\overline{n}=1/3$. This change only rescales the two-period model without altering the trade-off facing the households. But such rescaling facilitates the interpretation that households are deciding whether to allocate one-third of their fixed time endowment to work. The high-level human capital accumulation
 effort, $e_{H}$ is assumed to equal $\overline{n}.$ The low-level
