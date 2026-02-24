@@ -24,10 +24,10 @@ Timing convention: the cutoff shift is **period 2 only**, so period-1 sector map
 
 ## Mechanism to emphasize (what changes vs \(\gamma\)-only)
 ### Human capital investment
-- The higher cutoff shifts feasibility boundaries for reaching the high sector:
+- The higher cutoff shifts feasibility boundaries for reaching the high sector. Relative to \eqref{eq:hh}:
   \[
-  \underline{h}_H'(y)=\frac{h_H'-ye_H}{1-\delta},\qquad
-  \overline{h}_H'(y)=\frac{h_H'-ye_L}{1-\delta}.
+  \underline{h}_H'(y)=\underline{h}_H(y)+\frac{h_H'-h_H}{1-\delta},\qquad
+  \overline{h}_H'(y)=\overline{h}_H(y)+\frac{h_H'-h_H}{1-\delta}.
   \]
 - **Primary effect is regime reassignment**: some households move from “stay high without extra effort” (under cutoff \(h_H\)) to part-time/full-time learner regimes (under cutoff \(h_H'\)), or become unable to reach the high sector even with \(e_H\).
 - **Conditional on a given learner regime**, the relevant \(z\)-cutoff formulas are the **same as in the \(\gamma\)-only case**; \(h_H'\) changes which regime applies (and thus which cutoff comparison is relevant) for a larger/smaller set of \((h,y)\) states.
