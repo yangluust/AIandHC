@@ -1,7 +1,7 @@
 # Memo (2026-02-12): Separate learning-ability shock \(y\) from earnings shock \(z\) and re-solve the two-period model
 
 ## Purpose
-Record the model change and the full **two-period solution procedure** under the new setup where human-capital accumulation depends on a distinct, observed learning shock \(y\) rather than the same shock \(z\) that enters wages. This memo is intended to be read later to implement updates (not now).
+Record the model change and the full **two-period solution procedure** under the new setup where human-capital accumulation depends on a distinct, observed learning shock \(y\) rather than the same shock \(z\) that enters wages. This memo is intended to be read later to implement/extend the draft consistently.
 
 ## Current baseline (from `2025NovMain.tex`, around Sec. “Model Environment” and “Household Decisions in a Two-Period Model”)
 - **Wages / labor income** (unchanged in proposed change):
@@ -89,38 +89,51 @@ The discrete-choice problem is:
 \max_{n,e} (1+\beta)\ln c(n,e) - \chi_n n - \chi_e e.
 \]
 
-## Critical structural implication: “learner types” become cutoffs in \(y\), not \(z\)
-In the baseline text, feasibility regions (non-/slow-/fast learner) are defined by cutoffs in \(z\) because \(h'=z e + (1-\delta)h\).
+## Critical structural implication: learner types are cutoffs in \(h\) conditional on \(y\)
+In the baseline text, feasibility regions (non-/slow-/fast learner) were defined by cutoffs in \(z\) because \(h'=z e + (1-\delta)h\).
 
-With \(h'=y e+(1-\delta_h)h\), the analogous feasibility cutoffs are in \(y\).
+With \(h'=y e+(1-\delta_h)h\) and \(y\) observed at choice time, it is natural (and cleaner in exposition) to **condition on \(y\)** and define learner types by cutoffs in current human capital \(h\).
 
-### Cutoffs to reach middle-sector threshold \(h_M\)
-Define:
+### Cutoffs to reach the middle-sector threshold \(h_M\) (conditional on \(y\))
+Define the two \(h\)-cutoffs:
 \[
-\underline y_M(h):=\frac{h_M-(1-\delta_h)h}{e_H},\qquad
-\overline y_M(h):=\frac{h_M-(1-\delta_h)h}{e_L}.
+\underline h_M(y):=\frac{h_M-y e_H}{1-\delta_h},\qquad
+\overline h_M(y):=\frac{h_M-y e_L}{1-\delta_h}.
 \]
-Interpretation (for current \(h\) such that reaching \(h_M\) is relevant):
-- **Non-learners**: \(y<\underline y_M(h)\). Even \(e_H\) cannot reach \(h'\ge h_M\).
-- **Slow learners**: \(\underline y_M(h)\le y<\overline y_M(h)\). Only \(e_H\) can reach \(h'\ge h_M\).
-- **Fast learners**: \(y\ge \overline y_M(h)\). \(e_L\) is sufficient to reach \(h'\ge h_M\).
+Interpretation (conditional on \(y\), for the region where upgrading to the middle sector is relevant):
+- **Non-learners**: \(h<\underline h_M(y)\). Even \(e_H\) cannot reach \(h'\ge h_M\).
+- **Slow learners**: \(\underline h_M(y)\le h<\overline h_M(y)\). Only \(e_H\) can reach \(h'\ge h_M\).
+- **Fast learners**: \(h\ge \overline h_M(y)\). \(e_L\) is sufficient to reach \(h'\ge h_M\).
 
-### Cutoffs to reach high-sector threshold \(h_H\)
+### Cutoffs to reach the high-sector threshold \(h_H\) (conditional on \(y\))
+Analogously:
 \[
-\underline y_H(h):=\frac{h_H-(1-\delta_h)h}{e_H},\qquad
-\overline y_H(h):=\frac{h_H-(1-\delta_h)h}{e_L}.
+\underline h_H(y):=\frac{h_H-y e_H}{1-\delta_h},\qquad
+\overline h_H(y):=\frac{h_H-y e_L}{1-\delta_h}.
 \]
 
-### Diagram implication
-Existing “decision-rule diagram” that uses diagonal lines in \((h,z)\) space (baseline \(\underline z_M(h),\overline z_M(h)\)) should be reworked as:
-- **Feasibility / learner-type diagram in \((h,y)\)** with diagonals \(\underline y_M,\overline y_M\) (and \(\underline y_H,\overline y_H\) in the relevant \(h\) ranges).
-- Work cutoffs remain in **\(z\)**, but now their levels depend on \((h,y,a)\) through the future sector \(x(h'(e))\).
+### Diagram implication (current draft convention)
+Because decisions depend on both \(h\) and \(z\), while learner type depends on \(h\) conditional on \(y\), the clean diagram strategy is:
+- **Decision rule diagram**: plot **\(h\)** on the horizontal axis and **\(z\)** on the vertical axis, **conditional on a given \(y\)**, showing vertical lines at \(\underline h_M(y)\), \(\overline h_M(y)\) and horizontal lines at the relevant \(z\)-cutoffs.
+- **Human-capital investment region diagram**: plot **\(h\)** on the horizontal axis and **\(z\)** on the vertical axis, using:
+  - grey shading for learner types (conditional on \(y\)), and
+  - striped shading for regions where \(e>0\),
+  - with the understanding that \(z\)-cutoffs are scaled by current-sector productivity \(x(h)\).
 
-## Deriving period-1 \(z\)-cutoffs conditional on \((h,y,a)\): general reusable formulas
-The baseline paper derives multiple \(z\)-cutoffs by comparing discrete options.
-This approach still works. The key is to isolate how \(y\) enters via \(h'(e)\Rightarrow x(h'(e))\).
+## Deriving period-1 cutoffs in \(z\): use effective productivity \(\tilde z = z x(h)\)
+The baseline paper derives multiple \(z\)-cutoffs by comparing discrete options. This still works.
 
-### Notation (recommended for clean derivations)
+The key simplification in the separated-\(y\) setup is that \(z\) enters period-1 payoffs only through **current labor income**, \(n\cdot w z x(h)\). Define:
+\[
+\tilde z := z\,x(h).
+\]
+Conditional on \(y\) and learner type, the decision rules are characterized by cutoffs in \(\tilde z\). If one states cutoff formulae under the normalization \(x(h)=1\), then for other current sectors the corresponding cutoffs in \(z\) are obtained by dividing by \(x(h)\):
+\[
+z^{cut}(h)=\frac{\tilde z^{cut}}{x(h)}.
+\]
+In particular, in the low sector \(x(h)=1-\lambda\), so \(z\)-cutoffs are scaled by \(\frac{1}{1-\lambda}\); in the high sector \(x(h)=1+\lambda\), they are scaled by \(\frac{1}{1+\lambda}\).
+
+### Notation (reusable for pairwise comparisons)
 Define:
 - \(h'(e)=y e+(1-\delta_h)h\)
 - “non-\(z\)” resources under effort \(e\):
@@ -170,7 +183,7 @@ which implies:
 z=\frac{\exp\left(\frac{\chi_n-\chi_e e_H}{1+\beta}\right)A(e_H)-A(0)}{B}.
 \]
 This is the direct analogue of the baseline “slow learner” cutoff, except:
-- the group “slow learners” is defined by **\(y\)**, and
+- the group “slow learners” is defined by **\(h\) conditional on \(y\)**, and
 - the cutoff’s level depends on \(y\) through \(A(e_H)\) and potentially \(A(0)\) (via \(x(h')\)).
 
 ## Mapping to the baseline text’s structure (what changes, what stays)
@@ -183,9 +196,9 @@ This is the direct analogue of the baseline “slow learner” cutoff, except:
 ### What changes mechanically
 - Replace every “learning feasibility cutoff in \(z\)” (e.g. baseline \(\underline z_M(h),\overline z_M(h)\)) with the corresponding cutoff in \(y\):
   \[
-  \underline z_M,\overline z_M \;\Rightarrow\; \underline y_M,\overline y_M
+  \underline z_M,\overline z_M \;\Rightarrow\; \underline h_M(y),\overline h_M(y)
   \quad\text{and}\quad
-  \underline z_H,\overline z_H \;\Rightarrow\; \underline y_H,\overline y_H.
+  \underline z_H,\overline z_H \;\Rightarrow\; \underline h_H(y),\overline h_H(y).
   \]
 - Any baseline \(z\)-cutoff that included future income terms will now depend on \(y\) via \(x(h'(e))\) because \(h'(e)=y e+(1-\delta_h)h\).
 
@@ -217,14 +230,15 @@ Quadrature/discretization note:
 - **Model environment section**: add \(y\), AR(1) specification for \(y\), and revise the human-capital law of motion to \(h'=y e+(1-\delta_h)h\).
 - **Interpretation paragraph**: replace “\(z\) is also learning ability” with “\(y\) is learning ability; \(z\) is earnings productivity.”
 - **Two-period section**:
-  - Replace feasibility cutoffs in \(z\) (learner types) with feasibility cutoffs in \(y\).
-  - Update decision-rule diagram: learner partition in \((h,y)\); keep work cutoffs in \(z\) but note they shift with \((h,y)\) through \(x(h'(e))\).
+  - Define learner types using \(\underline h_M(y),\overline h_M(y)\) (and \(\underline h_H(y),\overline h_H(y)\)) conditional on observed \(y\).
+  - State cutoff formulae in terms of \(\tilde z=z x(h)\) (or equivalently state them for \(x(h)=1\) and scale by \(1/x(h)\)).
+  - Update decision-rule diagram(s) to be in \((h,z)\) conditional on a given \(y\), with vertical \(h\)-cutoffs and horizontal \(z\)-cutoffs.
 - **Risk discussion** (two-period): with \(y\) observed, “investment-return risk” is reduced relative to a setup where \(y\) is realized after choosing \(e\); heterogeneity in \(y\) matters, but the intertemporal risk channel is still mainly \(z'\).
 
 ## Implementation notes (for later coding/LaTeX edits)
 - Add new parameters: \(\rho_y,\sigma_y\) (and optionally \(\varrho_{zy}\)).
 - Update any routines/derivations that:
   - use \(z\) to compute next-period \(h'\) (replace with \(y\)),
-  - define “learner-type cutoffs” in terms of \(z\) (replace with \(y\)),
-  - build figures over \((h,z)\) for learner regions (move to \((h,y)\)).
+  - define “learner-type cutoffs” in terms of the learning shock (now use \(h\)-cutoffs conditional on \(y\)),
+  - implement sector scaling of \(z\)-cutoffs via \(\tilde z=z x(h)\) (or by dividing cutoffs by \(x(h)\)).
 
