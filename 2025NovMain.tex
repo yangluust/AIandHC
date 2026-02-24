@@ -1296,10 +1296,10 @@ Moreover, $\Delta_H(x,a;t)>0$ implies that
 \subsection{Proof of Proposition \ref{prop:AI_human_capital}}
 The relevant upper bounds of $z$ for positive human capital investment are functions of $\gamma$ (to the first order approximation):
 \begin{align*}
-    \overline{z}^L_{full}(a;\gamma)&= \overline{z}^L_{full}(a;\gamma=0) - \gamma \lambda  \frac{w'z'}{w(1+r')}\\
-    \overline{z}^L_{part}(a;\gamma)&= \overline{z}^L_{part}(a;\gamma=0) - \gamma \lambda \frac{w'z'}{w(1+r')}\frac{\exp(\frac{\chi_e e_L}{1+\beta})}{\exp(\frac{\chi_e e_L}{1+\beta})-1} \\
-    \overline{z}^M_{full}(a;\gamma)&=\overline{z}^M_{full}(a;\gamma=0) + \gamma \lambda \frac{w'z'}{w(1+r')}\exp(\frac{\chi_n-\chi_e e_H}{1+\beta})\\
-    \overline{z}^M_{part}(a;\gamma)&= \overline{z}^M_{part}(a;\gamma=0) + \gamma \lambda \frac{w'z'}{w(1+r')}\frac{1}{\exp(\frac{\chi_e e_L}{1+\beta})-1}
+    \overline{z}^L_{full}(a;\gamma)&= \overline{z}^L_{full}(a;\gamma=0) - \gamma \lambda  \frac{w'z'}{w\left(1-\mathbbm{1}_{h < h_M}\lambda\right)(1+r')}\\
+    \overline{z}^L_{part}(a;\gamma)&= \overline{z}^L_{part}(a;\gamma=0) - \gamma \lambda \frac{w'z'}{w\left(1-\mathbbm{1}_{h < h_M}\lambda\right)(1+r')}\frac{\exp(\frac{\chi_e e_L}{1+\beta})}{\exp(\frac{\chi_e e_L}{1+\beta})-1} \\
+    \overline{z}^M_{full}(a;\gamma)&=\overline{z}^M_{full}(a;\gamma=0) + \gamma \lambda \frac{w'z'}{w\left(1+\mathbbm{1}_{h > h_H}\lambda\right)(1+r')}\exp(\frac{\chi_n-\chi_e e_H}{1+\beta})\\
+    \overline{z}^M_{part}(a;\gamma)&= \overline{z}^M_{part}(a;\gamma=0) + \gamma \lambda \frac{w'z'}{w\left(1+\mathbbm{1}_{h > h_H}\lambda\right)(1+r')}\frac{1}{\exp(\frac{\chi_e e_L}{1+\beta})-1}
 \end{align*}
 Therefore, an anticipated AI shock, $\gamma>0$ makes those with $h<h_M\frac{1}{1-\delta}$ invest less human capital and those with $h>h_M\frac{1}{1-\delta}$ invest more human capital.
 
