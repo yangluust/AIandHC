@@ -62,3 +62,8 @@ Thumbs.db
 # Backup files
 *.bak
 *.backup
+
+# PDF files (except in figure* folders)
+*.pdf
+!figure*/*.pdf
+!figure*/**/*.pdf
