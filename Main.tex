@@ -455,7 +455,7 @@ We set up our model so that $\overline{z}^L_{part}(a,h)>\underline{z}^L_{part}(a
 
 \bigskip
 \noindent
-Households with $h_M\frac{1}{1-\delta} \leq h<h_H\frac{1}{1-\delta}$ have a decision rule analogous to those with $h<h_M\frac{1}{1-\delta}$. Conditional on $y$, the boundaries for learner type change to:
+Households with $h_M\frac{1}{1-\delta} \leq h<h_H\frac{1}{1-\delta}$ have a decision rule analogous to those with $h<h_M\frac{1}{1-\delta}$. Conditional on $y$, the cutoffs for learner type change to:
 \begin{equation}\label{eq:hh}
     \underline{h}_H(y):=\frac{h_H-ye_H}{1-\delta}; \qquad \overline{h}_H(y):=\frac{h_H-ye_L}{1-\delta} 
 \end{equation}
@@ -701,24 +701,17 @@ The increase in the high-sector cutoff is assumed to occur only in period 2; thu
 $h_H'=h_H$ nests the baseline AI 
 shock in \eqref{eq:xAI}.
 
-\paragraph{Human capital investment (regime reassignment)}
-Raising the high-sector cutoff in period 2 shifts the feasibility boundaries for reaching the high sector with effort $e\in\{e_L,e_H\}$ from \eqref{eq:hh} to
-\[
-    \underline{h}_H'(y):=\underline{h}_H(y)+\frac{h_H'-h_H}{1-\delta},\qquad
-    \overline{h}_H'(y):=\overline{h}_H(y)+\frac{h_H'-h_H}{1-\delta}.
-\]
+\paragraph{Human capital investment and labor supply}
+Raising the high-sector cutoff in period 2 shifts the period-1 human capital cutoffs that determine the feasibility of reaching the high sector with effort $e\in\{e_L,e_H\}$. Specifically, the upper bounds for non-learner, $\underline{h}_H(y)$, full-time learner, $\overline{h}_H(y)$, and part-time learner, $h_H\frac{1}{1-\delta}$ all increase by $(h_H'-h_H)\frac{1}{1-\delta}$.
+
 As a result, some households who would have been able to remain in the high sector under $e=0$ when the cutoff is $h_H$ (because $h'(0)>h_H$) may now fall into the middle sector when $h'(0)\in(h_H,h_H')$. For these households, the additional component reduces the payoff of $e=0$ in period 2 and creates an incentive to invest in human capital to remain in the high sector, if reaching $h_H'$ is feasible.
 Conversely, for households for whom $h_H'$ becomes infeasible even under $e=e_H$, the higher cutoff reduces the return to training aimed at accessing the high sector and shifts them toward $e=0$ in period 1.
 
-Relative to the baseline $\gamma$-only shock (Proposition~\ref{prop:AI_human_capital}), the $h_H'$ component therefore works primarily through a \textit{composition} effect: it reassigns households with $h_M\frac{1}{1-\delta} \leq h<h_H\frac{1}{1-\delta}$ across learner types (turning some part-time learners into full-time learners and some full-time learners into non-learners) and turns some households with $h_H\frac{1}{1-\delta}<h<h_H'\frac{1}{1-\delta}$ from non-learners into part-time or full-time learners. 
+Relative to the baseline $\gamma$-only shock (Proposition~\ref{prop:AI_human_capital}), the $h_H'$ component therefore works primarily through a \textit{composition} effect: it turns some households with $h_H\frac{1}{1-\delta}<h<h_H'\frac{1}{1-\delta}$ from non-learners into part-time or full-time learners, and reassigns households with $h_M\frac{1}{1-\delta} \leq h<h_H\frac{1}{1-\delta}$ across learner types, turning some part-time learners into full-time learners, and some part-time or full-time learners into non-learners.
 
-Conditional on a given learner type, however, the within-type cutoffs in $z$ that characterize labor and training choices follow the same formulae as under the baseline $\gamma$-only shock; the role of $h_H'$ is to shift which learner type applies.
+Conditional on a given learner type, however, the within-type cutoffs in $z$ that characterize labor supply and human capital investment remains the same as under the baseline $\gamma$-only shock; the role of $h_H'$ is to shift which learner type applies.
 
-\paragraph{Labor supply}
-The implications for period-1 labor supply follow the same two channels emphasized above.
-\textit{Via income}, households who are downgraded from high to middle absent additional investment (those with $h'(0)\in(h_H,h_H')$) face lower anticipated period-2 income than under the $\gamma$-only shock, which tends to raise their period-1 labor supply.
-\textit{Via full-time training}, among households who respond by switching toward (or intensifying) full-time training to reach $h_H'$, labor supply falls mechanically because training and work compete for time.
-Overall, the expansion generates heterogeneous labor-supply responses by moving households into different training regimes.
+ 
 
 \paragraph{Saving}
 The saving implications are benchmarked against the existing decomposition in terms of $\Delta(x,a;t)$ and $\Delta_H(x,a;t)$.
