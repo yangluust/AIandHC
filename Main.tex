@@ -455,7 +455,7 @@ We set up our model so that $\overline{z}^L_{part}(a,h)>\underline{z}^L_{part}(a
 
 \bigskip
 \noindent
-Households with $h_M\frac{1}{1-\delta} \leq h<h_H\frac{1}{1-\delta}$ have a decision rule analogous to those with $h<h_M\frac{1}{1-\delta}$. Conditional on $y$, the boundaries for learner type change to:
+Households with $h_M\frac{1}{1-\delta} \leq h<h_H\frac{1}{1-\delta}$ have a decision rule analogous to those with $h<h_M\frac{1}{1-\delta}$. Conditional on $y$, the cutoffs for learner type change to:
 \begin{equation}\label{eq:hh}
     \underline{h}_H(y):=\frac{h_H-ye_H}{1-\delta}; \qquad \overline{h}_H(y):=\frac{h_H-ye_L}{1-\delta} 
 \end{equation}
@@ -643,7 +643,14 @@ The AI shock raises period-2 labor income for households who will work in the lo
 
 \subsubsection{Effects on saving}
 
-The AI shock increases sectoral labor productivity for the low and high sectors in period 2, while leaving the middle sector's labor productivity unchanged. Its effect on saving can be analyzed as if we are varying the parameter $t$ in the functions $\Delta(x,a;t)$, defined in \eqref{eq:dadt_integral}, and $\Delta_{H}(x,a;t)$, defined in \eqref{eq:dadt_fulltime}. 
+
+The AI shock influences saving decisions through two main channels. First, it alters the human capital investment choices of some households (see Proposition \ref{prop:AI_human_capital}), which in turn affects their saving behavior (see Propositions \ref{prop:dadt} and \ref{prop:fulltime}). Second, for households whose human capital investment decisions remain unchanged, the AI shock impacts their saving by changing period-2 sectoral productivity.
+
+\paragraph{Households who change human capital investment}
+According to Proposition \ref{prop:AI_human_capital}, households with $h < h_M/(1-\delta)$ (low-income) decrease, while those with $h > h_M/(1-\delta)$ (high-income) increase their human capital investment following the AI shock. In both cases, as established in Propositions \ref{prop:dadt} and \ref{prop:fulltime}, when the AI shock causes low-income households to stop investing in human capital or high-income households to begin investing, their optimal saving increases.
+
+\paragraph{Households who do not change human capital investment}
+The effect of AI shock on their saving can be analyzed as if we are varying the parameter $t$ in the functions $\Delta(x,a;t)$, defined in \eqref{eq:dadt_integral}, and $\Delta_{H}(x,a;t)$, defined in \eqref{eq:dadt_fulltime}. 
 
 \begin{proposition}\label{prop:Delta}
     $\Delta_{H}(x,a;t)$ is increasing in $t$. $\Delta(x,a;t)$ is convex in $t$:
@@ -657,15 +664,15 @@ The AI shock increases sectoral labor productivity for the low and high sectors 
 \end{proof}
 
 
-\paragraph{Households who stay in the same sector}
+\paragraph{Those who stay in the same sector}
 For middle-sector households, the AI shock leaves both their incomes and saving unchanged.
 
-Low-sector and high-sector households experience an increase in period-2 labor income, $x'$, as a result of the AI shock. If they can remain in the same sector via part-time training or without any additional human capital investment, the effect of the AI shock on their saving mirrors that of part-time training, $\Delta(x,a;t)$, since the AI shock raises $x'$ (i.e., $t>1$). As established in Proposition \ref{prop:dadt}, $\Delta(x,a;t)$ has opposite signs for low-skill and high-skill households. Thus, the AI shock \textit{crowds out} saving for low-sector households while \textit{crowding in} saving for high-sector households.
+Low-sector and high-sector households experience an increase in period-2 labor income, $x'$, as a result of the AI shock. If they can remain in the same sector via part-time training or without any additional human capital investment, the effect of the AI shock on their saving mirrors that of part-time training, $\Delta(x,a;t)$, since the AI shock raises $x'$ (i.e., $t>1$). As established in Proposition \ref{prop:dadt}, $\Delta(x,a;t)$ has opposite signs for low-income and high-income households. Thus, the AI shock \textit{crowds out} saving for low-sector households while \textit{crowding in} saving for high-sector households.
 
 For households who must undertake full-time training to remain in the high sector, $\Delta_{H}(x,a;t)$ captures the additional effect of such training on saving. In this case, a higher $x'$—brought about by the AI shock—corresponds to an increase in $t$, further boosting $\Delta_{H}(x,a;t)$ (Proposition \ref{prop:Delta}). Consequently, the AI shock \textit{crowds in} saving for high-sector households in this scenario as well.
 
 
-\paragraph{Households who upskill} For low-sector households, saving behavior remains unchanged, as the AI shock does not affect their future productivity after upskilling.
+\paragraph{Those who upskill} For low-sector households, saving behavior remains unchanged, as the AI shock does not affect their future productivity after upskilling.
 
 For the middle-sector households who upskill via part-time training, their saving changes by $\Delta(x,a;t)$ with $t>1$. The AI shock boosts their future productivity gain from $\lambda$ to $(1+\gamma)\lambda$, which corresponds to increasing $t$ to $t'>1$. According to Proposition \ref{prop:Delta}, if the pre-shock effect of part-time training on saving is positive, the AI shock will \textit{raise} saving. If this effect is negative, the overall impact of the AI shock on saving becomes ambiguous.
 
@@ -673,13 +680,50 @@ For the middle-sector households who upskill via full-time training, there is an
 
 
 
-\paragraph{Households who downskill} Downskilling, which reflects human capital depreciation, does not require any new investment in skills. For high-sector households who transition downward, the AI shock leaves their future productivity -- and thus their saving -- unchanged.
+\paragraph{Those who downskill} Downskilling is caused by human capital depreciation. For high-sector households who transition downward, the AI shock leaves their future productivity -- and thus their saving -- unchanged.
 
 For middle-sector households who downskill to the low sector, their saving changes by $\Delta(x,a;t)$ with $t<1$. The AI shock mitigates their future productivity loss by reducing it from $\lambda$ to $(1-\gamma)\lambda$, effectively increasing $t$ to a new value $t'<1$. According to Proposition \ref{prop:Delta}, if the pre-shock effect $\Delta(x,a;t)$ is positive, the AI shock will \textit{reduce} saving. If this effect is negative, however, the overall impact of the AI shock on saving is ambiguous.
 
 
 
 
+
+\subsubsection{An additional component: expansion of the middle sector}
+The AI shock in \eqref{eq:xAI} changes sectoral productivities in period 2. 
+We now introduce an additional component of the anticipated AI shock to reflect the declining demand for junior hires in many college-level roles: the high 
+sector opportunity shrinks, i.e., the cutoff for high-sector employment 
+rises from $h_H$ to $h_H'>h_H$. 
+That is, period-2 sectoral productivity becomes:
+\begin{equation}
+    \label{eq:xAI_expand}
+x^{AI+}(h')=\left \{ 
+\begin{array}{cl}
+1-\lambda + \gamma \lambda & \text{low sector if }h'<h_{M} \\ 
+1 & \text{middle sector if }h_{M}<h'<h_{H}' \\ 
+1+\lambda + \gamma \lambda & \text{high sector if }h'>h_{H}'%
+\end{array}%
+\right. 
+\end{equation}
+The increase in the high-sector cutoff is assumed to occur only in period 2; thus, period-1 sectoral productivity remains unchanged from \eqref{eq:x}. Setting 
+$h_H'=h_H$ nests the baseline AI 
+shock in \eqref{eq:xAI}.
+
+\paragraph{Human capital investment and labor supply}
+Raising the high-sector cutoff in period 2 shifts the period-1 human capital cutoffs that determine the feasibility of reaching the high sector with effort $e\in\{e_L,e_H\}$. Specifically, the upper bounds for non-learner, $\underline{h}_H(y)$, full-time learner, $\overline{h}_H(y)$, and part-time learner, $h_H\frac{1}{1-\delta}$ all increase by $(h_H'-h_H)\frac{1}{1-\delta}$.
+
+As a result, some households who would have been able to remain in the high sector under $e=0$ when the cutoff is $h_H$ (because $h'(0)>h_H$) may now fall into the middle sector when $h'(0)\in(h_H,h_H')$. For these households, the additional component reduces the payoff of $e=0$ in period 2 and creates an incentive to invest in human capital to remain in the high sector, if reaching $h_H'$ is feasible.
+Conversely, for households for whom $h_H'$ becomes infeasible even under $e=e_H$, the higher cutoff reduces the return to training aimed at accessing the high sector and shifts them toward $e=0$ in period 1.
+
+Relative to the baseline $\gamma$-only shock (Proposition~\ref{prop:AI_human_capital}), the $h_H'$ component therefore works primarily through a \textit{composition} effect: it turns some households with $h_H\frac{1}{1-\delta}<h<h_H'\frac{1}{1-\delta}$ from non-learners into part-time or full-time learners, and reassigns households with $h_M\frac{1}{1-\delta} \leq h<h_H\frac{1}{1-\delta}$ across learner types, turning some part-time learners into full-time learners, and some part-time or full-time learners into non-learners.
+
+Conditional on a given learner type, however, the within-type cutoffs in $z$ that characterize labor supply and human capital investment remains the same as under the baseline $\gamma$-only shock; the role of $h_H'$ is to shift which learner type applies.
+
+ 
+
+\paragraph{Saving}
+The saving implications are benchmarked against the existing decomposition in terms of $\Delta(x,a;t)$ and $\Delta_H(x,a;t)$.
+Households who are downgraded to the middle sector absent extra effort experience a lower anticipated period-2 income than under the $\gamma$-only shock, which attenuates the saving effects previously attributed to higher future income for high-sector households.
+For households who respond by investing to remain in the high sector, the relevant saving channel depends on whether they upskill via part-time training (governed by $\Delta(x,a;t)$) or full-time training (which also loads on $\Delta_H(x,a;t)$). The key change induced by $h_H'$ is again a composition effect: more households shift from the ``stay high'' case into the ``upskill to remain high'' cases, so that the $\Delta$ and $\Delta_H$ mechanisms apply to a larger set of households than under the baseline AI shock in \eqref{eq:xAI}.
 
 \subsection{Limitations of the two-period model}
 Up to this point, our analysis has focused on how AI influences household-level decisions regarding human capital investment, labor supply, and saving within the framework of a two-period model. While this provides valuable insights into individual behavioral responses, understanding the broader, economy-wide implications of AI requires moving to a more comprehensive setting -- a quantitative model with an infinite time horizon, endogenous asset accumulation, and general equilibrium feedback.
