@@ -55,7 +55,7 @@
 % Emerald Harvard Citation Style
 
 \usepackage[style=authoryear,backend=biber,natbib=true,maxcitenames=2,uniquelist=false,url=false,doi=false,eprint=false,isbn=false]{biblatex}
-\addbibresource{refer.bib} % your .bib file
+%\addbibresource{refer.bib} % your .bib file
 \addbibresource{AI.bib} % your .bib file
 
 % Customizing biblatex for Harvard style
@@ -250,8 +250,10 @@ Our findings reveal that human capital responses to AI amplify its positive effe
 
 Regarding households' saving, the indirect effect of AI through human capital adjustments has little impact on aggregate savings -- both in terms of steady state and during the transition. However, these adjustments have a substantial impact on the distribution of wealth: while AI's direct effect increases wealth inequality, the indirect effect from human capital responses partially offsets this increase.
 
+To capture a distinctive feature of AI—its ability to reshape what counts as “high-skill” work—we consider a counterfactual that raises the high-skill cutoff so the middle sector expands by 5 percentage points, holding baseline productivity gains fixed. This reclassification weakens AI’s direct aggregate effect by reducing the share of workers who immediately benefit from high-skill productivity gains. At the same time, the higher cutoff increases the payoff to skill upgrading for workers near the boundary, making endogenous human-capital accumulation a more powerful propagation mechanism and amplifying longer-run gains. The same channel strengthens inequality responses: wealth inequality rises as relatively productive households invest more in skills and, through precautionary motives, also accumulate more assets.
+
 \subsection{Related Literature}
-This paper relates to the literature on how technological change, including AI and robotics, drives job polarization and affects the demand and supply of labor. Studies find that rising employment in both high- and low-wage occupations -- at the expense of middle-skill jobs -- characterizes job polarization across the UK, US, and Western Europe \parencites{Goos2007, Autor2013, Goos2014}. Robots and automation have also been shown to reduce employment and wages across US regions \parencite{Acemoglu2020}, with automation-induced job losses and declining labor force participation especially concentrated among vulnerable workers in highly automated sectors \parencites{Lerch2021, Faber2022}. \citet{wang_artificial_2025} models AI as a learning-by-using technology and predicts large productivity gains and employment loss in the long-run.
+This paper relates to the literature on how technological change, including AI and robotics, drives job polarization and affects the demand and supply of labor. Studies find that rising employment in both high- and low-wage occupations -- at the expense of middle-skill jobs -- characterizes job polarization across the UK, US, and Western Europe \parencites{Goos2007, Autor2013, Goos2014}. Robots and automation have also been shown to reduce employment and wages across US regions \parencite{Acemoglu2020}, with automation-induced job losses and declining labor force participation especially concentrated among vulnerable workers in highly automated sectors \parencites{Lerch2021, Faber2022}. \citet{wang_artificial_2025} models AI as a learning-by-using technology and predicts large productivity gains and employment loss in the long-run. \citet{Suh2023} develops a hierarchical production model in which the distributional effects of automation depend on the complexity of tasks that machines can perform: once technology becomes sufficiently capable, it can amplify top labor incomes and generate “superstar” dynamics.  \citet{Korinek2024} model the transition toward AGI as an expanding frontier of automation over tasks ranked by complexity, showing that macro and wage outcomes depend on how far automation progresses and how it interacts with capital accumulation.
 
 Technological disruption also influences human capital accumulation. Faced with employment risks caused by automation, many affected workers invest in further education as a form of self-insurance, rather than relying solely on increases in the college wage premium \parencites{Atkin2016,Beaudry2016}. Consistent with this, \citet{DiGiacomo2023} and \citet{Dauth2021} find that the adoption of industrial robots in the U.S. and Germany, respectively, has led to increased college and university enrollments.
 
@@ -1039,8 +1041,44 @@ In our quantitative model, this mechanism shows up most clearly in the middle se
 \paragraph{Effects of AI-induced human capital adjustments:}
 Endogenous human capital responses introduce an additional channel. Relative to the No-HC model, the benchmark exhibits a pronounced increase in average assets in the middle sector.\footnote{In the benchmark model, average assets in the high sector decline due to a composition effect, as relatively low-wealth households move up from the middle sector. In the low sector, average assets also fall, primarily because the scope for precautionary saving is limited, and this effect is reinforced by composition changes.} Middle-sector households are relatively productive in our model, and a composition effect further amplifies their asset accumulation: many less productive middle-sector households endogenously move down to the low sector, so the remaining middle-sector population is positively selected on productivity.\footnote{Note that the share of households moving up is relatively small.} In addition, as discussed above, some middle-sector households voluntarily exit employment to invest in human capital full-time. Taken together, these households are  the “active training” and relatively high-productivity workers in our model; thus, as predicted by Propositions ~\ref{prop:dadt} and ~\ref{prop:fulltime}, their human capital investment tends to crowd in saving. Accordingly, AI-induced human capital adjustment strengthens asset accumulation in the middle of the distribution and compresses the gap between the middle and the top. Quantitatively, the increase in wealth inequality in the benchmark economy with endogenous human capital is therefore markedly smaller than in the No HC economy, highlighting the stabilizing role of human capital adjustment in the wealth distribution.
 
-
  
+
+\subsection{AI+ Counterfactual: Shifting the High-Skill Cutoff }
+
+A distinctive feature of AI-driven technological change, relative to earlier waves of computerization or industrial robotics, is that it can substitute for (or complement) a broad set of cognitive and non-routine tasks that are central to many high-skill occupations. This suggests that AI may affect the economy not only by raising productivity in particular sectors, but also by changing the sectoral classification itself. In other words, AI can effectively raise the skill requirements for what counts as “high-skill” work. In our framework, this corresponds to a shift in the cutoff in the human-capital distribution that separates the middle and high sectors. The baseline AI experiment in the paper increases productivity in the same sectors as before while leaving the remaining sector unchanged. In this counterfactual, we keep all of those baseline AI productivity changes exactly the same. The only additional change is that the human-capital cutoff between the middle and high sectors increases. We calibrate this cutoff shift so that the middle-sector population share rises by 5 percentage points, holding everything else fixed. We refer to this specification as the \textbf{AI+ experiment}.
+
+
+\begin{figure}
+\begin{centering}
+\caption{\protect\label{fig:AI_plus}Transition Path of Aggregate Variables in the AI+ experiment:
+Benchmark vs. No HC Models.}
+\includegraphics[width=0.9\linewidth]{figure_204040calib/nohc_agg_plus.pdf}
+\par\end{centering}
+
+
+{\scriptsize Note:  The transition paths of aggregate variables in the AI+ experiment: benchmark vs. No HC models. The x-axis represents years, and the y-axis shows the percentage deviation from the initial steady state. AI introduction is assumed to occur in period 10. The No HC model is an economy in which workers maintain their initial steady-state level of human capital throughout the AI implementation until the new steady state is reached. }{\scriptsize\par}
+\end{figure}
+
+
+This design isolates a mechanism that is specific to AI: rather than only making existing tasks cheaper or faster, AI can redefine what firms consider to be “high-skill” work by raising the bar for entry and retention. As a result, some workers who would have been classified as high-skill in the baseline economy are mechanically reclassified into the middle sector after the cutoff shift. An important implication is that some of the workers who benefit from AI in the baseline experiment no longer receive the direct productivity boost under this counterfactual. Intuitively, these are workers who previously sat near the lower end of the high-skill group: when the cutoff rises, they are now labeled as middle-skill, and the middle sector does not experience the same direct AI productivity increase as the high sector in our baseline specification. Consequently, the direct aggregate impact of AI is smaller in this counterfactual because a smaller fraction of workers is immediately exposed to the high-skill productivity gain.
+
+Figure~\ref{fig:AI_plus} reports the transition dynamics of key aggregate variables in the AI+ experiment, comparing the benchmark model (the model with endogenous human-capital accumulation) to the No-HC model (the model in which human capital is held fixed). Qualitatively, the responses remain similar to the baseline AI experiment: AI adoption raises real activity over the transition. Quantitatively, however, the expansion is markedly weaker when human capital cannot adjust. In the AI+ experiment, the long-run increase in output in the No-HC economy is substantially smaller than in the baseline AI experiment, reflecting that the higher high-skill cutoff mechanically shifts some would-be high-sector workers into the middle sector and thereby attenuates AI’s direct productivity impact. At the same time, the cutoff shift makes the human-capital channel more powerful. By raising the threshold for high-skill employment, AI+ increases the payoff to skill accumulation for workers near the upper end of the middle sector, who can regain access to the high sector—and its productivity gains—only by investing in human capital. As a result, indirect effects operating through endogenous human-capital adjustment become relatively more important, widening the gap between the benchmark and no-human-capital economies. Overall, this counterfactual underscores that AI can reshape aggregate dynamics not only by changing productivity within sectors, but also by shifting sector boundaries, which in turn strengthens the quantitative role of human-capital accumulation during the transition.
+
+
+\begin{figure}
+\begin{centering}
+\caption{\protect\label{fig:AI_plus_gini}Transition Path of Inequality Measures in the AI+ experiment:
+Benchmark vs. No HC Models.}
+\par
+\includegraphics[width=0.95\linewidth]{figure_204040calib/nohc_gini_plus.pdf}
+\par\end{centering}
+{\scriptsize Note:  The transition paths of inequality measures in the AI+ experiment: benchmark vs. No HC models. The x-axis represents years, and the y-axis shows the percentage deviation from the initial steady state. AI introduction is assumed to occur in period 10. The No HC model is an economy in which workers maintain their initial steady-state level of human capital throughout the AI implementation until the new steady state is reached.}{\scriptsize\par}
+
+\end{figure}
+
+
+Figure~\ref{fig:AI_plus_gini}  reports the transition dynamics of inequality measures (income, earnings, consumption, and wealth Gini coefficients) in the AI+ experiment. Relative to the baseline AI experiment, the inequality responses can differ substantially because the cutoff shift changes both the composition of each sector and the incentives to invest in human capital near the boundary. In particular, wealth inequality becomes especially informative about the underlying mechanism. In the AI+ experiment, the higher high-skill cutoff raises the returns to “staying” (or becoming) high-skill, strengthening human-capital investment incentives among relatively productive households.\footnote{Consistent with this mechanism, human-capital inequality—as summarized by the human-capital Gini—rises more in the AI+ experiment than in the baseline AI case.} As emphasized by Propositions ~\ref{prop:dadt} and ~\ref{prop:fulltime}, additional human-capital investment by high-income (high-productivity) households can crowd in saving through the precautionary-savings motive. If the AI+ cutoff shift concentrates incremental training (and thus incremental saving) more strongly in the upper part of the distribution—rather than in the middle—asset accumulation tilts upward and the wealth Gini rises relative to the baseline AI experiment. 
+
 
 
 
