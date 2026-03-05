@@ -645,10 +645,6 @@ The AI shock influences labor supply and saving through two main channels: direc
 
 
 
-
-\paragraph{Households who change human capital investment}
-According to 
-
 \subsubsection{Additional component: AI contracts access to high sector}
 We now introduce an additional component to the anticipated AI shock, motivated by recent labor market evidence that AI exposure leads to reduced demand for junior hires in many college-level roles: the opportunity to enter the high sector contracts -- in other words, the cutoff for high-sector employment 
 rises from $h_H$ to $h_H'>h_H$. 
@@ -663,26 +659,25 @@ x^{AI+}(h')=\left \{
 \end{array}%
 \right. 
 \end{equation}
-If we set $h_H' = h_H$, the baseline AI shock in \eqref{eq:xAI} is nested as a special case .
+An increase in the period-2 high-sector cutoff raises the period-1 human capital thresholds required to access the high sector with any effort level $e \in \{e_L, e_H\}$. Specifically, the upper bounds for non-learners ($\underline{h}_H(y)$), full-time learners ($\overline{h}_H(y)$), and part-time learners ($h_H\frac{1}{1-\delta}$) all rise by $(h_H' - h_H)\frac{1}{1-\delta}$.
 
-\paragraph{Learner type cutoffs}
-Increasing the high-sector cutoff in period 2 causes the period-1 human capital thresholds for each learner type -- those that determine whether reaching the high sector is feasible with an effort level $e \in \{e_L, e_H\}$ -- to rise accordingly. Specifically, the upper bounds for non-learners ($\underline{h}_H(y)$), full-time learners ($\overline{h}_H(y)$), and part-time learners ($h_H\frac{1}{1-\delta}$) all increase by $(h_H' - h_H)\frac{1}{1-\delta}$.
+As a result, some households that previously could have remained in the high sector with $e=0$ under the original cutoff $h_H$ (i.e., those with $h'(0) > h_H$) may now find themselves reclassified into the middle sector if $h'(0) \in (h_H, h_H')$. For these households, the higher cutoff $h_H'$ in period 2 reduces the attractiveness of choosing $e=0$ and instead creates an incentive to invest in human capital to remain in the high sector -- provided that attaining $h_H'$ is feasible.
 
-As a result, some households who previously would have been able to remain in the high sector under $e=0$ when the cutoff was $h_H$ (i.e., those with $h'(0)>h_H$) may now find themselves in the middle sector if $h'(0)\in(h_H, h_H')$. For these households, the higher $h_H'$ in period 2 reduces the value of choosing $e=0$ and creates an incentive to invest in human capital in order to stay in the high sector -- provided that $h_H'$ is attainable.
+Conversely, for households for whom $h_H'$ is unattainable even with the maximum effort ($e = e_H$), the raised cutoff diminishes the returns to training for the high sector, leading these households to opt for $e=0$ in period 1.
 
-On the other hand, for households for whom $h_H'$ is not attainable even with maximum effort ($e=e_H$), the increased cutoff decreases the return to training aimed at accessing the high sector, pushing these households toward choosing $e=0$ in period 1 instead.
+\paragraph{Churning effect on human capital investment and labor supply}
+Compared to the baseline $\gamma$-only shock (Proposition~\ref{prop:AI_human_capital}), the introduction of the $h_H'$ component operates mainly through a \textit{churning} effect. Specifically, it shifts some high-sector households with $h_H\frac{1}{1-\delta}<h<h_H'\frac{1}{1-\delta}$ from being non-learners to becoming part-time or full-time learners. It also reclassifies households with $h_M\frac{1}{1-\delta} \leq h < h_H\frac{1}{1-\delta}$ across different learner types, turning some part-time learners into full-time learners if $h_H'$ is still attainable, and moving some part-time or 
+full-time learners into the non-learner group if $h_H'$ is no longer attainable.
 
-\paragraph{Churning effect}
-Relative to the baseline $\gamma$-only shock (Proposition~\ref{prop:AI_human_capital}), the $h_H'$ component therefore works primarily through a \textit{churning} effect: it turns some households with $h_H\frac{1}{1-\delta}<h<h_H'\frac{1}{1-\delta}$ from non-learners into part-time or full-time learners, and reassigns households with $h_M\frac{1}{1-\delta} \leq h<h_H\frac{1}{1-\delta}$ across learner types, turning some part-time learners into full-time learners, and some part-time or full-time learners into non-learners.
 
-\paragraph{Human capital investment and labor supply} Conditional on a given learner type, however, the within-type cutoffs in $z$ that characterize labor supply and human capital investment remains the same as under the baseline $\gamma$-only shock; the role of $h_H'$ is to shift which learner type applies.
+Conditional on a given learner type, however, the within-type cutoffs in $z$ that determine labor supply and human capital investment remain unchanged from the baseline $\gamma$-only shock. The main effect of $h_H'$ is therefore to modify which learner type applies to each household.
 
  
 
 \paragraph{Saving}
 The \emph{churning} effect from the $h_H'$ component also affects households' saving behavior, since changes in learner type lead to different human capital investment decisions and, consequently, to different saving outcomes. For those who increases their human capital investment due to the $h_H'$ component, their saving changes by $\Delta(x,a;t)$, $\Delta_H(x,a;t)$ or $\Delta_{\text{full-time}}(x,a;t)$ with $t>1$. For those who decrease their human capital investment, their saving changes by $-\Delta(x,a;t)$ or $-\Delta_{\text{full-time}}(x,a;t)$.
 
-For households whose human capital investment remains unchanged, their saving responses largely mirror those under the baseline $\gamma$-only shock, with one notable exception: some households with $h_H\frac{1}{1-\delta} < h < h_H'\frac{1}{1-\delta}$ are reclassified to the middle sector absent any human capital investment. As a result, they anticipate lower period-2 income compared to the $\gamma$-only shock, leading to a change in their saving given by $\Delta(x,a;t<1)$.
+For households whose human capital investment remains unchanged, their saving responses largely mirror those under the baseline $\gamma$-only shock (Appnedix \ref{appsec: AIeffects_saving}), with one notable exception: some households with $h_H\frac{1}{1-\delta} < h < h_H'\frac{1}{1-\delta}$ are reclassified to the middle sector absent any human capital investment. As a result, they anticipate lower period-2 income compared to the $\gamma$-only shock, leading to a change in their saving given by $\Delta(x,a;t<1)$.
 
 \subsection{Limitations of the two-period model}
 Up to this point, our analysis has focused on how AI influences household-level decisions regarding human capital investment, labor supply, and saving within the framework of a two-period model. While this provides valuable insights into individual behavioral responses, understanding the broader, economy-wide implications of AI requires moving to a more comprehensive setting -- a quantitative model with an infinite time horizon, endogenous asset accumulation, and general equilibrium feedback.
@@ -1212,14 +1207,17 @@ Households with $h \geq h_H\frac{1}{1-\delta}$ are non-learners, and have their 
 \label{fig:e-digram_yequalz}
 \end{figure}
 
-\section{Effects of AI shock in two-period model}\label{appsec: AIeffects}
-\subsubsection{Effects on labor supply} 
+\section{Effects of baseline AI shock in two-period model}\label{appsec: AIeffects}
+
+The baseline AI shock is defined in \eqref{eq:xAI}. In this section, we examine how this shock directly affects labor supply and saving through its effect on period-2 labor income.
+
+\subsection{Effects on labor supply} 
 
 The AI shock raises period-2 labor income for households who will work in the low or high sector, leading to a positive income effect that reduces their labor supply in period 1. 
 
 
 
-\subsubsection{Effects on saving when human capital investment is unchanged}
+\subsection{Effects on saving when human capital investment is unchanged}\label{appsec: AIeffects_saving}
 
 The effect of AI shock on their saving can be analyzed as if we are varying the parameter $t$ in the functions $\Delta(x,a;t)$, defined in \eqref{eq:dadt_integral}, and $\Delta_{H}(x,a;t)$, defined in \eqref{eq:dadt_fulltime}. 
 
