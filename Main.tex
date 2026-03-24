@@ -334,7 +334,40 @@ h_{t+1}=y_te_t + (1-\delta)h_t
 \end{equation}
 where $\delta$ is human capital's depreciation rate. We interpret $y_t e_t$ as effective human-capital investment, with $y_t$ capturing a learning-ability shock.\footnote{The learning ability shock $y_t$ is likely to be correlated with the labor productivity shock $z_t$ in reality. In our quantitative analysis, we assume they are perfectly correlated to reduce the dimensionality of the state space. For readers interested in the two-period model under this perfect-correlation assumption, Appendix~\ref{appendix:decision_rule_diagram} displays the corresponding decision rule diagram.}
 
- 
+
+\subsection{AI Shock}
+We model the AI shock as an anticipated change occurring in a future period. We consider two components of the AI shock: a baseline component that changes the skill premium and an additional component that contracts access to the high sector.
+
+\subsubsection{Baseline component: AI changes skill premium}
+Suppose that an AI shock is anticipated to increase the labor productivity for the low sector and the high sector but not the middle sector. The effect of AI shock on the sectoral productivity is captured by $\gamma$ with $0<\gamma<1$:
+\begin{equation}
+    \label{eq:xAI}
+x(h')=\left \{ 
+\begin{array}{cl}
+1-\lambda + \gamma \lambda & \text{low sector if }h'<h_{M} \\ 
+1 & \text{middle sector if }h_{M}<h'<h_{H} \\ 
+1+\lambda + \gamma \lambda & \text{high sector if }h'>h_{H}%
+\end{array}%
+\right. 
+\end{equation}
+where $h'$ is the human capital in the future period.
+In other words, the AI shock increases average labor productivity, reduces the earnings premium for the middle sector, and enlarges the earnings premium for the high sector relative to the middle sector.
+
+\subsubsection{Additional component: AI contracts access to high sector}
+We now introduce an additional component to the anticipated AI shock, motivated by recent labor market evidence that AI exposure leads to reduced demand for junior hires in many college-level roles: the opportunity to enter the high sector contracts -- in other words, the cutoff for high-sector employment 
+rises from $h_H$ to $h_H'>h_H$. 
+With this additional component of AI shock, sectoral productivity becomes:
+\begin{equation}
+    \label{eq:xAI_expand}
+x^{AI+}(h')=\left \{ 
+\begin{array}{cl}
+1-\lambda + \gamma \lambda & \text{low sector if }h'<h_{M} \\ 
+1 & \text{middle sector if }h_{M}<h'<h_{H}' \\ 
+1+\lambda + \gamma \lambda & \text{high sector if }h'>h_{H}'%
+\end{array}%
+\right. 
+\end{equation}
+
 \section{Household Decisions in a Two-Period Model}
 In this section, we solve the household's problem with two periods to gain intuition. 
 
@@ -610,7 +643,7 @@ If the idiosyncratic risk is large enough, i.e., $\frac{\Sigma}{\mu}>\max\{\sigm
 \end{proposition}
 
 \subsection{The Effects of an Anticipated Period-2 AI Shock}
-We assume that an AI shock is anticipated to occur in period 2 and study how it affects the household's decisions in period 1. We consider two components of the AI shock: a baseline component that changes the skill premium and an additional component that contracts access to the high sector.
+We assume that an AI shock is anticipated to occur in period 2 and study how it affects the household's decisions in period 1. 
 
 \subsubsection{Baseline component: AI changes skill premium}
 Suppose that an AI shock is to increase the labor productivity for the low sector and the high sector but not the middle sector. The effect of AI shock on the sectoral productivity is captured by $\gamma$ with $0<\gamma<1$:
