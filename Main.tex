@@ -336,10 +336,18 @@ where $\delta$ is human capital's depreciation rate. We interpret $y_t e_t$ as e
 
 
 \subsection{AI Shock}
-We model the AI shock as an anticipated change occurring in a future period. We consider two components of the AI shock: a baseline component that changes the skill premium and an additional component that contracts access to the high sector.
+AI differs from earlier waves of technological change because it can perform a broad range of cognitive and non-routine tasks across many occupations. This gives rise to two distinct effects. 
+
+First, AI raises productivity in occupations whose task bundles are complementary to it, particularly low-sector jobs that combine service delivery with information processing, such as delivery or customer-service work, and high-sector jobs that combine expert judgment with research, drafting, or diagnostic tasks, such as consulting, law, or medicine. By contrast, middle-sector occupations such as production supervisors, office managers, logistics coordinators, or maintenance technicians are likely to be less affected, because their core tasks remain centered on implementation, coordination, and hands-on problem-solving. 
+
+Second, AI may erode the task content that previously justified 
+high-sector classification for marginal occupations, thereby 
+shifting the boundary of what counts as a high-sector occupation.  Recent labor market evidence illustrates this, showing that AI exposure has led to decreased demand for junior hires in many college-level positions.
+
+We capture the impact of an AI shock as a foreseeable change expected to occur in a future period. This shock consists of two distinct components: a baseline component that alters the skill premium and an additional component that reduces accessibility to the high sector.
 
 \subsubsection{Baseline component: AI changes skill premium}
-Suppose an AI shock is expected to boost labor productivity in both the low and high sectors in a future period, while leaving the middle sector unaffected. We capture the impact of the AI shock on sectoral productivity through the parameter $\gamma$, where $0<\gamma<1$:
+Suppose an AI shock is expected to boost labor productivity in both the low and high sectors in a future period, while leaving the middle sector unaffected. We capture this impact on sectoral productivity through the parameter $\gamma\in(0,1)$:
 \begin{equation}
     \label{eq:xAI}
 x(h')=\left \{ 
@@ -354,7 +362,7 @@ where $h'$ denotes human capital in the future period. In this baseline componen
 
 
 \subsubsection{Additional component: AI contracts access to high sector}
-Recent labor market evidence suggests that AI exposure has led to reduced demand for junior hires in many college-level positions. To reflect this, we introduce an additional AI shock component: a contraction in opportunities to enter the high sector. Specifically, the threshold for high-sector employment in a future period increases from $h_H$ to $h_H' > h_H$, so that future sectoral productivity is given by:
+Suppose an AI shock also raises the threshold for high-sector employment from $h_H$ to $h_H'$ in a future period. Future sectoral productivity is thus given by:
 \begin{equation}
     \label{eq:xAI_expand}
 x^{AI+}(h')=\left\{ 
@@ -365,6 +373,8 @@ x^{AI+}(h')=\left\{
 \end{array}%
 \right. 
 \end{equation}
+As a result, some households whose human capital falls between the old and new thresholds, that is, $h_H < h' < h_H'$, will be reclassified from high-sector to middle-sector employment.
+
 
 \section{Household Decisions in a Two-Period Model}
 In this section, we solve the household's problem with two periods to gain intuition. 
@@ -836,7 +846,7 @@ We now introduce AI technology into the quantitative model, assuming that it wil
 
 The effect of AI on the sectorial productivity is modeled as in (\ref{eq:xAI}) with $\gamma=0.3$. That is, AI boosted the productivity of the low sector workers by 7.5\% and the productivity of the high sector workers by 5\%, leaving the middle sector intact. It captures the key idea that AI increases average labor productivity \parencites{Acemoglu2019a}, but reduces the earning premium for the middle sector, and enlarges the earning premium for the higher sector relative the middle sector. 
 
-A distinctive feature of AI-driven technological change, relative to earlier waves of computerization or industrial robotics, is that it can substitute for (or complement) a broad set of cognitive and non-routine tasks that are central to many high-skill occupations. This suggests that AI may affect the economy not only by raising productivity in particular sectors, but also by changing the sectoral classification itself. In other words, AI can effectively raise the skill requirements for what counts as “high-skill” work. In our framework, this corresponds to a shift in the cutoff in the human-capital distribution that separates the middle and high sectors. The baseline AI experiment in the paper increases productivity in the same sectors as before while leaving the remaining sector unchanged. In this counterfactual, we keep all of those baseline AI productivity changes exactly the same. The only additional change is that the human-capital cutoff between the middle and high sectors increases. We calibrate this cutoff shift so that the middle-sector population share rises by 5 percentage points, holding everything else fixed. We refer to this specification as the \textbf{AI+ experiment}.
+In our framework, this corresponds to a shift in the cutoff in the human-capital distribution that separates the middle and high sectors. The baseline AI experiment in the paper increases productivity in the same sectors as before while leaving the remaining sector unchanged. In this counterfactual, we keep all of those baseline AI productivity changes exactly the same. The only additional change is that the human-capital cutoff between the middle and high sectors increases. We calibrate this cutoff shift so that the middle-sector population share rises by 5 percentage points, holding everything else fixed. We refer to this specification as the \textbf{AI+ experiment}.
 
 
 \subsection{Human Capital Adjustments}
