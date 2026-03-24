@@ -645,19 +645,8 @@ If the idiosyncratic risk is large enough, i.e., $\frac{\Sigma}{\mu}>\max\{\sigm
 \subsection{The Effects of an Anticipated Period-2 AI Shock}
 We assume that an AI shock is anticipated to occur in period 2 and study how it affects the household's decisions in period 1. 
 
-\subsubsection{Baseline component: AI changes skill premium}
-Suppose that an AI shock is to increase the labor productivity for the low sector and the high sector but not the middle sector. The effect of AI shock on the sectoral productivity is captured by $\gamma$ with $0<\gamma<1$:
-\begin{equation}
-    \label{eq:xAI}
-x(h')=\left \{ 
-\begin{array}{cl}
-1-\lambda + \gamma \lambda & \text{low sector if }h'<h_{M} \\ 
-1 & \text{middle sector if }h_{M}<h'<h_{H} \\ 
-1+\lambda + \gamma \lambda & \text{high sector if }h'>h_{H}%
-\end{array}%
-\right. 
-\end{equation}
-In other words, the AI shock increases average labor productivity, reduces the earnings premium for the middle sector, and enlarges the earnings premium for the high sector relative to the middle sector.
+\subsubsection{The effects of skill premium change}
+As specified in \eqref{eq:xAI}, the baseline AI component lowers the relative earnings advantage of the middle sector in period 2 while increasing it for the high sector.
 
 
 \paragraph{Human capital investment:} 
@@ -670,7 +659,7 @@ An anticipated AI shock decreases human capital investment among households with
     See Appendix~\ref{appsec: proofs}.
 \end{proof}
 
-The AI shock influences labor supply and saving through two main channels: directly, by altering households’ period-2 labor income, and indirectly, by affecting their human capital investment decisions. In what follows, we focus on the indirect effects, while the more standard direct channel is discussed in Appendix \ref{appsec: AIeffects}.
+\noindent The AI shock influences labor supply and saving through two main channels: directly, by altering households’ period-2 labor income, and indirectly, by affecting their human capital investment decisions. In what follows, we focus on the indirect effects, while the more standard direct channel is discussed in Appendix \ref{appsec: AIeffects}.
 
 \paragraph{Labor supply:} Because full-time training and labor supply compete for time, households with $h<h_M/(1-\delta)$ shift away from full-time training and supply more labor in the first period, while households with $h>h_M/(1-\delta)$ become more likely to engage in full-time training and thus reduce period-1 labor supply. 
 
@@ -678,20 +667,9 @@ The AI shock influences labor supply and saving through two main channels: direc
 
 
 
-\subsubsection{Additional component: AI contracts access to high sector}
-We now introduce an additional component to the anticipated AI shock, motivated by recent labor market evidence that AI exposure leads to reduced demand for junior hires in many college-level roles: the opportunity to enter the high sector contracts -- in other words, the cutoff for high-sector employment 
-rises from $h_H$ to $h_H'>h_H$. 
-With this additional component of AI shock, period-2 sectoral productivity becomes:
-\begin{equation}
-    \label{eq:xAI_expand}
-x^{AI+}(h')=\left \{ 
-\begin{array}{cl}
-1-\lambda + \gamma \lambda & \text{low sector if }h'<h_{M} \\ 
-1 & \text{middle sector if }h_{M}<h'<h_{H}' \\ 
-1+\lambda + \gamma \lambda & \text{high sector if }h'>h_{H}'%
-\end{array}%
-\right. 
-\end{equation}
+\subsubsection{The effects of access contraction to high sector}
+The additional component of the AI shock is captured by an increase in the high-sector cutoff from $h_H$ to $h_H'>h_H$ in period 2 (see \eqref{eq:xAI_expand}).
+ 
 An increase in the period-2 high-sector cutoff raises the period-1 human capital thresholds required to access the high sector with any effort level $e \in \{e_L, e_H\}$. Specifically, the upper bounds for non-learners ($\underline{h}_H(y)$), full-time learners ($\overline{h}_H(y)$), and part-time learners ($h_H\frac{1}{1-\delta}$) all rise by $(h_H' - h_H)\frac{1}{1-\delta}$.
 
 As a result, some households that previously could have remained in the high sector with $e=0$ under the original cutoff $h_H$ (i.e., those with $h'(0) > h_H$) may now find themselves reclassified into the middle sector if $h'(0) \in (h_H, h_H')$. For these households, the higher cutoff $h_H'$ in period 2 reduces the attractiveness of choosing $e=0$ and instead creates an incentive to invest in human capital to remain in the high sector -- provided that attaining $h_H'$ is feasible.
