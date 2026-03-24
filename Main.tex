@@ -836,6 +836,7 @@ We now introduce AI technology into the quantitative model, assuming that it wil
 
 The effect of AI on the sectorial productivity is modeled as in (\ref{eq:xAI}) with $\gamma=0.3$. That is, AI boosted the productivity of the low sector workers by 7.5\% and the productivity of the high sector workers by 5\%, leaving the middle sector intact. It captures the key idea that AI increases average labor productivity \parencites{Acemoglu2019a}, but reduces the earning premium for the middle sector, and enlarges the earning premium for the higher sector relative the middle sector. 
 
+A distinctive feature of AI-driven technological change, relative to earlier waves of computerization or industrial robotics, is that it can substitute for (or complement) a broad set of cognitive and non-routine tasks that are central to many high-skill occupations. This suggests that AI may affect the economy not only by raising productivity in particular sectors, but also by changing the sectoral classification itself. In other words, AI can effectively raise the skill requirements for what counts as “high-skill” work. In our framework, this corresponds to a shift in the cutoff in the human-capital distribution that separates the middle and high sectors. The baseline AI experiment in the paper increases productivity in the same sectors as before while leaving the remaining sector unchanged. In this counterfactual, we keep all of those baseline AI productivity changes exactly the same. The only additional change is that the human-capital cutoff between the middle and high sectors increases. We calibrate this cutoff shift so that the middle-sector population share rises by 5 percentage points, holding everything else fixed. We refer to this specification as the \textbf{AI+ experiment}.
 
 
 \subsection{Human Capital Adjustments}
@@ -844,7 +845,7 @@ Given the employment distribution in the initial steady state, AI is projected t
 \paragraph{Steady-state human capital distribution:}
 Figure \ref{fig:hc_dist} illustrates how households reallocate across sectors in the new steady state relative to the initial one. The x-axis denotes the level of human capital, while the y-axis indicates the mass of households at each human capital level. The red vertical line marks the cutoff between the low and middle sectors, and the blue vertical line marks the cutoff between the middle and high sectors.
 
-The gray shaded area shows the overlap between the two steady-state distributions. Within each sector, the distribution of households is skewed to the left, reflecting the tendency for human capital investment to be concentrated among those near the sectoral cutoffs. As shown in the decision rule diagram in Figure \ref{fig:e-digram}, some households seek to upgrade their skills, while others aim to remain in more skilled sectors. The blue shaded area highlights the mass of households who have exited the middle sector following the AI shock. The pink areas represent the additional mass of households in the new steady-state distribution, concentrated at the lower end of the low sector and the lower end of the high sector.
+The gray shaded area shows the overlap between the two steady-state distributions. Within each sector, the distribution of households is skewed to the left, reflecting the tendency for human capital investment to be concentrated among those near the sectoral cutoffs. As shown in the decision rule diagram in Figure \ref{fig:rule-diagram}, these are households who seek to upgrade their skills or to remain in more skilled sectors. The blue shaded area highlights the mass of households who have exited the middle sector following the AI shock. The pink areas represent the additional mass of households in the new steady-state distribution, concentrated at the lower end of the low sector and the lower end of the high sector.
 
  \begin{figure}
      \begin{centering}
@@ -880,7 +881,6 @@ Another intriguing finding in our model is the more pronounced employment effect
 
 This disparity arises from two key factors. First, AI enhances the productivity of low-sector workers by 7.5\% and high-sector workers by 5\%. However, this productivity differential alone does not fully account for the significant asymmetry. The second factor is the variation in labor supply elasticity across sectors. Compared to the high sector, the low sector exhibits higher labor supply elasticity, meaning that the same change in labor earnings triggers larger labor supply responses. This is because households in the low sector have lower consumption levels, making their marginal utility of consumption more sensitive to changes in their budget. Consequently, a greater proportion of households in the low sector are at the margin between employment and non-employment \citep{Chang2006}.
 
-
 \begin{figure}
     \begin{centering}
     \caption{Sectoral Population and Employment Transition}
@@ -889,6 +889,26 @@ This disparity arises from two key factors. First, AI enhances the productivity 
     \end{centering}\par
     {\scriptsize Note: The transition paths within each sector. The x-axis represents years, and the y-axis shows the percentage (or percentage point) deviation from the initial steady state. AI introduction is assumed to occur in period 10. “Pop. Share” denotes the population share within each sector. “Employment" is the percentage of households who are employed in each sector.}{\scriptsize\par}
 \end{figure}
+
+\subsection{AI+ Effects}
+
+\begin{figure}
+    \begin{centering}
+    \caption{\protect\label{fig:AI_plus_high} Transition Paths of Key High-Sector Variables in the AI+ Experiment: Benchmark vs. No HC Models.}
+    \par
+    \includegraphics[width=0.95\linewidth]{figure_204040calib/nohc_high_plus.pdf}
+    \par\end{centering}
+    {\scriptsize Note:  Transition paths of the high-sector population share, total human capital, and average assets in the AI+ experiment: benchmark vs. No HC models. The x-axis represents years, and the y-axis shows the percentage deviation from the initial steady state. AI introduction is assumed to occur in period 10.}{\scriptsize\par}
+    
+    \end{figure}
+    
+    
+    
+    This design captures a mechanism that is especially relevant for AI: the technology does not merely make existing workers more productive, but can also redefine what firms consider to be “high-skill” work by raising the threshold for access to the high sector. As a result, some workers who would previously have remained in the high sector are reclassified into the middle sector unless they invest more in human capital. In the simple model, this gives rise to the clear \textbf{churning effect}, as discussed in Section 3.4: workers near the old high-skill cutoff face stronger incentives to invest in order to preserve access to the high sector, while those too far below the new cutoff may instead reduce learning because the high sector has become unattainable. Figure~\ref{fig:AI_plus_high} shows the transition dynamics of the high-sector population share, total human capital, and average assets in the AI+ experiment.\footnote{See Figure \ref{fig:AI_plus_all}  for the corresponding transition dynamics across all sectors in the AI+ experiment.} On the one hand, the higher cutoff mechanically reduces access to the high sector in both models, so the high-sector population share initially falls. In the No-HC model, this mechanical effect remains dominant, and both the high-sector share and total human capital decline because households cannot respond through additional skill accumulation. On the other hand, in the benchmark model, the tighter cutoff gives rise to the churning effect by reshuffling households across learner types near the middle-to-high boundary: some households invest more in order to retain or regain access to the high sector, while others stop upgrading if the new threshold is out of reach. 
+    
+    
+
+
 
 
 
@@ -1008,25 +1028,10 @@ Endogenous human capital responses introduce an additional channel. Relative to 
 
 \subsection{AI+ Counterfactual: Shifting the High-Skill Cutoff }
 
-A distinctive feature of AI-driven technological change, relative to earlier waves of computerization or industrial robotics, is that it can substitute for (or complement) a broad set of cognitive and non-routine tasks that are central to many high-skill occupations. This suggests that AI may affect the economy not only by raising productivity in particular sectors, but also by changing the sectoral classification itself. In other words, AI can effectively raise the skill requirements for what counts as “high-skill” work. In our framework, this corresponds to a shift in the cutoff in the human-capital distribution that separates the middle and high sectors. The baseline AI experiment in the paper increases productivity in the same sectors as before while leaving the remaining sector unchanged. In this counterfactual, we keep all of those baseline AI productivity changes exactly the same. The only additional change is that the human-capital cutoff between the middle and high sectors increases. We calibrate this cutoff shift so that the middle-sector population share rises by 5 percentage points, holding everything else fixed. We refer to this specification as the \textbf{AI+ experiment}.
 
 
 
 
-
-\begin{figure}
-\begin{centering}
-\caption{\protect\label{fig:AI_plus_high} Transition Paths of Key High-Sector Variables in the AI+ Experiment: Benchmark vs. No HC Models.}
-\par
-\includegraphics[width=0.95\linewidth]{figure_204040calib/nohc_high_plus.pdf}
-\par\end{centering}
-{\scriptsize Note:  Transition paths of the high-sector population share, total human capital, and average assets in the AI+ experiment: benchmark vs. No HC models. The x-axis represents years, and the y-axis shows the percentage deviation from the initial steady state. AI introduction is assumed to occur in period 10.}{\scriptsize\par}
-
-\end{figure}
-
-
-
-This design captures a mechanism that is especially relevant for AI: the technology does not merely make existing workers more productive, but can also redefine what firms consider to be “high-skill” work by raising the threshold for access to the high sector. As a result, some workers who would previously have remained in the high sector are reclassified into the middle sector unless they invest more in human capital. In the simple model, this gives rise to the clear \textbf{churning effect}, as discussed in Section 3.4: workers near the old high-skill cutoff face stronger incentives to invest in order to preserve access to the high sector, while those too far below the new cutoff may instead reduce learning because the high sector has become unattainable. Figure~\ref{fig:AI_plus_high} shows the transition dynamics of the high-sector population share, total human capital, and average assets in the AI+ experiment.\footnote{See Figure \ref{fig:AI_plus_all}  for the corresponding transition dynamics across all sectors in the AI+ experiment.} On the one hand, the higher cutoff mechanically reduces access to the high sector in both models, so the high-sector population share initially falls. In the No-HC model, this mechanical effect remains dominant, and both the high-sector share and total human capital decline because households cannot respond through additional skill accumulation. On the other hand, in the benchmark model, the tighter cutoff gives rise to the churning effect by reshuffling households across learner types near the middle-to-high boundary: some households invest more in order to retain or regain access to the high sector, while others stop upgrading if the new threshold is out of reach. 
 
 
 \begin{figure}
