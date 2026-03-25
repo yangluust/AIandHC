@@ -336,15 +336,14 @@ where $\delta$ is human capital's depreciation rate. We interpret $y_t e_t$ as e
 
 
 \subsection{AI Shock}
-AI differs from earlier waves of technological change because it can perform a broad range of cognitive and non-routine tasks across many occupations. This gives rise to two distinct effects. 
+AI differs from earlier waves of automation or computerization because it can perform complex, cognitive, and non-routine tasks that once required substantial education and expertise. This primarily affects the economy through two channels.
 
-First, AI raises productivity in occupations whose task bundles are complementary to it, particularly low-sector jobs that combine service delivery with information processing, such as delivery or customer-service work, and high-sector jobs that combine expert judgment with research, drafting, or diagnostic tasks, such as consulting, law, or medicine. By contrast, middle-sector occupations such as production supervisors, office managers, logistics coordinators, or maintenance technicians are likely to be less affected, because their core tasks remain centered on implementation, coordination, and hands-on problem-solving. 
+First, AI raises productivity in occupations whose task bundles are complementary to it, particularly low-sector occupations that combine service delivery with information processing, such as delivery or customer-service work, and high-sector occupations that combine expert judgment with research, drafting, or diagnostic tasks, such as consulting, law, or medicine. By contrast, middle-sector occupations such as production supervisors, office managers, logistics coordinators, or maintenance technicians are likely to be less affected. As a result, the earnings premium for middle-sector occupations erodes relative to both the low and high sectors, while the high-sector premium rises.
 
-Second, AI may erode the task content that previously justified 
-high-sector classification for marginal occupations, thereby 
-shifting the boundary of what counts as a high-sector occupation.  Recent labor market evidence illustrates this, showing that AI exposure has led to decreased demand for junior hires in many college-level positions.
+Second, AI may raise the effective skill threshold for high-sector 
+entry, thereby reducing the set of workers who qualify for high-sector employment. Recent labor market evidence supports this view: demand for junior hires in many college-level positions is already declining, particularly in roles with greater exposure to AI \citep{bloomberg2025}.
 
-We capture the impact of an AI shock as a foreseeable change expected to occur in a future period. This shock consists of two distinct components: a baseline component that alters the skill premium and an additional component that reduces accessibility to the high sector.
+We model these two channels as two components of an anticipated AI shock occurring in a future period: a baseline component that changes the skill premium and an additional component that reduces accessibility to the high sector. Our analysis centers on the baseline component and examines the additional component only insofar as it qualifies the baseline results.
 
 \subsubsection{Baseline component: AI changes skill premium}
 Suppose an AI shock is expected to boost labor productivity in both the low and high sectors in a future period, while leaving the middle sector unaffected. We capture this impact on sectoral productivity through the parameter $\gamma\in(0,1)$:
@@ -361,7 +360,7 @@ x(h')=\left \{
 where $h'$ denotes human capital in the future period. In this baseline component, the AI shock raises average labor productivity, diminishes the earnings premium for the middle sector, and increases the earnings premium for the high sector relative to the middle sector.
 
 
-\subsubsection{Additional component: AI contracts access to high sector}
+\subsubsection{Additional component: AI raises the bar for high-sector entry}
 Suppose an AI shock also raises the threshold for high-sector employment from $h_H$ to $h_H'$ in a future period. Future sectoral productivity is thus given by:
 \begin{equation}
     \label{eq:xAI_expand}
@@ -846,7 +845,7 @@ We now introduce AI technology into the quantitative model, assuming that it wil
 
 The baseline component of AI is modeled in (\ref{eq:xAI}) and we set $\gamma=0.3$. That is, AI boosted the productivity of the low sector workers by 7.5\% and the productivity of the high sector workers by 5\%, leaving the middle sector intact. It captures the key idea that AI increases average labor productivity \parencites{Acemoglu2019a}, but reduces the earning premium for the middle sector, and enlarges the earning premium for the higher sector relative the middle sector. 
 
-The additional component of AI is that the human-capital threshold between the middle and high sectors increases as in \eqref{eq:xAI_expand}. We calibrate this threshold shift so that the middle-sector population share in the initial steady state rises by 5 percentage points, holding everything else fixed. \textcolor{red}{We need to explain more on what holding everything else fixed means.} We refer to this specification as the \textbf{AI+ experiment}.
+The additional component of AI is that the human-capital threshold between the middle and high sectors increases as in \eqref{eq:xAI_expand}. We calibrate the new threshold $h_H'$ such that the middle-sector population share in the initial steady state is increased from 40\% to 45\%, relative to the benchmark model. In other words, 5\% population will be reclassified out of high-sector employment due to the AI shock if their human capital remains the same. \textcolor{red}{Please edit this part if you think it is not clear or correct.} We refer to this specification as the \textbf{AI+ experiment}.
 
 
 \subsection{Human Capital Adjustments}
