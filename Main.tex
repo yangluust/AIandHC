@@ -343,7 +343,7 @@ First, AI raises productivity in occupations whose task bundles are complementar
 Second, AI may raise the effective skill threshold for high-sector 
 entry, thereby reducing the set of workers who qualify for high-sector employment. Recent labor market evidence supports this view: demand for junior hires in many college-level positions is already declining, particularly in roles with greater exposure to AI \citep{bloomberg2025}.
 
-We model these two channels as two components of an anticipated AI shock occurring in a future period: a baseline component that changes the skill premium and an additional component that reduces accessibility to the high sector. Our analysis centers on the baseline component and examines the additional component only insofar as it qualifies the baseline results.
+We model these two channels as two components of an anticipated AI shock occurring in a future period: a baseline component that changes the skill premium and an additional component that reduces accessibility to the high sector. 
 
 \subsubsection{Baseline component: AI changes skill premium}
 Suppose an AI shock is expected to boost labor productivity in both the low and high sectors in a future period, while leaving the middle sector unaffected. We capture this impact on sectoral productivity through the parameter $\gamma\in(0,1)$:
@@ -372,7 +372,7 @@ x^{AI+}(h')=\left\{
 \end{array}%
 \right. 
 \end{equation}
-As a result, some households whose human capital falls between the old and new thresholds, that is, $h_H < h' < h_H'$, will be reclassified from high-sector to middle-sector employment.
+As a result, some households whose human capital falls between the old and new thresholds, that is, $h_H < h' < h_H'$, will be reclassified from high-sector to middle-sector employment. We refer to this specification as the \textbf{AI+ experiment}.
 
 
 \section{Household Decisions in a Two-Period Model}
@@ -845,7 +845,9 @@ We now introduce AI technology into the quantitative model, assuming that it wil
 
 The baseline component of AI is modeled in (\ref{eq:xAI}) and we set $\gamma=0.3$. That is, AI boosted the productivity of the low sector workers by 7.5\% and the productivity of the high sector workers by 5\%, leaving the middle sector intact. It captures the key idea that AI increases average labor productivity \parencites{Acemoglu2019a}, but reduces the earning premium for the middle sector, and enlarges the earning premium for the higher sector relative the middle sector. 
 
-The additional component of AI is that the human-capital threshold between the middle and high sectors increases as in \eqref{eq:xAI_expand}. We calibrate the new threshold $h_H'$ such that the middle-sector population share in the initial steady state is increased from 40\% to 45\%, relative to the benchmark model. In other words, 5\% population will be reclassified out of high-sector employment due to the AI shock if their human capital remains the same. \textcolor{red}{Please edit this part if you think it is not clear or correct.} We refer to this specification as the \textbf{AI+ experiment}.
+The additional component of AI is that the human-capital threshold between the middle and high sectors increases as in \eqref{eq:xAI_expand}. We calibrate the new threshold $h_H'$ such that the middle-sector population share in the initial steady state is increased from 40\% to 45\%, relative to the benchmark model. In other words, 5\% population will be reclassified out of high-sector employment due to the AI shock if their human capital remains the same. \textcolor{red}{Please edit this part if you think it is not clear or correct.} 
+
+Our analysis centers on the baseline component and examines the additional component only insofar as it qualifies the baseline results.
 
 
 \subsection{Human Capital Adjustments}
@@ -910,7 +912,8 @@ This disparity arises from two key factors. First, AI enhances the productivity 
     {\scriptsize Note:  Transition paths of the high-sector population share, total human capital, and average assets in the AI+ experiment: benchmark vs. No HC models. The x-axis represents years, and the y-axis shows the percentage deviation from the initial steady state. AI introduction is assumed to occur in period 10.}{\scriptsize\par}
     
     \end{figure}
-    
+
+    In the AI+ experiment, the additional component of AI raises the bar for high-sector employment. Relative to the baseline results discussed above, the rising bar of high-sector employment significantly increases the human capital investment by the high-sector households. \textcolor{red}{Use the figures of population share and total human capital in high sector to support this claim.}
     
     
     This design captures a mechanism that is especially relevant for AI: the technology does not merely make existing workers more productive, but can also redefine what firms consider to be “high-skill” work by raising the threshold for access to the high sector. As a result, some workers who would previously have remained in the high sector are reclassified into the middle sector unless they invest more in human capital. In the simple model, this gives rise to the clear \textbf{churning effect}, as discussed in Section 3.4: workers near the old high-skill cutoff face stronger incentives to invest in order to preserve access to the high sector, while those too far below the new cutoff may instead reduce learning because the high sector has become unattainable. Figure~\ref{fig:AI_plus_high} shows the transition dynamics of the high-sector population share, total human capital, and average assets in the AI+ experiment.\footnote{See Figure \ref{fig:AI_plus_all}  for the corresponding transition dynamics across all sectors in the AI+ experiment.} On the one hand, the higher cutoff mechanically reduces access to the high sector in both models, so the high-sector population share initially falls. In the No-HC model, this mechanical effect remains dominant, and both the high-sector share and total human capital decline because households cannot respond through additional skill accumulation. On the other hand, in the benchmark model, the tighter cutoff gives rise to the churning effect by reshuffling households across learner types near the middle-to-high boundary: some households invest more in order to retain or regain access to the high sector, while others stop upgrading if the new threshold is out of reach. 
