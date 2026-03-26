@@ -674,7 +674,7 @@ An anticipated AI shock decreases human capital investment among households with
 
 
 
-\subsubsection{The effects of access contraction to high sector}
+\subsubsection{The effects of raising the high-sector cutoff}\label{sec:AI_raising_high_sector_cutoff}
 The additional component of the AI shock raises the high-sector cutoff from $h_H$ to $h_H'>h_H$ in period 2 (see \eqref{eq:xAI_expand}), which in turn increases the period-1 human capital thresholds required to access the high sector with any effort level $e \in \{e_L, e_H\}$. Specifically, the upper bounds for non-learners ($\underline{h}_H(y)$), full-time learners ($\overline{h}_H(y)$), and part-time learners ($h_H\frac{1}{1-\delta}$) all rise by $(h_H' - h_H)\frac{1}{1-\delta}$.
 
 As a result, some households that previously could have remained in the high sector with $e=0$ under the original cutoff $h_H$ (i.e., those with $h'(0) > h_H$) may now find themselves reclassified into the middle sector if $h'(0) \in (h_H, h_H')$. For these households, the higher cutoff $h_H'$ in period 2 reduces the attractiveness of choosing $e=0$ and instead creates an incentive to invest in human capital to remain in the high sector -- provided that attaining $h_H'$ is feasible.
@@ -832,15 +832,7 @@ are implied by households labor supply decisions and saving decisions. }{\script
 
 
 \section{AI's Impact on Human Capital Adjustments}
-\begin{figure}
-    \begin{centering}
-    \caption{Steady-state Human Capital Distribution}
-    \includegraphics[width=0.9\linewidth]{figure_204040calib/h_dist.pdf}
-    \label{fig:hc_dist}    
-    \end{centering}\par
-    {\scriptsize Note: The x-axis denotes the level of human capital, while the y-axis indicates the mass of households at each human capital level. The red vertical line marks the cutoff between the low and middle sectors, and the blue vertical line marks the cutoff between the middle and high sectors.}{\scriptsize\par}
-    \end{figure}
-     
+
 We now use the calibrated model to examine the effects of an AI shock anticipated to arrive in 10 years, under the assumption that households have full information about its timing. This allows us to study how the economy adjusts both in anticipation of and in response to AI adoption.
 
 Our analysis centers on the baseline component, examining both transition dynamics and the differences between the initial and new steady states; we refer to this as the baseline AI experiment. We then consider the additional component only insofar as it qualifies the baseline results; we refer to this as the AI+ experiment.
@@ -855,10 +847,22 @@ The additional component of AI is a rise of human-capital threshold between the 
 \subsection{Human Capital Adjustments}
 Given the employment distribution in the initial steady state, AI is projected to increase the economy's labor productivity by 4\% on average, assuming households do not alter their decisions in response. However, changes in earning premiums incentivize households to adjust their human capital investments. 
 
-\paragraph{Steady-state human capital distribution:}
-Figure \ref{fig:hc_dist} illustrates how households reallocate across sectors in the new steady state relative to the initial one. The x-axis denotes the level of human capital, while the y-axis indicates the mass of households at each human capital level. The red vertical line marks the cutoff between the low and middle sectors, and the blue vertical line marks the cutoff between the middle and high sectors.
+\begin{figure}
+    \begin{centering}
+    \caption{Steady-state Human Capital Distribution}
+    \includegraphics[width=0.9\linewidth]{figure_204040calib/h_dist.pdf}
+    \label{fig:hc_dist}    
+    \end{centering}\par
+    {\scriptsize Note: The x-axis denotes the level of human capital, while the y-axis indicates the mass of households at each human capital level. The red vertical line marks the cutoff between the low and middle sectors, and the blue vertical line marks the cutoff between the middle and high sectors.}{\scriptsize\par}
+    \end{figure}
+     
 
-The gray shaded area shows the overlap between the two steady-state distributions. Within each sector, the distribution of households is skewed to the left, reflecting the tendency for human capital investment to be concentrated among those near the sectoral cutoffs. As shown in the decision rule diagram in Figure \ref{fig:rule-diagram}, these are households who seek to upgrade their skills or to remain in more skilled sectors. The blue shaded area highlights the mass of households who have exited the middle sector following the AI shock. The pink areas represent the additional mass of households in the new steady-state distribution, concentrated at the lower end of the low sector and the lower end of the high sector.
+\paragraph{Steady-state distribution:}
+Figure \ref{fig:hc_dist} compares the initial and new steady-state human capital distributions, highlighting how households reallocate across sectors after the AI shock. The x-axis reports human capital levels and the y-axis shows the mass of households at each level; the red and blue vertical lines indicate the low--middle and middle--high sector cutoffs, respectively.
+
+
+The gray shaded area indicates the overlap between the initial and new steady-state distributions. Within each sector, the distribution is left-skewed, consistent with human capital investment being concentrated among households near sectoral cutoffs; as illustrated by the decision rule in Figure \ref{fig:rule-diagram}, these households invest to move up or remain in more skilled sectors. The blue shaded area captures households exiting the middle sector after the AI shock, and the pink shaded areas show where this mass is reallocated in the new steady state---toward the lower end of the low sector and the lower end of the high sector. This reallocation pattern highlights a divergence in human capital investment behavior across households. Proposition~\ref{prop:AI_human_capital} provides the formal characterization of this mechanism.
+
 
  \begin{figure}
      \begin{centering}
@@ -870,29 +874,15 @@ The gray shaded area shows the overlap between the two steady-state distribution
 \end{figure}
 
 \paragraph{Transition path}
-Figure \ref{fig:h_agg} reports the transition dynamics of aggregate human capital from the initial to the new steady state. The figure also displays its extensive margin (the share of households making positive human capital investments) and intensive margin (average human capital per household among those who invest).
+Figure \ref{fig:h_agg} traces the transition of aggregate human capital from the initial to the new steady state, together with its two margins: the extensive margin (the share of households making positive human capital investments) and the intensive margin (average human capital among investing households).
 
-As households reallocate from the middle sector to the low and high sectors, the net effect is a gradual decline in aggregate human capital along the transition path. This mirrors the steady-state change observed in Figure \ref{fig:hc_dist}, where the increased mass at the lower end of the low sector outweighs the increase in the high sector.
+As households move out of the middle sector and into the low and high sectors, aggregate human capital declines gradually along the transition path. This pattern is due to the fact that the increase in mass at the lower end of the low sector is larger than the increase in the high sector, as shown in Figure \ref{fig:hc_dist}.
 
-Additionally, human capital accumulation becomes increasingly concentrated among a smaller share of the population. The proportion of households making positive human capital investments steadily declines, ultimately stabilizing at a level 4\% lower than in the initial steady state. Meanwhile, the average human capital among those who invest rises, reaching a level 12\% higher than the initial steady state in the long run.\footnote{The only exception to those patterns occurs at period 10 when the positive effects of AI on sectoral productivity are realized.}
+At the same time, human capital accumulation becomes more concentrated in a smaller group of households. The share of households making positive human capital investments falls steadily and settles about 4\% below its initial steady-state level, while average human capital among investors rises and converges to roughly 12\% above its initial steady-state level.\footnote{The only exception to these patterns occurs in period 10, when the productivity effects of AI are realized.}
 
 
 
 \subsection{Job Polarization}\label{sec:jobpolar}
-
-An important implication of human capital adjustments to the AI shock is job polarization. 
-Figure \ref{fig:tr_share} illustrate the transition paths of population shares and employment rates in each sector. Notably, the middle sector experiences a significant decline, with its population share decreasing by approximately 13\%. Additionally, employment within this sector plummets to a level 16\% lower than the initial steady state. In contrast, both the low and high sectors see increases in their population shares and employment rates. These dynamics indicate a reallocation of \emph{workers} from the middle sector to the low and high sectors following the introduction of AI.
-
-\paragraph{Voluntary job polarization}
-This worker reallocation aligns with the phenomenon of ``job polarization"\parencites{Goos2014}, where AI and automation technologies disproportionately replace tasks commonly performed by middle-skilled workers. However, our model introduces a complementary mechanism to the conventional understanding of this reallocation. Specifically, households in our model voluntarily exit the middle sector even before AI implementation by adjusting their human capital investments -- many middle-sector workers opt for non-employment to invest in skills that will better position
-them for the post-AI labor market.\footnote{To emphasize this key difference, our model deliberately abstracts from any direct negative effect of AI on middle-sector workers.}   This mechanism is formally characterized in  Proposition (\ref{prop:AI_human_capital}) in the two period model above.
-
-
-\paragraph{Employment flows more towards the low sector}
-
-Another intriguing finding in our model is the more pronounced employment effect in the low sector compared to the high sector. In the new steady state, the employment rate in the low sector increases by 12\%, whereas in the high sector, it rises by only 0.5\%. This asymmetry in employment rate changes suggests an unbalanced reallocation of workers from the middle sector, with a greater flow toward the low sector.
-
-This disparity arises from two key factors. First, AI enhances the productivity of low-sector workers by 7.5\% and high-sector workers by 5\%. However, this productivity differential alone does not fully account for the significant asymmetry. The second factor is the variation in labor supply elasticity across sectors. Compared to the high sector, the low sector exhibits higher labor supply elasticity, meaning that the same change in labor earnings triggers larger labor supply responses. This is because households in the low sector have lower consumption levels, making their marginal utility of consumption more sensitive to changes in their budget. Consequently, a greater proportion of households in the low sector are at the margin between employment and non-employment \citep{Chang2006}.
 
 \begin{figure}
     \begin{centering}
@@ -902,6 +892,18 @@ This disparity arises from two key factors. First, AI enhances the productivity 
     \end{centering}\par
     {\scriptsize Note: The transition paths within each sector. The x-axis represents years, and the y-axis shows the percentage (or percentage point) deviation from the initial steady state. AI introduction is assumed to occur in period 10. “Pop. Share” denotes the population share within each sector. “Employment" is the percentage of households who are employed in each sector.}{\scriptsize\par}
 \end{figure}
+
+An important implication of the human-capital response to AI is job polarization. Figure \ref{fig:tr_share} illustrates the transition paths of sectoral population shares and employment rates. The middle sector contracts sharply: its population share falls by about 13\%, and its employment rate declines by 16\%. By contrast, both the low and high sectors experience increases in population shares and employment. Taken together, these dynamics imply a reallocation of \emph{workers} away from the middle sector and toward the low and high sectors after AI is introduced.
+
+\paragraph{Voluntary job polarization}
+This reallocation is consistent with the standard job-polarization pattern documented in the literature \parencites{Goos2014}, in which AI and automation disproportionately displace tasks typically performed by middle-skill workers. Our model, however, adds a complementary channel. Households can begin leaving the middle sector even before AI is implemented by adjusting their human-capital investment decisions: many middle-sector workers choose non-employment in order to invest in skills that improve their position in the post-AI labor market.\footnote{To highlight this mechanism, the model deliberately abstracts from any direct negative effect of AI on middle-sector workers.} This mechanism is formally characterized in Proposition~\ref{prop:AI_human_capital} in the two-period model above.
+
+\paragraph{Employment flows more toward the low sector}
+A second result is that employment rises much more in the low sector than in the high sector. In the new steady state, the low-sector employment rate increases by 12\%, whereas the high-sector employment rate rises by only 0.5\%. This asymmetry indicates that reallocation out of the middle sector is tilted toward low-sector employment.
+
+Two forces drive this pattern. First, AI raises productivity by 7.5\% in the low sector, compared with 5\% in the high sector. But this productivity gap alone is not enough to explain the difference in employment responses. The second force is heterogeneity in labor-supply elasticities: labor supply is more elastic in the low sector than in the high sector, so a given change in labor earnings generates a larger labor-supply response. Intuitively, because low-sector households consume less, their marginal utility of consumption is more sensitive to budget changes. As a result, a larger share of low-sector households is near the employment/non-employment margin \citep{Chang2006}.
+
+
 
 \subsection{AI+ Effects}
 
@@ -915,10 +917,18 @@ This disparity arises from two key factors. First, AI enhances the productivity 
     
     \end{figure}
 
-    In the AI+ experiment, the additional component of AI raises the bar for high-sector employment. Relative to the baseline results discussed above, the rising bar of high-sector employment significantly increases the human capital investment by the high-sector households. \textcolor{red}{Use the figures of population share and total human capital in high sector to support this claim. Move the asset holding figure to the next section.}
+In the AI+ experiment, AI does more than changing the skill premium: it also changes what firms classify as ``high-skill'' work by increasing the cutoff for entering the high sector. This tighter threshold implies that some workers who would previously have remained in the high sector are reclassified into the middle sector unless they increase their human capital investment. 
+
+This mechanism generates a \textbf{churning effect} (Section \ref{sec:AI_raising_high_sector_cutoff}). Workers near the new high-sector cutoff have stronger incentives to invest in human capital to retain high-sector employment, while workers far below the new cutoff may reduce learning because entry into the high sector becomes less attainable. 
+
+Quantitatively, this churning effect leads to a significant increase in human capital investment among high-sector households relative to the baseline AI experiment. Figure~\ref{fig:AI_plus_high} reports the transition dynamics of the high-sector population share and total human capital.\footnote{See Figure \ref{fig:AI_plus_all} for the corresponding transition dynamics across all sectors in the AI+ experiment.} Although a higher cutoff would mechanically lower both variables, the stronger skill-investment response is large enough to reverse that effect, so both the high-sector population share and total human capital increase along the transition.
+
+
+\textcolor{red}{Use the figures of population share and total human capital in high sector to support this claim. Move the asset holding figure to the next section.}
     
-    
-    This design captures a mechanism that is especially relevant for AI: the technology does not merely make existing workers more productive, but can also redefine what firms consider to be “high-skill” work by raising the threshold for access to the high sector. As a result, some workers who would previously have remained in the high sector are reclassified into the middle sector unless they invest more in human capital. In the simple model, this gives rise to the clear \textbf{churning effect}, as discussed in Section 3.4: workers near the old high-skill cutoff face stronger incentives to invest in order to preserve access to the high sector, while those too far below the new cutoff may instead reduce learning because the high sector has become unattainable. Figure~\ref{fig:AI_plus_high} shows the transition dynamics of the high-sector population share, total human capital, and average assets in the AI+ experiment.\footnote{See Figure \ref{fig:AI_plus_all}  for the corresponding transition dynamics across all sectors in the AI+ experiment.} On the one hand, the higher cutoff mechanically reduces access to the high sector in both models, so the high-sector population share initially falls. In the No-HC model, this mechanical effect remains dominant, and both the high-sector share and total human capital decline because households cannot respond through additional skill accumulation. On the other hand, in the benchmark model, the tighter cutoff gives rise to the churning effect by reshuffling households across learner types near the middle-to-high boundary: some households invest more in order to retain or regain access to the high sector, while others stop upgrading if the new threshold is out of reach. 
+
+
+
     
     
 
@@ -995,7 +1005,7 @@ Benchmark vs. No HC Models.}
 
 
 
-Figure \ref{fig:no_hc_gini} shows the transition paths of Gini coefficients for earnings (labor income), total income (capital and labor income), consumption, wealth (asset holdings), and human capital. The black dashed lines represent results from the No-HC model, capturing the direct impact of AI without human capital adjustment. In contrast, the blue solid lines reflect the benchmark model, where human capital responds endogenously to both anticipated and realized changes in the skill premium induced by AI.
+Figure \ref{fig:no_hc_gini} plots the transition paths of the Gini coefficients for earnings (labor income), total income (labor plus capital income), consumption, wealth (asset holdings), and human capital. The black dashed lines correspond to the No-HC model and isolate AI’s direct effects when human capital is fixed, whereas the blue solid lines correspond to the benchmark model, in which human capital adjusts endogenously to both anticipated and realized changes in the AI-induced skill premium.
 
 \subsubsection{Income, earnings, and consumption inequalities}
 The comparison of transition paths between the No-HC model and the benchmark model reveals that endogenous human capital adjustments fundamentally alter the impact of AI on income, earnings, and consumption inequalities.
@@ -1014,11 +1024,9 @@ Allowing human capital to adjust endogenously, however, leads to pronounced job 
 
 
 
-\subsubsection{Wealth inequality} 
+\subsubsection{Human capital and wealth inequalities} 
 
-We now turn to the effects of AI on asset inequality. Because human-capital adjustment is an important channel through which AI affects the wealth Gini, it is useful to begin with the dynamics of human-capital inequality. 
-
-As shown in Figure~\ref{fig:no_hc_gini}, the human-capital Gini rises following the AI adoption. The mechanism is relatively straightforward. The AI induces heterogeneous adjustments in human-capital investment across households: middle-sector households respond more strongly to the increase in returns to skill, whereas low-sector households reduce human-capital investment, as shown in Figure~\ref{fig:hc_dist}.  This divergence in investment behavior increases dispersion in human capital. The pattern is established formally in Proposition~\ref{prop:AI_human_capital}.
+Human-capital inequality (Gini) rises in anticipation of AI and continues to rise following the AI adoption. The mechanism is relatively straightforward. The AI induces heterogeneous adjustments in human-capital investment across households: middle-sector households respond more strongly to the increase in returns to skill, whereas low-sector households reduce human-capital investment, as shown in Figure~\ref{fig:hc_dist}.  
 
 The response of wealth inequality is more subtle than that of human-capital inequality. Figure~\ref{fig:no_hc_gini} shows that the wealth Gini rises following AI adoption, but the increase is smaller in the benchmark model than in the No-HC model. This comparison suggests that endogenous human-capital adjustment mitigates, rather than amplifies, the unequalizing effect of AI on wealth. To see why, it is useful to first examine the direct effect of AI on saving behavior in the No-HC economy, and then consider how endogenous human-capital adjustment alters that response.
 
