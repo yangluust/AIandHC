@@ -832,7 +832,7 @@ are implied by households labor supply decisions and saving decisions. }{\script
 
 \subsection{AI Shock}
 
-The baseline component of AI is modeled in (\ref{eq:xAI}) and we set $\gamma=0.3$. That is, AI boosted the productivity of the low sector workers by 7.5\% and the productivity of the high sector workers by 5\%, leaving the middle sector intact. It captures the key idea that AI increases average labor productivity \parencites{Acemoglu2019a}, but reduces the earning premium for the middle sector, and enlarges the earning premium for the higher sector relative the middle sector. 
+The baseline component of AI is modeled as in (\ref{eq:xAI}), with $\gamma=0.3$. Under this specification, AI increases the productivity of low-sector workers by 7.5\% and high-sector workers by 5\%, while leaving the middle sector unaffected. Given the employment distribution in the initial steady state, these changes imply that AI raises average labor productivity in the economy by 4\%, assuming households do not adjust their behavior. This formulation captures the core idea that AI boosts overall labor productivity \parencites{Acemoglu2019a}, while at the same time narrowing the earning premium for the middle sector and increasing it for the high sector relative to the middle sector.
 
 The additional component of AI is a rise of human-capital threshold between the middle and high sectors as in \eqref{eq:xAI_expand}. We calibrate the new threshold $h_H'$ such that the middle-sector population share in the initial steady state is increased from 40\% to 45\%. In other words, 5\% population will be reclassified out of high-sector employment due to the AI shock if their human capital remains the same. \textcolor{red}{Please edit this part if you think it is not clear or correct.} 
 
@@ -845,9 +845,11 @@ Our analysis centers on the baseline component, examining both transition dynami
 
 
 \section{The Baseline AI Experiment}
+In the baseline experiment, AI is expected to increase the productivity of the low and high sectors, but not the middle sector. As a result, the earning premium for the middle sector decreases, while the earning premium for the high sector increases.
+
 
 \subsection{Human Capital Adjustments}
-Given the employment distribution in the initial steady state, AI is projected to increase the economy's labor productivity by 4\% on average, assuming households do not alter their decisions in response. However, changes in earning premiums incentivize households to adjust their human capital investments. 
+Changes in earning premiums incentivize households to adjust their human capital investments. 
 
 \begin{figure}
     \begin{centering}
@@ -914,7 +916,7 @@ Sectoral productivity differences also reshape incentives to accumulate skills a
 
 This section quantifies how important these human capital adjustments are for both transition dynamics and long-run outcomes. We compare the benchmark economy—where households adjust human capital endogenously—with a “No HC model,” in which human capital is fixed at its initial steady-state level throughout the AI transition. In both economies, households still choose consumption, savings, and labor supply endogenously.
 
-This comparison lets us decompose AI’s effects. The No-HC model isolates the direct effects of AI on aggregate and distributional outcomes by shutting down human capital adjustment. The gap between the benchmark and No-HC paths then identifies the indirect effects that operate through endogenous human capital accumulation. Together, this decomposition clarifies the role of human capital dynamics in shaping the overall consequences of AI.
+This comparison lets us decompose AI’s effects. The No-HC model isolates the direct effects of AI on aggregate and distributional outcomes by shutting down human capital adjustment. The gap between the benchmark and No-HC paths then identifies the indirect effects that operate through endogenous human capital accumulation. Together, this decomposition clarifies the role of human capital dynamics in shaping the overall consequences of AI.\footnote{We also examine the general equilibrium channel of AI effects by comparing the benchmark model with a fixed-factor-prices model. As this channel is not our main focus and does not produce qualitative differences in results, we relegate the discussion to Appendix~\ref{sec:GE_channel}.}
 
 \subsection{Aggregate Outcomes}\label{sec:result}
 
@@ -981,14 +983,16 @@ Human-capital inequality (Gini) rises already during the anticipation phase and 
 
 The dynamics of wealth inequality are more nuanced. The wealth Gini increases after AI adoption in both models, but the rise is smaller in the benchmark economy than in the No-HC economy. This comparison indicates that human capital responses mitigate, rather than amplify, AI’s unequalizing effect on wealth. 
 
-To clarify the mechanism, it is useful to first describe the direct saving response in the No-HC economy and then explain how endogenous human-capital adjustment modifies it. Figure \ref{fig:asset_sector} shows the transition paths of average assets in each sector.
+To clarify the mechanism, it is useful to first describe the direct response of household saving in the No-HC economy and then explain how endogenous human-capital adjustment modifies it. Figure \ref{fig:asset_sector} shows the transition paths of average asset holdings by households in each sector.
 
 \paragraph{AI's direct impacts:} Without human-capital adjustment, AI affects household saving only through income effects. In the low and high sectors, households reduce saving before period 10 because they expect higher future labor income; after AI is implemented, they increase saving as labor income rises. In contrast, middle-sector households anticipate a negative income effect from lower wages and therefore increase saving before period 10. Once AI is introduced and wages recover, they reduce saving.
 
 \paragraph{Effects of AI-induced human capital adjustments:}
-\textcolor{red}{Better separate composition effect and the saving crowding in effect. Explain why we focus on the middle sector.}
 
-Allowing human capital to adjust introduces an additional channel. Relative to the No-HC model, the benchmark features a pronounced increase in average assets in the middle sector.\footnote{In the benchmark model, average assets in the high sector decline due to a composition effect, as relatively low-wealth households move up from the middle sector. In the low sector, average assets also fall, primarily because the scope for precautionary saving is limited, and this effect is reinforced by composition changes.} Middle-sector households are relatively productive in our model, and composition effects further strengthen their asset accumulation: many less productive middle-sector households move down to the low sector, leaving a middle-sector population that is positively selected on productivity.\footnote{Note that the share of households moving up is relatively small.} At the same time, some middle-sector households voluntarily leave employment to invest in human capital full-time. These are the “active-training,” relatively high-productivity workers, and, as implied by Propositions~\ref{prop:dadt} and~\ref{prop:fulltime}, their human-capital investment tends to crowd in saving. As a result, AI-induced human-capital adjustment boosts asset accumulation in the middle of the distribution and narrows the gap between the middle and the top. Quantitatively, the increase in wealth inequality is therefore markedly smaller in the benchmark economy than in the No-HC economy, underscoring the stabilizing role of endogenous human-capital adjustment.
+
+Allowing human capital to adjust significantly changes average household saving in all three sectors. The most pronounced shift occurs in the middle sector, where average saving rises markedly; this is the main reason why endogenous human-capital responses mitigate AI’s unequalizing effect on wealth.
+
+Two channels drive this result. First, a composition channel: as households move out of the middle sector, less productive households disinvest in human capital and sort into the low sector, while more productive households increase human capital investment and move up to the high sector. Because the share moving down exceeds the share moving up, the remaining middle-sector population is positively selected on productivity. Second, a saving-crowding-in channel: as implied by Propositions~\ref{prop:dadt} and~\ref{prop:fulltime}, human capital investment crowds in saving for high-income households. Because the composition channel raises the average productivity of the middle sector, more middle-sector households now fall into the range where human capital investment crowds in saving, boosting asset accumulation in the middle of the distribution. Together, these two channels narrow the gap between the middle and the top.\footnote{At the same time, average assets in the high sector decline as relatively low-wealth households move up from the middle sector. In the low sector, average assets also fall because the low-sector population is negatively selected on productivity.}
 
 \begin{figure}
     \begin{centering}
@@ -1003,7 +1007,7 @@ Allowing human capital to adjust introduces an additional channel. Relative to t
 \section{The AI+ Experiment}
 In the AI+ experiment, AI does more than changing the skill premium: it also changes what firms classify as ``high-skill'' work by increasing the cutoff for entering the high sector. This tighter threshold implies that some workers who would previously have remained in the high sector are reclassified into the middle sector unless they increase their human capital investment. 
 
-\subsection{Human Capital Adjustments in AI+ Experiment}\label{sec:AI_plus_HC}
+\subsection{High-sector Human Capital and Saving Adjustments}\label{sec:AI_plus_HC}
 
 \begin{figure}
     \begin{centering}
@@ -1027,7 +1031,7 @@ This concentration of skill investment among high-sector -- and therefore high-p
 
 
 
-\subsection{Aggregate and Distributional Effects in AI+ Experiment}
+\subsection{Aggregate and Distributional Implications}
 
 \begin{figure}
 \begin{centering}
@@ -1586,7 +1590,7 @@ period is close enough, we obtain the converged transition path. Otherwise,
 we assume new capital-labor ratio and go back to 3.
 \end{enumerate}
 
-\section{Investigating the GE channel of AI's impact}
+\section{Investigating the GE channel of AI's impact}\label{sec:GE_channel}
 
   
 \begin{figure}
