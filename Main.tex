@@ -1,67 +1,67 @@
-% Emerald Publishing - Construction Innovation Submission Template
-% by Oleksandr Melnyk
-% Ver 0.0.4
-% Based on: https://www.emeraldgrouppublishing.com/journal/ci#author-guidelines
+\documentclass[12pt,english]{article}
 
-
-\documentclass[12pt]{article}
-\usepackage{setspace}
-\onehalfspacing
 \usepackage[english]{babel}
-\usepackage{appendix}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,margin=1in]{geometry}
+
+\usepackage{ae,aecompl}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs=true}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{dsfont}
+\newcommand{\mathbbm}{\mathds}
+
+\usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{patterns}
 \usepackage{standalone}
-\usepackage{bbm}
-
-% Set page size and margins
-% Replace `letterpaper' with `a4paper' for UK/EU standard size
-\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
-
-\usepackage{sectsty}
-\sectionfont{\fontsize{15}{15}\selectfont}
-
-% Useful packages
-\usepackage{amssymb,amsmath}
-\usepackage{amsthm}
-\newtheorem{theorem}{Theorem}
-\newtheorem{proposition}{Proposition}
-\newtheorem{lemma}{Lemma}
-\newtheorem{corollary}{Corollary}
-\newtheorem{remark}{Remark}
-\usepackage{siunitx}
-\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
-\usepackage{cleveref}
-\usepackage[utf8]{inputenc}
-\usepackage[left]{lineno}
-\usepackage{csquotes}
+\usepackage{fourier}
+\usepackage{microtype}
+\usepackage{nicefrac}
+\usepackage{setspace}
+\usepackage{rotfloat}
+\usepackage{subfig}
+\usepackage[normalem]{ulem}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{anyfontsize}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{adjustbox}
 \usepackage{array}
-\usepackage{url}
-\usepackage{titlesec}
-%\usepackage[compatibility=false]{caption}
-\usepackage{authblk}
-\usepackage{xcolor} % Load the xcolor package for color options
-\renewcommand{\thetable}{\Roman{table}}
+\usepackage{caption}
+\usepackage{siunitx}
+\usepackage[left]{lineno}
+\usepackage{csquotes}
+\usepackage{appendix}
+\usepackage{import}
 
-% Define a new format for \subsection
-\titleformat{\subsection}
-  {\mdseries\itshape\large} % Medium series, italic shape, and large font size
-  {\thesubsection}{1em}{} % Numbering, spacing, and the section title itself
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{table,dvipsnames}{xcolor}
+\usepackage{xcolor}
 
+\definecolor{darkred}{rgb}{0.55, 0.0, 0.0}
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
 
-% Emerald Harvard Citation Style
+\usepackage[unicode=true,breaklinks=true]{hyperref}
+\usepackage{cleveref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkred,
+    citecolor=darkblue,
+    urlcolor=darkblue
+}
 
 \usepackage[style=authoryear,backend=biber,natbib=true,maxcitenames=2,uniquelist=false,url=false,doi=false,eprint=false,isbn=false]{biblatex}
-%\addbibresource{refer.bib} % your .bib file
-\addbibresource{AI.bib} % your .bib file
+\addbibresource{AI.bib}
 
-% Customizing biblatex for Harvard style
-% Customizing biblatex for Harvard style
 \DeclareNameAlias{sortname}{family-given}
 \DeclareNameAlias{default}{family-given}
+\DeclareNameWrapperFormat{labelname}{\textcolor{darkblue}{#1}}
 
 \renewbibmacro{in:}{}
 \DeclareFieldFormat[article]{title}{\mkbibquote{#1}\addcomma}
@@ -86,7 +86,6 @@
 \DeclareFieldFormat{volume}{\bibstring{volume}~#1}
 \DeclareFieldFormat{number}{\bibstring{number}~#1}
 
-% Definitions for "Vol." and "No."
 \DefineBibliographyStrings{english}{
   volume = {Vol.},
   number = {No.}
@@ -117,13 +116,6 @@
 
 \renewcommand*{\bibpagespunct}{\addcomma\space}
 
-\newcommand\YL[1]{\textcolor{blue}{YL: #1}}	
-
-% Customizing page field format to prevent duplication
-% \DeclareFieldFormat{pages}{%
-%   \mkfirstpage[{\mkpageprefix[page]{#1}}]{#1}}
-
-% Customizing citations for Harvard style
 \DeclareCiteCommand{\cite}[\mkbibparens]
   {\usebibmacro{prenote}}
   {\usebibmacro{citeindex}%
@@ -153,60 +145,102 @@
   }{}
 }
 
-% Formatting "et al." in italics followed by a comma
-\DefineBibliographyStrings{english}{
-  andothers = {\textit{et al.},}
-}
-
 \DeclareFieldFormat[article]{volume}{\bibstring{jourvol}\addnbspace #1}
 \DeclareFieldFormat[article]{number}{\bibstring{number}\addnbspace #1}
 \DeclareFieldFormat[article]{volume}{Vol. #1}
 \DeclareFieldFormat[article]{number}{No. #1}
-% Customizing DOI field format to lowercase "doi"
-%\DeclareFieldFormat{doi}{\bibstring{doi}\addcolon\space\url{#1}}
 
-% % Customizing URL field format to "available at:"
-% \DeclareFieldFormat{url}{\bibstring{available at}\addcolon\space\url{#1}}
-% \DeclareFieldFormat{urldate}{\mkbibparens{accessed \addspace#1}}
+\newcommand{\vadd}[1]{\textcolor{blue}{#1}}
+\newcommand{\vedit}[1]{\textcolor{ForestGreen}{#1}}
+\newcommand{\vdel}[1]{\textcolor{red}{\sout{#1}}}
+\newcommand\YL[1]{\textcolor{blue}{YL: #1}}
 
-% % Customizing urldate to match the required format
-% \DeclareFieldFormat{urldate}{%
-%   \mkbibparens{accessed\space%
-%     \thefield{urlday}\addspace%
-%     \mkbibmonth{\thefield{urlmonth}}\addspace%
-%     \thefield{urlyear}}}
+\captionsetup{belowskip=5pt,aboveskip=5pt}
+\newcommand\notes[1]{%
+    \captionsetup{
+        belowskip=5pt,
+        aboveskip=5pt,
+        font={footnotesize,stretch=1},
+        justification=justified
+    }%
+    \caption*{\emph{Notes:} #1}
+}
 
+\renewcommand{\thetable}{\Roman{table}}
+\numberwithin{equation}{section}
 
-% Configure cleveref
-%\crefformat{figure}{#2Figure~#1#3}
-%\Crefformat{figure}{#2Figure~#1#3}
-%\crefformat{table}{#2Table~#1#3}
-%\Crefformat{table}{#2Table~#1#3}
+\makeatletter
+
+\declaretheoremstyle[
+    spaceabove=0.5cm,
+    spacebelow=0.5cm,
+    headfont=\color{darkblue}\normalfont\bfseries,
+    notefont=\color{magenta}\mdseries,
+    notebraces={(}{)},
+    bodyfont=\color{darkblue}\normalfont
+]{thmstyle}
+
+\declaretheoremstyle[
+    spaceabove=0.5cm,
+    spacebelow=0.1cm,
+    headfont=\normalfont\bfseries,
+    notefont=\mdseries,
+    notebraces={(}{)},
+    bodyfont=\normalfont\itshape
+]{thmstyleblk}
+
+\declaretheorem[style=thmstyleblk,name=Theorem,numberwithin=section]{theorem}
+\declaretheorem[style=thmstyleblk,name=Proposition,numberwithin=section]{proposition}
+\declaretheorem[style=thmstyleblk,name=Remark,numberwithin=section]{remark}
+\declaretheorem[style=thmstyleblk,name=Lemma,numberwithin=section]{lemma}
+\declaretheorem[style=thmstyleblk,name=Corollary,numberwithin=section]{corollary}
+\declaretheorem[style=thmstyleblk,name=Definition,numberwithin=section]{definition}
+\declaretheorem[style=thmstyleblk,name=Assumption,numberwithin=section]{assumption}
+\declaretheorem[style=thmstyleblk,name=Definition,numbered=no]{definition*}
+\declaretheorem[style=thmstyleblk,name=Algorithm,numberwithin=section]{algorithm}
+
+\declaretheorem[style=thmstyleblk,sibling=theorem,name=Theorem]{thm}
+\declaretheorem[style=thmstyleblk,sibling=proposition,name=Proposition]{prop}
+\declaretheorem[style=thmstyleblk,sibling=lemma,name=Lemma]{lem}
+\declaretheorem[style=thmstyleblk,sibling=corollary,name=Corollary]{cor}
+\declaretheorem[style=thmstyleblk,sibling=remark,name=Remark]{rem}
+\declaretheorem[style=thmstyleblk,sibling=definition,name=Definition]{defn}
+\declaretheorem[style=thmstyleblk,sibling=assumption,name=Assumption]{asm}
+
+\renewcommand{\qedsymbol}{\rule{1.2ex}{1.2ex}}
+\renewenvironment{proof}[1][\proofname]{\par
+    \pushQED{\qed}%
+    \normalfont \topsep2\p@\@plus6\p@\relax
+    \trivlist
+    \item\relax
+    {\itshape #1\@addpunct{.}}\hspace\labelsep\ignorespaces
+}{%
+    \popQED\endtrivlist\@endpefalse
+}
+
+\makeatother
+
+\let\originaleqref\eqref
+\renewcommand{\eqref}{Equation~\originaleqref}
+\newcommand{\eqreff}{\originaleqref}
+
 \crefformat{section}{#2Section~#1#3}
 \Crefformat{section}{#2Section~#1#3}
 
-%Front Matter
-\author[1]{Yang K. Lu}
-\author[2]{Eunseong Ma}
-
-\affil[1]{HKUST}
-\affil[2]{Yonsei}
-
-%\title{\Large Anticipating AI-Driven Skill Demand: Human Capital Responses and Macro-Level Implications}
-\title{\LARGE AI and Human Capital Accumulation: \\ Aggregate and Distributional Implications\footnote{Author emails: yanglu@ust.hk; masilver@yonsei.ac.kr}}
-
+\title{\LARGE \textbf{AI and Human Capital Accumulation:\\ Aggregate and Distributional Implications}\thanks{We thank Sewon Hur, Ryan Kim, Yena Park, and Jiheum Yeon, as well as seminar and conference participants at Sogang, SNU, and the 2025 BSE Summer Forum. All errors are our own. We acknowledge financial support from the Yonsei Institute for AI and Social Innovation.}\\[1.0cm]}
+\author{Yang K. Lu\thanks{Economics Department, Hong Kong University of Science and Technology, Clear Water Bay, Kowloon, Hong Kong. Email: \protect\href{mailto:yanglu@ust.hk}{yanglu@ust.hk}.} \\
+	HKUST \and Eunseong Ma\thanks{School of Economics, Yonsei University, 50 Yonsei-ro, Seodaemun-gu, Seoul 03722, South Korea. Email: \protect\href{mailto:masilver@yonsei.ac.kr}{masilver@yonsei.ac.kr}.} \\
+	Yonsei\\[0.5cm]
+}
+\date{April 2026}
 
 \begin{document}
 \maketitle
 
 
 \begin{abstract}
-This paper investigates how human capital responses to anticipated advances in artificial intelligence (AI) reshape aggregate and distributional consequences of AI. We develop an 
-incomplete-markets model with endogenous human 
-capital and asset accumulation in general 
-equilibrium, featuring three skill sectors and 
-uninsurable idiosyncratic risk. AI enters as an anticipated, sector-biased shock that narrows middle-skill wage premiums and boosts returns to top expertise. We find that human capital responses to AI (i) drive \textit{voluntary job polarization}, shifting workers from the middle toward both lower and higher skill sectors; (ii) magnify AI’s positive effects on aggregate output and consumption, while dampening its impact on employment; and (iii) alter inequality: even as polarization increases disparities in income and consumption, precautionary saving by middle-sector households reduces the rise in wealth inequality. In an extension (AI+), where AI raises the human-capital threshold for high-skill jobs, additional training and saving become concentrated among high-sector households, further increasing wealth inequality.\\
-
+This paper investigates how human capital responses to anticipated advances in artificial intelligence (AI) reshape aggregate and distributional consequences of AI. We develop an incomplete-markets model with endogenous human capital and asset accumulation in general equilibrium, featuring three skill sectors and uninsurable idiosyncratic risk. AI enters as an anticipated, sector-biased shock that narrows middle-skill wage premiums and boosts returns to top expertise. We find that human capital responses to AI (i) drive \textit{voluntary job polarization}, shifting workers from the middle toward both lower and higher skill sectors; (ii) magnify AI’s positive effects on aggregate output and consumption, while dampening its impact on employment; and (iii) alter inequality: even as polarization increases disparities in income and consumption, precautionary saving by middle-sector households reduces the rise in wealth inequality. In an extension (AI+), where AI raises the human-capital threshold for high-skill jobs, additional training and saving become concentrated among high-sector households, further increasing wealth inequality.\\
+\\
 %add 6 keywords
 \textbf{Keywords:} AI, Human Capital, Job Polarization, Inequality
 \end{abstract}
@@ -234,26 +268,24 @@ On the distributional side, income and earnings inequality rise due to polarizat
 More broadly, these findings show that abstracting from endogenous human capital adjustment leads to a fundamental mischaracterization of both the aggregate and distributional consequences of AI.
 
 \subsection{Related Literature}
-This paper relates to the literature on how technological change, including AI and robotics, drives job polarization and affects the demand and supply of labor. Studies find that rising employment in both high- and low-wage occupations -- at the expense of middle-skill jobs -- characterizes job polarization across the UK, US, and Western Europe \parencites{Goos2007, Autor2013, Goos2014}. Robots and automation have also been shown to reduce employment and wages across US regions \parencite{Acemoglu2020}, with automation-induced job losses and declining labor force participation especially concentrated among vulnerable workers in highly automated sectors \parencites{Lerch2021, Faber2022}. \citet{wang_artificial_2025} models AI as a learning-by-using technology and predicts large productivity gains and employment loss in the long-run. \citet{Suh2023} develops a hierarchical production model in which the distributional effects of automation depend on the complexity of tasks that machines can perform: once technology becomes sufficiently capable, it can amplify top labor incomes and generate “superstar” dynamics.  \citet{Korinek2024} model the transition toward AGI as an expanding frontier of automation over tasks ranked by complexity, showing that macro and wage outcomes depend on how far automation progresses and how it interacts with capital accumulation.
+This paper relates to the literature on how technological change, including AI and robotics, drives job polarization and affects the demand and supply of labor. Studies find that rising employment in both high- and low-wage occupations -- at the expense of middle-skill jobs -- characterizes job polarization across the UK, US, and Western Europe \parencites{Goos2007, Autor2013, Goos2014}. Robots and automation have also been shown to reduce employment and wages across US regions \parencite{Acemoglu2020}, with automation-induced job losses and declining labor force participation especially concentrated among vulnerable workers in highly automated sectors \parencites{Lerch2021, Faber2022}. \citet{wang_artificial_2025} model AI as a learning-by-using technology and predicts large productivity gains and employment loss in the long-run. \citet{Suh2023} develops a hierarchical production model in which the distributional effects of automation depend on the complexity of tasks that machines can perform: once technology becomes sufficiently capable, it can amplify top labor incomes and generate “superstar” dynamics.  \citet{Korinek2024} model the transition toward AGI as an expanding frontier of automation over tasks ranked by complexity, showing that macro and wage outcomes depend on how far automation progresses and how it interacts with capital accumulation.
 
 Technological disruption also influences human capital accumulation. Faced with employment risks caused by automation, many affected workers invest in further education as a form of self-insurance, rather than relying solely on increases in the college wage premium \parencites{Atkin2016,Beaudry2016}. Consistent with this, \citet{DiGiacomo2023} and \citet{Dauth2021} find that the adoption of industrial robots in the U.S. and Germany, respectively, has led to increased college and university enrollments.
 
 Building on this literature, our paper develops a model that explicitly allows for a trade-off between labor supply and human capital investment. In our framework, job polarization emerges as a voluntary response to AI advancements: households in the middle sector may choose to either downskill to the low sector or upskill to the high sector, while an increasing number of middle-sector households opt for full-time training to accelerate their upskilling.
 
-This paper also relates to the literature that studies human capital and physical capital in a unified framework. \citet{chanda_rise_2008} shows that the rise in returns to education reduces household savings. \citet{waldinger_bombs_2016} finds that human capital is much more important than physical capital for innovation in both the short and long-run. \citet{huggett_sources_2011} develops a risky human capital model with incomplete markets to estimate the source of lifetime inequality. \citet{park_constrained_2018} investigates whether capital and human capital are over-accumulated in an incomplete market economy. Our model is most similar to \citet{huggett_sources_2011} in that human capital is risky and there is a trade-off between human capital investment and labor supply. Our analysis sheds light on the effect of AI-induced human capital adjustments on households labor supply and saving.
+This paper also relates to the literature that studies human capital and physical capital in a unified framework. \citet{chanda_rise_2008} shows that the rise in returns to education reduces household savings. \citet{waldinger_bombs_2016} finds that human capital is much more important than physical capital for innovation in both the short and long-run. \citet{huggett_sources_2011} develops a risky human capital model with incomplete markets to estimate the source of lifetime inequality. \citet{park_constrained_2018} investigates whether capital and human capital are over-accumulated in an incomplete market economy. Our model is most similar to \citet{huggett_sources_2011} in that human capital is risky and there is a trade-off between human capital investment and labor supply. Our analysis sheds light on the effect of AI-induced human capital adjustments on household labor supply and saving.
 
 A growing body of literature suggests that AI and automation may contribute to rising inequality across income, consumption, and wealth \citep[e.g.,][]{Sachs2012, berg_should_2018, Prettner2020, hemous_rise_2022}. Our model confirms that AI advancements indeed increase inequality in all three dimensions. However, we find that the endogenous human capital responses to AI amplify the rise in income and consumption inequality, while at the same time mitigating the increase in wealth inequality.
 
 
 \vspace{1em}
 \noindent
-The remainder of the paper proceeds as follows. Section 2 introduces the model environment. Section 3 analyzes household decision-making using a two-period version of the model, clarifying the main mechanisms. Section 4 presents the fully specified quantitative model and its calibration to key features of the U.S. economy, including employment, human capital investment, and household heterogeneity. Section 5 examines the aggregate and distributional impacts of AI in the baseline experiment, while Section 6 considers the effects of AI when sectoral skill requirements change. Section 7 concludes.
-
-
+The remainder of the paper proceeds as follows. Section 2 introduces the model environment. Section 3 analyzes household decision-making using a two-period version of the model, clarifying the main mechanisms. Section 4 presents the fully specified quantitative model and its calibration to key features of the U.S. economy, including household heterogeneity. Section 5 examines the aggregate and distributional impacts of AI in the baseline experiment, while Section 6 considers the effects of AI when sectoral skill requirements change. Section 7 concludes.
 \section{Model Environment }
 \label{sec:model}
 Time is discrete and infinite. 
-There is a continuum of households. Each household is endowed with one unit of indivisible labor and faces an idiosyncratic labor productivity shock, $z$, and an idiosyncratic learning-ability shock, $y$. The labor productivity shock follows an AR(1) process in logs:
+There is a continuum of households. Each household is endowed with one unit of time and faces an idiosyncratic labor productivity shock, $z$, and an idiosyncratic learning-ability shock, $y$. The labor productivity shock follows an AR(1) process in logs:
 \begin{equation}
     \label{eq:z}
 \ln z'=\rho_z\ln z + \varepsilon_z, \varepsilon_z \overset{\mathrm{iid}}{\sim} N(0,\sigma_z^2)
@@ -264,14 +296,14 @@ The learning-ability shock follows an AR(1) process in logs:
 \ln y'=\rho_y\ln y + \varepsilon_y, \varepsilon_y \overset{\mathrm{iid}}{\sim} N(0,\sigma_y^2)
 \end{equation}
 Households observe $(z_t,y_t)$ at the beginning of each period before making decisions.
-The asset market is incomplete following \citet{aiyagari_uninsured_1994}, and the physical capital, $a$, is the only asset available to households to insure against idiosyncratic labor income risk. Households can also invest in human capital, $h$, which allows them to work in sectors with different human capital requirement.
+The asset market is incomplete following \citet{aiyagari_uninsured_1994}, and the physical capital, $a$, is the only asset available to households to insure against idiosyncratic risks. Households can also invest in human capital, $h$, which allows them to work in sectors with different human capital requirements.
 
 \subsection{Production Technology}
 The production technology in the economy is a constant-returns-to-scale Cobb-Douglas production function:
 \begin{equation}
     F(K,L)=K^{1-\alpha} L^{\alpha}
 \end{equation}
-$K$ represents the total physical capital accumulated by households, while $L$ denotes the total effective labor supplied by households, aggregated across three sectors: low, middle, and high. The marginal products of capital and effective labor determine the economy-wide wage rate, $w$, and interest rate, $r$.
+$K$ represents the total physical capital accumulated by households, while $L$ denotes the total effective labor supplied by households, aggregated across three sectors: low, middle, and high. Given the real wage rate per effective labor, $w$, and the real interest rate, $r$, the representative firm chooses labor and capital to maximize current profits. Capital depreciates at rate $\delta_k$.
 
 These sectors differ in their technologies for converting labor into effective labor units and in the levels of human capital required for employment. 
 The middle sector employs households with human capital above $h_M$ and converts one unit of labor to one effective labor unit. The high sector, requiring human capital above $h_H$, converts one unit of labor to $1+\lambda$ effective units, while the low sector, with no human capital requirement, converts one unit into $1-\lambda$ effective units. This implies a sectoral labor productivity $x(h)$ that is a step function in human capital:
@@ -280,14 +312,14 @@ The middle sector employs households with human capital above $h_M$ and converts
 x(h)=\left \{ 
 \begin{array}{cl}
 1-\lambda  & \text{low sector if }h<h_{M} \\ 
-1 & \text{middle sector if }h_{M}<h<h_{H} \\ 
-1+\lambda  & \text{high sector if }h>h_{H}%
+1 & \text{middle sector if }h_{M} \leq h<h_{H} \\ 
+1+\lambda  & \text{high sector if }h \geq h_{H}%
 \end{array}%
 \right. 
 \end{equation}
-A household $i$ who decides to work thus contributes $z_ix(h_i)$ units of effective labor, where $z_i$ is his idiosyncratic productivity. Denote $n_i \in \{0,1\}$ as the indicator that takes one if the household works and zero if the household does not. The aggregate labor is
+A household $i$ who chooses to work $n_i$ hours contributes $z_ix(h_i)n_i$ units of effective labor, where $z_i$ is his idiosyncratic productivity. The aggregate labor is
 \begin{equation}
-    L=\int n_iz_ix(h_i)di,
+    L=\int z_ix(h_i)n_idi,
 \end{equation}
 assuming perfect substitutability of effective labor across the three sectors.
 
@@ -298,14 +330,14 @@ A household maximizes the expected lifetime utility by optimally choosing consum
 \max_{\left \{ c_t,a_{t+1},n_t,e_t\right \}_{t=0}^{\infty }}E_0\left[
 \sum\limits_{t=0}^{\infty }\beta^t( \ln c_t-\chi_n n_t-\chi_e e_t ) \right] 
 \end{equation}
-where $c_t$ represents consumption, $a_{t+1}$ represents saving, $n_t \in \{0,1\}$ is labor supply, and $e_t$ is the effort of human capital investment.
+where $c_t$ represents consumption, $a_{t+1}$ represents saving, $n_t$ is labor supply, and $e_t$ is the effort of human capital investment. Following \citet{Chang2006}, we assume that labor supply is indivisible, so that each household chooses either not to work or to work a fixed number of hours, $\bar{n}$.
 
 If a household decides to work in period $t$, he will be employed into the appropriate sector according to his human capital $h_t$ and receive labor income $w_tz_tx(h_t)$. The household's budget constraint is
 \begin{align}
-    c_t+a_{t+1}&=n_t( w_tz_tx(h_t))+(1+r_t)a_t \\
+    c_t+a_{t+1}&=w_tz_tx(h_t)n_t+(1+r_t)a_t \\
     c_t& \geq 0 \text{ and } a_{t+1} \geq 0
 \end{align}
-We prohibit households from borrowing $a_{t+1} \geq 0$ to simplify analysis.\footnote{According to \citet{aiyagari_uninsured_1994}, a borrowing constraint is necessarily implied by present value budget balance and nonnegativity of consumption. Since the borrowing limit is not essential to our analysis, we set it to zero for simplicity.} 
+We prohibit households from borrowing $a_{t+1} \geq 0$ to simplify analysis.
 
 Human capital investment can take three levels of effort: $\{0,e_L,e_H\}$. A non-working household is free to choose any of the three effort levels but a working household cannot devote the highest level of effort $e_H$, reflecting a trade-off between working and human capital investment. Hence:
 \begin{equation}
@@ -321,7 +353,7 @@ where $\delta$ is human capital's depreciation rate. We interpret $y_t e_t$ as e
 \subsection{AI Shock}
 AI differs from earlier waves of automation or computerization because it can perform complex, cognitive, and non-routine tasks that once required substantial education and expertise. This primarily affects the economy through two channels.
 
-First, AI raises productivity in occupations whose task bundles are complementary to it, particularly low-sector occupations that combine service delivery with information processing, such as delivery or customer-service work, and high-sector occupations that combine expert judgment with research, drafting, or diagnostic tasks, such as consulting, law, or medicine. By contrast, middle-sector occupations such as production supervisors, office managers, logistics coordinators, or maintenance technicians are likely to be less affected. As a result, the earnings premium for middle-sector occupations erodes relative to both the low and high sectors, while the high-sector premium rises.
+First, AI raises productivity in occupations whose task bundles are complementary to it, particularly low-sector occupations that combine service delivery with information processing, such as delivery or customer-service work, and high-sector occupations that combine expert judgment with research, drafting, or diagnostic tasks, such as consulting, law, or medicine. By contrast, middle-sector occupations such as production supervisors, office managers, logistics coordinators, or maintenance technicians are likely to be less affected. As a result, the earnings premium for middle-sector occupations erodes relative to both the low and high sectors, while the high-sector premium rises \parencites{Goos2007, Autor2013, Goos2014}.
 
 Second, AI may raise the effective skill threshold for high-sector 
 entry, thereby reducing the set of workers who qualify for high-sector employment. Recent labor market evidence supports this view: demand for junior hires in many college-level positions is already declining, particularly in roles with greater exposure to AI \citep{bloomberg2025}.
@@ -335,8 +367,8 @@ Suppose an AI shock is expected to boost labor productivity in both the low and 
 x(h')=\left \{ 
 \begin{array}{cl}
 1-\lambda + \gamma \lambda & \text{low sector if }h'<h_{M} \\ 
-1 & \text{middle sector if }h_{M}<h'<h_{H} \\ 
-1+\lambda + \gamma \lambda & \text{high sector if }h'>h_{H}%
+1 & \text{middle sector if }h_{M} \leq h'<h_{H} \\ 
+1+\lambda + \gamma \lambda & \text{high sector if }h'\geq h_{H}%
 \end{array}%
 \right. 
 \end{equation}
@@ -350,8 +382,8 @@ Suppose an AI shock also raises the threshold for high-sector employment from $h
 x^{AI+}(h')=\left\{ 
 \begin{array}{cl}
 1-\lambda + \gamma \lambda & \text{low sector if }h'<h_{M} \\ 
-1 & \text{middle sector if }h_{M}<h'<h_{H}' \\ 
-1+\lambda + \gamma \lambda & \text{high sector if }h'>h_{H}'%
+1 & \text{middle sector if }h_{M} \leq h'<h_{H}' \\ 
+1+\lambda + \gamma \lambda & \text{high sector if }h' \geq h_{H}'%
 \end{array}%
 \right. 
 \end{equation}
@@ -359,7 +391,7 @@ As a result, some households whose human capital falls between the old and new t
 
 
 \section{Household Decisions in a Two-Period Model}
-In this section, we solve the household's problem with two periods to gain intuition. 
+In this section, we solve the household's problem with two periods to gain intuition. In this analysis, we assume that $\bar{n}=1$ for simplicity.
 
 
 \paragraph{Period-2 decisions}\label{sec:period2}
@@ -377,12 +409,12 @@ Given the sector-specific productivity $x(h)$ specified in (\ref{eq:x}), the thr
 \begin{array}{cl}
 \overline{z}(a)\frac{1}{1-\lambda}  & \text{if }h<h_{M} \\ 
 \overline{z}(a) & \text{if }h_{M} \leq h<h_{H} \\ 
-\overline{z}(a)\frac{1}{1+\lambda}   & \text{if }h>h_{H}%
+\overline{z}(a)\frac{1}{1+\lambda}   & \text{if }h \geq h_{H}%
 \end{array}%
 \right. \\
 \text{where }\overline{z}(a)&:=\frac{(\exp(\chi_n)-1)(1+r)a}{w}
 \end{align}
-Households with higher human capital is more likely to work, whereas households with higher physical capital is less likely to work. 
+Households with higher human capital are more likely to work, whereas households with higher physical capital is less likely to work. 
 
 \paragraph{Period-1 decisions}\label{sec:period1}
 In addition to labor supply, period-1 decisions include saving and human capital investment, both of which are forward-looking and affected by the idiosyncratic risk associated with the productivity shock $z'$. 
@@ -394,9 +426,9 @@ To see the implication of this trade-off and how it interacts with uninsured idi
 \subsection{Period-1 Labor Supply and Human Capital Investment} 
 \subsubsection{Consumption and saving without uncertainty}
 
-The additive separability of household's utility implies that labor supply $n$ and human capital investment $e$ enters in consumption and saving choices only via the intertemporal budget constraint:
+The additive separability of the household's utility implies that labor supply $n$ and human capital investment $e$ enter in consumption and saving choices only via the intertemporal budget constraint:
 \begin{align*}
-    c + \frac{c'}{1+r'}&=(1+r)a+n(wzx(h))+\frac{w'z'x(h')}{1+r'} \\
+    c + \frac{c'}{1+r'}&=(1+r)a+wzx(h)n+\frac{w'z'x(h')}{1+r'} \\
     \text{with } h'&=ye+ (1-\delta)h.
 \end{align*}
 The log utility in consumption implies the optimality condition:
@@ -405,7 +437,7 @@ The log utility in consumption implies the optimality condition:
 \end{equation}
 Combining it with the budget constraint, we obtain the optimal consumption as a function of labor supply $n$ and human capital investment $e$:
 \begin{equation}\label{eq:c}
-    c(n,e)=\frac{1}{1+\beta}\left[(1+r)a+n(wzx(h))+\frac{w'z'x\left(h'=ye+ (1-\delta)h\right)}{1+r'} \right].
+    c(n,e)=\frac{1}{1+\beta}\left[(1+r)a+wzx(h)n+\frac{w'z'x\left(h'=ye+ (1-\delta)h\right)}{1+r'} \right].
 \end{equation}
 
 \subsubsection{Labor supply and human capital investment}\label{sec:n_and_e}
@@ -427,7 +459,7 @@ These cutoffs divide households into three groups based on their ability to be e
 \textbf{Non-learners} are households with $h < \underline{h}_M(y)$. They cannot achieve $h' > h_M$ with either $e_L$ or $e_H$ level of human capital investment today. \textbf{Full-time learners} are households with $h \in (\underline{h}_M(y), \overline{h}_M(y))$. These households can reach $h' > h_M$ in the next period only by investing $e = e_H$ today. \textbf{Part-time learners} are households with $h > \overline{h}_M(y)$. They can achieve $h' > h_M$ in the next period if they invest $e = e_L$ today. 
 
 
-Conditional on $y$ and learner type, the optimal choices of labor supply and human capital investment are characterized by cutoffs in $z$. The cutoff formulae varies with households' current sectoral productivity, i.e, if $h<h_M$ or not. 
+Conditional on $y$ and learner type, the optimal choices of labor supply and human capital investment are characterized by cutoffs in $z$. The cutoff formulas vary with households' current sectoral productivity, i.e, if $h<h_M$ or not. 
 
 
 \paragraph{Non-learners} will not invest in human capital, $e=0$, and their future sectoral productivity will be $x(h')=1-\lambda$. Non-learners work $n=1$ if and only if:
@@ -467,7 +499,7 @@ We set up our model so that $\overline{z}^L_{part}(a,h)>\underline{z}^L_{part}(a
 \input{figure_204040calib/Figure1}
 \caption{Decision Rule Diagram for $0 \leq h<h_M(1-\delta)^{-1}$}
 \begin{flushleft}
-\footnotesize{Conditional on a given learning ability $y$, the figure illustrates the decision rule $(n,e)$ as a function of states $(z,h,a)$ for households with $0 \leq h<h_M\frac{1}{1-\delta}$. The human capital $h$ changes along the horizontal axis and the labor productivity shock $z$ changes along the vertical axis. The two vertical lines $\underline{h}_M(y)$ and $\overline{h}_M(y)$ defined in (\ref{eq:hm}) separate the state space into non-learners, full-time learners, and part-time learners. Within each learner type, labor supply and investment choices vary with $z$.} 
+\footnotesize{Note: Conditional on a given learning ability $y$, the figure illustrates the decision rule $(n,e)$ as a function of states $(z,h,a)$ for households with $0 \leq h<h_M\frac{1}{1-\delta}$. The human capital $h$ changes along the horizontal axis and the labor productivity shock $z$ changes along the vertical axis. The two vertical lines $\underline{h}_M(y)$ and $\overline{h}_M(y)$ defined in (\ref{eq:hm}) separate the state space into non-learners, full-time learners, and part-time learners. Within each learner type, labor supply and investment choices vary with $z$.} 
 \end{flushleft}
     
 \label{fig:rule-diagram}
@@ -534,7 +566,7 @@ is held fixed at $e=0$. The comparison between $(n=0,e=0)$
 and $(n=0,e=e_L \text{ or } e_H)$ is similar to the 
 comparison between $(n=1,e=0)$ to $(n=1,e=e_L)$, since human capital investment does not affect period-1 labor income in either case.}
 
-To make the human captial relevant, we assume that $n'=1$ in period 2. The additive separability of work and human capital investment effort from consumption allows us to consider the optimal saving conditional on a given choice of labor supply and human capital investment. 
+To make the human capital relevant, we assume that $n'=1$ in period 2. The additive separability of work and human capital investment effort from consumption allows us to consider the optimal saving conditional on a given choice of labor supply and human capital investment. 
 
 In particular, the household maximizes expected lifetime utility:   
 \begin{equation}\label{eq:savingprob}
@@ -632,33 +664,33 @@ If the idiosyncratic risk is large enough, i.e., $\frac{\Sigma}{\mu}>\max\{\sigm
     for $x<\min\{x^*(a,t),\hat{x}(a,t)\}$, $e=e_H$ lowers saving $\Delta_{\text{full-time}}(x,a;t>1)<0$; for $x>\max\{x^*(a,t),\hat{x}(a,t)\}$, $e=e_H$ raises saving $\Delta_{\text{full-time}}(x,a;t>1)>0$.
 \end{proposition}
 
-\subsection{The Effects of an Anticipated Period-2 AI Shock}
-We assume that an AI shock is anticipated to occur in period 2 and study how it affects the household's decisions in period 1. 
+\subsection{The Effects of an Anticipated Period-2 AI Adoption}
+We assume that an AI adoption is anticipated to occur in period 2 and study how it affects the household's decisions in period 1. 
 
 \subsubsection{The effects of skill premium change}
 As specified in \eqref{eq:xAI}, the baseline AI component lowers the relative earnings advantage of the middle sector in period 2 while increasing it for the high sector.
 
 
 \paragraph{Human capital investment:} 
-The AI shock lowers the incentive to work in the middle sector in period 2. Consequently, households with $h < h_M/(1-\delta)$ reduce their human capital investment, while those with $h > h_M/(1-\delta)$ increase it. The effect is formalized in the following proposition.
+The AI adoption lowers the incentive to work in the middle sector in period 2. Consequently, households with $h < h_M/(1-\delta)$ reduce their human capital investment, while those with $h > h_M/(1-\delta)$ increase it. The effect is formalized in the following proposition.
 
 \begin{proposition}\label{prop:AI_human_capital}
-An anticipated AI shock decreases human capital investment among households with $h < h_M/(1-\delta)$, but increases it among those with $h > h_M/(1-\delta)$. Specifically, $\overline{z}^L_{full}$ and $\overline{z}^L_{part}$ decrease with $\gamma$, while $\overline{z}^M_{full}$ and $\overline{z}^M_{part}$ increase with $\gamma$.
+An anticipated AI adoption decreases human capital investment among households with $h < h_M/(1-\delta)$, but increases it among those with $h > h_M/(1-\delta)$. Specifically, $\overline{z}^L_{full}$ and $\overline{z}^L_{part}$ decrease with $\gamma$, while $\overline{z}^M_{full}$ and $\overline{z}^M_{part}$ increase with $\gamma$.
 \end{proposition}
 \begin{proof}
     See Appendix~\ref{appsec: proofs}.
 \end{proof}
 
-\noindent The AI shock influences labor supply and saving through two main channels: directly, by altering households’ period-2 labor income, and indirectly, by affecting their human capital investment decisions. In what follows, we focus on the indirect effects, while the more standard direct channel is discussed in Appendix \ref{appsec: AIeffects}.
+\noindent The AI adoption influences labor supply and saving through two main channels: directly, by altering households’ period-2 labor income, and indirectly, by affecting their human capital investment decisions. In what follows, we focus on the indirect effects, while the more standard direct channel is discussed in Appendix \ref{appsec: AIeffects}.
 
 \paragraph{Labor supply:} Because full-time training and labor supply compete for time, households with $h<h_M/(1-\delta)$ shift away from full-time training and supply more labor in the first period, while households with $h>h_M/(1-\delta)$ become more likely to engage in full-time training and thus reduce period-1 labor supply. 
 
-\paragraph{Saving:} As established in Propositions \ref{prop:dadt} and \ref{prop:fulltime}, investing in human capital tends to crowd out saving for low-income households, but crowds in saving for high-income households. Therefore, when the AI shock leads low-income households ($h < h_M/(1-\delta)$) to stop investing, and encourages high-income households ($h > h_M/(1-\delta)$) to start investing, optimal saving \emph{increases} for both groups. 
+\paragraph{Saving:} As established in Propositions \ref{prop:dadt} and \ref{prop:fulltime}, investing in human capital tends to crowd out saving for low-income households, but crowds in saving for high-income households. Therefore, when the AI adoption leads low-income households ($h < h_M/(1-\delta)$) to stop investing, and encourages high-income households ($h > h_M/(1-\delta)$) to start investing, optimal saving \emph{increases} for both groups. 
 
 
 
 \subsubsection{The effects of raising the high-sector cutoff}\label{sec:AI_raising_high_sector_cutoff}
-The additional component of the AI shock raises the high-sector cutoff from $h_H$ to $h_H'>h_H$ in period 2 (see \eqref{eq:xAI_expand}), which in turn increases the period-1 human capital thresholds required to access the high sector with any effort level $e \in \{e_L, e_H\}$. Specifically, the upper bounds for non-learners ($\underline{h}_H(y)$), full-time learners ($\overline{h}_H(y)$), and part-time learners ($h_H\frac{1}{1-\delta}$) all rise by $(h_H' - h_H)\frac{1}{1-\delta}$.
+The additional component of the AI adoption raises the high-sector cutoff from $h_H$ to $h_H'>h_H$ in period 2 (see \eqref{eq:xAI_expand}), which in turn increases the period-1 human capital thresholds required to access the high sector with any effort level $e \in \{e_L, e_H\}$. Specifically, the upper bounds for non-learners ($\underline{h}_H(y)$), full-time learners ($\overline{h}_H(y)$), and part-time learners ($h_H\frac{1}{1-\delta}$) all rise by $(h_H' - h_H)\frac{1}{1-\delta}$.
 
 As a result, some households that previously could have remained in the high sector with $e=0$ under the original cutoff $h_H$ (i.e., those with $h'(0) > h_H$) may now find themselves reclassified into the middle sector if $h'(0) \in (h_H, h_H')$. For these households, the higher cutoff $h_H'$ in period 2 reduces the attractiveness of choosing $e=0$ and instead creates an incentive to invest in human capital to remain in the high sector -- provided that attaining $h_H'$ is feasible.
 
@@ -677,16 +709,16 @@ Similarly, it reclassifies households with $h_M\frac{1}{1-\delta} \leq h < h_H\f
  
 
 \paragraph{Saving}
-The \emph{churning} effect from the $h_H'$ component also affects households' saving behavior, since changes in learner type lead to different human capital investment decisions and, consequently, to different saving outcomes. For those who increases their human capital investment due to the $h_H'$ component, their saving changes by $\Delta(x,a;t)$, $\Delta_H(x,a;t)$ or $\Delta_{\text{full-time}}(x,a;t)$ with $t>1$. For those who decrease their human capital investment, their saving changes by $-\Delta(x,a;t)$ or $-\Delta_{\text{full-time}}(x,a;t)$.
+The \emph{churning} effect from the $h_H'$ component also affects households' saving behavior, since changes in learner type lead to different human capital investment decisions and, consequently, to different saving outcomes. For those who increase their human capital investment due to the $h_H'$ component, their saving changes by $\Delta(x,a;t)$, $\Delta_H(x,a;t)$ or $\Delta_{\text{full-time}}(x,a;t)$ with $t>1$. For those who decrease their human capital investment, their saving changes by $-\Delta(x,a;t)$ or $-\Delta_{\text{full-time}}(x,a;t)$.
 
-For households whose human capital investment remains unchanged, their saving responses largely mirror those under the baseline $\gamma$-only shock (Appnedix \ref{appsec: AIeffects_saving}), with one notable exception: some households with $h_H\frac{1}{1-\delta} < h < h_H'\frac{1}{1-\delta}$ are reclassified to the middle sector absent any human capital investment. As a result, they anticipate lower period-2 income compared to the $\gamma$-only shock, leading to a change in their saving given by $\Delta(x,a;t<1)$.
+For households whose human capital investment remains unchanged, their saving responses largely mirror those under the baseline $\gamma$-only shock (Appendix \ref{appsec: AIeffects_saving}), with one notable exception: some households with $h_H\frac{1}{1-\delta} < h < h_H'\frac{1}{1-\delta}$ are reclassified to the middle sector absent any human capital investment. As a result, they anticipate lower period-2 income compared to the $\gamma$-only shock, leading to a change in their saving given by $\Delta(x,a;t<1)$.
 
 \subsection{Limitations of the two-period model}
 Up to this point, our analysis has focused on how AI influences household-level decisions regarding human capital investment, labor supply, and saving within the framework of a two-period model. While this provides valuable insights into individual behavioral responses, understanding the broader, economy-wide implications of AI requires moving to a more comprehensive setting -- a quantitative model with an infinite time horizon, endogenous asset accumulation, and general equilibrium feedback.
 
 \paragraph{General equilibrium (GE) effects} When households adjust their investment in human capital, labor supply, and savings in response to AI, these changes aggregate up to affect the total supply of effective labor and capital in the economy. As these aggregates shift, they exert downward or upward pressure on the wage rate and the interest rate, feeding back into each household’s optimization problem. Thus, general equilibrium effects capture the intricate loop by which individual decisions shape, and are shaped by, the macroeconomic environment.
 
-\paragraph{Composition effects} Endogenizing human capital investment injects dynamism into how households sort themselves among the three skill sectors. When an AI shock occurs, individuals may choose to retrain, upskill, or even move to lower-skilled work, reshaping the distribution of labor across sectors. This shifting composition changes the relative size of each sector, with significant consequences for both aggregate outcomes and the distributional effects of AI.
+\paragraph{Composition effects} Endogenizing human capital investment injects dynamism into how households sort themselves among the three skill sectors. When an AI adoption occurs, individuals may choose to retrain, upskill, or even move to lower-skilled work, reshaping the distribution of labor across sectors. This shifting composition changes the relative size of each sector, with significant consequences for both aggregate outcomes and the distributional effects of AI.
 
 
 \section{A Full Dynamic Quantitative Model \protect\label{sec:quant_model}}
@@ -697,10 +729,7 @@ capturing reasonable household heterogeneity.
 
 \subsection{Calibration \protect\label{sec:calib}}
 
-We calibrate the model to match the U.S. economy. For several preference
-parameters, we adopt values commonly used in the literature. Other
-parameters are calibrated to align with targeted moments. The model
-operates on an annual time period. Table \ref{tbl:para} summarizes
+We calibrate the model to match key features of the U.S. economy. Some parameters are set to standard values from the literature, while others are chosen to match targeted moments. Table \ref{tbl:para} summarizes
 the parameter values used in the benchmark model.
 
 \begin{table}
@@ -737,7 +766,7 @@ $\delta_k$  & 0.1  &  & Capital depreciation rate  & Standard value\tabularnewli
 The time discount factor, $\beta$, is calibrated to match an annual
 interest rate of 4 percent. We set $\chi_{n}$ to replicate an 80
 percent employment rate. We calibrate $\chi_{e}$ to match the fact
-that around 30 percent of the population invests in human capital \citep{oecd2025adultlearning}.
+that around 30 percent of the population invests in human capital in the U.S. \citep{oecd2025adultlearning}.
 
 We calibrate parameters regarding labor productivity process as follows.
 Recall that $z$ follows the AR(1) process in logs: $\log z'=\rho_{z}\log z+\epsilon_{z}$,
@@ -752,26 +781,13 @@ sectors, $\lambda,$ is set at 0.2 to match the earnings Gini coefficient.
 Human capital cutoffs, $h_{M}$ and $h_{H}$, are set so that the population shares in low, middle, and high sectors are, respectively, 20, 40, and 40 percent. This population distribution roughly matches the fractions of U.S. workers in 2014 who are employed in routine manual occupations (low sector), routine cognitive and non-routine manual (middle sector), and non-routine cognitive (high sector) \cite{cortes_disappearing_2017}.
 
 
-On the production side, we set the capital income share, $\alpha,$ to 0.36, and the depreciation rate, $\delta,$ to 0.1. For simplicity, we assume that human capital depreciates at the same rate, i.e., $\delta =0.1$.
+On the production side, we set the capital income share, $\alpha,$ to 0.36, and the depreciation rate, $\delta_k,$ to 0.1. For simplicity, we assume that human capital depreciates at the same rate, i.e., $\delta =0.1$.
 
-\subsection{Key Moments: Data vs. Model}
+\subsection{Model Fit and Steady-State Distribution}
 
-In Table \ref{tbl:moments}, we present a comparison of
-key moments between the model and the empirical data. The model does
-an excellent job of replicating the 80\% employment rate observed
-in the data. In this context, employment is defined as having positive
-labor income in the given year, consistent with the common approach
-used in the literature. According to \citet{oecd2025adultlearning}, the share
-of the population investing in human capital---those who are actively
-engaged in skill acquisition or education---is approximately 30\%,
-a figure well matched by the model\textquoteright s predictions. This
-is an important metric because it reflects the model's capacity to
-capture the dynamics of human capital formation, which plays a critical
-role in shaping long-run earnings and income inequality. Additionally,
-the model accurately captures the distribution of income and earnings,
-aligning closely with observed data. This suggests that the model
-effectively incorporates the key mechanisms driving labor market outcomes
-and the corresponding distributional aspects of earnings. Although the model does not explicitly target the wealth Gini coefficient, it achieves a close match to the data: the empirical wealth Gini is 0.78, while the model produces a value of 0.76. This highlights the model’s ability to capture substantial wealth inequality in the economy.
+In Table \ref{tbl:moments}, we compare key moments from the model with their empirical counterparts.\footnote{Employment and inequality measures are from the Survey of Consumer Finances (SCF) 2007. Employment is defined as having positive labor income in a given year.} The three main targeted moments are the employment rate, the human capital investment rate, and the earnings Gini coefficient. The model replicates well the 80 percent employment rate observed in the data, where employment is defined as having positive labor income in a given year. It also closely matches the share of the population investing in human capital, which is 30 percent in the data. In addition, the model captures the distribution of earnings quite accurately, generating an earnings Gini coefficient close to its empirical counterpart.
+
+Although the wealth and income Gini coefficients are not directly targeted in the calibration, the model nevertheless delivers a close fit along these dimensions as well. The empirical wealth Gini is 0.78, compared with 0.76 in the model. Similarly, the model produces an income Gini of 0.58, which is also close to the value observed in the data.
 
 \begin{table}
     \caption{\protect\label{tbl:moments}Key Moments}
@@ -783,15 +799,16 @@ and the corresponding distributional aspects of earnings. Although the model doe
     \hline 
     ~~Employment rate  &  &  &  & 0.80  &  &  &  & 0.80\tabularnewline
     ~~Human capital investment ratio  &  &  &  & 0.29  &  &  &  & 0.29\tabularnewline
-    ~~Gini coefficient for wealth  &  &  &  & 0.78  &  &  &  & 0.76\tabularnewline
     ~~Gini coefficient for earnings  &  &  &  & 0.63  &  &  &  & 0.62\tabularnewline
     ~~Gini coefficient for income  &  &  &  & 0.57  &  &  &  & 0.58\tabularnewline
+    ~~Gini coefficient for wealth  &  &  &  & 0.78  &  &  &  & 0.76\tabularnewline
     \hline 
     \end{tabular}
     \par\end{centering}
+    {\scriptsize Note: Employment and inequality measures are based on the 2007 SCF. The human capital investment ratio is from \citet{oecd2025adultlearning}. Employment is defined as positive labor income in a given year. The employment rate, the human capital investment rate, and the earnings Gini coefficient are targeted moments.}{\scriptsize\par}
     \end{table}
 
-\subsection{Steady-state Distribution}
+
 Table \ref{tab:SSdistribution} presents the steady-state distribution of population, employment, and assets across sectors. The population shares are calibrated to 20\%, 40\%, and 40\% by adjusting the human capital thresholds that define sectors. The shares of employment and assets are endogenously determined by households' labor supply and savings decisions. Notably, the high sector accounts for 46\% of total employment—exceeding its population share—indicating that a disproportionate number of households choose to work in that sector. Asset holdings are even more skewed: the high sector holds 68\% of total assets, while the low sector holds only 8\%.  
  
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
@@ -813,26 +830,24 @@ the population share across sectors. Employment share and assets share
 are implied by households labor supply decisions and saving decisions. }{\scriptsize\par}
 \end{table}
 
+
 \subsection{AI Shock}
 
-The baseline component of AI is modeled as in (\ref{eq:xAI}), with $\gamma=0.3$. Under this specification, AI increases the productivity of low-sector workers by 7.5\% and high-sector workers by 5\%, while leaving the middle sector unaffected. Given the employment distribution in the initial steady state, these changes imply that AI raises average labor productivity in the economy by 4\%, assuming households do not adjust their behavior. This formulation captures the core idea that AI boosts overall labor productivity \parencites{Acemoglu2019a}, while at the same time narrowing the earning premium for the middle sector and increasing it for the high sector relative to the middle sector.
+The baseline component of AI is modeled as in (\ref{eq:xAI}), with $\gamma=0.3$. Under this specification, AI increases the productivity of low-sector workers by 7.5\% and high-sector workers by 5\%, while leaving the middle sector unaffected. Given the employment distribution in the initial steady state, these changes imply that AI raises average labor productivity in the economy by 4\%, assuming households do not adjust their behavior. This formulation captures the core idea that AI boosts overall labor productivity \parencites{Acemoglu2019a}, while at the same time narrowing the earnings premium for the middle sector and increasing it for the high sector relative to the middle sector.
 
-The additional component of AI is a rise of human-capital threshold between the middle and high sectors as in \eqref{eq:xAI_expand}. We calibrate the new threshold $h_H'$ such that the middle-sector population share in the initial steady state is increased from 40\% to 45\%. In other words, 5\% population will be reclassified out of high-sector employment due to the AI shock if their human capital remains the same. \textcolor{red}{Please edit this part if you think it is not clear or correct.} 
+The additional component of AI is a rise of human-capital threshold between the middle and high sectors as in \eqref{eq:xAI_expand}. We calibrate the new threshold $h_H'$ such that the middle-sector population share in the initial steady state is increased from 40\% to 45\%. In other words, 5\% population will be reclassified out of high-sector employment due to the AI adoption if their human capital remains the same.
 
-
-\bigskip
-\noindent
-We now use the calibrated model to examine the effects of an AI shock anticipated to arrive in 10 years, under the assumption that households have full information about its timing. This allows us to study how the economy adjusts both in anticipation of and in response to AI adoption.
+We now use the calibrated model to examine the effects of an AI adoption anticipated to arrive in 10 years, under the assumption that households have full information about its timing. This allows us to study how the economy adjusts both in anticipation of and in response to AI adoption.\footnote{Later, we discuss robustness to alternative assumptions regarding both the magnitude and the timing of AI adoption.}
 
 Our analysis centers on the baseline component, examining both transition dynamics and the differences between the initial and new steady states; we refer to this as the baseline AI experiment. We then consider the additional component only insofar as it qualifies the baseline results; we refer to this as the AI+ experiment.
 
 
 \section{The Baseline AI Experiment}
-In the baseline experiment, AI is expected to increase the productivity of the low and high sectors, but not the middle sector. As a result, the earning premium for the middle sector decreases, while the earning premium for the high sector increases.
+In the baseline experiment, AI is expected to increase the productivity of the low and high sectors, but not the middle sector. As a result, the earnings premium for the middle sector decreases, while the earnings premium for the high sector increases.
 
 
 \subsection{Human Capital Adjustments}
-Changes in earning premiums incentivize households to adjust their human capital investments. 
+Changes in earnings premiums incentivize households to adjust their human capital investments. 
 
 \begin{figure}
     \begin{centering}
@@ -845,10 +860,10 @@ Changes in earning premiums incentivize households to adjust their human capital
      
 
 \paragraph{Steady-state distribution:}
-Figure \ref{fig:hc_dist} compares the initial and new steady-state human capital distributions, highlighting how households reallocate across sectors after the AI shock. The x-axis reports human capital levels and the y-axis shows the mass of households at each level; the red and blue vertical lines indicate the low--middle and middle--high sector cutoffs, respectively.
+Figure \ref{fig:hc_dist} compares the initial and new steady-state human capital distributions, highlighting how households reallocate across sectors after the AI adoption. The x-axis reports human capital levels and the y-axis shows the mass of households at each level; the red and blue vertical lines indicate the low--middle and middle--high sector cutoffs, respectively.
 
 
-The gray shaded area indicates the overlap between the initial and new steady-state distributions. Within each sector, the distribution is left-skewed, consistent with human capital investment being concentrated among households near sectoral cutoffs; as illustrated by the decision rule in Figure \ref{fig:rule-diagram}, these households invest to move up or remain in more skilled sectors. The blue shaded area captures households exiting the middle sector after the AI shock, and the pink shaded areas show where this mass is reallocated in the new steady state---toward the lower end of the low sector and the lower end of the high sector. This reallocation pattern highlights a divergence in human capital investment behavior across households. Proposition~\ref{prop:AI_human_capital} provides the formal characterization of this mechanism.
+The gray shaded area indicates the overlap between the initial and new steady-state distributions. Within each sector, the distribution is left-skewed, consistent with human capital investment being concentrated among households near sectoral cutoffs; as illustrated by the decision rule in Figure \ref{fig:rule-diagram}, these households invest to move up or remain in more skilled sectors. The blue shaded area captures households exiting the middle sector after the AI adoption, and the pink shaded areas show where this mass is reallocated in the new steady state---toward the lower end of the low sector and the lower end of the high sector. This reallocation pattern highlights a divergence in human capital investment behavior across households. Proposition~\ref{prop:AI_human_capital} provides the formal characterization of this mechanism.
 
 
  \begin{figure}
@@ -986,9 +1001,18 @@ Two channels drive this result. First, a composition channel: as households move
     {\scriptsize Note: The transition paths within each sector.  “Average Asset” is defined as the total assets in a given sector divided by that sector’s population share. The x-axis represents years, and the y-axis shows the percentage (or percentage point) deviation from the initial steady state. AI introduction is assumed to occur in period 10.  The No HC model is an economy in which workers maintain their initial steady-state level of human capital throughout the AI implementation until the new steady state is reached.}{\scriptsize\par}
 \end{figure}
 
+\subsection{Robustness}
+In the benchmark economy, AI is introduced so that $\gamma$ reaches 0.3 in period 10. We now show that the main results are robust to alternative assumptions regarding both the magnitude and the timing of AI adoption. First, we consider alternative terminal values of $\gamma$, namely $\gamma=0.2$ and $\gamma=0.4$. We next consider a gradual-adoption specification in which AI is phased in over time and becomes fully implemented by period 10. Specifically, $\gamma$ is assumed to increase linearly over time until it reaches its new long-run value in period 10.
+
+ Figures \ref{fig:gamma02_nohc_agg}$-$\ref{fig:gamma04_nohc_gini} in the Appendix present the aggregate and distributional effects under $\gamma=0.2$ and $\gamma=0.4$. The main qualitative results remain unchanged. Relative to the model without endogenous human capital accumulation, the model with human capital generates a larger increase in GDP and a larger decline in employment, as workers reduce labor supply in order to invest in human capital during the transition. These endogenous human capital responses also continue to generate voluntary job polarization, leading to higher income and consumption inequality. At the same time, wealth inequality rises by less than in the model without human capital accumulation.
+
+Figures \ref{fig:smooth_nohc_agg} and \ref{fig:smooth_nohc_gini} in the Appendix report the results for the gradual-adoption case. The qualitative implications are again very similar to those in the benchmark. Endogenous human capital adjustment continues to amplify the output gains from AI adoption, lower employment during the transition, and increase income and consumption inequality, while moderating the rise in wealth inequality relative to the no-human-capital economy.
+
+Overall, these robustness exercises confirm that our main qualitative results are not sensitive to either the magnitude of the AI shock or the timing of its adoption.
+
 
 \section{The AI+ Experiment}
-In the AI+ experiment, AI does more than changing the skill premium: it also changes what firms classify as ``high-skill'' work by increasing the cutoff for entering the high sector. This tighter threshold implies that some workers who would previously have remained in the high sector are reclassified into the middle sector unless they increase their human capital investment. 
+In the AI+ experiment, AI changes more than the skill premium: it also changes what firms classify as ``high-skill'' work by increasing the cutoff for entering the high sector. This tighter threshold implies that some workers who would previously have remained in the high sector are reclassified into the middle sector unless they increase their human capital investment. 
 
 \subsection{High-sector Human Capital and Saving Adjustments}\label{sec:AI_plus_HC}
 
@@ -1028,7 +1052,7 @@ Because the churning effect induces a sharper increase in human-capital investme
 
 Figure~\ref{fig:AI_plus} shows the transition dynamics of aggregate variables. Qualitatively, the pattern is similar to the baseline AI experiment: AI adoption still raises real activity over the transition. Quantitatively, however, the underlying composition changes. Two offsetting forces are at work. On the one hand, the higher high-sector cutoff mechanically reclassifies some workers from the high sector to the middle sector, muting AI’s direct productivity effect. On the other hand, this reclassification amplifies the human capital channel via the churning mechanism, prompting households to invest more aggressively in human capital to meet the higher threshold (Section~\ref{sec:AI_plus_HC}). As a result, aggregate activity remains broadly comparable to the baseline, but a larger portion of the total effect operates through endogenous human-capital accumulation.
 
-Figure~\ref{fig:AI_plus_gini} reports the transition dynamics of inequality measures. Income, earnings, and consumption inequality evolve much as in the baseline. By contrast, human-capital and wealth inequality respond more strongly. The churning effect widens dispersion in human capital investments: relatively productive households invest more and regain high-sector access, while others fall behind. The skill investment among high-productivity households also crowds in precautionary saving, making asset accumulation more top-heavy and amplifying wealth inequality relative to the baseline. In the No-HC model, however, wealth-inequality responses are broadly similar across the two AI specifications, indicating that the additional increase under AI+ is driven by endogenous human-capital adjustment rather than by the direct productivity effect.
+Figure~\ref{fig:AI_plus_gini} reports the transition dynamics of inequality measures. Income, earnings, and consumption inequality evolve much as in the baseline. By contrast, human-capital and wealth inequality respond more strongly. The churning effect widens dispersion in human capital investments: relatively productive households invest more and regain high-sector access, while others fall behind. The skill investment among high-productivity households also crowds in precautionary saving, making asset accumulation more top-heavy and amplifying wealth inequality relative to the baseline. In the No-HC model, however, wealth-inequality responses are broadly similar across the two AI specifications, indicating that the additional increase under AI+ is driven by endogenous human-capital adjustment rather than by the direct productivity effect.\footnote{As an additional robustness check, we also consider cases in which the initial steady-state share of the middle-sector population is increased by 7 percent and 10 percent. The main results remain qualitatively similar. The corresponding results are available upon request.}
 
 
 
@@ -1054,9 +1078,19 @@ Figure~\ref{fig:AI_plus_gini} reports the transition dynamics of inequality meas
 
 \section{Conclusion}
 
-Recent studies on AI suggest that advancements are likely to reduce demand for junior-level positions in high-skill industries while increasing the need for roles focused on advanced decision-making and AI oversight. We demonstrate how human capital investments are expected to adapt in response to these shifts in skill demand, highlighting the importance of accounting for these human capital responses when assessing AI’s economic impact.
+This paper studies how anticipated advances in artificial intelligence reshape the economy when households can respond through human capital accumulation. We develop an incomplete-markets general equilibrium model with endogenous human capital investment, labor supply, and saving, and use it to examine how AI-driven changes in sectoral skill returns affect aggregate dynamics and inequality. Our main message is that the consequences of AI depend not only on its direct effects on productivity, but also on how households adapt in advance through retraining, labor supply adjustment, and precautionary saving.
 
-Our work points to several promising directions for future research on the economic impacts of AI. First, if governments implement redistribution policies to address AI-induced inequality, understanding how these policies influence human capital accumulation, and thus their effectiveness, would be valuable. Second, our model assumes households have perfect foresight when making human capital investments. Relaxing this assumption could reveal new insights into the economic trajectory of AI advancements and offer important policy implications.
+In the baseline experiment, AI raises productivity in the low- and high-skill sectors while leaving the middle sector unchanged, thereby reducing the relative attractiveness of middle-skill work. This generates endogenous divergence in human capital investment incentives and leads to what we call voluntary job polarization. Many middle-sector households begin to adjust before AI is implemented, with some moving toward the low sector and others withdrawing from work temporarily to invest in skills aimed at high-sector employment. These human capital responses amplify the long-run gains in output, consumption, and investment relative to a counterfactual economy with fixed human capital, but they also dampen employment during the transition and raise income and consumption inequality through stronger polarization.
+
+At the same time, the distributional effects of AI are more nuanced than a simple polarization narrative would suggest. In our benchmark economy, endogenous human capital adjustment mitigates the rise in wealth inequality. The reason is that middle-sector households facing retraining risk increase saving for precautionary reasons, strengthening asset accumulation in the middle of the wealth distribution. In the AI+ experiment, however, AI also raises the human-capital threshold for high-sector employment. This produces a churning effect near the new cutoff: households close to the threshold invest more aggressively to retain access, while those further below reduce investment. Because the additional training and precautionary saving become concentrated among relatively high-productivity households, wealth accumulation becomes more top-heavy and wealth inequality rises more strongly than in the baseline experiment.
+
+Taken together, our findings imply that analyses that abstract from endogenous human capital adjustment may mischaracterize both the aggregate and distributional consequences of AI. 
+
+There are several promising directions for future research. One important extension is to enrich the way AI is modeled. In our framework, AI operates through sector-specific productivity shifts and, in the AI+ experiment, through a higher human-capital threshold for high-skill employment. This structure is useful for isolating the human-capital adjustment channel, but future work could consider richer forms of technological change in which AI both substitutes for and complements tasks along a broader task spectrum, for example by modeling tasks ranked by complexity as in \citet{Korinek2024}. Relatedly, allowing for more flexible substitution patterns or sector-specific wages could provide a more realistic account of how AI reshapes relative earnings and retraining incentives across different parts of the labor market.
+
+A second important direction is to study policy design under alternative AI scenarios. If AI changes both the returns to skills and the incentives to accumulate them, then the effects of redistribution, training subsidies, social insurance, and public insurance against displacement risk may depend crucially on the nature of the technological change itself. Examining these interactions would help clarify which policies are most effective in supporting adjustment, limiting inequality, and improving welfare during the transition to an AI-intensive economy. Finally, it would also be valuable to relax perfect foresight and allow households to learn gradually about the timing, scale, and incidence of AI adoption.
+
+
 
 \printbibliography
 
@@ -1212,19 +1246,19 @@ Households with $h \geq h_H\frac{1}{1-\delta}$ are non-learners, and have their 
 \label{fig:e-digram_yequalz}
 \end{figure}
 
-\section{Effects of baseline AI shock in two-period model}\label{appsec: AIeffects}
+\section{Effects of baseline AI adoption in two-period model}\label{appsec: AIeffects}
 
 The baseline AI shock is defined in \eqref{eq:xAI}. In this section, we examine how this shock directly affects labor supply and saving through its effect on period-2 labor income.
 
 \subsection{Effects on labor supply} 
 
-The AI shock raises period-2 labor income for households who will work in the low or high sector, leading to a positive income effect that reduces their labor supply in period 1. 
+The AI adoption raises period-2 labor income for households who will work in the low or high sector, leading to a positive income effect that reduces their labor supply in period 1. 
 
 
 
 \subsection{Effects on saving when human capital investment is unchanged}\label{appsec: AIeffects_saving}
 
-The effect of AI shock on their saving can be analyzed as if we are varying the parameter $t$ in the functions $\Delta(x,a;t)$, defined in \eqref{eq:dadt_integral}, and $\Delta_{H}(x,a;t)$, defined in \eqref{eq:dadt_fulltime}. 
+The effect of AI adoption on their saving can be analyzed as if we are varying the parameter $t$ in the functions $\Delta(x,a;t)$, defined in \eqref{eq:dadt_integral}, and $\Delta_{H}(x,a;t)$, defined in \eqref{eq:dadt_fulltime}. 
 
 \begin{proposition}\label{prop:Delta}
     $\Delta_{H}(x,a;t)$ is increasing in $t$. $\Delta(x,a;t)$ is convex in $t$:
@@ -1239,7 +1273,7 @@ The effect of AI shock on their saving can be analyzed as if we are varying the 
 
 
 \paragraph{Those who stay in the same sector}
-For middle-sector households, the AI shock leaves both their incomes and saving unchanged.
+For middle-sector households, the AI adoption leaves both their incomes and saving unchanged.
 
 Low-sector and high-sector households experience an increase in period-2 labor income, $x'$, as a result of the AI shock. If they can remain in the same sector via part-time training or without any additional human capital investment, the effect of the AI shock on their saving mirrors that of part-time training, $\Delta(x,a;t)$, since the AI shock raises $x'$ (i.e., $t>1$). As established in Proposition \ref{prop:dadt}, $\Delta(x,a;t)$ has opposite signs for low-income and high-income households. Thus, the AI shock \textit{crowds out} saving for low-sector households while \textit{crowding in} saving for high-sector households.
 
@@ -1532,7 +1566,7 @@ following steps:
 \begin{enumerate}
 \item We choose the number of grid for the risk-free asset, $a,$ human
 capital, $h$, and the idiosyncratic labor productivity, $z$. We
-set $N_{a}=151$, $N_{h}=151$, and $N_{z}=9$ where $N$ denotes
+set $N_{a}=151$, $N_{h}=151$, and $N_{z}=11$ where $N$ denotes
 the number of grid for each variable. To better incorporate the saving
 decisions of households near the borrowing constraint, we assign more
 points to the lower range of the asset and human capital. 
@@ -1612,6 +1646,75 @@ On the aggregate side (Figure \ref{fig:pe_1}), both models deliver a long-run ex
 Turning to inequality dynamics (Figure \ref{fig:pe_2}), the long-run behavior is similar across the two environments, but the impact responses differ markedly. As noted above, employment rises more on impact in the PE model even though output responses are similar. This implies that the additional employment mainly comes from low-productivity households. Consequently, the Gini coefficients for income, earnings, and consumption fall more on impact in the PE model but then move toward levels similar to those in the benchmark once job polarization and skill reallocation take hold. The human-capital Gini shows virtually no difference between the two models.  By contrast, the wealth Gini exhibits very different transition dynamics.  In the PE model, it displays a pronounced but short-lived spike early in the transition because poor households save less, as wages do not fall there in response to AI adoption, unlike in the benchmark economy.  In the long run, however, the wealth Gini converges to a level similar to the benchmark, mainly because middle-sector households gradually increase their savings, as discussed in the main text.
 
  \section{Additional Figures and Tables}
+
+
+ 
+\begin{figure}
+\begin{centering}
+\caption{\protect\label{fig:gamma02_nohc_agg}Transition Path of Aggregate Variables with $\gamma=0.2$}
+\includegraphics[width=0.9\linewidth]{figure_204040calib/gamma02_nohc_agg.pdf}
+\par\end{centering}
+
+
+{\scriptsize Note:  The transition paths of aggregate variables with $\gamma=0.2$: benchmark vs. No HC models. The x-axis represents years, and the y-axis shows the percentage deviation from the initial steady state. AI introduction is assumed to occur in period 10. The No HC model is an economy in which workers maintain their initial steady-state level of human capital throughout the AI implementation until the new steady state is reached. }{\scriptsize\par}
+\end{figure}
+
+
+
+\begin{figure}
+    \begin{centering}
+    \caption{\protect\label{fig:gamma02_nohc_gini}Transition Path of Inequality Measures with $\gamma=0.2$}
+    \par
+    \includegraphics[width=0.95\linewidth]{figure_204040calib/gamma02_nohc_gini.pdf}
+    \par\end{centering}
+    {\scriptsize Note:  The transition paths of inequality measures with $\gamma=0.2$: benchmark vs. No HC models. The x-axis represents years, and the y-axis shows the percentage deviation from the initial steady state. AI introduction is assumed to occur in period 10. The No HC model is an economy in which workers maintain their initial steady-state level of human capital throughout the AI implementation until the new steady state is reached.}{\scriptsize\par}    
+    \end{figure}
+
+
+\begin{figure}
+\begin{centering}
+\caption{\protect\label{fig:gamma04_nohc_agg}Transition Path of Aggregate Variables with $\gamma=0.4$}
+\includegraphics[width=0.9\linewidth]{figure_204040calib/gamma04_nohc_agg.pdf}
+\par\end{centering}
+
+
+{\scriptsize Note:  The transition paths of aggregate variables with $\gamma=0.4$: benchmark vs. No HC models. The x-axis represents years, and the y-axis shows the percentage deviation from the initial steady state. AI introduction is assumed to occur in period 10. The No HC model is an economy in which workers maintain their initial steady-state level of human capital throughout the AI implementation until the new steady state is reached. }{\scriptsize\par}
+\end{figure}
+
+
+
+\begin{figure}
+    \begin{centering}
+    \caption{\protect\label{fig:gamma04_nohc_gini}Transition Path of Inequality Measures with $\gamma=0.4$}
+    \par
+    \includegraphics[width=0.95\linewidth]{figure_204040calib/gamma04_nohc_gini.pdf}
+    \par\end{centering}
+    {\scriptsize Note:  The transition paths of inequality measures with $\gamma=0.4$: benchmark vs. No HC models. The x-axis represents years, and the y-axis shows the percentage deviation from the initial steady state. AI introduction is assumed to occur in period 10. The No HC model is an economy in which workers maintain their initial steady-state level of human capital throughout the AI implementation until the new steady state is reached.}{\scriptsize\par}    
+    \end{figure}
+
+
+
+\begin{figure}
+\begin{centering}
+\caption{\protect\label{fig:smooth_nohc_agg}Transition Path of Aggregate Variables under Gradual AI Adoption}
+\includegraphics[width=0.9\linewidth]{figure_204040calib/smooth_nohc_agg.pdf}
+\par\end{centering}
+
+
+{\scriptsize Note:  The transition paths of aggregate variables: benchmark vs. No HC models. The x-axis represents years, and the y-axis shows the percentage deviation from the initial steady state. In this exercise, AI is introduced gradually from period 0 and fully implemented by period 10. The No HC model is an economy in which workers maintain their initial steady-state level of human capital throughout the AI implementation until the new steady state is reached. }{\scriptsize\par}
+\end{figure}
+
+
+
+\begin{figure}
+    \begin{centering}
+    \caption{\protect\label{fig:smooth_nohc_gini}Transition Path of Inequality Measures under Gradual AI Adoption}
+    \par
+    \includegraphics[width=0.95\linewidth]{figure_204040calib/smooth_nohc_gini.pdf}
+    \par\end{centering}
+    {\scriptsize Note:  The transition paths of inequality measures: benchmark vs. No HC models. The x-axis represents years, and the y-axis shows the percentage deviation from the initial steady state. In this exercise, AI is introduced gradually from period 0 and fully implemented by period 10. The No HC model is an economy in which workers maintain their initial steady-state level of human capital throughout the AI implementation until the new steady state is reached.}{\scriptsize\par}    
+    \end{figure}
+
 \begin{figure}
 \begin{centering}
 \caption{\protect\label{fig:AI_plus_all}Transition Path of Key Variables by Sectors in the AI+ experiment:
