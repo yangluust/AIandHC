@@ -1,5 +1,7 @@
 # LaTeX auxiliary files
 *.aux
+*.nav
+*.snm
 *.lof
 *.log
 *.lot
