@@ -1,0 +1,705 @@
+\documentclass[serif, aspectratio=169]{beamer}
+\usepackage{xcolor}
+\usepackage{appendixnumberbeamer}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usepackage{standalone}
+%\documentclass[serif]{beamer}  % for 4:3 ratio
+\usepackage[T1]{fontenc} 
+\usepackage{fourier} % see "http://faq.ktug.org/wiki/uploads/MathFonts.pdf" for other options
+\usepackage{hyperref}
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+
+\usepackage{amsthm}
+%\theoremstyle{definition}
+%\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\theoremstyle{plain}
+\newtheorem{proposition}[theorem]{Proposition}
+\setbeamertemplate{theorems}[numbered]
+
+
+
+
+\usepackage{graphicx,pstricks,listings,stackengine}
+\usepackage{lipsum}
+\usepackage[citestyle=authoryear,bibstyle=numeric,backend=biber,maxcitenames=2,uniquelist=false,url=false,doi=false,eprint=false,isbn=false]{biblatex}
+\AtEveryBibitem{\clearfield{month}\clearfield{note}\clearfield{language}}
+\AtEveryCitekey{\clearfield{month}\clearfield{note}\clearfield{language}}
+\DeclareRedundantLanguages{en}{english,american,british,
+  canadian,australian,newzealand,USenglish,UKenglish}
+  
+\addbibresource{refer.bib}
+\addbibresource{AI.bib}
+%\setbeamertemplate{bibliography item}{}
+
+\author{Yang K. Lu \inst{1} \and Eunseong Ma \inst{2}}
+\title[AI and Human Capital Accumulation]{AI and Human Capital Accumulation: \\ Aggregate and Distributional Implications}
+\institute{\inst{1} Hong Kong University of Science and Technology \and %
+                      \inst{2} Yonsei University}
+\date{\small Jan 2026}
+\usepackage{HKUSTstyle}
+
+% defs
+\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{blue}\footnotesize #1}}
+% set colors
+\definecolor{hkustyellow}{RGB}{167, 131, 55}
+\definecolor{hkustblue}{RGB}{0, 56, 116}
+\definecolor{hkustred}{RGB}{209, 51, 59}
+
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{deepblue},
+    emphstyle=\ttfamily\color{deepred},    % Custom highlighting style
+    stringstyle=\color{deepgreen},
+    numbers=left,
+    numberstyle=\small\color{halfgray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox,
+}
+
+%- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
+\begin{document}
+
+\begin{frame}
+    \titlepage
+    % \vspace*{-0.6cm}
+    % \begin{figure}[htpb]
+    %     \begin{center}
+    %         \includegraphics[keepaspectratio, scale=0.02]{pic/UST.png}
+    %     \end{center}
+    % \end{figure}
+\end{frame}
+
+% \begin{frame}    
+% \tableofcontents[sectionstyle=show,
+% subsectionstyle=show/shaded/hide,
+% subsubsectionstyle=show/shaded/hide]
+% \end{frame}
+
+% Introduction --- --- --- --- --- --- --- --- --- --- --- --- 
+
+\section{Introduction}
+
+\begin{frame}{AI reduces college premium \& increases value of high-level expertise}
+
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\begin{center}
+     \includegraphics[width=\textwidth]{figure/RevelioLabs.jpg}      
+     \end{center}
+\end{column}
+\begin{column}{0.4\textwidth}
+Bloomberg (2025):
+\begin{quote}
+    Demand for junior hires in many college-level roles is already declining, even as demand for experienced hires in the same jobs is on the rise. \\
+    -- \footnotesize{Matt Sigelman, president of the Burning Glass Institute}
+\end{quote}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{AI reduces college premium \& increases value of high-level expertise} 
+\begin{itemize}
+    \item Recent experimental evidence reviewed by Calvino et al. (2025)
+    \item[-] on simpler tasks, AI narrows productivity gap 
+    \item[-] on more complex tasks, AI productivity gain greater for more experienced
+    \medskip
+    \item Firm-level evidence
+    \item[-] AI adoption in Brazilian firms benefits low-skill production workers, hurts middle-wage office workers (Souza 2025)
+    \item[-] GitHub Copilot helps software startups raise funding faster with fewer developers, driven by startups with more experienced funders (Asam and Heller 2025)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Questions}
+\begin{itemize}
+    \item AI adoption is \textbf{anticipated}.
+    \item AI \textbf{reduces} college premium, \textbf{increases} high-level skill premium
+
+    \bigskip
+    \item How AI-driven technological change affects human capital investment?
+    \item How these adjustments shape aggregate and distributional outcome?
+
+
+
+
+
+    
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{An incomplete markets model with human capital investment
+and a sectoral structure}
+\begin{enumerate}
+\item \textbf{Market Incompleteness}
+\begin{itemize}
+\item Households face uninsurable idiosyncratic productivity
+shocks\textit{\textcolor{gray}{{} (Aiyagari, 1994)}}
+\item Rich household heterogeneity
+\end{itemize}
+\smallskip
+\item \textbf{\textcolor{red}{Human Capital (HC) Investment }}
+\begin{itemize}
+\item Part-time learning vs. full-time education
+\item Segmented sectors based on human capital
+\end{itemize}
+\smallskip
+\item \textbf{Transition Dynamics in General Equilibrium:}
+\begin{itemize}
+\item Fully anticipated AI introduction and its dynamic effects
+\item General equilibrium feedback through endogenous factor prices
+\end{itemize}
+\end{enumerate}
+\smallskip
+\textbf{\textcolor{brown}{Key Channels:}}\textcolor{brown}{{} }
+\begin{itemize}
+
+\item \textbf{Interaction b/w human capital investment and labor supply.}
+\item \textbf{Interaction b/w human capital and physical capital investments.}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{What We Find}
+
+\medskip{}
+
+\begin{enumerate}
+\item \textbf{\textcolor{black}{Effects on HC Accumulation}}
+\begin{itemize}
+\item HC adjustment resembles the pattern of \textbf{\textcolor{brown}{job polarization}}
+\item HC accumulation increasingly concentrated in a smaller fraction of population
+\end{itemize}
+\medskip{}
+
+\item \textbf{\textcolor{black}{Aggregate Effect}}
+\begin{itemize}
+\item AI leads to long-run increases in output, consumption, and investment. 
+\item HC adjustments \textcolor{red}{reduce labor supply. }
+\end{itemize}
+\medskip{}
+
+\item \textbf{\textcolor{black}{Distributional Effects }}
+\begin{itemize}
+\item \textcolor{blue}{Income and consumption inequalities}
+\item[-] decrease due to AI's direct effect
+\item[-] AI-induced HC adjustments \textcolor{red}{reverse} AI's direct effect
+\item \textcolor{blue}{Wealth inequality}
+\item[-] increases due to AI's direct effect
+\item[-] AI-induced HC adjustments \textcolor{red}{mitigate} AI's direct effect
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Related Literature}
+
+\begin{itemize}
+\item \textcolor{black}{Technological advancements on job and human capital}
+\begin{itemize}
+\item \textit{\textcolor{gray}{Goos and Manning (2007), Autor and Dorn (2013),
+Goos et al. (2014), Acemoglu and Restrepo (2020), Atkin (2016), Beaudry et al. (2016), Dauth
+et al. (2021), Di Giacomo and Lerch (2023), etc}}
+\end{itemize}
+\item[] \textcolor{purple}{Job polarization as voluntary response to AI advancements}
+\smallskip{}
+
+\item \textcolor{black}{Unified framework for human capital and physical capital}
+\begin{itemize}
+\item \textit{\textcolor{gray}{Chanda (2008), Huggett et al. (2011), Waldinger (2016), Park (2018), etc}}
+\end{itemize}
+\item[] \textcolor{purple}{Effects of AI-induced HC adjustments on saving and labor supply}
+\smallskip{}
+
+\item \textcolor{black}{Automation contributes to rising income and wealth inequalities}
+\begin{itemize}
+\item \textit{\textcolor{gray}{Sachs and Kotlikoff (2012), Berg et al. (2018), Prettner and
+Strulik (2020), Hemous and Olsen (2022), etc}}
+\end{itemize}
+\item[] \textcolor{purple}{AI-induced HC adjustments amplify increase in income inequality, mitigate increase in wealth inequality}
+\end{itemize}
+
+\end{frame}
+
+
+
+
+\section{Model}
+\begin{frame}{An incomplete markets economy}
+\begin{itemize}
+    \item Time is discrete and infinite.
+    \item A continuum of households, each with 
+    \item[-] $\overline{n}$ unit of indivisible labor
+    \item[-] idiosyncratic productivity shock $z$:
+    \begin{equation}
+    \label{eq:z}
+    \ln z'=\rho_z\ln z + \varepsilon_z, \varepsilon_z \overset{\mathrm{iid}}{\sim} N(0,\sigma_z^2)
+    \end{equation}
+    \item Households cannot issue any asset contingent on future idiosyncratic shock.
+    \item Households can invest in physical capital $a$ and human capital $h$
+\end{itemize}
+    
+\end{frame}
+
+\begin{frame}{Production technology}
+\begin{itemize}
+\item[]
+\begin{equation}
+    F(K,L)=K^{1-\alpha} L^{\alpha},
+\end{equation}
+\begin{equation}
+    K=\textstyle\int a_idi, \quad L=\textstyle\int n_iz_ix(h_i)di
+\end{equation}
+    \item $n_i \in \{0,\overline{n}\}$: labor supply decision
+    \item Sectoral productivity for effective labor units
+    \begin{equation}
+    \label{eq:x}
+x(h)=\left \{ 
+\begin{array}{cl}
+1-\lambda  & \text{low sector if }h<h_{M} \\ 
+1 & \text{middle sector if }h_{M}<h<h_{H} \\ 
+1+\lambda  & \text{high sector if }h>h_{H}%
+\end{array}%
+\right. 
+\end{equation}
+\item Anticipated AI introduction: $\gamma \in (0,1)$
+\begin{equation}
+    \label{eq:xAI}
+x(h')=\left \{ 
+\begin{array}{cl}
+1-\lambda + \gamma \lambda & \text{low sector if }h'<h_{M} \\ 
+1 & \text{middle sector if }h_{M}<h'<h_{H} \\ 
+1+\lambda + \gamma \lambda & \text{high sector if }h'>h_{H}%
+\end{array}%
+\right. 
+\end{equation}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Household's Problem}
+\begin{itemize}
+\item Based on $\color{blue}z_t\color{black}$
+\begin{align}
+\max_{\left \{ c_t,a_{t+1},n_t,e_t\right \}_{t=0}^{\infty }}&E_0\left[
+\sum\limits_{t=0}^{\infty }\beta^t( \ln c_t-\chi_n n_t-\chi_e e_t ) \right] \text{ s.t.} \\
+    c_t+a_{t+1}&=n_t( w_t\color{blue}z_t\color{black}x(h_t))+(1+r_t)a_t \\
+    c_t& \geq 0 \text{ and } a_{t+1} \geq 0 \\
+    e_t& \in \{0, e_L, \color{red}\mathbf{1}_{n_t=0}\color{black}e_H\} \\
+    h_{t+1}&=\color{blue}z_t\color{black}e_t + (1-\delta)h_t
+\end{align}    
+\item $z_t$: productivity for both work and human capital accumulation
+\item Take factor prices as given: $w_t = F_L(K,L)$ and $r_t=F_K(K,L)$.
+\end{itemize}
+\end{frame}
+
+\section{Household Decisions in a Two-Period Model}
+\begin{frame}{Two-period model household decisions}
+\begin{itemize}
+    \item Period 2: work $n=1$ iff $z>\overline{z}(h,a)$
+    \medskip
+    \item Period 1: states $\{z,h,a\}$ map to decisions $n\in\{0,1\}, e\in\{0,e_L,e_H\}, a'$
+    \smallskip
+    \item[] Additive separability of $\{n,e\}$ and $c$ in utility $\Rightarrow$ 
+    \item[] Step 1: $\{n,e\}$ conditional on optimal $a'$ without uncertainty
+    \item[] Step 2: $\{n,e,a'\}$ affected by uncertainty
+    \item[] Step 3: $a'$ with uncertainty conditional on $\{n,e\}$ 
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[label=decision]{$\{n,e\}$ conditional on optimal $a'$ without uncertainty: $h\in[h_M,h_M\frac{1}{1-\delta}]$}
+\begin{figure}
+    \centering
+    
+\input{figure/Figure1}
+\caption{Decision Rule Diagram for $h_M \leq h<h_M(1-\delta)^{-1}$}
+   
+\label{fig:rule-diagram}
+\end{figure}
+
+\end{frame}
+\begin{frame}[label=HCrule]{Optimal human capital investment $e$ without uncertainty for all $h$}
+\begin{figure}
+    \centering
+    
+\input{figure/Figure2a}
+
+\label{fig:e-digram}
+\end{figure}
+    
+\end{frame}
+
+\begin{frame}{Effect of idiosyncratic risk $z'$ on $\{n,e,a'\}$}
+\begin{proposition}
+    The uninsured idiosyncratic risk in $z'$ makes households in period 1 save more, work more and invest less in human capital.
+\end{proposition}
+\begin{itemize}
+    \item Idiosyncratic risk raises saving and labor supply (Swanson 2012)
+    \item Idiosyncratic risk lowers return to human capital
+    \item[-] higher $x'$ $\rightarrow$ $ln(c')$ more concave in $z'$
+    \item[-] higher $x'$ $\rightarrow$ more exposure to low $z'$ risk due to endogenous labor supply
+    
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Effect of part-time learning on saving $a'$}
+Normalize $z=1$ and $\ln z' \sim \mathcal{N}(0,\sigma_z^2)$
+\begin{equation*}\label{eq:savingprob}
+\max_{a'} : \ln(c) + \beta \mathbb{E}_{z'}[\ln(c')],
+\end{equation*}
+subject to:
+\begin{equation}
+c + a' = a + x , \quad c' = a' + txz'
+\end{equation}
+The second-order approximate solution to the FOC is:
+\begin{equation}
+a'^*(x,a;t) = \underbrace{\frac{\beta(a+x) - tx\mu}{1+\beta}}_{\text{CE}} + \underbrace{\frac{t^2x^2\Sigma}{\beta(a+x + tx\mu)}}_{\text{Precautionary}}
+\end{equation}
+where $\mu\equiv \mathbb{E}[z']$ and $\Sigma \equiv\operatorname{Var}(z')$
+
+
+\end{frame}
+
+\begin{frame}{Effect of part-time learning on saving $a'$}
+Compare optimal $a'$ between $e=e_L$ $(t>1)$ and $e=0$ $(t=1)$
+\begin{equation} \label{eq:dadt_integral}
+    \Delta_{\text{part-time}}(x,a;t) = a'^*(x,a;t) - a'^*(x,a;1) = \int_1^t \frac{\partial a'^*}{\partial u}(x,a;u) du,
+\end{equation}
+Part-time learning \textcolor{red}{\textbf{crowds out}} saving for \textcolor{red}{\textbf{low-income}} households and \textcolor{blue}{\textbf{crowds in}} saving for \textcolor{blue}{\textbf{high-income}} households.
+\begin{proposition}\label{prop:dadt}
+    If $\frac{\Sigma}{\mu}>\sigma^*(t)$, $\Delta_{\text{part-time}}(x,a;t)<0$ for $x<x^\ast(a,t)$, and $\Delta_{\text{part-time}}(x,a;t)>0$ for $x>x^\ast(a,t)$.
+\end{proposition}
+
+\end{frame}
+
+\begin{frame}{Effect of full-time training on saving $a'$}
+\begin{itemize}
+    \item Full-time training requires $n=0$.
+    \item Household forgoes period-1 labor income.
+\end{itemize}
+\begin{align}
+\max_{a'} &: \ln(c) + \beta \mathbb{E}_{z'}[\ln(c')],\notag\\
+e=e_H&: \quad c + a' = a, \quad c' = a' + txz'\\
+e=0&: \quad c + a' = a + x, \quad c' = a' + xz'
+\end{align}
+\end{frame}
+
+\begin{frame}{Effect of full-time training on saving $a'$}
+Compare optimal $a'$ between $e=e_H$ $(t>1,n=0)$ and $e=0$ $(t=1)$
+\begin{align}
+    \Delta_{\text{full-time}}(x,a;t) &=\Delta_{\text{part-time}}(x,a;t) + \Delta_H(x,a;t) \notag \\
+    \text{where } \Delta_H(x,a;t) &\equiv x \Bigg[ -\frac{\beta}{1+\beta} + \frac{\Sigma}{\beta} \frac{t^2 x^2}{(a + x + t x \mu)(a + t x \mu)} \Bigg]
+\end{align}
+Full-time training \textcolor{red}{\textbf{crowds out}} saving for \textcolor{red}{\textbf{low-income}} households and \textcolor{blue}{\textbf{crowds in}} saving for \textcolor{blue}{\textbf{high-income}} households.
+\begin{proposition}\label{prop:fulltime}
+If $\frac{\Sigma}{\mu}>\max\{\sigma^*(t),\hat{\sigma}(t)\}$, $\Delta_{\text{full-time}}(x,a;t)<0$ for $x<\min\{x^*(a,t),\hat{x}(a,t)\}$, $\Delta_{\text{full-time}}(x,a;t)>0$ for $x>\max\{x^*(a,t),\hat{x}(a,t)\}$.
+\end{proposition}
+
+\end{frame}
+
+\begin{frame}{Effects of an Anticipated Period-2 AI Shock}
+\begin{itemize}
+    \item on human capital investment:
+    \item[-] $ e \downarrow$ for $h < h_M/(1-\delta)$, $ e \uparrow$ for $h > h_M/(1-\delta)$
+    \medskip
+    \item on labor supply:
+    \item[-] via income effect: $ n \downarrow$ for low- and high- sectors 
+    \item[-] via full-time training: $n \uparrow$ for $h < h_M/(1-\delta)$, $ n \downarrow$ for $h > h_M/(1-\delta)$
+    \medskip
+    \item on saving:
+    \item[-] $ a' \downarrow$ for low sector, $ a' \uparrow$ for high sector
+    \item[-] ambiguous for middle sector
+    
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Limitations of the two-period model}
+
+\begin{itemize}
+    \item General Equilibrium Effects
+    \item[-] wage and interest rate respond and shape household decisions
+    \medskip
+    \item Composition Effects
+    \item[-] human capital adjustment $\Rightarrow$ shifting composition of labor across sectors
+    \medskip
+    \item Transition Dynamics
+    \item[-] human capital takes time to build
+    \item[-] effects of anticipating AI and responding to AI
+\end{itemize}
+\medskip
+A quantitative model with infinite horizon, endogenous asset accumulation, and GE. 
+\end{frame}
+
+\section{Calibration}
+\begin{frame}{Key moments for calibration}
+\begin{table}
+%\caption{\protect\label{tbl:=000020EarningDist}Key Moments}
+
+\begin{centering}
+\begin{tabular}{lccccrrrc}
+\hline 
+\hline Moment &  &  &  & Data &  &  &  & Model\tabularnewline
+\hline 
+~~Employment rate &  &  &  & 0.80 &  &  &  & 0.80\tabularnewline
+~~Human capital investment ratio &  &  &  & 0.29 &  &  &  & 0.29\tabularnewline
+~~Gini coefficient for wealth &  &  &  & 0.78 &  &  &  & 0.74\tabularnewline
+~~Gini coefficient for earning &  &  &  & 0.63 &  &  &  & 0.64\tabularnewline
+~~Gini coefficient for income &  &  &  & 0.57 &  &  &  & 0.59\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+{\scriptsize Note: Gini coefficients are sourced from \cite{DiazGimenez1997},\\
+Human capital investment ratio is obtained from \cite{OECD1998}.}{\scriptsize\par}
+\end{table}
+
+    
+\end{frame}
+
+\begin{frame}{Calibration Parameters}
+\begin{table}
+%\noindent\begin{minipage}[t]{1\columnwidth}%
+\begin{center}
+\begin{tabular}{crrll}
+\toprule 
+\hline~Parameter & Value &  & Description & Target or Reference\tabularnewline
+\midrule
+$\beta$ & 0.91795 &  & Time discount factor & Annual interest rate\tabularnewline
+$\alpha$ & 0.36 &  & Capital income share & Standard \tabularnewline
+$\delta$ & 0.1 &  & Capital depreciation rate & Standard \tabularnewline
+$\rho_{z}$ & 0.94 &  & Persistence of $z$ shocks & Standard \tabularnewline
+$\sigma_{z}$ & 0.287 &  & Standard deviation of $z$ shocks & Earnings Gini\tabularnewline
+$\chi_{n}$ & 2.47 &  & Disutility from working & Employment rate\tabularnewline
+$\chi_{e}$ & 1.48 &  & Disutility from HC effort & HC investment ratio\tabularnewline
+$h_{M}$ & 0.41 &  & Human capital cutoff for M & 40\% in Middle sector\tabularnewline
+$h_{H}$ & 0.96 &  & Human capital cutoff for H & 40\% in High sector\tabularnewline
+$\lambda$ & 0.2 &  & Skill premium & Income Gini\tabularnewline
+
+\bottomrule
+\end{tabular}
+\par\end{center}
+{\scriptsize Note: Middle and High sector population shares calibrated to 2014 US workers in RCM occupations (\cite{cortes_disappearing_2017}}){\scriptsize\par}
+%\end{minipage}
+\end{table}
+\centering
+$\overline{n}=e_H=1/3$, $e_L=1/6$
+    
+\end{frame}
+
+\begin{frame}{Distribution of population, employment and assets}
+\begin{table}[htbp]
+\begin{centering}
+\caption{Distribution of Population, Employment and Assets}
+\begin{tabular}{lccc}
+\toprule 
+Sectors  & \multicolumn{1}{l}{Pop. Share (\%)} & \multicolumn{1}{l}{Emp. Share (\%)} & \multicolumn{1}{l}{Assets Share (\%)}\tabularnewline
+\midrule 
+Low  & 20.76 & 18.58 & 8.07\tabularnewline
+Middle  & 38.87 & 35.35 & 23.92\tabularnewline
+High  & 40.35 & 46.07 & 68.01\tabularnewline
+\bottomrule
+\end{tabular}\label{tab:SSdistribution}
+\par\end{centering}
+{\scriptsize Note: Human capital cutoffs, $h_{M}$ and $h_{H}$, determine
+the population share across sectors. \\
+Employment share and assets share
+are implied by households labor supply decisions and saving decisions. }{\scriptsize\par}
+\end{table}
+
+    
+\end{frame}
+
+\section{Economic Impact of AI}
+\begin{frame}{AI's effect on skill premia}
+
+\begin{itemize}
+    \item Fully anticipated AI introduction in year-10 with $\gamma=0.3$
+    \item Increases productivity for Low sector (7.5\%) and High sector (5\%)
+    \item Reduces middle sector skill premium: 0.2 --> 0.14
+    \item Increases high sector skill premium: 0.2 --> 0.26
+
+\end{itemize}    
+
+\end{frame}
+
+\begin{frame}{On human capital: steady state distribution change}
+\begin{itemize}
+    \item Reallocation from middle to low or high sectors
+    \item Newly added mass concentrated in the \emph{lower} end of low and high sectors
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figure/h_dist.pdf}
+    \label{fig:hc_dist}
+    
+\end{figure}
+\end{frame}
+
+\begin{frame}{On human capital: transition dynamics}
+\begin{itemize}
+    \item Decline of aggregate human capital
+    \item HC investment concentrated in a smaller share of population
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\linewidth]{figure/agg_HC.pdf}
+    %\caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+\end{frame}
+
+\begin{frame}{On employment: Job Polarization }
+\begin{itemize}
+    \item Unbalanced reallocation of workers: more to Low than to High 
+    \item[-] Low: higher productivity growth and labor supply elasticity
+\end{itemize}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.7\linewidth]{figure/share.pdf}
+        %\caption{Caption}
+        \label{fig:enter-label}
+    \end{figure}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{Isolating the effects of human capital adjustment}
+
+\begin{itemize}
+    \item Benchmark: AI boosts productivity and induces human capital adjustment
+    \item No-HC model: shutdown human capital adjustment
+    \item[-] initial steady state: same population distribution, same parameters
+    \item[-] households stay in the same sector forever
+    \item[-] only chooses labor supply and physical capital holding
+    \item[-] same effect of AI on sectoral productivity
+\end{itemize}
+
+\end{frame}
+\begin{frame}{Aggregate Outcomes: interaction b/w HC investment and labor supply}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\linewidth]{figure/nohc_agg.pdf}
+    %\caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+    
+\end{frame}
+
+\begin{frame}{Distributional Outcomes: job polarization worsens income inequalities}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figure/nohc_gini.pdf}
+    %\caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+    
+\end{frame}
+
+\begin{frame}{Wealth inequality: interaction b/w human and physical capital investments}
+\begin{itemize}
+    \item Composition effect --> remaining middle-sector households more productive
+    \item Precautionary saving --> middle-sector households $e \uparrow$ crowds in saving
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figure/nohc_asset.pdf}
+    %\caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+    
+\end{frame}
+
+
+
+
+
+
+
+
+\section{Conclusion}
+\begin{frame}{Conclusions}
+
+How AI-driven technological change affects human capital investment and, in turn, aggregate outcomes and economic inequality?
+\smallskip
+\begin{itemize}
+\item A quantitative incomplete markets model with endogenous HC investment, sectoral structure, transition dynamics, and GE feedback
+\medskip 
+\item AI induces \textbf{job polarization} via human capital adjustment
+\medskip
+\item Human capital adjustment is crucial in determining AI's economic impacts 
+\item[-] \textbf{reduces} labor supply
+\item[-] \textbf{reverses} AI's positive effect on income and consumption inequalities
+\item[-] \textbf{mitigates} AI's negative effect on wealth inequality
+    
+\end{itemize}
+    
+\end{frame}
+
+\appendix
+
+
+
+
+
+\section{GE}
+
+\begin{frame}{Isolating the effects of wage and capital return adjustment}
+Fixed wage and capital return to initial steady state
+\begin{itemize}
+    \item Benchmark with HC adjustment --> PE model
+\end{itemize}
+    
+    
+\end{frame}
+
+\begin{frame}{Aggregate Outcomes}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\linewidth]{figure/pe_agg.pdf}
+    %\caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+    
+\end{frame}
+
+
+\begin{frame}{GE effects on aggregate outcomes}
+\begin{itemize}
+    \item Mitigate transitional fluctuations in output and investment
+    \item Allocate output from investment to consumption in the long run
+    \item Reduce post-AI employment
+\end{itemize}
+    
+\end{frame}
+
+\begin{frame}{Distributional Outcomes}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figure/pe_gini.pdf}
+    %\caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+    
+\end{frame}
+
+\begin{frame}{GE effects on inequalities}
+\begin{itemize}
+    \item Mitigate transitional fluctuations in all inequalities
+    \item Increase long-run income and consumption inequality
+    \item Reduces wealth inequality in transition but increases it in the long run
+\end{itemize}
+\end{frame}
+
+
+\end{document}
