@@ -10,6 +10,9 @@
 \usepackage{amstext}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usepackage{standalone}
 \ifx\hypersetup\undefined
   \AtBeginDocument{%
     \hypersetup{bookmarks=false,
@@ -177,8 +180,8 @@ decision.
 \begin{itemize}
 \item \textbf{We assume that AI adoption is fully anticipated}
 \begin{enumerate}
-\item \textbf{\textcolor{blue}{Baseline experiment:}} AI raises labor productivity in the low and high sectors 
-\item \textbf{\textcolor{brown}{AI+ experiment:}}\textcolor{brown}{{} }AI raises the HC threshold for high-sector entry
+\item \textbf{\textcolor{blue}{Baseline:}} AI reduces middle-level skill premium, increases high-level skill premium
+\item \textbf{\textcolor{brown}{AI+:}}\textcolor{brown}{{} }AI raises the HC threshold for high-sector entry
 \end{enumerate}
 
 \medskip{}
@@ -186,8 +189,8 @@ decision.
 
   \item \textbf{Analytical Results from a two-period model}
   \begin{itemize}
-  \item HC investment crowds out saving for low-income HHs but crowds in saving for high-income HHs
-  \item AI shock reduces HC investment for low-HC HHs but increases it for high-HC HHs
+  \item HC investment \textcolor{red}{\textbf{crowds out}} saving for \textcolor{red}{\textbf{low-income}} HHs and \textcolor{blue}{\textbf{crowds in}} saving for \textcolor{blue}{\textbf{high-income}} HHs.
+  \item AI shock \textcolor{red}{reduces} HC investment for \textcolor{red}{low-HC} HHs but \textcolor{blue}{increases} it for \textcolor{blue}{high-HC} HHs.
   \end{itemize}
 
 \medskip{}
@@ -195,7 +198,7 @@ decision.
 
 \begin{itemize}
 \item AI generates\textbf{ voluntary job polarization}
-\item HC adjustment amplifies AI's positive effects on GDP, consumption, and investment, but mitigates its effects on employment
+\item HC adjustment \textcolor{red}{amplifies} AI's positive effects on GDP, consumption, and investment, but \textcolor{blue}{mitigates} its effects on employment
 \item Income and earnings inequality rises due to the polarization.
 \item Wealth inequality changes \textcolor{blue}{little in the baseline} but \textcolor{brown}{rises in the AI+ experiment}.
 \end{itemize}
@@ -378,99 +381,102 @@ x^{AI+}(h)=\left\{ \begin{array}{cl}
 \begin{frame}{~}
 
 \begin{center}
-{\huge\textbf{Household Decisions \\ in Two-Period Model}}{\huge\par}
+{\huge\textbf{Household Decisions in Two-Period Model}}{\huge\par}
 \par\end{center}
 
 \end{frame}
 
-\begin{frame}{Assumptions}
-
-\begin{itemize}
-\item Period 2 : Households choose labor supply only and consume all. 
-\item Period 1 : Households choose labor supply, consumption, saving and
-human capital investment. 
-\end{itemize}
-\bigskip{}
-
-\begin{itemize}
-\item We partition households into three ranges:
-\end{itemize}
-\begin{equation}
-h=\left\{ \begin{array}{cl}
-[0,h_{M}(1-\delta)^{-1}) & \text{low sector}\\{}
-[h_{M}(1-\delta)^{-1},h_{H}(1-\delta)^{-1}) & \text{middle sector}\\{}
-[h_{H}(1-\delta)^{-1},h_{\max}] & \text{high sector }
-\end{array}\right.\label{eq:xAI-1-1-1}
-\end{equation}
-
+\begin{frame}{}
+  \begin{itemize}
+      \item Period 2: work $n=1$ iff $z>\overline{z}(h,a)$ (normalize $\overline{n}=1$)
+      \medskip
+      \item Period 1: labor supply and HC investment $\{n,e\}$ 
+      \begin{figure}
+        \centering
+        \input{../figure_204040calib/Figure1}
+        \par
+      \end{figure}
+  \end{itemize}
 \end{frame}
 
-\begin{frame}{Decision Rule}
 
-\begin{center}
-\includegraphics[scale=1]{../figure_204040calib/Figure1.pdf}
-\par\end{center}
 
+\begin{frame}{Effect of part-time learning on saving $a'$}
+  Normalize $z=1$ and $\ln z' \sim \mathcal{N}(0,\sigma_z^2)$
+  \begin{equation*}\label{eq:savingprob}
+  \max_{a'} : \ln(c) + \beta \mathbb{E}_{z'}[\ln(c')],
+  \end{equation*}
+  subject to:
+  \begin{equation}
+  c + a' = a + x , \quad c' = a' + txz'
+  \end{equation}
+  The second-order approximate solution to the FOC is:
+  \begin{equation}
+  a'^*(x,a;t) = \underbrace{\frac{\beta(a+x) - tx\mu}{1+\beta}}_{\text{CE}} + \underbrace{\frac{t^2x^2\Sigma}{\beta(a+x + tx\mu)}}_{\text{Precautionary}}
+  \end{equation}
+  where $\mu\equiv \mathbb{E}[z']$ and $\Sigma \equiv\operatorname{Var}(z')$
+  
+  
 \end{frame}
+  
+\begin{frame}{Effect of part-time learning on saving $a'$}
+  Compare optimal $a'$ between $e=e_L$ $(t>1)$ and $e=0$ $(t=1)$
+  \begin{equation} \label{eq:dadt_integral}
+      \Delta_{\text{part-time}}(x,a;t) = a'^*(x,a;t) - a'^*(x,a;1) = \int_1^t \frac{\partial a'^*}{\partial u}(x,a;u) du,
+  \end{equation}
+  Part-time learning \textcolor{red}{\textbf{crowds out}} saving for \textcolor{red}{\textbf{low-income}} households and \textcolor{blue}{\textbf{crowds in}} saving for \textcolor{blue}{\textbf{high-income}} households.
+  \begin{proposition}\label{prop:dadt}
+      If $\frac{\Sigma}{\mu}>\sigma^*(t)$, $\Delta_{\text{part-time}}(x,a;t)<0$ for $x<x^\ast(a,t)$, and $\Delta_{\text{part-time}}(x,a;t)>0$ for $x>x^\ast(a,t)$.
+  \end{proposition}
+  
+ \end{frame}
 
-\begin{frame}{Key Propositions}
+ \begin{frame}{Effect of full-time training on saving $a'$}
+  \begin{itemize}
+      \item Full-time training requires $n=0$.
+      \item Household forgoes period-1 labor income.
+  \end{itemize}
+  \begin{align}
+  \max_{a'} &: \ln(c) + \beta \mathbb{E}_{z'}[\ln(c')],\notag\\
+  e=e_H&: \quad c + a' = a, \quad c' = a' + txz'\\
+  e=0&: \quad c + a' = a + x, \quad c' = a' + xz'
+  \end{align}
+  \end{frame}
+  
+  \begin{frame}{Effect of full-time training on saving $a'$}
+  Compare optimal $a'$ between $e=e_H$ $(t>1,n=0)$ and $e=0$ $(t=1)$
+  \begin{align}
+      \Delta_{\text{full-time}}(x,a;t) &=\Delta_{\text{part-time}}(x,a;t) + \Delta_H(x,a;t) \notag \\
+      \text{where } \Delta_H(x,a;t) &\equiv x \Bigg[ -\frac{\beta}{1+\beta} + \frac{\Sigma}{\beta} \frac{t^2 x^2}{(a + x + t x \mu)(a + t x \mu)} \Bigg]
+  \end{align}
+  Full-time training \textcolor{red}{\textbf{crowds out}} saving for \textcolor{red}{\textbf{low-income}} households and \textcolor{blue}{\textbf{crowds in}} saving for \textcolor{blue}{\textbf{high-income}} households.
+  \begin{proposition}\label{prop:fulltime}
+  If $\frac{\Sigma}{\mu}>\max\{\sigma^*(t),\hat{\sigma}(t)\}$, $\Delta_{\text{full-time}}(x,a;t)<0$ for $x<\min\{x^*(a,t),\hat{x}(a,t)\}$, $\Delta_{\text{full-time}}(x,a;t)>0$ for $x>\max\{x^*(a,t),\hat{x}(a,t)\}$.
+  \end{proposition}
+  
+  \end{frame}
+  
+
+\begin{frame}{Effects of an Anticipated Period-2 AI Adoption}
 
 \begin{itemize}
-\item HC investment changes savings ultimately depends on the size of two
-channels
-\begin{enumerate}
-\item the crowd-out effect via higher expected future income
-\item the precautionary crowd-in effect via heightened future income risk
-\end{enumerate}
+\item \textbf{HC Investment:}
+\item[] Skill premium change decreases HC investment among households with $h < h_M/(1-\delta)$, but increases it among those with $h > h_M/(1-\delta)$.
+\item[] Raising high-sector cutoff strengthens HC investment among high-sector workers.
 \medskip{}
 
-\item \textbf{Proposition 1}\textit{ }
-\begin{itemize}
-\item \textit{HC investment crowds out saving for low-income households
-and crowds in saving for high-income households}
-\item {\small\textit{Part-time: for $x<x^{\ast}(a,t)$, $e=e_{L}$ lowers
-saving $\Delta(x,a;t>1)<0$; for $x>x^{\ast}(a,t)$, $e=e_{L}$ raises
-saving $\Delta(x,a;t>1)>0$.}}{\small\par}
-\item {\small\textit{Full-time: for $x<\min\{x^{*}(a,t),\hat{x}(a,t)\}$,
-$e=e_{H}$ lowers saving $\Delta_{\text{full-time}}(x,a;t>1)<0$;
-for $x>\max\{x^{*}(a,t),\hat{x}(a,t)\}$, $e=e_{H}$ raises saving
-$\Delta_{\text{full-time}}(x,a;t>1)>0$.}}{\small\par}
-\end{itemize}
-\medskip{}
-
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Key Propositions}
-
-\medskip{}
-
-\begin{itemize}
-\item \textbf{Propositions 2} 
-\begin{itemize}
-\item \textit{An anticipated AI adoption decreases HC investment among households
-with $h<h_{M}/(1-\delta)$, but increases it among those with $h>h_{M}/(1-\delta)$. }
-\item \textit{Specifically, $\overline{z}_{full}^{L}$ and $\overline{z}_{part}^{L}$
-decrease with $\gamma$, while $\overline{z}_{full}^{M}$ and $\overline{z}_{part}^{M}$
-increase with $\gamma$.}
-\end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Implications}
-
-\begin{itemize}
 \item \textbf{Labor Supply:} 
 \begin{itemize}
 \item Full-time training and labor supply compete for time.
-\item Low-income households increase labor supply, while high-income households
+\item Low-income households increase labor supply due to higher wage
+\item high-income households
 reduce labor supply due to full-time training.
 \end{itemize}
 \medskip{}
 
 \item \textbf{Saving: }
 \begin{itemize}
-\item Human capital investment crowds out saving for low-income households,
+\item HC investment crowds out saving for low-income households,
 but crowds in saving for high-income households.
 \item As AI adoption shifts human capital investment from low- to high-income
 households, optimal saving increases for both groups.
@@ -531,12 +537,12 @@ Distributions}}}}}
 
 \section{AI Shock}
 
-\begin{frame}{AI Introduction {\small\textbf{\textit{\textcolor{brown}{~~Assumptions}}}}}
+\begin{frame}{AI Adoption {\small\textbf{\textit{\textcolor{brown}{~~Assumptions}}}}}
 
 \begin{itemize}
-\item AI introduction is fully anticipated and occurs in 10 years.
+\item AI adoption is fully anticipated and occurs in 10 years.
 \begin{itemize}
-\item Fully incorporates transition dynamics from the initial steady state
+\item Transition dynamics from the initial steady state
 to the post-AI steady state.
 \end{itemize}
 \end{itemize}
@@ -565,14 +571,6 @@ middle-sector population share by 5 pp.
 
 \end{frame}
 
-\begin{frame}{Results {\small\textbf{\textit{\textcolor{brown}{~~HC Dynamics}}}}}
-
-\begin{center}
-\includegraphics[scale=0.6]{../figure_204040calib/agg_HC}
-\par\end{center}
-
-\end{frame}
-
 \begin{frame}{Results {\small\textbf{\textit{\textcolor{brown}{~~Job Polarization}}}}}
 
 \begin{center}
@@ -588,18 +586,18 @@ Effects}}}}}
 \begin{itemize}
 \item \textbf{Direct effect: }AI changes sectoral productivity, shifting
 earnings, labor supply, savings, and aggregate output.
-\item \textbf{Indirect effect:} Households respond by accumulating human
-capital and reallocating across sectors, further affecting productivity
+\item \textbf{Indirect effect:} Households respond with human capital adjustment and reallocate across sectors, further affecting productivity
 and inequality.
 
 \medskip{}
 
 \end{itemize}
 \item To decompose the effect, \textcolor{blue}{we compare the benchmark
-model to a No-HC model}
+model to a Without-HC model}
 \begin{itemize}
-\item The No-HC model captures AI\textquoteright s direct effects, while
-the gap identifies the indirect effects. 
+\item The Without-HC model captures AI's direct effects
+\item Gap between benchmark and Without-HC models captures indirect effects. 
+
 \end{itemize}
 \end{itemize}
 \end{frame}
@@ -646,8 +644,9 @@ channel}}
 \medskip{}
 
 \begin{itemize}
-\item \textbf{Churning effect: }Workers near the new threshold increase
-human capital investment to stay in the high sector. 
+\item Workers near the new threshold increase
+HC investment to stay in the high sector. 
+\item They are high-income households so HC investment crowds in their saving.
 \end{itemize}
 \end{frame}
 
@@ -684,14 +683,12 @@ and general equilibrium feedback.}
 \bigskip{}
 
 \begin{itemize}
-\item \textcolor{black}{The aggregate and distributional effects of AI depend
-not only on its direct productivity effects, but also }
-\begin{itemize}
-\item \textcolor{black}{on households\textquoteright{} anticipatory responses
-through retraining; }
-\item \textcolor{black}{on its interaction with labor supply adjustment
+\item \textcolor{black}{AI's effects not only depend on its direct productivity effects, but also }
+
+\item[-] \textcolor{black}{on households' human capital responses; }
+\item[-] \textcolor{black}{on human capital's interaction with labor supply 
 and precautionary saving.}
-\end{itemize}
+
 \end{itemize}
 \end{frame}
 
