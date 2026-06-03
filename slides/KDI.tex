@@ -108,7 +108,7 @@ Aggregate and Distributional Implications}}}}{\LARGE\textrm{\textcolor{violet}{\
 
 \makebeamertitle
 
-\begin{frame}{Introduction{\small\textbf{\textit{\textcolor{brown}{~~Motivation}}}}}
+\begin{frame}{Motivation}
 
 \begin{itemize}
 \item AI's effects on labor markets are both profound and uneven
@@ -161,48 +161,12 @@ decision.
 
 \item \textbf{\textcolor{red}{Human Capital Investment}}
 \begin{itemize}
-\item On-the-job learning vs. full-time learning
-\item Segmented sectors based on HC
+\item part-time learning vs. full-time learning
+\item higher-HC sector: higher wages but more exposed to idiosyncratic productivity shock
 \end{itemize}
 \medskip{}
 
-\item \textbf{\textcolor{brown}{Key Channel:}}\textcolor{brown}{{} }\textbf{\textcolor{brown}{Rich
-interactions among HC investment, labor supply, and saving decisions.}}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{What We Do}
-
-\medskip{}
-
-\begin{itemize}
-\item \textbf{Assumption for AI Adoption}
-\begin{itemize}
-\item Common assumption: It is anticipated
-\end{itemize}
-\begin{enumerate}
-\item \textbf{\textcolor{blue}{Baseline experiment:}} an shock that raises
-productivity in the low and high sectors
-\item \textbf{\textcolor{brown}{AI+ experiment:}}\textcolor{brown}{{} }raises
-the HC threshold for high-sector entry
-\end{enumerate}
-\end{itemize}
-\medskip{}
-
-\begin{itemize}
-\item \textbf{Methodological Approach}
-\begin{enumerate}
-\item A two-period version of the model
-\begin{itemize}
-\item to see analytical results that isolate the core mechanisms.
-\end{itemize}
-\item A full dynamic quantitative model 
-\begin{itemize}
-\item to incorporate transition dynamics and general equilibrium effects,
-\item to quantify i) direct and indirect effect of AI and ii) aggregate
-and distributional outcomes.
-\end{itemize}
-\end{enumerate}
+\item \textbf{\textcolor{brown}{Key Channel:}}\textcolor{brown}{{} }\textbf{\textcolor{brown}{HC investment interacts with labor supply and saving decisions.}}
 \end{itemize}
 \end{frame}
 
@@ -210,36 +174,36 @@ and distributional outcomes.
 
 \medskip{}
 
-\begin{enumerate}
-\item \textbf{Analytical Results}
 \begin{itemize}
-\item An anticipated AI shock generates endogenous divergence in HC investment
-incentives. 
-\item In the AI+ case, a\textbf{ churning effect} additionally emerges near
-the new high-sector cutoff.
-\end{itemize}
+\item \textbf{We assume that AI adoption is fully anticipated}
+\begin{enumerate}
+\item \textbf{\textcolor{blue}{Baseline experiment:}} AI raises labor productivity in the low and high sectors 
+\item \textbf{\textcolor{brown}{AI+ experiment:}}\textcolor{brown}{{} }AI raises the HC threshold for high-sector entry
+\end{enumerate}
+
 \medskip{}
 
-\item \textbf{Quantitative Results}
-\begin{enumerate}
-\item \textbf{Aggregate Effect }
+
+  \item \textbf{Analytical Results from a two-period model}
+  \begin{itemize}
+  \item HC investment crowds out saving for low-income HHs but crowds in saving for high-income HHs
+  \item AI shock reduces HC investment for low-HC HHs but increases it for high-HC HHs
+  \end{itemize}
+
+\medskip{}
+\item \textbf{Quantitative Results from a calibrated dynamic model}
+
 \begin{itemize}
-\item AI shock generates\textbf{ voluntary job polarization}
-\item GDP and consumption rise, while aggregate employment falls. 
-\item Endogenous HC adjustment amplifies the effects through more efficient
-sectoral reallocation.
-\item In the AI+ experiment, it becomes more important due to the \textbf{churning
-effect. }
-\end{itemize}
-\item \textbf{\textcolor{black}{Distributional Effects}}
-\begin{itemize}
+\item AI generates\textbf{ voluntary job polarization}
+\item HC adjustment amplifies AI's positive effects on GDP, consumption, and investment, but mitigates its effects on employment
 \item Income and earnings inequality rises due to the polarization.
-\item Wealth inequality changes little in the baseline but rises in the
-AI+ experiment.
+\item Wealth inequality changes \textcolor{blue}{little in the baseline} but \textcolor{brown}{rises in the AI+ experiment}.
 \end{itemize}
-\end{enumerate}
-\end{enumerate}
+
+\end{itemize}
 \end{frame}
+
+
 
 \begin{frame}{Related Literature}
 
@@ -267,13 +231,8 @@ Strulik (2020)}}
 \smallskip{}
 
 \begin{itemize}
-\item \textbf{\textcolor{purple}{Our Contributions: analyzing effects of
-AI on both aggregate and distributional outcomes, highlighting }}
-\begin{itemize}
-\item \textbf{\textcolor{purple}{i) the roles of human capital adjustment, }}
-\item \textbf{\textcolor{purple}{ii) general equilibrium feedback, and }}
-\item \textbf{\textcolor{purple}{iii) transition dynamics.}}
-\end{itemize}
+\item \textbf{\textcolor{purple}{We analyze effects of
+AI on both aggregate and distributional outcomes, highlighting the roles of human capital adjustment.}}
 \end{itemize}
 \end{frame}
 
@@ -347,8 +306,7 @@ x(h)=\left\{ \begin{array}{cl}
 \begin{frame}{Households{\small\textbf{\textit{\textcolor{brown}{~~Problem}}}} }
 
 \begin{itemize}
-\item A household maximizes her expected lifetime utility consumption, $c_{t},$
-and hours of work, $h_{t}:$ 
+\item Given $z_t$ and $y_t$, a household maximizes her expected lifetime utility by choosing consumption, saving, labor supply, and human capital investment.
 
 \medskip{}
 
@@ -357,12 +315,11 @@ and hours of work, $h_{t}:$
 \end{equation}
 \textcolor{black}{
 \begin{align}
-c_{t}+a_{t+1} & =w_{t}{\color{blue}{\color{black}z_{t}n_{t}x(h_{t})+(1+r_{t})a_{t}}}
+c_{t}+a_{t+1} & =w_{t}{\color{blue}{\color{black}z_{t}n_{t}x(h_{t})+(1+r_{t})a_{t}}}\\
+h_{t+1}&=y_{t}e_{t}+(1-\delta)h_{t}\\
+a_{t+1}&\ge0.
 \end{align}
 }
-\[
-a_{t+1}\ge0.
-\]
 
 \item Labor supply is indivisible: $n_{t}\in\{0,\overline{n}\}$.
 \end{itemize}
@@ -379,11 +336,14 @@ F(K,L)=K^{1-\alpha}L^{\alpha},
 \begin{equation}
 K={\textstyle \int a_{i}di,\quad L={\textstyle \int n_{i}z_{i}x(h_{i})di}}
 \end{equation}
+\begin{equation}
+    w = F_L(K,L),\quad r =F_K(K,L).
+\end{equation}
 
 \end{itemize}
 \end{frame}
 
-\begin{frame}{AI Shock}
+\begin{frame}{AI Effects}
 
 \begin{itemize}
 \item \textbf{Baseline:} AI changes skill premium through $\gamma$ {\small\textit{\textcolor{gray}{(Autor
@@ -399,14 +359,14 @@ x(h)=\left\{ \begin{array}{cl}
 
 \medskip{}
 
-\item \textbf{AI+ experiment:} AI raises the bar for high-sector entry {\small\textit{\textcolor{gray}{(Bloomberg,
+\item \textbf{AI+:} AI raises the bar for high-sector entry: $h_H'>h_H$ {\small\textit{\textcolor{gray}{(Bloomberg,
 2025)}}}{\small\par}
 
 \begin{equation}
-x^{AI+}(h')=\left\{ \begin{array}{cl}
-1-\lambda+\gamma\lambda & \text{low sector if }h'<h_{M}\\
-1 & \text{middle sector if }h_{M}\leq h'<h'_{H}\\
-1+\lambda+\gamma\lambda & \text{high sector if }h'\geq h'_{H}
+x^{AI+}(h)=\left\{ \begin{array}{cl}
+1-\lambda+\gamma\lambda & \text{low sector if }h<h_{M}\\
+1 & \text{middle sector if }h_{M}\leq h<h'_{H}\\
+1+\lambda+\gamma\lambda & \text{high sector if }h\geq h'_{H}
 \end{array}\right.\label{eq:xAI-1-1}
 \end{equation}
 
