@@ -2,6 +2,7 @@
 %% Do not edit unless you really know what you are doing.
 \documentclass[aspectratio=169]{beamer}
 \usepackage{mathpazo}
+\usepackage{booktabs}
 \usepackage[latin9]{inputenc}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
@@ -110,6 +111,7 @@ Aggregate and Distributional Implications}}}}{\LARGE\textrm{\textcolor{violet}{\
 \date{{\normalsize\textrm{June 4, 2026}}}
 
 \makebeamertitle
+\section{Introduction}
 
 \begin{frame}{Motivation}
 
@@ -377,7 +379,7 @@ x^{AI+}(h)=\left\{ \begin{array}{cl}
 \end{frame}
 
 
-\section{Model}
+\section{Two-period Model}
 \begin{frame}{~}
 
 \begin{center}
@@ -509,8 +511,39 @@ Moment &  &  &  & Data &  &  &  & Model\tabularnewline
 \hline 
 \end{tabular}
 \par\end{center}
+{\scriptsize Note: Employment and inequality measures are based on the 2007 SCF. The human capital investment ratio is from OECD(2025). Employment is defined as positive labor income in a given year. The employment rate, the human capital investment rate, and the earnings Gini coefficient are targeted moments.}{\scriptsize\par}
 
 \end{frame}
+
+\begin{frame}{Calibration Parameters}
+  \begin{table}
+  %\noindent\begin{minipage}[t]{1\columnwidth}%
+  \begin{center}
+  \begin{tabular}{crrll}
+  \toprule 
+  \hline~Parameter & Value &  & Description & Target or Reference\tabularnewline
+  \midrule
+  $\beta$ & 0.91795 &  & Time discount factor & Annual interest rate\tabularnewline
+  $\alpha$ & 0.36 &  & Capital income share & Standard value\tabularnewline
+  $\delta$ & 0.1 &  & HC depreciation rate & Standard value\tabularnewline
+  $\rho_{z}$ & 0.948 &  & Persistence of $z$ shocks & Chang and Kim (2006)\tabularnewline
+  $\sigma_{z}$ & 0.269 &  & Standard deviation of $z$ shocks & Chang and Kim (2006)\tabularnewline
+  $\chi_{n}$ & 2.47 &  & Disutility from working & Employment rate\tabularnewline
+  $\chi_{e}$ & 1.48 &  & Disutility from HC effort & HC investment ratio \tabularnewline
+  $h_{M}$ & 0.41 &  & Human capital cutoff for M & 40\% in Middle sector\tabularnewline
+  $h_{H}$ & 0.96 &  & Human capital cutoff for H & 40\% in High sector\tabularnewline
+  $\lambda$ & 0.2 &  & Skill premium & Earnings Gini\tabularnewline
+  
+  \bottomrule
+  \end{tabular}
+  \par\end{center}
+  {\scriptsize Note: Middle and High sector population shares calibrated to 2014 US workers in RCM occupations}{\scriptsize\par}
+  %\end{minipage}
+  \end{table}
+  \centering
+  $\overline{n}=e_H=1/3$ to match average hours worked, $e_L=1/6$.
+      
+  \end{frame}
 
 \begin{frame}{Model Fits {\small\textbf{\textit{\textcolor{brown}{~~Cross-sectional
 Distributions}}}}}
@@ -535,7 +568,6 @@ Distributions}}}}}
 \par\end{center}
 \end{frame}
 
-\section{AI Shock}
 
 \begin{frame}{AI Adoption {\small\textbf{\textit{\textcolor{brown}{~~Assumptions}}}}}
 
@@ -563,15 +595,17 @@ middle-sector population share by 5 pp.
 \end{enumerate}
 \end{frame}
 
-\begin{frame}{Results {\small\textbf{\textit{\textcolor{brown}{~~HC Distribution}}}}}
+\section{Baseline Results}
+\begin{frame}{Baseline Results {\small\textbf{\textit{\textcolor{brown}{~~HC Distribution}}}}}
 
 \begin{center}
-\includegraphics[scale=0.6]{../figure_204040calib/h_dist}
+\includegraphics[scale=0.7]{../figure_204040calib/h_dist}
 \par\end{center}
+
 
 \end{frame}
 
-\begin{frame}{Results {\small\textbf{\textit{\textcolor{brown}{~~Job Polarization}}}}}
+\begin{frame}{Baseline Results {\small\textbf{\textit{\textcolor{brown}{~~Job Polarization}}}}}
 
 \begin{center}
 \includegraphics[scale=0.6]{../figure_204040calib/share} 
@@ -579,7 +613,7 @@ middle-sector population share by 5 pp.
 
 \end{frame}
 
-\begin{frame}{Results {\small\textbf{\textit{\textcolor{brown}{~~Direct and Indirect
+\begin{frame}{Baseline Results {\small\textbf{\textit{\textcolor{brown}{~~Direct and Indirect
 Effects}}}}}
 \begin{itemize}
 \item Effects of AI reflect two forces:
@@ -602,7 +636,7 @@ model to a Without-HC model}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Results {\small\textbf{\textit{\textcolor{brown}{~~Aggregate Effects}}}}}
+\begin{frame}{Baseline Results {\small\textbf{\textit{\textcolor{brown}{~~Aggregate Effects}}}}}
 
 \begin{center}
 \includegraphics[scale=0.6]{../figure_204040calib/nohc_agg}
@@ -610,7 +644,7 @@ model to a Without-HC model}
 
 \end{frame}
 
-\begin{frame}{Results {\small\textbf{\textit{\textcolor{brown}{~~Distributional
+\begin{frame}{Baseline Results {\small\textbf{\textit{\textcolor{brown}{~~Distributional
 Outcomes}}}}}
 
 \begin{center}
@@ -619,7 +653,7 @@ Outcomes}}}}}
 
 \end{frame}
 
-\begin{frame}{Results {\small\textbf{\textit{\textcolor{brown}{~~Wealth Inequality}}}}}
+\begin{frame}{Baseline Results {\small\textbf{\textit{\textcolor{brown}{~~Wealth Inequality}}}}}
 
 \begin{center}
 \includegraphics[scale=0.6]{../figure_204040calib/nohc_asset}
@@ -634,6 +668,8 @@ through income effects.
 channel}}
 \end{itemize}
 \end{frame}
+
+\section{AI+ Results}
 
 \begin{frame}{AI+ Results {\small\textbf{\textit{\textcolor{brown}{~~High Sector}}}}}
 
