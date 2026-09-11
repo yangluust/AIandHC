@@ -1,0 +1,226 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{amsthm}
+\usepackage{geometry}
+\usepackage{booktabs}
+\geometry{margin=1in}
+
+\newtheorem{proposition}{Proposition}
+
+\title{CES Labor Income and the Effect of Part-Time Training on Saving}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent This note generalizes the two-period saving problem in which labor income is multiplicative, $wzx$, to a CES aggregator $wf(x,z)$. The object of interest is how the sign of $\rho$ changes the result that part-time training crowds out saving at low income and crowds in saving at high income.
+
+\section{Setup}
+
+The household solves
+\begin{equation}
+    \max_{a'}\ \ln(c)+\beta\mathbb{E}_{z'}[\ln(c')]
+\end{equation}
+subject to
+\begin{equation}
+    c+a'=(1+r)a+n\,w f(x,z),
+    \qquad
+    c'=(1+r')a'+w'f(x',z'),
+\end{equation}
+where
+\begin{equation}
+    f(x,z)
+    =
+    \bigl[\alpha_1 x^{1-\rho}+\alpha_2 z^{1-\rho}\bigr]^{1/(1-\rho)},
+    \qquad
+    \alpha_1,\alpha_2>0.
+    \label{eq:ces-f}
+\end{equation}
+The elasticity of substitution between skill and the productivity shock is $\sigma=1/\rho$. Special cases of~\eqref{eq:ces-f}:
+\begin{itemize}
+    \item $\rho=0$: perfect substitutes, $f=\alpha_1 x+\alpha_2 z$;
+    \item $\rho\to 1$: Cobb--Douglas;
+    \item $\rho>1$: gross complements ($\sigma<1$);
+    \item $\rho<0$: $f_z$ decreases in skill (super-substitutes).
+\end{itemize}
+The baseline technology $xz$ is \emph{not} nested in~\eqref{eq:ces-f}: $xz$ is homogeneous of degree~2, whereas~\eqref{eq:ces-f} is constant returns to scale.
+
+Compare part-time training $(n=1,e=e_L)$ with no training $(n=1,e=0)$. Training scales skill from $x$ to $tx$ with $t>1$. Use the same normalization as in the multiplicative analysis: $(1+r)=(1+r')=w=w'=1$, period-1 shock $z=1$, and $\ln z'\sim\mathcal{N}(0,\sigma_z^2)$. Write
+\begin{equation}
+    \mu\equiv\mathbb{E}[z']=e^{\sigma_z^2/2},
+    \qquad
+    \Sigma\equiv\operatorname{Var}(z')=e^{\sigma_z^2}(e^{\sigma_z^2}-1).
+\end{equation}
+The budgets become
+\begin{equation}
+    c+a'=a+f(x,1),
+    \qquad
+    c'=a'+f(tx,z').
+\end{equation}
+Let $y_1\equiv a+f(x,1)$. The Euler equation is
+\begin{equation}
+    \frac{1}{y_1-a'}
+    =
+    \beta\,\mathbb{E}_{z'}\!\left[\frac{1}{a'+f(tx,z')}\right].
+\end{equation}
+
+\section{CES derivatives and income-risk exposure}
+
+Write $A=\alpha_1 x^{1-\rho}+\alpha_2 z^{1-\rho}$, so $f=A^{1/(1-\rho)}$. Then
+\begin{equation}
+    f_z=\alpha_2\Bigl(\frac{f}{z}\Bigr)^{\rho},
+    \qquad
+    f_x=\alpha_1\Bigl(\frac{f}{x}\Bigr)^{\rho},
+\end{equation}
+and therefore
+\begin{equation}
+    \frac{\partial f_z}{\partial x}
+    =
+    \alpha_1\alpha_2\rho\,\frac{f^{2\rho-1}}{x^{\rho}z^{\rho}}.
+    \label{eq:fz-x}
+\end{equation}
+Equation~\eqref{eq:fz-x} is the key comparative static:
+\begin{equation}
+    \operatorname{sign}\!\left(\frac{\partial f_z}{\partial x}\right)
+    =
+    \operatorname{sign}(\rho).
+\end{equation}
+Part-time training raises the sensitivity of labor income to $z'$ if and only if $\rho>0$. If $\rho<0$, additional skill \emph{insures} against the shock. If $\rho=0$, that sensitivity is constant.
+
+\section{Second-order approximate saving}
+
+Match the multiplicative derivation: evaluate expected period-2 labor income at $z'=\mu$ and its variance by the delta method. Define
+\begin{equation}
+    \varphi(t,x)\equiv f(tx,\mu),
+    \qquad
+    \psi(t,x)\equiv f_z(tx,\mu)=\alpha_2\bigl(\varphi/\mu\bigr)^{\rho}.
+\end{equation}
+Then $\mathbb{E}[f(tx,z')]\approx\varphi$ and $\operatorname{Var}(f(tx,z'))\approx\psi^2\Sigma$. Linearizing the Euler equation around the certainty-equivalent point gives
+\begin{equation}
+    a'^{\star}(x,a;t)
+    =
+    \underbrace{\frac{\beta y_1-\varphi}{1+\beta}}_{\text{CE}}
+    +
+    \underbrace{\frac{\kappa\,\varphi^{2\rho}}{\beta(y_1+\varphi)}}_{\text{Precautionary}},
+    \qquad
+    \kappa\equiv \alpha_2^2\Sigma\,\mu^{-2\rho}.
+    \label{eq:astar-ces}
+\end{equation}
+The multiplicative formulas are the special case $\varphi=tx\mu$ and $\kappa\varphi^{2\rho}=t^2x^2\Sigma$.
+
+Differentiate~\eqref{eq:astar-ces} with respect to $t$. Since $\varphi_t=\alpha_1(\varphi/(tx))^{\rho}\,x>0$,
+\begin{equation}
+    \frac{\partial a'^{\star}}{\partial t}
+    =
+    \varphi_t
+    \left[
+        -\frac{1}{1+\beta}
+        +\frac{\kappa}{\beta}H'(\varphi)
+    \right],
+    \qquad
+    H(\varphi)\equiv\frac{\varphi^{2\rho}}{y_1+\varphi},
+    \label{eq:dadt-ces}
+\end{equation}
+where
+\begin{equation}
+    H'(\varphi)
+    =
+    \frac{\varphi^{2\rho-1}\bigl[2\rho y_1+(2\rho-1)\varphi\bigr]}{(y_1+\varphi)^2}.
+    \label{eq:Hprime}
+\end{equation}
+The first term in the bracket of~\eqref{eq:dadt-ces} is the certainty-equivalent crowd-out: training raises expected period-2 income. The second term is the precautionary response. Its sign is $\operatorname{sign}(H')$ and is therefore governed by $\rho$. Define, as in the multiplicative analysis,
+\begin{equation}
+    \Delta(x,a;t)
+    \equiv
+    a'^{\star}(x,a;t)-a'^{\star}(x,a;1)
+    =
+    \int_1^t \frac{\partial a'^{\star}}{\partial u}(x,a;u)\,du.
+\end{equation}
+
+\section{How the sign of $\rho$ changes the result}
+
+\begin{proposition}\label{prop:dadt-ces}
+    Under the approximation~\eqref{eq:astar-ces}, the effect of part-time training on saving is governed by $\rho$ as follows.
+    \begin{enumerate}
+        \item If $\rho\le 0$, then $\partial a'^{\star}/\partial t<0$ and $\Delta(x,a;t)<0$ for all $x>0$, $a\ge 0$, and $t>1$. Training crowds out saving at every income level. The high-income crowd-in disappears.
+        \item If $0<\rho<1$, then
+        \begin{equation}
+            \frac{\Delta(x,a;t)}{x}
+            \;\xrightarrow{x\to\infty}\;
+            -\frac{\alpha_1^{1/(1-\rho)}(t-1)}{1+\beta}<0.
+            \label{eq:rho-lt-1-limit}
+        \end{equation}
+        Consumption smoothing dominates for sufficiently large $x$, so high-income crowd-in does not survive.
+        \item If $\rho>1$ and
+        \begin{equation}
+            \frac{\Sigma}{\mu^{2\rho}}
+            >
+            \frac{\beta}{1+\beta}\,\frac{1}{\alpha_2^2 H'(\varphi_{\infty})},
+            \qquad
+            \varphi_{\infty}=\alpha_2^{1/(1-\rho)}\mu,
+            \label{eq:ces-sigma-star}
+        \end{equation}
+        then $\Delta<0$ for small $x$ and $\Delta>0$ for large $x$. The qualitative multiplicative result is restored.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \emph{Part 1.} If $\rho<0$, then $2\rho y_1+(2\rho-1)\varphi<0$, so $H'<0$ by~\eqref{eq:Hprime}. Both terms in the bracket of~\eqref{eq:dadt-ces} are negative. Hence $\partial a'^{\star}/\partial t<0$ and $\Delta<0$. Skill substitutes for luck: training raises expected period-2 income and reduces exposure to $z'$.
+
+    If $\rho=0$, then $f=\alpha_1 x+\alpha_2 z$, $\varphi=\alpha_1 tx+\alpha_2\mu$, and $\psi=\alpha_2$ (variance independent of $t$). Differentiating~\eqref{eq:astar-ces} gives
+    \[
+        \frac{\partial a'^{\star}}{\partial t}
+        =
+        -\frac{\alpha_1 x}{1+\beta}
+        -\frac{\alpha_2^2\Sigma\,\alpha_1 x}{\beta(y_1+\varphi)^2}<0.
+    \]
+    Again $\Delta<0$ for all $x$.
+
+    \emph{Part 2.} If $0<\rho<1$, skill dominates as $x\to\infty$:
+    \[
+        \varphi(t,x)\sim\alpha_1^{1/(1-\rho)}\,tx,
+        \qquad
+        y_1\sim\alpha_1^{1/(1-\rho)}\,x.
+    \]
+    The certainty-equivalent gap is of order $x$. The precautionary gap is of order $x^{2\rho-1}$. Because $2\rho-1<1$, the ratio $\Delta/x$ converges to the certainty-equivalent limit~\eqref{eq:rho-lt-1-limit}. If $\Sigma$ is very large, $\Delta$ can be positive at intermediate $x$, but it turns negative again as $x\to\infty$.
+
+    \emph{Part 3.} If $\rho>0$, then $f_z$ increases in skill, so training raises period-2 income risk. For $\rho\ge 1/2$, $H'>0$ always and the two channels oppose each other.
+
+    Now take $\rho>1$ and $a>0$. As $x\to 0$, $\varphi\sim\alpha_1^{1/(1-\rho)}\,tx\to 0$ and $H'(\varphi)\to 0$ because $2\rho-1>1$. Thus
+    \[
+        \frac{\partial a'^{\star}}{\partial t}\approx -\frac{\varphi_t}{1+\beta}<0,
+    \]
+    so $\Delta<0$ at low $x$. As $x\to\infty$, the shock is the bottleneck:
+    \[
+        \varphi\to\varphi_{\infty}=\alpha_2^{1/(1-\rho)}\mu,
+        \qquad
+        y_1\to y_{1\infty}=\alpha_2^{1/(1-\rho)}.
+    \]
+    Then $H'(\varphi_{\infty})>0$ because $\rho>1/2$. The bracket in~\eqref{eq:dadt-ces} is positive at large $x$ if and only if~\eqref{eq:ces-sigma-star} holds, in which case $\Delta>0$ for large $x$. As $x\to\infty$, $\varphi_t\to 0$, so $\Delta\to 0$ from above.
+\end{proof}
+
+\paragraph{Cobb--Douglas ($\rho=1$).}
+If $\alpha_1+\alpha_2=1$, then $f=x^{\alpha_1}z^{\alpha_2}$. Increments in the mean and in the variance are both of order $x^{\alpha_1}$. The sign of $\Delta$ is a horse race between $\Sigma$ and $\alpha_1$, as in the multiplicative model (which is closer to $\alpha_1$ near one).
+
+\section{Discussion}
+
+The multiplicative technology $txz'$ makes $\operatorname{Var}(c')$ of order $x^2$. The certainty-equivalent and precautionary gaps therefore remain the same order as $x\to\infty$, and a single crossing can occur when $\Sigma/\mu$ is large enough. That knife-edge scaling is why the original proposition can deliver high-income crowd-in.
+
+Under the CRS CES~\eqref{eq:ces-f}, the same qualitative conclusion requires $\rho>1$ (complements). If $\rho\le 0$, both channels crowd out saving and the sign flip disappears.
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+$\rho$ & Exposure $f_z$ vs.\ skill & Effect of part-time training on saving \\
+\midrule
+$\rho<0$ & falls & $\Delta<0$ for all $x$ (no crowd-in) \\
+$\rho=0$ & flat & $\Delta<0$ for all $x$ (no crowd-in) \\
+$0<\rho<1$ & rises, slowly & CE wins as $x\to\infty$; high-$x$ crowd-in fails \\
+$\rho=1$ & rises with income & horse race in $\Sigma$; original logic possible \\
+$\rho>1$ & rises, strongly & original result: low-$x$ out, high-$x$ in, if $\Sigma$ large \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{document}
