@@ -42,7 +42,7 @@ The elasticity of substitution between skill and the productivity shock is $\sig
     \item $\rho=0$: perfect substitutes, $f=\alpha_1 x+\alpha_2 z$;
     \item $\rho\to 1$: Cobb--Douglas;
     \item $\rho>1$: gross complements ($\sigma<1$);
-    \item $\rho<0$: $f_z$ decreases in skill (super-substitutes).
+    \item $\rho<0$: $f_z$ decreases in skill (super-substitutes). Here $1-\rho>1$, so $f$ is convex in $(x,z)$ and $\sigma=1/\rho<0$ is no longer an elasticity of substitution; this case lies outside the standard concave CES range and is included only as a formal benchmark.
 \end{itemize}
 The baseline technology $xz$ is \emph{not} nested in~\eqref{eq:ces-f}: $xz$ is homogeneous of degree~2, whereas~\eqref{eq:ces-f} is constant returns to scale.
 
@@ -90,7 +90,8 @@ Part-time training raises the sensitivity of labor income to $z'$ if and only if
 
 \section{Second-order approximate saving}
 
-Match the multiplicative derivation: evaluate expected period-2 labor income at $z'=\mu$ and its variance by the delta method. Define
+Match the multiplicative derivation: evaluate expected period-2 labor income at $z'=\mu$ and its variance by the delta method.\footnote{\label{fn:approx}This treats $\mathbb{E}[f(tx,z')]\approx f(tx,\mu)$, which is exact when $f$ is linear in $z'$ (the multiplicative case) but under CES drops the mean correction $\tfrac12 f_{zz}(tx,\mu)\Sigma$, which is of the same order in $\Sigma$ as the retained precautionary term. A consistent second-order expansion of the Euler equation adds
+$\Gamma(t,x)\equiv -f_{zz}(tx,\mu)\Sigma/[2(1+\beta)]$ to~\eqref{eq:astar-ces}, where $f_{zz}=-\alpha_1\alpha_2\rho\,f^{\rho}x^{1-\rho}z^{-\rho-1}/A$, so $\operatorname{sign}(f_{zz})=-\operatorname{sign}(\rho)$. The term vanishes for $\rho=0$. For $\rho>1$ its $t$-derivative is $O(x^{\rho})=o(\varphi_t)$ as $x\to0$, leaving low-income crowd-out unchanged, but as $x\to\infty$ it is of the same order as $\varphi_t$, with $\partial_t f_{zz}/\varphi_t\to\rho(\rho-1)/\mu^{2}$; Part~3 of Proposition~\ref{prop:dadt-ces} accounts for this. For $\rho<0$ the sign of $\partial_t f_{zz}$ is ambiguous at intermediate $x$ but the term is $O(x^{\rho})=o(1)$ as $x\to\infty$, so Part~1 holds asymptotically. Parts~1 and~2 below use the simpler form~\eqref{eq:astar-ces} to parallel the multiplicative analysis.} Define
 \begin{equation}
     \varphi(t,x)\equiv f(tx,\mu),
     \qquad
@@ -119,12 +120,12 @@ Differentiate~\eqref{eq:astar-ces} with respect to $t$. Since $\varphi_t=\alpha_
         +\frac{\kappa}{\beta}H'(\varphi)
     \right],
     \qquad
-    H(\varphi)\equiv\frac{\varphi^{2\rho}}{y_1+\varphi},
+    H(\varphi;y_1)\equiv\frac{\varphi^{2\rho}}{y_1+\varphi},
     \label{eq:dadt-ces}
 \end{equation}
-where
+where $H'\equiv\partial H/\partial\varphi$ and
 \begin{equation}
-    H'(\varphi)
+    H'(\varphi;y_1)
     =
     \frac{\varphi^{2\rho-1}\bigl[2\rho y_1+(2\rho-1)\varphi\bigr]}{(y_1+\varphi)^2}.
     \label{eq:Hprime}
@@ -152,13 +153,18 @@ The first term in the bracket of~\eqref{eq:dadt-ces} is the certainty-equivalent
             \label{eq:rho-lt-1-limit}
         \end{equation}
         Consumption smoothing dominates for sufficiently large $x$, so high-income crowd-in does not survive.
-        \item If $\rho>1$ and
+        \item Let $\rho>1$, $a>0$, and use the consistent second-order expansion of footnote~\ref{fn:approx}. Write
         \begin{equation}
-            \frac{\Sigma}{\mu^{2\rho}}
-            >
-            \frac{\beta}{1+\beta}\,\frac{1}{\alpha_2^2 H'(\varphi_{\infty})},
-            \qquad
             \varphi_{\infty}=\alpha_2^{1/(1-\rho)}\mu,
+            \qquad
+            y_{1\infty}=a+\alpha_2^{1/(1-\rho)}.
+        \end{equation}
+        If
+        \begin{equation}
+            \frac{\alpha_2^2\,H'(\varphi_{\infty};y_{1\infty})}{\beta\,\mu^{2\rho}}
+            -\frac{\rho(\rho-1)}{2(1+\beta)\mu^{2}}
+            >
+            \frac{1}{(1+\beta)\,\Sigma},
             \label{eq:ces-sigma-star}
         \end{equation}
         then $\Delta<0$ for small $x$ and $\Delta>0$ for large $x$. The qualitative multiplicative result is restored.
@@ -187,7 +193,14 @@ The first term in the bracket of~\eqref{eq:dadt-ces} is the certainty-equivalent
 
     \emph{Part 3.} If $\rho>0$, then $f_z$ increases in skill, so training raises period-2 income risk. For $\rho\ge 1/2$, $H'>0$ always and the two channels oppose each other.
 
-    Now take $\rho>1$ and $a>0$. As $x\to 0$, $\varphi\sim\alpha_1^{1/(1-\rho)}\,tx\to 0$ and $H'(\varphi)\to 0$ because $2\rho-1>1$. Thus
+    Now take $\rho>1$ and $a>0$, and add the mean correction $\Gamma(t,x)=-f_{zz}(tx,\mu)\Sigma/[2(1+\beta)]$ of footnote~\ref{fn:approx} to~\eqref{eq:astar-ces}, so that
+    \[
+        \frac{\partial a'^{\star}}{\partial t}
+        =
+        \varphi_t\left[-\frac{1}{1+\beta}+\frac{\kappa}{\beta}H'(\varphi;y_1)\right]
+        -\frac{\Sigma}{2(1+\beta)}\,\partial_t f_{zz}(tx,\mu).
+    \]
+    As $x\to 0$, $\varphi\sim\alpha_1^{1/(1-\rho)}\,tx\to 0$, $y_1\to a>0$, and $H'(\varphi;y_1)\to 0$ because $2\rho-1>0$. Moreover $\alpha_1(tx)^{1-\rho}/A\to 1$, so $f_{zz}(tx,\mu)\sim-\alpha_2\rho\,\varphi^{\rho}\mu^{-\rho-1}$ and $\partial_t f_{zz}=O(x^{\rho})=o(\varphi_t)$ since $\varphi_t=O(x)$ and $\rho>1$. Thus
     \[
         \frac{\partial a'^{\star}}{\partial t}\approx -\frac{\varphi_t}{1+\beta}<0,
     \]
@@ -195,10 +208,26 @@ The first term in the bracket of~\eqref{eq:dadt-ces} is the certainty-equivalent
     \[
         \varphi\to\varphi_{\infty}=\alpha_2^{1/(1-\rho)}\mu,
         \qquad
-        y_1\to y_{1\infty}=\alpha_2^{1/(1-\rho)}.
+        y_1\to y_{1\infty}=a+\alpha_2^{1/(1-\rho)},
+        \qquad
+        \varphi_t\sim\alpha_1\varphi_{\infty}^{\rho}\,t^{-\rho}x^{1-\rho}\to 0.
     \]
-    Then $H'(\varphi_{\infty})>0$ because $\rho>1/2$. The bracket in~\eqref{eq:dadt-ces} is positive at large $x$ if and only if~\eqref{eq:ces-sigma-star} holds, in which case $\Delta>0$ for large $x$. As $x\to\infty$, $\varphi_t\to 0$, so $\Delta\to 0$ from above.
+    Then $H'(\varphi_{\infty};y_{1\infty})>0$ because $\rho>1/2$. For the mean correction, $A\to\alpha_2\mu^{1-\rho}$ gives $f_{zz}(tx,\mu)\sim-\alpha_1\rho\,\mu^{-2}\varphi_{\infty}^{\rho}(tx)^{1-\rho}$, hence
+    \[
+        \partial_t f_{zz}(tx,\mu)\sim\alpha_1\rho(\rho-1)\,\mu^{-2}\varphi_{\infty}^{\rho}\,t^{-\rho}x^{1-\rho}
+        =\frac{\rho(\rho-1)}{\mu^{2}}\,\varphi_t .
+    \]
+    Substituting,
+    \[
+        \frac{\partial a'^{\star}}{\partial t}
+        \sim
+        \varphi_t\left[-\frac{1}{1+\beta}\Bigl(1+\frac{\rho(\rho-1)\Sigma}{2\mu^{2}}\Bigr)+\frac{\kappa}{\beta}H'(\varphi_{\infty};y_{1\infty})\right].
+    \]
+    With $\kappa=\alpha_2^2\Sigma\mu^{-2\rho}$, the bracket is positive if and only if~\eqref{eq:ces-sigma-star} holds. Because $\varphi(u,x)\to\varphi_{\infty}$ for every $u\in[1,t]$, the bracket has the same sign along the whole path of integration in $\Delta$, so $\Delta>0$ for large $x$. Since $\varphi_t\to 0$, $\Delta\to 0$ from above.
 \end{proof}
+
+\paragraph{Interpretation of condition~\eqref{eq:ces-sigma-star}.}
+Unlike the multiplicative case, a large $\Sigma$ alone does not deliver high-income crowd-in. The left-hand side of~\eqref{eq:ces-sigma-star} must be positive: the precautionary gain from higher exposure to $z'$, $\alpha_2^2 H'(\varphi_\infty;y_{1\infty})/(\beta\mu^{2\rho})$, must exceed $\rho(\rho-1)/[2(1+\beta)\mu^{2}]$. The second term arises because $f$ is concave in $z'$ when $\rho>0$, so expected period-2 income lies $\tfrac12 f_{zz}\Sigma$ below $\varphi$. Training shrinks this concavity penalty, raising expected income and adding a crowd-out channel that also scales with $\Sigma$; the two $\Sigma$-terms therefore compete regardless of how large $\Sigma$ is.
 
 \paragraph{Cobb--Douglas ($\rho=1$).}
 If $\alpha_1+\alpha_2=1$, then $f=x^{\alpha_1}z^{\alpha_2}$. Increments in the mean and in the variance are both of order $x^{\alpha_1}$. The sign of $\Delta$ is a horse race between $\Sigma$ and $\alpha_1$, as in the multiplicative model (which is closer to $\alpha_1$ near one).
@@ -207,7 +236,7 @@ If $\alpha_1+\alpha_2=1$, then $f=x^{\alpha_1}z^{\alpha_2}$. Increments in the m
 
 The multiplicative technology $txz'$ makes $\operatorname{Var}(c')$ of order $x^2$. The certainty-equivalent and precautionary gaps therefore remain the same order as $x\to\infty$, and a single crossing can occur when $\Sigma/\mu$ is large enough. That knife-edge scaling is why the original proposition can deliver high-income crowd-in.
 
-Under the CRS CES~\eqref{eq:ces-f}, the same qualitative conclusion requires $\rho>1$ (complements). If $\rho\le 0$, both channels crowd out saving and the sign flip disappears.
+Under the CRS CES~\eqref{eq:ces-f}, the same qualitative conclusion requires $\rho>1$ (complements) together with condition~\eqref{eq:ces-sigma-star}, which is not implied by a large $\Sigma$ alone. Even then the high-income crowd-in is weaker than in the multiplicative model: because $\varphi_t=O(x^{1-\rho})\to 0$, $\Delta$ is positive but vanishes as $x\to\infty$, whereas under $txz'$ the gap $\Delta$ grows linearly in $x$. If $\rho\le 0$, both channels crowd out saving and the sign flip disappears.
 
 \begin{center}
 \begin{tabular}{lll}
@@ -218,7 +247,7 @@ $\rho<0$ & falls & $\Delta<0$ for all $x$ (no crowd-in) \\
 $\rho=0$ & flat & $\Delta<0$ for all $x$ (no crowd-in) \\
 $0<\rho<1$ & rises, slowly & CE wins as $x\to\infty$; high-$x$ crowd-in fails \\
 $\rho=1$ & rises with income & horse race in $\Sigma$; original logic possible \\
-$\rho>1$ & rises, strongly & original result: low-$x$ out, high-$x$ in, if $\Sigma$ large \\
+$\rho>1$ & rises, strongly & original result: low-$x$ out, high-$x$ in, if~\eqref{eq:ces-sigma-star} holds \\
 \bottomrule
 \end{tabular}
 \end{center}
